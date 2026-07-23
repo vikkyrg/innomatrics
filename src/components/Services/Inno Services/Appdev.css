@@ -1,0 +1,23 @@
+.BgDiv{
+    margin-top: -3%;
+    
+}
+
+.AppBg{
+    opacity: 0.5;
+}
+
+#appDiv{
+    
+    background-image: url('../../../assets/AppDev.jpg');
+    background-size: contain;
+    background-attachment: fixed;
+    background-position: center;
+}
+@media (max-width: 640px) {#appDiv{
+    
+    background-image: url('../../../assets/AppDev.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}}

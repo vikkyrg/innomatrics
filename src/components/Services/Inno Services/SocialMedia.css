@@ -1,0 +1,24 @@
+.BgDiv{
+    margin-top: -3%;
+    
+}
+
+.AppBg{
+    opacity: 0.5;
+}
+
+#SocialMediaDiv{
+    background-image: url('../../../assets/socialHero.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+
+@media (max-width: 640px) {#SocialMediaDiv{
+    
+    background-image: url('../../../assets/socialHero.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}}

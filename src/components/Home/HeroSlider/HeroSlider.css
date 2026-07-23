@@ -1,0 +1,121 @@
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+}
+
+.slide.opacity-100 {
+  opacity: 1;
+  visibility: visible;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Animation for text */
+.slide.opacity-100 h1 {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.slide.opacity-100 p {
+  animation: slideUp 0.8s ease-out 0.2s forwards;
+}
+
+.slide.opacity-100 button {
+  animation: fadeIn 0.8s ease-out 0.4s forwards;
+}
+
+.slide h1,
+.slide p,
+.slide button {
+  opacity: 0;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Navigation buttons hover effect */
+.hero-slider button.nav-arrow {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.hero-slider:hover button.nav-arrow {
+  opacity: 1;
+}
+
+/* Ensure navigation elements are above slides */
+.hero-slider .dots {
+  z-index: 10;
+}
+
+/* Responsive height adjustments */
+@media (max-width: 768px) {
+  .hero-slider {
+    height: 80vh;
+  }
+  
+  .slide h1 {
+    font-size: 2.5rem;
+  }
+  
+  .slide p {
+    font-size: 1.125rem;
+  }
+} 
+
+.text-shadow-lg {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5),
+               0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Make navigation buttons more visible */
+.hero-slider button {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure text is readable on any background */
+.hero-slider h1,
+.hero-slider p {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5),
+               0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Make the CTA button stand out */
+.hero-slider button.bg-blue-600 {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+} 

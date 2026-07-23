@@ -1,0 +1,114 @@
+/* .career-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 25%;
+  } */
+  
+  .career-section{
+    height: 60vh; /* Adjust height as needed */
+    background-image: url('../../assets/careerHero.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  .career-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .career-form {
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-label {
+    font-weight: bold;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .form-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .form-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .career-container {
+    padding: 5%;
+    
+    background-attachment: fixed;
+    background-size: cover;
+}
+  
+  .career-content {
+    display: flex;
+  }
+  
+  .career-image {
+    flex: 1;
+  }
+  
+  .career-image img {
+    width: 100%;
+    height: auto;
+    margin-top: 10%;
+  }
+  
+  .career-form {
+    flex: 1;
+     /* Add padding to create space between the image and the form */
+    margin-left: 5%;
+    }
+  
+  @media screen and (max-width: 768px) {
+    .career-image{
+        height: 10rem;
+        
+        
+        
+    }
+
+    .career-form{
+        flex-direction: column;
+        height: 20%;
+        margin-top: 3%;
+    }
+
+    .career-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 3%;
+    }
+  }
+
+  
+  /* Rest of the form styling remains the same */
+  

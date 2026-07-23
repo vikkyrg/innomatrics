@@ -1,0 +1,27 @@
+.service-section {
+    height: 70vh; /* Adjust height as needed */
+    /* background-image: url('../../assets/serviceBg.jpg'); */
+
+    background-size: cover;
+    background-position: center;
+}
+
+.carosuelBox{
+    /* margin-bottom: 12%; */
+    
+    padding: 2%;
+    width: 100%;
+    
+}
+
+.carousel img{
+    border-radius: 20%;
+}
+
+.Services{
+    background-image: url('../../assets/serviceBg2.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+
+}

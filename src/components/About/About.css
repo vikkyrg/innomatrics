@@ -1,0 +1,205 @@
+/* 
+.about{
+
+    width: 100rem;
+    height: 50vh;
+
+    background-image: url('../../assets/aboutdoodle.jpg');
+
+    background-size: cover;
+
+    background-attachment: fixed;
+}
+
+.aboutText {
+    font-size: 5rem;
+    font-weight: bolder;
+    margin-top: -40%;
+    color: white;
+    animation: effect 5s linear infinite; /* Increased duration */
+
+
+/* @keyframes effect {
+    0% {
+        background: linear-gradient(#ecdd0d, #00FF00);
+        -webkit-background-clip: text;
+    }
+
+    50% { 
+        background: linear-gradient(#f89604, #ff0000);
+        -webkit-background-clip: text;
+    }
+
+    100% {
+        background: linear-gradient(#3CE7D7, #000FFF);
+        -webkit-background-clip: text;
+    }
+} */
+
+.about-section {
+    height: 60vh; /* Adjust height as needed */
+    background-image: url('../../assets/aboutBg2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.missonVision{
+    background-image: url('../../assets/aboutBg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.aboutMe{
+    /* border: 3pt solid blue; */
+    /* margin-top: -3%; */
+    
+}
+
+.aboutMe img{
+    padding: 5%;
+    height: 80%;
+    width: 70%;
+    margin-left: 20%;
+}
+
+.aboutText{
+    padding: 4%;
+}
+
+.company-overview,
+.vision-mission,
+.why-us {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bg-blue-100 {
+  transition: all 0.3s ease;
+}
+
+.bg-blue-100:hover {
+  transform: scale(1.05);
+  background-color: #93C5FD;
+}
+
+.rounded-xl {
+  transition: all 0.3s ease;
+}
+
+.rounded-xl:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.flex-shrink-0 svg {
+  transition: all 0.3s ease;
+}
+
+.flex-shrink-0:hover svg {
+  transform: scale(1.2);
+  color: #2563EB;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .company-overview,
+  .vision-mission,
+  .why-us {
+    padding: 3rem 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  .grid {
+    gap: 1.5rem;
+  }
+}
+.hero-section {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  animation: gradient 15s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.company-overview .bg-blue-600 {
+  background-color: #2563eb;
+}
+
+.company-overview .bg-blue-700 {
+  background-color: #1d4ed8;
+}
+
+.company-overview .bg-blue-800 {
+  background-color: #1e40af;
+}
+
+.company-overview .text-blue-600 {
+  color: #2563eb;
+}
+
+.company-overview .hover\:bg-blue-700:hover {
+  background-color: #1d4ed8;
+}
+
+/* Smooth transitions for hover effects */
+.shadow-lg {
+  transition: all 0.3s ease;
+}
+
+.hover\:shadow-xl:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  .hero-section h1 {
+    font-size: 2.25rem;
+  }
+  
+  .hero-section p {
+    font-size: 1.125rem;
+  }
+}
+
+.testimonial-container {
+  scroll-snap-type: x mandatory;
+}
+
+.testimonial-pair {
+  scroll-snap-align: start;
+}

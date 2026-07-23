@@ -1,0 +1,14 @@
+.Icontainer{
+    padding: 2%;
+}
+.Icard{
+    transition: transform 0.6s ease,
+     /* Added ease for background-color */
+
+}
+
+.Icard:hover {
+    transform: scale(1.06);
+    
+  }
+  

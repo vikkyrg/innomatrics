@@ -1,0 +1,45 @@
+.home {
+  background-image: url('../../assets/homeBg.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.ServicesMission {
+  background: linear-gradient(to right, #0B2447, #19376D);
+  padding: 2rem 0;
+}
+
+/* Remove any margin/padding from the top of Why Choose Us section */
+.why-choose-us {
+  margin-top: 0;
+  padding-top: 4rem;
+}
+
+/* Ensure proper spacing between sections */
+.section-spacing {
+  margin-top: 4rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .home {
+    min-height: 80vh;
+  }
+
+  .ServicesMission {
+    padding: 1rem 0;
+  }
+}
+
+/* WhatsApp Floating Icon Animations */
+@keyframes shine {
+  0% { transform: translate(-100%, -100%) rotate(45deg); }
+  100% { transform: translate(100%, 100%) rotate(45deg); }
+}
+
+.animate-shine {
+  animation: shine 2s ease-in-out infinite;
+}

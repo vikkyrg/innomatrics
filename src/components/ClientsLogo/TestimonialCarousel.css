@@ -1,0 +1,29 @@
+.carousel-container{
+    
+    background-image: url('../../assets/testimonials/testimonyBg2.jpg');
+    background-size: contain;
+    background-attachment: fixed;
+    /* border: 3pt solid red;
+    height: auto; */
+   }
+   
+   
+   @media only screen and (max-width: 1024px) {
+       .carousel-container {
+           background-size: cover;
+           background-attachment: scroll;
+           height: auto;
+       width: 100vw;
+       background-repeat: repeat-y;
+       }
+   }
+   
+   /* For mobile devices (landscape and portrait) */
+   @media only screen and (max-width: 768px) {
+       .carousel-container {
+           background-attachment: scroll;
+           height: auto;
+       width: 100vw;
+       background-repeat: repeat-y;
+       }
+   }

@@ -1,0 +1,13 @@
+.custom-map-container {
+  height: 60vh;
+  position: relative;
+  width: 100%;
+  float: right;
+  margin-top: 20px;
+  margin-bottom: 30%;
+  border-radius: 15px; /* Adjust the border-radius value for smoother edges */
+  overflow: hidden; /* Hide overflow content for perfect rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
+  z-index: 0; /* Ensure map stays behind the navbar */
+}
+  

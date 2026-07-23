@@ -1,0 +1,29 @@
+/* .portfolio{
+
+    padding: 3%;
+    background-image: url('../../assets/portfolioBg.webp');
+    background-size: contain;
+    width: 100%;
+       
+} */
+.portfolio-section{
+
+    
+    height: 60vh; /* Adjust height as needed */
+    background-image: url('../../assets/portfolioBg.webp');
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+       
+}
+
+.largePortfolio{
+    background-image: url("../../assets/lgPortfolio.jpg");
+}
+
+/* .block2{
+    
+    padding: 3%;
+    background-image: url('../../assets/portfolioBg.webp');
+    background-attachment: fixed;
+} */

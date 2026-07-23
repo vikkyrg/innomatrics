@@ -1,0 +1,50 @@
+<div className='bg-gray-200 shadow-lg'>
+   <div className="container  mx-auto flex flex-col md:flex-row items-center justify-center py-8">
+      <div className="md:w-full mx-4 md:pr-8 mb-4 md:mb-0">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">Welcome to Our Portfolio</h2>
+        <p className="text-lg md:text-xl mb-4">
+          At Innomatrics Technologies, we take pride in delivering top-notch software consultancy services to businesses of all sizes. Our team of experienced professionals specializes in a wide range of technologies and domains, ensuring that we can cater to your specific needs with precision and expertise.
+        </p>
+        <p className="text-lg md:text-xl mb-4">
+          With a proven track record of successful projects and satisfied clients, we offer comprehensive consultancy services that cover the entire software development lifecycle. From initial planning and strategy to development, testing, deployment, and ongoing support, we're here to guide you every step of the way.
+        </p>
+        <p className="text-lg md:text-xl mb-4">
+          Our portfolio showcases a diverse array of projects we've undertaken, each highlighting our commitment to excellence, innovation, and customer satisfaction. Whether you're looking to streamline your business processes, develop a custom software solution, or harness the power of emerging technologies, we have the expertise and dedication to turn your vision into reality.
+        </p>
+       
+      </div>
+      {/* <div className="md:w-1/2">
+        <img src={p1} alt="Consultancy Service" className="w-full h-auto rounded-lg shadow-md" />
+      </div> */}
+    
+      <VerticalImageCarousel/>
+    
+    </div>
+
+    </div>
+
+    <div className="block2">
+    <div className="mb-8 flex justify-center">
+        
+
+        <h1 className= "text-zinc-800 font-semibold text-6xl">Our Portfolio</h1>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {imageCardsData.map((card, index) => (
+            <a href= {card.link} target='_blank'> 
+            <div
+              key={index}
+              onClick={() => handleCardClick(card.videoUrl)}
+              onMouseEnter={() => handleCardHover(card.videoUrl)}
+              onMouseLeave={() => {setVideoUrl(''); ;}}
+              className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transition duration-300 ease-in-out transform hover:scale-105"
+            >
+              <img src={card.image} alt={card.text} className="w-full h-auto" />
+              <div className="p-4">
+                <p className="text-lg font-semibold mb-2">{card.text}</p>
+              </div>
+            </div>
+            </a>
+          ))}
+        </div>
+    </div>
