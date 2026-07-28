@@ -1,0 +1,25 @@
+.BgDiv{
+    margin-top: -3%;
+    
+}
+
+.AppBg{
+    opacity: 0.5;
+}
+
+
+
+#webDevDiv{
+    
+    background-image: url('../../../assets/webDevHero.jpg');
+    background-size: contain;
+    background-attachment: fixed;
+    background-position: center;
+}
+@media (max-width: 640px) {#webDevDiv{
+    
+    background-image: url('../../../assets/webDevHero.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}}

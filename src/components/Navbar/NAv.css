@@ -244,9 +244,7 @@ margin-top: 7%;
 /* Make sure the hover menu items are also bigger */
 .services-hover-menu a,
 .about-hover-menu a {
-  font-size: 16px !important;  /* Increased from default */
-  padding: 10px 15px;
-  display: block;
+  font-size: 14px !important;  /* Adjusted from default */
   color: #333;
   text-decoration: none;
   transition: background-color 0.3s ease;

@@ -28,6 +28,18 @@ import LogoDesign from './components/Services/Inno Services/LogoDesign';
 import SocialMedia from './components/Services/Inno Services/SocialMedia';
 import DevOps from './components/Services/Inno Services/DevOps';
 
+import CustomSoftware from './components/Services/Inno Services/CustomSoftware';
+import AIAutomation from './components/Services/Inno Services/AIAutomation';
+import SaaSProduct from './components/Services/Inno Services/SaaSProduct';
+import Ecommerce from './components/Services/Inno Services/Ecommerce';
+import Cybersecurity from './components/Services/Inno Services/Cybersecurity';
+import UiUxDesign from './components/Services/Inno Services/UiUxDesign';
+import ApiIntegration from './components/Services/Inno Services/ApiIntegration';
+import QaTesting from './components/Services/Inno Services/QaTesting';
+import ItConsulting from './components/Services/Inno Services/ItConsulting';
+import DedicatedTeam from './components/Services/Inno Services/DedicatedTeam';
+import MaintenanceSupport from './components/Services/Inno Services/MaintenanceSupport';
+
 // Legal Pages
 import PrivacyPolicy from './components/Footer/Legal/PrivacyPolicy';
 import TermsOfService from './components/Footer/Legal/TermsOfService';
@@ -79,6 +91,18 @@ function App() {
           <Route path="logodesign" element={<LogoDesign />} />
           <Route path="socialmedia" element={<SocialMedia />} />
           <Route path="devops" element={<DevOps />} />
+          
+          <Route path="customsoftware" element={<CustomSoftware />} />
+          <Route path="aiautomation" element={<AIAutomation />} />
+          <Route path="saasproduct" element={<SaaSProduct />} />
+          <Route path="ecommerce" element={<Ecommerce />} />
+          <Route path="cybersecurity" element={<Cybersecurity />} />
+          <Route path="uiuxdesign" element={<UiUxDesign />} />
+          <Route path="apiintegration" element={<ApiIntegration />} />
+          <Route path="qatesting" element={<QaTesting />} />
+          <Route path="itconsulting" element={<ItConsulting />} />
+          <Route path="dedicatedteam" element={<DedicatedTeam />} />
+          <Route path="maintenancesupport" element={<MaintenanceSupport />} />
 
           {/* Legal Routes */}
           <Route path="privacy" element={<PrivacyPolicy />} />

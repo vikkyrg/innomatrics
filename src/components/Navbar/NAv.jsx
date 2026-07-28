@@ -292,17 +292,50 @@ function NAv() {
                   <Link to="/appdev" className="nav-item block pl-4" onClick={closeMenu}>
                     App Development
                   </Link>
+                  <Link to="/customsoftware" className="nav-item block pl-4" onClick={closeMenu}>
+                    Custom Software
+                  </Link>
+                  <Link to="/aiautomation" className="nav-item block pl-4" onClick={closeMenu}>
+                    AI & Automation
+                  </Link>
+                  <Link to="/saasproduct" className="nav-item block pl-4" onClick={closeMenu}>
+                    SaaS Product
+                  </Link>
+                  <Link to="/ecommerce" className="nav-item block pl-4" onClick={closeMenu}>
+                    E-Commerce
+                  </Link>
+                  <Link to="/devops" className="nav-item block pl-4" onClick={closeMenu}>
+                    Cloud & DevOps
+                  </Link>
+                  <Link to="/cybersecurity" className="nav-item block pl-4" onClick={closeMenu}>
+                    Cybersecurity
+                  </Link>
                   <Link to="/digitalmarket" className="nav-item block pl-4" onClick={closeMenu}>
                     Digital Marketing
+                  </Link>
+                  <Link to="/uiuxdesign" className="nav-item block pl-4" onClick={closeMenu}>
+                    UI/UX Design
+                  </Link>
+                  <Link to="/apiintegration" className="nav-item block pl-4" onClick={closeMenu}>
+                    API Integration
+                  </Link>
+                  <Link to="/qatesting" className="nav-item block pl-4" onClick={closeMenu}>
+                    QA Testing
+                  </Link>
+                  <Link to="/itconsulting" className="nav-item block pl-4" onClick={closeMenu}>
+                    IT Consulting
+                  </Link>
+                  <Link to="/dedicatedteam" className="nav-item block pl-4" onClick={closeMenu}>
+                    Dedicated Team
+                  </Link>
+                  <Link to="/maintenancesupport" className="nav-item block pl-4" onClick={closeMenu}>
+                    Maintenance & Support
                   </Link>
                   <Link to="/logodesign" className="nav-item block pl-4" onClick={closeMenu}>
                     Logo Design
                   </Link>
                   <Link to="/socialmedia" className="nav-item block pl-4" onClick={closeMenu}>
                     Social Media Marketing
-                  </Link>
-                  <Link to="/devops" className="nav-item block pl-4" onClick={closeMenu}>
-                    DevOps
                   </Link>
                 </div>
               )}

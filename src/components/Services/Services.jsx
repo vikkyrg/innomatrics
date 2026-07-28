@@ -232,3 +232,75 @@
 // })
 
 // export default Services;
+
+import React, { useEffect, forwardRef } from 'react';
+import { Link } from 'react-router-dom';
+import { FaCode, FaRobot, FaCloud, FaShoppingCart, FaShieldAlt, FaPaintBrush, FaPlug, FaCheckCircle, FaBriefcase, FaUsers, FaCogs, FaDesktop, FaMobile, FaChartLine } from 'react-icons/fa';
+
+const ALL_SERVICES = [
+  { path: '/webdev', title: 'Web Development', icon: FaDesktop, description: 'Modern, responsive websites and web applications.' },
+  { path: '/appdev', title: 'Mobile App Development', icon: FaMobile, description: 'Android, iOS and cross-platform applications.' },
+  { path: '/customsoftware', title: 'Custom Software', icon: FaCode, description: 'Business software built around your workflow.' },
+  { path: '/aiautomation', title: 'AI & Automation', icon: FaRobot, description: 'Intelligent automation, AI agents and chatbots.' },
+  { path: '/saasproduct', title: 'SaaS Product Development', icon: FaCloud, description: 'Scalable cloud-based SaaS solutions.' },
+  { path: '/ecommerce', title: 'E-Commerce Solutions', icon: FaShoppingCart, description: 'Online stores and multi-vendor marketplaces.' },
+  { path: '/devops', title: 'Cloud & DevOps', icon: FaCloud, description: 'Secure, scalable infrastructure deployment.' },
+  { path: '/cybersecurity', title: 'Cybersecurity', icon: FaShieldAlt, description: 'Data protection and security audits.' },
+  { path: '/digitalmarket', title: 'Digital Marketing', icon: FaChartLine, description: 'SEO, Google Ads and lead generation.' },
+  { path: '/uiuxdesign', title: 'UI/UX Design', icon: FaPaintBrush, description: 'Engaging user interfaces and experiences.' },
+  { path: '/apiintegration', title: 'API Integration', icon: FaPlug, description: 'Seamless third-party system connections.' },
+  { path: '/qatesting', title: 'Software Testing & QA', icon: FaCheckCircle, description: 'Automated and manual testing services.' },
+  { path: '/itconsulting', title: 'IT Consulting', icon: FaBriefcase, description: 'Digital transformation strategy and guidance.' },
+  { path: '/dedicatedteam', title: 'Dedicated Team', icon: FaUsers, description: 'Hire expert developers for your projects.' },
+  { path: '/maintenancesupport', title: 'Maintenance & Support', icon: FaCogs, description: 'Ongoing IT management and support.' },
+  { path: '/logodesign', title: 'Logo Design', icon: FaPaintBrush, description: 'Professional brand identity creation.' },
+  { path: '/socialmedia', title: 'Social Media Marketing', icon: FaUsers, description: 'Social media strategy and management.' },
+];
+
+const Services = forwardRef((props, ref) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <div ref={ref} className="bg-gray-50 min-h-screen pt-20 pb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-blue-900 tracking-tight">
+            Our Services
+          </h1>
+          <p className="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+            Everything You Need to Go Digital.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {ALL_SERVICES.map((service, index) => {
+            const Icon = service.icon;
+            return (
+              <Link 
+                key={index} 
+                to={service.path}
+                className="bg-white rounded-xl shadow-md p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 flex flex-col items-center text-center"
+              >
+                <div className="p-4 bg-blue-50 rounded-full mb-6">
+                  <Icon className="w-8 h-8 text-blue-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
+                <p className="text-gray-600 mb-6 flex-grow">{service.description}</p>
+                <span className="text-blue-600 font-medium inline-flex items-center group">
+                  Explore Service 
+                  <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+});
+
+export default Services;
