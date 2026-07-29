@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   FaPhone,
   FaEnvelope,
@@ -13,14 +13,20 @@ import logo from "../../assets/innomatric_logo_only.png";
 import "./NAv.css";
 import ServiceHover from "./ServiceHover";
 import AboutHover from "./AboutHover";
+import IndustryHover from "./IndustryHover";
+import HireDevelopersHover from "./HireDevelopersHover";
 
 function NAv() {
   const [isOpen, setIsOpen] = useState(false);
   const [showServices, setShowServices] = useState(false);
   const [showAbout, setShowAbout] = useState(false);
+  const [showIndustries, setShowIndustries] = useState(false);
+  const [showHireDevelopers, setShowHireDevelopers] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [showInfoBar, setShowInfoBar] = useState(true);
   const navRef = useRef(null);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -30,6 +36,8 @@ function NAv() {
     setIsOpen(false);
     setShowServices(false);
     setShowAbout(false);
+    setShowIndustries(false);
+    setShowHireDevelopers(false);
   };
 
   useEffect(() => {
@@ -70,16 +78,16 @@ function NAv() {
   return (
     <header className="relative">
       {/* Top Information Bar */}
-      
+
 
       {/* Main Navigation */}
       <nav
         ref={navRef}
         className={`w-full z-50 top-0 fixed transition-all duration-300 ${
-          scrolled
+          scrolled || !isHomePage
             ? "bg-gradient-to-r from-blue-300 via-blue-800 to-blue-100 shadow-lg backdrop-blur-sm"
             : "bg-transparent"
-        } ${showInfoBar ? "" : "top-0"}`}
+          } ${showInfoBar ? "" : "top-0"}`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
@@ -95,7 +103,7 @@ function NAv() {
             </div>
 
             {/* Mobile Contact Button */}
-            <div className="md:hidden flex items-center">
+            <div className="xl:hidden flex items-center">
               <Link
                 to="/contact"
                 className="px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-lg hover:bg-red-500 transition duration-150 ease-in-out shadow-lg"
@@ -105,7 +113,7 @@ function NAv() {
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex md:items-center md:space-x-6">
+            <div className="hidden xl:flex xl:items-center xl:space-x-2">
               <div
                 className="relative"
                 onMouseEnter={() => setShowAbout(true)}
@@ -150,9 +158,57 @@ function NAv() {
                 </button>
                 {showServices && <ServiceHover />}
               </div>
-              <Link to="/industries" className="nav-item text-white hover:text-blue-200">
-                Industries
+              <Link to="/solutions" className="nav-item text-white hover:text-blue-200">
+                Solutions
               </Link>
+              <div
+                className="relative"
+                onMouseEnter={() => setShowIndustries(true)}
+                onMouseLeave={() => setShowIndustries(false)}
+              >
+                <Link to="/industries" className="nav-item flex items-center text-white hover:text-blue-200">
+                  Industries
+                  <svg
+                    className="ml-1 h-4 w-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </Link>
+                {showIndustries && <IndustryHover />}
+              </div>
+              <Link to="/technologies" className="nav-item text-white hover:text-blue-200">
+                Technologies
+              </Link>
+
+              <div
+                className="relative"
+                onMouseEnter={() => setShowHireDevelopers(true)}
+                onMouseLeave={() => setShowHireDevelopers(false)}
+              >
+                <Link to="/hire-developers" className="nav-item flex items-center text-white hover:text-blue-200">
+                  Hire Developers
+                  <svg
+                    className="ml-1 h-4 w-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </Link>
+                {showHireDevelopers && <HireDevelopersHover />}
+              </div>
               <Link to="/blog" className="nav-item text-white hover:text-blue-200">
                 Blog
               </Link>
@@ -168,7 +224,7 @@ function NAv() {
                 >
                   Contact Us
                 </Link>
-                
+
                 <Link
                   to="/contact"
                   className="nav-button secondary bg-red-500/90 hover:bg-red-600 text-white shadow-lg backdrop-blur-sm"
@@ -179,7 +235,7 @@ function NAv() {
             </div>
 
             {/* Mobile menu button */}
-            <div className="md:hidden flex items-center">
+            <div className="xl:hidden flex items-center">
               <button
                 onClick={toggleMenu}
                 className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-blue-200 focus:outline-none"
@@ -222,7 +278,7 @@ function NAv() {
         </div>
 
         {/* Mobile menu */}
-        <div className={`${isOpen ? "block" : "hidden"} md:hidden bg-blue-900`}>
+        <div className={`${isOpen ? "block" : "hidden"} xl:hidden bg-blue-900`}>
           <div className="px-2 pt-2 pb-3 space-y-1">
             <div className="relative">
               <button
@@ -231,9 +287,8 @@ function NAv() {
               >
                 About Us
                 <svg
-                  className={`h-5 w-5 transform ${
-                    showAbout ? "rotate-180" : ""
-                  } transition-transform duration-200`}
+                  className={`h-5 w-5 transform ${showAbout ? "rotate-180" : ""
+                    } transition-transform duration-200`}
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -270,9 +325,8 @@ function NAv() {
               >
                 Services
                 <svg
-                  className={`h-5 w-5 transform ${
-                    showServices ? "rotate-180" : ""
-                  } transition-transform duration-200`}
+                  className={`h-5 w-5 transform ${showServices ? "rotate-180" : ""
+                    } transition-transform duration-200`}
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -340,7 +394,87 @@ function NAv() {
                 </div>
               )}
             </div>
-            <MobileLink to="/industries">Industries</MobileLink>
+            <MobileLink to="/solutions">Solutions</MobileLink>
+            <div className="relative">
+              <button
+                onClick={() => setShowIndustries(!showIndustries)}
+                className="nav-item block w-full text-left flex items-center justify-between"
+              >
+                Industries
+                <svg
+                  className={`h-5 w-5 transform ${showIndustries ? "rotate-180" : ""
+                    } transition-transform duration-200`}
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </button>
+              {showIndustries && (
+                <div className="bg-blue-800 rounded-md mt-1 py-2 h-64 overflow-y-auto">
+                  <Link to="/industries" className="nav-item block pl-4 font-bold text-blue-200 pb-2 mb-2 border-b border-blue-700" onClick={closeMenu}>
+                    View All Industries
+                  </Link>
+                  <Link to="/industries/healthcare" className="nav-item block pl-4" onClick={closeMenu}>Healthcare</Link>
+                  <Link to="/industries/banking" className="nav-item block pl-4" onClick={closeMenu}>Banking & Finance</Link>
+                  <Link to="/industries/ngo" className="nav-item block pl-4" onClick={closeMenu}>NGO</Link>
+                  <Link to="/industries/travel" className="nav-item block pl-4" onClick={closeMenu}>Tours & Travel</Link>
+                  <Link to="/industries/construction" className="nav-item block pl-4" onClick={closeMenu}>Construction</Link>
+                  <Link to="/industries/security" className="nav-item block pl-4" onClick={closeMenu}>Security</Link>
+                  <Link to="/industries/education" className="nav-item block pl-4" onClick={closeMenu}>Education</Link>
+                  <Link to="/industries/manufacturing" className="nav-item block pl-4" onClick={closeMenu}>Manufacturing</Link>
+                  <Link to="/industries/garments" className="nav-item block pl-4" onClick={closeMenu}>Garments</Link>
+                  <Link to="/industries/logistics" className="nav-item block pl-4" onClick={closeMenu}>Logistics</Link>
+                  <Link to="/industries/ecommerce" className="nav-item block pl-4" onClick={closeMenu}>E-Commerce</Link>
+                  <Link to="/industries/real-estate" className="nav-item block pl-4" onClick={closeMenu}>Real Estate</Link>
+                  <Link to="/industries/restaurants" className="nav-item block pl-4" onClick={closeMenu}>Restaurants</Link>
+                  <Link to="/industries/retail" className="nav-item block pl-4" onClick={closeMenu}>Retail</Link>
+                  <Link to="/industries/professional-services" className="nav-item block pl-4" onClick={closeMenu}>Professional Services</Link>
+                  <Link to="/industries/startups" className="nav-item block pl-4" onClick={closeMenu}>Startups</Link>
+                </div>
+              )}
+            </div>
+            <MobileLink to="/technologies">Technologies</MobileLink>
+
+            <div className="relative">
+              <button
+                onClick={() => setShowHireDevelopers(!showHireDevelopers)}
+                className="nav-item block w-full text-left flex items-center justify-between"
+              >
+                Hire Developers
+                <svg
+                  className={`h-5 w-5 transform ${showHireDevelopers ? "rotate-180" : ""
+                    } transition-transform duration-200`}
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </button>
+              {showHireDevelopers && (
+                <div className="bg-blue-800 rounded-md mt-1 py-2">
+                  <Link to="/hire/react-developers" className="nav-item block pl-4" onClick={closeMenu}>Hire React Developers</Link>
+                  <Link to="/hire/nodejs-developers" className="nav-item block pl-4" onClick={closeMenu}>Hire Node.js Developers</Link>
+                  <Link to="/hire/mobile-app-developers" className="nav-item block pl-4" onClick={closeMenu}>Hire Mobile App Developers</Link>
+                  <Link to="/hire/full-stack-developers" className="nav-item block pl-4" onClick={closeMenu}>Hire Full Stack Developers</Link>
+                  <Link to="/hire/ai-engineers" className="nav-item block pl-4" onClick={closeMenu}>Hire AI & Automation Engineers</Link>
+                  <Link to="/hire/ui-ux-designers" className="nav-item block pl-4" onClick={closeMenu}>Hire UI/UX Designers</Link>
+                  <Link to="/hire/digital-marketers" className="nav-item block pl-4" onClick={closeMenu}>Hire Digital Marketers</Link>
+                  <Link to="/hire/development-team" className="nav-item block pl-4 font-bold text-blue-200 pt-2 mt-2 border-t border-blue-700" onClick={closeMenu}>Hire Dedicated Team</Link>
+                </div>
+              )}
+            </div>
+
             <MobileLink to="/blog">Blog</MobileLink>
             <MobileLink to="/careers">Careers</MobileLink>
             <div className="pt-4 flex flex-col items-center space-y-2 px-2">

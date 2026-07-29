@@ -32,9 +32,9 @@ const DigitalMarketing = forwardRef((props, ref) => {
     ],
     description: "At Innomatrics, we help businesses grow their online presence with data-driven strategies and creative campaigns. From SEO to social media and paid ads, we focus on driving measurable results.",
     images: {
-      default: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+      default: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop",
       "Search Engine Optimization (SEO)": "https://w0.peakpx.com/wallpaper/1018/455/HD-wallpaper-search-engine-optimization-seo-marketing.jpg",
-      "Pay-Per-Click (PPC) Advertising": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+      "Pay-Per-Click (PPC) Advertising": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop",
       "Social Media Marketing": "https://img.freepik.com/premium-photo/social-media-icons-logos-with-3d-space-rocket-digital-social-media-marketing-background_125322-391.jpg",
       "Content Marketing": "https://community.nasscom.in/sites/default/files/media/images/Content%20marketing.jpg",
       "Email Marketing": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
@@ -60,7 +60,7 @@ const DigitalMarketing = forwardRef((props, ref) => {
     {
       title: "Pay-Per-Click (PPC) Advertising",
       description: "Drive targeted traffic to your website and generate leads or sales with our expertly managed PPC campaigns on platforms like Google Ads, Bing Ads, and social media advertising.",
-      image: "https://media.designrush.com/articles/608361/conversions/12-Best-PPC-platforms-in-2024-(2)-details_mobile.jpg",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
     },
     {
       title: "Social Media Marketing",

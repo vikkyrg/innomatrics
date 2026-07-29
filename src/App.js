@@ -15,6 +15,8 @@ import WhyUs from './components/About/WhyUs';
 import Services from './components/Services/Services';
 import Industries from './components/Industries/Industries';
 import IndustryDetail from './components/Industries/IndustryDetail';
+import Technologies from './components/Technologies/Technologies';
+import Solutions from './components/Solutions/Solutions';
 import Contact from './components/Contact/Contact';
 import Career from './components/Career/Career';
 import BlogPage from './components/Blog/BlogPage';
@@ -56,6 +58,9 @@ import AdminBlogForm from './components/Admin/AdminBlogForm';
 // Public Blog Detail
 import BlogDetail from './components/Blog/BlogDetail';
 
+// Hire Developers
+import HireDeveloperDetail from './components/HireDevelopers/HireDeveloperDetail';
+
 function App() {
   return (
     <Router>
@@ -78,11 +83,14 @@ function App() {
           <Route path="services" element={<Services />} />
           <Route path="industries" element={<Industries />} />
           <Route path="industries/:industry" element={<IndustryDetail />} />
+          <Route path="technologies" element={<Technologies />} />
+          <Route path="solutions" element={<Solutions />} />
           <Route path="contact" element={<Contact />} />
           <Route path="careers" element={<Career />} />
           <Route path="blog" element={<BlogPage />} />
           <Route path="blog/:slug" element={<BlogDetail />} />
           <Route path="quote" element={<Quote />} />
+          <Route path="hire/:role" element={<HireDeveloperDetail />} />
 
           {/* Service Routes */}
           <Route path="webdev" element={<WebDev />} />

@@ -268,6 +268,316 @@ const IndustryDetail = () => {
           result: "50% reduction in security breaches"
         }
       ]
+    },
+    education: {
+      title: "Education Technology Solutions",
+      heroImage: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2000&auto=format&fit=crop",
+      description: "Empowering educational institutions with digital solutions that enhance learning experiences, streamline administration, and foster global collaboration.",
+      features: [
+        "Learning Management Systems (LMS)",
+        "Student Information Systems",
+        "E-learning Platforms",
+        "Virtual Classroom Solutions",
+        "Educational Analytics"
+      ],
+      benefits: [
+        {
+          title: "Enhanced Learning",
+          description: "Interactive and personalized learning experiences for students."
+        },
+        {
+          title: "Streamlined Administration",
+          description: "Automate administrative tasks and student records management."
+        },
+        {
+          title: "Remote Access",
+          description: "Enable learning from anywhere at any time."
+        },
+        {
+          title: "Data-Driven Insights",
+          description: "Track student progress and optimize teaching methods."
+        }
+      ],
+      caseStudies: []
+    },
+    manufacturing: {
+      title: "Manufacturing Software Solutions",
+      heroImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop",
+      description: "Optimizing manufacturing processes through smart automation, ERP integration, and data-driven insights to improve efficiency and output.",
+      features: [
+        "Manufacturing ERP Systems",
+        "Production Planning Tools",
+        "Inventory Management",
+        "Quality Control Systems",
+        "Supply Chain Automation"
+      ],
+      benefits: [
+        {
+          title: "Increased Efficiency",
+          description: "Streamline production workflows and reduce downtime."
+        },
+        {
+          title: "Inventory Optimization",
+          description: "Maintain optimal stock levels and reduce waste."
+        },
+        {
+          title: "Quality Assurance",
+          description: "Ensure consistent product quality with automated checks."
+        },
+        {
+          title: "Cost Reduction",
+          description: "Lower operational costs through resource optimization."
+        }
+      ],
+      caseStudies: []
+    },
+    garments: {
+      title: "Garment Industry Solutions",
+      heroImage: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=2000&auto=format&fit=crop",
+      description: "Providing tailored ERP and supply chain management software to streamline operations, inventory, and sales in the garment industry.",
+      features: [
+        "Garment ERP Systems",
+        "Inventory Tracking",
+        "Order Management",
+        "Vendor Management",
+        "Retail POS Integration"
+      ],
+      benefits: [
+        {
+          title: "Seamless Operations",
+          description: "Connect design, production, and retail seamlessly."
+        },
+        {
+          title: "Real-time Tracking",
+          description: "Track raw materials and finished goods in real-time."
+        },
+        {
+          title: "Faster Time-to-Market",
+          description: "Accelerate production cycles with better coordination."
+        },
+        {
+          title: "Enhanced Profitability",
+          description: "Optimize costs and maximize profit margins."
+        }
+      ],
+      caseStudies: []
+    },
+    logistics: {
+      title: "Logistics & Supply Chain Solutions",
+      heroImage: "https://images.unsplash.com/photo-1561518776-e76a5e48f731?q=80&w=2000&auto=format&fit=crop",
+      description: "Enhancing supply chain visibility and fleet management with robust logistics solutions designed for speed, accuracy, and reliability.",
+      features: [
+        "Fleet Management Systems",
+        "Warehouse Management (WMS)",
+        "Route Optimization",
+        "Real-time Tracking",
+        "Freight Management"
+      ],
+      benefits: [
+        {
+          title: "Improved Visibility",
+          description: "End-to-end visibility of your supply chain."
+        },
+        {
+          title: "Cost Savings",
+          description: "Reduce fuel consumption and operational costs."
+        },
+        {
+          title: "Faster Deliveries",
+          description: "Optimize routes for quicker turnaround times."
+        },
+        {
+          title: "Customer Satisfaction",
+          description: "Provide accurate tracking and timely deliveries."
+        }
+      ],
+      caseStudies: []
+    },
+    ecommerce: {
+      title: "E-Commerce Solutions",
+      heroImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2000&auto=format&fit=crop",
+      description: "Building scalable, secure, and user-centric e-commerce platforms that drive sales, improve customer retention, and expand market reach.",
+      features: [
+        "Custom E-commerce Platforms",
+        "Multi-vendor Marketplaces",
+        "Payment Gateway Integration",
+        "Inventory Synchronization",
+        "Mobile Commerce Apps"
+      ],
+      benefits: [
+        {
+          title: "Global Reach",
+          description: "Expand your business beyond geographical boundaries."
+        },
+        {
+          title: "Increased Sales",
+          description: "Drive conversions with user-friendly interfaces."
+        },
+        {
+          title: "Customer Insights",
+          description: "Understand buying behaviors through analytics."
+        },
+        {
+          title: "Seamless Management",
+          description: "Manage products, orders, and customers easily."
+        }
+      ],
+      caseStudies: []
+    },
+    "real-estate": {
+      title: "Real Estate Software Solutions",
+      heroImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2000&auto=format&fit=crop",
+      description: "Transforming real estate operations with innovative CRM, property management, and lead generation platforms.",
+      features: [
+        "Property Management Systems",
+        "Real Estate CRM",
+        "Virtual Tours Integration",
+        "Lead Generation Portals",
+        "Tenant Management"
+      ],
+      benefits: [
+        {
+          title: "Efficient Management",
+          description: "Streamline property and tenant management."
+        },
+        {
+          title: "Better Lead Conversion",
+          description: "Capture and nurture leads effectively."
+        },
+        {
+          title: "Enhanced Client Experience",
+          description: "Offer virtual tours and easy property search."
+        },
+        {
+          title: "Automated Workflows",
+          description: "Reduce manual paperwork and administrative tasks."
+        }
+      ],
+      caseStudies: []
+    },
+    restaurants: {
+      title: "Restaurant Management Solutions",
+      heroImage: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2000&auto=format&fit=crop",
+      description: "Delivering custom POS systems, online ordering platforms, and management dashboards tailored for the food and beverage industry.",
+      features: [
+        "Restaurant POS Systems",
+        "Online Ordering Platforms",
+        "Table Management",
+        "Inventory Tracking",
+        "Customer Loyalty Programs"
+      ],
+      benefits: [
+        {
+          title: "Faster Service",
+          description: "Speed up ordering and billing processes."
+        },
+        {
+          title: "Increased Revenue",
+          description: "Boost sales with online ordering and delivery."
+        },
+        {
+          title: "Better Inventory Control",
+          description: "Reduce food waste and track stock levels."
+        },
+        {
+          title: "Enhanced Customer Loyalty",
+          description: "Reward repeat customers and improve retention."
+        }
+      ],
+      caseStudies: []
+    },
+    retail: {
+      title: "Retail Technology Solutions",
+      heroImage: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2000&auto=format&fit=crop",
+      description: "Empowering retail businesses with omnichannel digital solutions, intelligent inventory management, and seamless customer experiences.",
+      features: [
+        "Omnichannel Retail Platforms",
+        "Retail POS Integration",
+        "Inventory Management",
+        "Customer Relationship Management",
+        "Retail Analytics"
+      ],
+      benefits: [
+        {
+          title: "Unified Experience",
+          description: "Connect in-store and online shopping seamlessly."
+        },
+        {
+          title: "Inventory Accuracy",
+          description: "Maintain accurate stock counts across channels."
+        },
+        {
+          title: "Personalized Marketing",
+          description: "Target customers based on purchase history."
+        },
+        {
+          title: "Data-Driven Decisions",
+          description: "Analyze sales trends and customer preferences."
+        }
+      ],
+      caseStudies: []
+    },
+    "professional-services": {
+      title: "Professional Services Solutions",
+      heroImage: "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2000&auto=format&fit=crop",
+      description: "Equipping professional service providers with digital tools for appointment scheduling, client management, and workflow automation.",
+      features: [
+        "Client Management Portals",
+        "Appointment Scheduling",
+        "Billing and Invoicing",
+        "Document Management",
+        "Workflow Automation"
+      ],
+      benefits: [
+        {
+          title: "Improved Client Relations",
+          description: "Offer seamless communication and service delivery."
+        },
+        {
+          title: "Time Savings",
+          description: "Automate scheduling and administrative tasks."
+        },
+        {
+          title: "Streamlined Billing",
+          description: "Ensure accurate and timely invoicing."
+        },
+        {
+          title: "Secure Data",
+          description: "Protect client information with secure document management."
+        }
+      ],
+      caseStudies: []
+    },
+    startups: {
+      title: "Startup Technology Solutions",
+      heroImage: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2000&auto=format&fit=crop",
+      description: "Partnering with startups to rapidly build, launch, and scale innovative digital products and platforms.",
+      features: [
+        "MVP Development",
+        "Scalable Architecture",
+        "Agile Product Development",
+        "Cloud Infrastructure Setup",
+        "Growth Marketing Tech"
+      ],
+      benefits: [
+        {
+          title: "Faster Time-to-Market",
+          description: "Launch your product quickly and efficiently."
+        },
+        {
+          title: "Scalability",
+          description: "Build on architecture that grows with your business."
+        },
+        {
+          title: "Cost-Effective",
+          description: "Optimize resources for maximum impact."
+        },
+        {
+          title: "Expert Guidance",
+          description: "Leverage technical expertise for product success."
+        }
+      ],
+      caseStudies: []
     }
   };
 

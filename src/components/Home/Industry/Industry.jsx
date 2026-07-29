@@ -6,7 +6,17 @@ import {
   MdApartment,
   MdDirectionsCar,
   MdBusiness,
-  MdLock
+  MdLock,
+  MdSchool,
+  MdBuild,
+  MdLocalMall,
+  MdLocalShipping,
+  MdShoppingCart,
+  MdHome,
+  MdRestaurant,
+  MdStore,
+  MdWork,
+  MdFlightTakeoff
 } from 'react-icons/md';
 
 const Industry = () => {
@@ -54,6 +64,76 @@ const Industry = () => {
       title: "Security",
       description: "Protecting digital assets and infrastructure with state-of-the-art security solutions that ensure peace of mind in an increasingly connected world.",
       image: "https://media.istockphoto.com/id/1412282189/photo/lock-network-technology-concept.jpg?s=612x612&w=0&k=20&c=hripuxLs9pS_7Ln6YWQR-Ow2_-BU5RdQ4vOY8s1q1iQ="
+    },
+    {
+      id: 'education',
+      icon: <MdSchool className="text-2xl" />,
+      title: "Education",
+      description: "Empowering educational institutions with digital solutions that enhance learning experiences, streamline administration, and foster global collaboration.",
+      image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2000&auto=format&fit=crop"
+    },
+    {
+      id: 'manufacturing',
+      icon: <MdBuild className="text-2xl" />,
+      title: "Manufacturing",
+      description: "Optimizing manufacturing processes through smart automation, ERP integration, and data-driven insights to improve efficiency and output.",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop"
+    },
+    {
+      id: 'garments',
+      icon: <MdLocalMall className="text-2xl" />,
+      title: "Garments",
+      description: "Providing tailored ERP and supply chain management software to streamline operations, inventory, and sales in the garment industry.",
+      image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=2000&auto=format&fit=crop"
+    },
+    {
+      id: 'logistics',
+      icon: <MdLocalShipping className="text-2xl" />,
+      title: "Logistics",
+      description: "Enhancing supply chain visibility and fleet management with robust logistics solutions designed for speed, accuracy, and reliability.",
+      image: "https://images.unsplash.com/photo-1561518776-e76a5e48f731?q=80&w=2000&auto=format&fit=crop"
+    },
+    {
+      id: 'ecommerce',
+      icon: <MdShoppingCart className="text-2xl" />,
+      title: "E-Commerce",
+      description: "Building scalable, secure, and user-centric e-commerce platforms that drive sales, improve customer retention, and expand market reach.",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2000&auto=format&fit=crop"
+    },
+    {
+      id: 'real-estate',
+      icon: <MdHome className="text-2xl" />,
+      title: "Real Estate",
+      description: "Transforming real estate operations with innovative CRM, property management, and lead generation platforms.",
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2000&auto=format&fit=crop"
+    },
+    {
+      id: 'restaurants',
+      icon: <MdRestaurant className="text-2xl" />,
+      title: "Restaurants",
+      description: "Delivering custom POS systems, online ordering platforms, and management dashboards tailored for the food and beverage industry.",
+      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2000&auto=format&fit=crop"
+    },
+    {
+      id: 'retail',
+      icon: <MdStore className="text-2xl" />,
+      title: "Retail",
+      description: "Empowering retail businesses with omnichannel digital solutions, intelligent inventory management, and seamless customer experiences.",
+      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2000&auto=format&fit=crop"
+    },
+    {
+      id: 'professional-services',
+      icon: <MdWork className="text-2xl" />,
+      title: "Professional Services",
+      description: "Equipping professional service providers with digital tools for appointment scheduling, client management, and workflow automation.",
+      image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2000&auto=format&fit=crop"
+    },
+    {
+      id: 'startups',
+      icon: <MdFlightTakeoff className="text-2xl" />,
+      title: "Startups",
+      description: "Partnering with startups to rapidly build, launch, and scale innovative digital products and platforms.",
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2000&auto=format&fit=crop"
     }
   ];
 

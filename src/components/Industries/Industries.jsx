@@ -39,6 +39,66 @@ const Industries = () => {
       title: "SECURITY",
       subtitle: "We deliver cutting-edge digital solutions tailored for the security industry, enhancing protection.",
       image: "https://images.pexels.com/photos/279810/pexels-photo-279810.jpeg"
+    },
+    {
+      id: 'education',
+      title: "EDUCATION",
+      subtitle: "Empowering educational institutions with digital solutions that enhance learning experiences.",
+      image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2000&auto=format&fit=crop"
+    },
+    {
+      id: 'manufacturing',
+      title: "MANUFACTURING",
+      subtitle: "Optimizing manufacturing processes through smart automation and data-driven insights.",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop"
+    },
+    {
+      id: 'garments',
+      title: "GARMENTS",
+      subtitle: "Providing tailored ERP and supply chain software to streamline operations in the garment industry.",
+      image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=2000&auto=format&fit=crop"
+    },
+    {
+      id: 'logistics',
+      title: "LOGISTICS",
+      subtitle: "Enhancing supply chain visibility with robust logistics solutions designed for speed and reliability.",
+      image: "https://images.unsplash.com/photo-1561518776-e76a5e48f731?q=80&w=2000&auto=format&fit=crop"
+    },
+    {
+      id: 'ecommerce',
+      title: "E-COMMERCE",
+      subtitle: "Building scalable and user-centric e-commerce platforms that drive sales and market reach.",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2000&auto=format&fit=crop"
+    },
+    {
+      id: 'real-estate',
+      title: "REAL ESTATE",
+      subtitle: "Transforming real estate operations with innovative CRM and property management platforms.",
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2000&auto=format&fit=crop"
+    },
+    {
+      id: 'restaurants',
+      title: "RESTAURANTS",
+      subtitle: "Delivering custom POS systems and management dashboards tailored for the food industry.",
+      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2000&auto=format&fit=crop"
+    },
+    {
+      id: 'retail',
+      title: "RETAIL",
+      subtitle: "Empowering retail businesses with omnichannel digital solutions and intelligent inventory management.",
+      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2000&auto=format&fit=crop"
+    },
+    {
+      id: 'professional-services',
+      title: "PROFESSIONAL SERVICES",
+      subtitle: "Equipping professional service providers with digital tools for workflow automation.",
+      image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2000&auto=format&fit=crop"
+    },
+    {
+      id: 'startups',
+      title: "STARTUPS",
+      subtitle: "Partnering with startups to rapidly build, launch, and scale innovative digital products.",
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2000&auto=format&fit=crop"
     }
   ];
 
