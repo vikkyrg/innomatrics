@@ -20,7 +20,7 @@ const Footer = () => {
 
     const scrollHeight = document.documentElement.scrollHeight;
     const scrollPos = window.innerHeight + window.pageYOffset;
-    
+
     // Show button only if we are within 800px of the bottom (near the footer)
     if (scrollHeight - scrollPos <= 800) {
       setIsVisible(true);
@@ -34,7 +34,7 @@ const Footer = () => {
   const scrollToTop = () => {
     isScrollingToTop.current = true;
     setIsVisible(false); // Hide immediately on click
-    
+
     window.scrollTo({
       top: 0,
       behavior: "smooth"
@@ -56,8 +56,8 @@ const Footer = () => {
     <footer className="bg-gradient-to-r from-blue-900 via-blue-800 to-purple-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Top Section with Logo and Description */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          <div className="col-span-1 md:col-span-2 lg:col-span-1">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 mb-8">
+          <div className="col-span-1 md:col-span-2 lg:col-span-3">
             <div className="flex items-center mb-4">
               <img src={logo} alt="Innomatrics Logo" className="h-12 w-12 mr-3" />
               <div>
@@ -69,46 +69,46 @@ const Footer = () => {
               Empowering businesses with innovative technology solutions. We specialize in web development, mobile apps, digital marketing, and more.
             </p>
             <div className="social-icons-container">
-              <a 
-                href="https://www.facebook.com/people/Innomatrics-Technologies/61560974679711/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://www.facebook.com/people/Innomatrics-Technologies/61560974679711/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="social-icon-link facebook"
                 title="Facebook"
               >
                 <FaFacebook size={20} />
               </a>
-              <a 
-                href="https://twitter.com/innomatricstech" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://twitter.com/innomatricstech"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="social-icon-link twitter"
                 title="Twitter"
               >
-                <FontAwesomeIcon icon={faXTwitter} style={{fontSize: '18px'}} />
+                <FontAwesomeIcon icon={faXTwitter} style={{ fontSize: '18px' }} />
               </a>
-              <a 
-                href="https://www.instagram.com/innomatrics_tech/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://www.instagram.com/innomatrics_tech/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="social-icon-link instagram"
                 title="Instagram"
               >
                 <FaInstagram size={20} />
               </a>
-              <a 
-                href="https://www.linkedin.com/company/innomatricstech/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://www.linkedin.com/company/innomatricstech/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="social-icon-link linkedin"
                 title="LinkedIn"
               >
                 <FaLinkedin size={20} />
               </a>
-              <a 
-                href="https://www.google.com/search?gs_ssp=eJzj4tVP1zc0LMs1Lcu2sMwxYLRSNaiwMDQwNTYzTDZPNE0yS04ytDKoME1KMrawNLRMSzE0N0kyMfGSyMzLy89NLCnKTC5WKElNzsjLz8lPz0wtBgCTQRi5&q=innomatrics+technologies&rlz=1C1VDKB_enIN1002IN1002&oq=innomatri&gs_lcrp=EgZjaHJvbWUqFQgCEC4YJxivARjHARiABBiKBRiOBTIGCAAQRRg8MgYIARBFGDwyFQgCEC4YJxivARjHARiABBiKBRiOBTIGCAMQRRg7MgYIBBBFGDsyBggFEEUYPDIGCAYQRRg8MgYIBxBFGD3SAQg0NDQwajBqN6gCALACAA&sourceid=chrome&ie=UTF-8" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href="https://www.google.com/search?gs_ssp=eJzj4tVP1zc0LMs1Lcu2sMwxYLRSNaiwMDQwNTYzTDZPNE0yS04ytDKoME1KMrawNLRMSzE0N0kyMfGSyMzLy89NLCnKTC5WKElNzsjLz8lPz0wtBgCTQRi5&q=innomatrics+technologies&rlz=1C1VDKB_enIN1002IN1002&oq=innomatri&gs_lcrp=EgZjaHJvbWUqFQgCEC4YJxivARjHARiABBiKBRiOBTIGCAAQRRg8MgYIARBFGDwyFQgCEC4YJxivARjHARiABBiKBRiOBTIGCAMQRRg7MgYIBBBFGDsyBggFEEUYPDIGCAYQRRg8MgYIBxBFGD3SAQg0NDQwajBqN6gCALACAA&sourceid=chrome&ie=UTF-8"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="social-icon-link google"
                 title="Google"
               >
@@ -118,60 +118,81 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Quick Links</h3>
-            <ul className="space-y-2">
+          <div className="col-span-1 lg:col-span-3">
+            <h3 className="text-lg font-semibold mb-6 text-white">Quick Links</h3>
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-3">
               <li>
-                <Link to="/about/overview" className="text-gray-300 hover:text-white transition-colors">Company Overview</Link>
+                <Link to="/about/overview" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Overview</Link>
               </li>
               <li>
-                <Link to="/about/vision-mission" className="text-gray-300 hover:text-white transition-colors">Vision & Mission</Link>
+                <Link to="/about/vision-mission" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Vision</Link>
               </li>
               <li>
-                <Link to="/about/why-us" className="text-gray-300 hover:text-white transition-colors">Why Choose Us</Link>
+                <Link to="/about/why-us" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Why Us</Link>
               </li>
               <li>
-                <Link to="/industries" className="text-gray-300 hover:text-white transition-colors">Industries</Link>
+                <Link to="/solutions" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Solutions</Link>
               </li>
               <li>
-                <Link to="/careers" className="text-gray-300 hover:text-white transition-colors">Careers</Link>
+                <Link to="/technologies" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Tech</Link>
               </li>
               <li>
-                <Link to="/blog" className="text-gray-300 hover:text-white transition-colors">Blog</Link>
+                <Link to="/hire-developers" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Hire Devs</Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-300 hover:text-white transition-colors">Contact Us</Link>
+                <Link to="/industries" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Industries</Link>
+              </li>
+              <li>
+                <Link to="/careers" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Careers</Link>
+              </li>
+              <li>
+                <Link to="/blog" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Blog</Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Contact</Link>
               </li>
             </ul>
           </div>
 
           {/* Services */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Our Services</h3>
-            <ul className="space-y-2">
+          <div className="col-span-1 lg:col-span-3">
+            <h3 className="text-lg font-semibold mb-6 text-white">Our Services</h3>
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-3">
               <li>
-                <Link to="/webdev" className="text-gray-300 hover:text-white transition-colors">Web Development</Link>
+                <Link to="/webdev" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>Web Dev</Link>
               </li>
               <li>
-                <Link to="/appdev" className="text-gray-300 hover:text-white transition-colors">App Development</Link>
+                <Link to="/appdev" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>App Dev</Link>
               </li>
               <li>
-                <Link to="/digitalmarket" className="text-gray-300 hover:text-white transition-colors">Digital Marketing</Link>
+                <Link to="/customsoftware" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>Custom SW</Link>
               </li>
               <li>
-                <Link to="/logodesign" className="text-gray-300 hover:text-white transition-colors">Logo Design</Link>
+                <Link to="/aiautomation" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>AI & Auto</Link>
               </li>
               <li>
-                <Link to="/socialmedia" className="text-gray-300 hover:text-white transition-colors">Social Media Marketing</Link>
+                <Link to="/ecommerce" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>E-Commerce</Link>
               </li>
               <li>
-                <Link to="/devops" className="text-gray-300 hover:text-white transition-colors">DevOps Services</Link>
+                <Link to="/cybersecurity" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>Cybersec</Link>
+              </li>
+              <li>
+                <Link to="/digitalmarket" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>Marketing</Link>
+              </li>
+              <li>
+                <Link to="/logodesign" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>Logo Design</Link>
+              </li>
+              <li>
+                <Link to="/socialmedia" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>Social Media</Link>
+              </li>
+              <li>
+                <Link to="/devops" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>DevOps</Link>
               </li>
             </ul>
           </div>
 
           {/* Contact Info */}
-          <div>
+          <div className="col-span-1 lg:col-span-3">
             <h3 className="text-lg font-semibold mb-4 text-white">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start">

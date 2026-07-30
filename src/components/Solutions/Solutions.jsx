@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import NAv from '../Navbar/NAv';
 import { Link } from 'react-router-dom';
 import { 
@@ -7,60 +7,76 @@ import {
   MdTrendingUp, 
   MdCampaign, 
   MdLightbulbOutline, 
-  MdSettingsApplications 
+  MdSettingsApplications,
+  MdSecurity,
+  MdArchitecture,
+  MdSpeed
 } from 'react-icons/md';
 
 const Solutions = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    // SEO Meta Tags update
+    document.title = "Enterprise IT Solutions & Custom Software Development | Innomatrics";
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = "description";
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.content = "Innomatrics provides world-class digital solutions including custom software development, mobile apps, ERP automation, AI integrations, and digital marketing to scale your enterprise.";
+  }, []);
+
   const solutionsList = [
     {
-      challenge: "Need a Business Website?",
-      solution: "Website Development",
-      description: "High-performance websites and web applications designed for growth.",
+      challenge: "Need a High-Converting Website?",
+      solution: "Custom Web Development",
+      description: "We build SEO-optimized, highly responsive, and blazing-fast web applications designed to convert visitors into loyal customers.",
       icon: <MdWeb className="text-2xl text-blue-500" />,
       link: "/webdev",
       bgColor: "bg-blue-50",
       image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=600&auto=format&fit=crop"
     },
     {
-      challenge: "Need a Mobile App?",
-      solution: "Mobile App Development",
-      description: "Scalable Android and iOS mobile applications for your business.",
+      challenge: "Want to Dominate Mobile?",
+      solution: "Mobile App Engineering",
+      description: "Scalable, native-feeling Android and iOS mobile applications built with React Native, Flutter, and native frameworks for maximum performance.",
       icon: <MdSmartphone className="text-2xl text-green-500" />,
       link: "/appdev",
       bgColor: "bg-green-50",
       image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=600&auto=format&fit=crop"
     },
     {
-      challenge: "Need to Automate Your Business?",
+      challenge: "Bottlenecked by Manual Tasks?",
       solution: "ERP & Business Automation",
-      description: "Integrated ERP and CRM solutions to simplify operations and improve visibility.",
+      description: "Custom ERP and CRM solutions engineered to automate data entry, streamline operations, and provide real-time business intelligence.",
       icon: <MdTrendingUp className="text-2xl text-purple-500" />,
       link: "/customsoftware",
       bgColor: "bg-purple-50",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop"
     },
     {
-      challenge: "Need More Customers?",
-      solution: "Digital Marketing & Lead Generation",
-      description: "SEO, paid advertising, social media, and proven lead generation strategies.",
+      challenge: "Struggling with Lead Gen?",
+      solution: "Digital Growth Marketing",
+      description: "Data-driven Technical SEO, paid advertising, and inbound marketing strategies guaranteed to increase your digital footprint and ROI.",
       icon: <MdCampaign className="text-2xl text-orange-500" />,
       link: "/digitalmarket",
       bgColor: "bg-orange-50",
       image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=600&auto=format&fit=crop"
     },
     {
-      challenge: "Need AI for Your Business?",
-      solution: "AI & Automation",
-      description: "Intelligent automation, AI agents, chatbots, and generative AI solutions.",
+      challenge: "Ready to Future-Proof?",
+      solution: "AI & Machine Learning",
+      description: "Integrate predictive analytics, custom LLM chatbots, and intelligent computer vision into your existing enterprise architecture.",
       icon: <MdLightbulbOutline className="text-2xl text-red-500" />,
       link: "/aiautomation",
       bgColor: "bg-red-50",
       image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=600&auto=format&fit=crop"
     },
     {
-      challenge: "Need a Custom Software Product?",
-      solution: "SaaS & Custom Software",
-      description: "Business-specific software designed around your workflows.",
+      challenge: "Have a Unique Idea?",
+      solution: "SaaS Product Development",
+      description: "End-to-end software architecture for cloud-native SaaS platforms, from database schema design to frontend deployment.",
       icon: <MdSettingsApplications className="text-2xl text-teal-500" />,
       link: "/saasproduct",
       bgColor: "bg-teal-50",
@@ -69,12 +85,12 @@ const Solutions = () => {
   ];
 
   const coreSolutions = [
-    { name: "Business Automation", icon: <MdTrendingUp className="text-4xl mb-4 text-blue-500 group-hover:text-white transition-colors duration-300" /> },
-    { name: "ERP Solutions", icon: <MdSettingsApplications className="text-4xl mb-4 text-indigo-500 group-hover:text-white transition-colors duration-300" /> },
-    { name: "CRM Solutions", icon: <MdCampaign className="text-4xl mb-4 text-purple-500 group-hover:text-white transition-colors duration-300" /> },
-    { name: "Industry Solutions", icon: <MdLightbulbOutline className="text-4xl mb-4 text-pink-500 group-hover:text-white transition-colors duration-300" /> },
-    { name: "SaaS Products", icon: <MdWeb className="text-4xl mb-4 text-teal-500 group-hover:text-white transition-colors duration-300" /> },
-    { name: "On-Demand Apps", icon: <MdSmartphone className="text-4xl mb-4 text-orange-500 group-hover:text-white transition-colors duration-300" /> }
+    { name: "Workflow Automation", icon: <MdTrendingUp className="text-4xl mb-4 text-blue-500 group-hover:text-white transition-colors duration-300" /> },
+    { name: "Enterprise ERP", icon: <MdSettingsApplications className="text-4xl mb-4 text-indigo-500 group-hover:text-white transition-colors duration-300" /> },
+    { name: "Cloud Migrations", icon: <MdArchitecture className="text-4xl mb-4 text-purple-500 group-hover:text-white transition-colors duration-300" /> },
+    { name: "Cybersecurity", icon: <MdSecurity className="text-4xl mb-4 text-pink-500 group-hover:text-white transition-colors duration-300" /> },
+    { name: "B2B SaaS Platforms", icon: <MdWeb className="text-4xl mb-4 text-teal-500 group-hover:text-white transition-colors duration-300" /> },
+    { name: "High-Performance APIs", icon: <MdSpeed className="text-4xl mb-4 text-orange-500 group-hover:text-white transition-colors duration-300" /> }
   ];
 
   return (
@@ -90,16 +106,16 @@ const Solutions = () => {
         </div>
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center mt-4">
           <span className="inline-block py-1 px-3 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-sm font-semibold tracking-wider uppercase mb-4 backdrop-blur-sm">
-            Tailored For Growth
+            Enterprise IT Services
           </span>
           <h1 className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-gray-300 mb-4 drop-shadow-lg">
             Have a Business Challenge?
           </h1>
           <h2 className="text-2xl md:text-3xl font-bold text-blue-400 mb-6 tracking-wide">
-            We Have a Digital Solution.
+            We Engineer the Solution.
           </h2>
           <p className="text-lg text-blue-100/80 max-w-2xl mx-auto mb-6 leading-relaxed font-light">
-            From idea to deployment, we combine technology, design, AI, and business strategy to create digital solutions that solve real problems.
+            From ideation to deployment, we combine cloud architecture, UX design, Artificial Intelligence, and agile strategy to create scalable software solutions that solve complex problems.
           </p>
         </div>
       </div>
@@ -138,6 +154,53 @@ const Solutions = () => {
         </div>
       </div>
 
+      {/* New SEO Feature Section: Engineering Approach */}
+      <div className="bg-white py-20 relative overflow-hidden border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <div className="lg:w-1/2">
+              <h2 className="text-4xl font-extrabold text-gray-900 mb-6 leading-tight">Our Enterprise Software Engineering Approach</h2>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                At Innomatrics, we do more than just write code. We act as your strategic technical partners, ensuring that every digital product we develop is highly secure, scalable, and optimized for maximum search engine visibility (SEO) and user conversion.
+              </p>
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                  <div className="bg-blue-100 rounded-full p-2 mr-4 mt-1">
+                    <MdArchitecture className="text-blue-600 text-xl" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900 text-lg">Scalable Cloud Architecture</h4>
+                    <p className="text-gray-600">Built on AWS & Azure to handle millions of concurrent users without downtime.</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-blue-100 rounded-full p-2 mr-4 mt-1">
+                    <MdSecurity className="text-blue-600 text-xl" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900 text-lg">Military-Grade Security</h4>
+                    <p className="text-gray-600">OWASP compliance, end-to-end encryption, and rigorous vulnerability testing.</p>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-blue-100 rounded-full p-2 mr-4 mt-1">
+                    <MdSpeed className="text-blue-600 text-xl" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900 text-lg">Core Web Vitals Optimized</h4>
+                    <p className="text-gray-600">Lightning-fast load times designed specifically to boost your Google SEO rankings.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div className="lg:w-1/2 relative">
+               <div className="absolute inset-0 bg-blue-600 transform translate-x-4 translate-y-4 rounded-3xl opacity-20"></div>
+               <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1000&auto=format&fit=crop" alt="Software Engineering Team" className="relative z-10 rounded-3xl shadow-2xl object-cover h-[500px] w-full" />
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Core Enterprise Solutions List */}
       <div className="bg-gray-50 py-24 relative overflow-hidden">
         <div className="absolute -left-40 top-20 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
@@ -147,6 +210,7 @@ const Solutions = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-extrabold text-[#07111F] mb-6">Core Business Solutions</h2>
             <div className="w-24 h-1.5 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
+            <p className="text-gray-600 mt-6 max-w-2xl mx-auto text-lg">We provide full-stack capabilities across a wide array of specialized enterprise IT demands.</p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8 text-center">

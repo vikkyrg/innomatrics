@@ -3,7 +3,7 @@ import career2 from "../../../assets/app2.jpg";
 import { Link } from "react-router-dom";
 const InfoBlock = () => {
   return (
-    <div className="bg-gray-200 flex flex-col  md:flex-row gap-x-0 md:gap-x-12 p-24 md:space-x-[100px]">
+    <div className="bg-gray-200 flex flex-col  md:flex-row gap-x-0 md:gap-x-12 p-8 md:p-24 md:space-x-[100px]">
       <div className="w-full lg:w-[670px] text-justify lg:text-left">
         <h2 className="text-3xl md:text-4xl font-bold text-zinc-800 mb-4">
           The work we do impacts the world, and the future

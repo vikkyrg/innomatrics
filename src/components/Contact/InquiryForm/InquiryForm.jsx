@@ -44,7 +44,7 @@ const InquiryForm = () => {
       });
       setShowPopup(true);
       resetForm();
-      
+
       // Hide popup after 3 seconds
       setTimeout(() => {
         setShowPopup(false);
@@ -156,11 +156,10 @@ const InquiryForm = () => {
         <button
           type="submit"
           disabled={loading}
-          className={`w-full font-medium py-3 px-6 rounded-xl transition duration-200 transform hover:translate-y-[-1px] active:translate-y-0 ${
-            loading
+          className={`w-full font-medium py-3 px-6 rounded-xl transition duration-200 transform hover:translate-y-[-1px] active:translate-y-0 ${loading
               ? "bg-gray-400 cursor-not-allowed"
               : "bg-red-500 hover:bg-red-600 text-white"
-          }`}
+            }`}
         >
           {loading ? (
             <div className="flex items-center justify-center">
@@ -222,14 +221,14 @@ const InquiryAndMapComponent = () => {
 
           {/* Google Maps Embed */}
           <div className="w-full h-[300px] rounded-lg overflow-hidden">
-          <iframe
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.8106411375257!2d77.60544587473798!3d12.916304287388451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15b14d40b127%3A0xf9c3ada4f0a27e4b!2sInnomatrics%20Technologies!5e0!3m2!1sen!2sin!4v1709641611099!5m2!1sen!2sin"
-  width="100%"
-  height="400"
-  style={{ border: 0 }}
-  allowFullScreen=""
-  loading="lazy"
-  referrerPolicy="no-referrer-when-downgrade"
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.8106411375257!2d77.60544587473798!3d12.916304287388451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15b14d40b127%3A0xf9c3ada4f0a27e4b!2sInnomatrics%20Technologies!5e0!3m2!1sen!2sin!4v1709641611099!5m2!1sen!2sin"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
         </div>

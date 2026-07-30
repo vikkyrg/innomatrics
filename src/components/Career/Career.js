@@ -3,7 +3,9 @@ import { FiMapPin, FiBriefcase, FiClock, FiDollarSign, FiX } from "react-icons/f
 import { FiChevronLeft, FiChevronRight, FiCheck } from "react-icons/fi";
 import careerBg from "../../assets/careerBg.jpg";
 import emailjs from "@emailjs/browser";
-import ashok from "../../assets/profile.jpeg"
+import ashok from "../../assets/profile.jpeg";
+import dev1 from "../../assets/dev1.jpeg";
+import dev2 from "../../assets/dev2.jpeg";
 
 
 // Initialize EmailJS with your public key
@@ -50,7 +52,7 @@ const testimonials = [
   },
   {
     id: 3,
-    quote: "The collaborative environment at Innomatrics fosters creativity and growth. Every day brings new challenges and opportunities to learn from talented professionals.",
+    quote: "The collaborative ironment at Innomatrics fosters creativity and growth. Every day brings new challenges and opportunities to learn from talented professionals.",
     name: "Rakesh SG",
     role: "Product Manager",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvdRorUCLbX8qiYq5deN8s955LjOSbSY6ARZwxFs3onTXCgjcegoL7wo1d10qV2K4XrS8&usqp=CAU"
@@ -68,6 +70,20 @@ const testimonials = [
     name: "Pramesh prami",
     role: "Manager",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLsQM2TMQmLbfWyqQJTjkkYjdRdOtoON5ODg&s"
+  },
+  {
+    id: 6,
+    quote: "Joining Innomatrics Tech has been a fantastic experience. The team spirit and dedication to delivering top-notch web applications is unmatched.",
+    name: "Moula Hussain",
+    role: "Web Developer",
+    image: dev1
+  },
+  {
+    id: 7,
+    quote: "Building scalable web solutions here is both challenging and rewarding. I appreciate the continuous learning opportunities provided by the company.",
+    name: "Janarthanan",
+    role: "Web Developer",
+    image: dev2
   }
 ];
 
@@ -159,7 +175,7 @@ const Career = () => {
         const cardWidth = 400;
         const gap = 24;
         const scrollAmount = cardWidth + gap;
-        
+
         if (container.scrollLeft >= (items.length * scrollAmount) - 1) {
           container.scrollLeft = 0;
         } else {
@@ -245,7 +261,7 @@ Experience: ${formData.experience}
           role: "",
           experience: ""
         });
-        
+
         // Show success popup
         setShowSuccessPopup(true);
         setTimeout(() => {
@@ -267,7 +283,7 @@ Experience: ${formData.experience}
   };
 
   const prevTestimonial = () => {
-    setCurrentTestimonial((prev) => 
+    setCurrentTestimonial((prev) =>
       prev === 0 ? testimonials.length - 1 : prev - 1
     );
   };
@@ -277,7 +293,7 @@ Experience: ${formData.experience}
   };
 
   const prevValueSlide = () => {
-    setCurrentValueSlide((prev) => 
+    setCurrentValueSlide((prev) =>
       prev === 0 ? valueSlides.length - 1 : prev - 1
     );
   };
@@ -310,7 +326,7 @@ Experience: ${formData.experience}
           <p className="text-lg text-white opacity-90 mb-6">
             Join our global team and shape the future with us.
           </p>
-          
+
         </div>
       </div>
 
@@ -374,11 +390,10 @@ Experience: ${formData.experience}
                 {valueSlides.map((slide, index) => (
                   <div
                     key={index}
-                    className={`absolute inset-0 transition-opacity duration-500 ${
-                      index === currentValueSlide ? 'opacity-100' : 'opacity-0'
-                    }`}
+                    className={`absolute inset-0 transition-opacity duration-500 ${index === currentValueSlide ? 'opacity-100' : 'opacity-0'
+                      }`}
                   >
-                    <img 
+                    <img
                       src={slide.image}
                       alt={slide.title}
                       className="w-full h-full object-cover"
@@ -391,9 +406,8 @@ Experience: ${formData.experience}
                   <button
                     key={index}
                     onClick={() => setCurrentValueSlide(index)}
-                    className={`w-2 h-2 rounded-full transition-colors ${
-                      index === currentValueSlide ? 'bg-orange-500' : 'bg-gray-300'
-                    }`}
+                    className={`w-2 h-2 rounded-full transition-colors ${index === currentValueSlide ? 'bg-orange-500' : 'bg-gray-300'
+                      }`}
                   />
                 ))}
               </div>
@@ -405,7 +419,7 @@ Experience: ${formData.experience}
       {/* Career Highlights Section */}
       <div className="bg-white py-12">
         <div className="max-w-full mx-auto px-4">
-          <div 
+          <div
             ref={containerRef}
             className="overflow-hidden"
           >
@@ -413,12 +427,12 @@ Experience: ${formData.experience}
               {careerHighlights.map((highlight) => (
                 <div
                   key={highlight.id}
-                  className="flex-shrink-0 w-[400px]"
+                  className="flex-shrink-0 w-[300px] sm:w-[400px]"
                 >
                   <div className="bg-[#f8f8ff] rounded-lg border border-gray-100 h-full shadow-lg">
                     <div className="relative h-48">
-                      <img 
-                        src={highlight.image} 
+                      <img
+                        src={highlight.image}
                         alt={highlight.title}
                         className="w-full h-full object-cover rounded-t-lg"
                       />
@@ -448,12 +462,12 @@ Experience: ${formData.experience}
         <div className="max-w-7xl mx-auto">
           <div className="py-16 px-4">
             <h2 className="text-4xl font-bold mb-12">Discover the Innomatrics Tech Universe</h2>
-            
+
             <div className="grid md:grid-cols-2 gap-8 items-center">
               {/* Left Side - Abstract Image */}
               <div className="relative h-[500px] rounded-lg overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-transparent opacity-50"></div>
-                <img 
+                <img
                   src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3"
                   alt="Abstract Technology"
                   className="w-full h-full object-cover"
@@ -481,10 +495,10 @@ Experience: ${formData.experience}
                       <div className="h-full flex flex-col">
                         <div className="flex items-center mb-6">
                           <div className="w-16 h-16 rounded-full overflow-hidden bg-gray-300 mr-4 flex-shrink-0">
-                            <img 
-                              src={testimonial.image} 
+                            <img
+                              src={testimonial.image}
                               alt={testimonial.name}
-                              className="w-full h-full object-cover"
+                              className="w-full h-full object-cover object-top"
                             />
                           </div>
                           <div className="min-w-0">
@@ -506,7 +520,7 @@ Experience: ${formData.experience}
             <div className="grid md:grid-cols-2 gap-8 mt-8">
               {/* Left Box */}
               <div className="bg-[#143b82] p-6 rounded-lg">
-                <img 
+                <img
                   src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3"
                   alt="Business Meeting"
                   className="w-full h-48 object-cover rounded-lg mb-4"
@@ -517,7 +531,7 @@ Experience: ${formData.experience}
 
               {/* Right Box - CSR */}
               <div className="bg-[#143b82] p-6 rounded-lg relative group cursor-pointer">
-                <img 
+                <img
                   src="https://images.unsplash.com/photo-1542744094-24638eff58bb?ixlib=rb-4.0.3"
                   alt="CSR Activities"
                   className="w-full h-48 object-cover rounded-lg"
@@ -558,21 +572,21 @@ Experience: ${formData.experience}
               Our team will reach out to you when we have the opening.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button 
+              <button
                 className="inline-flex items-center px-6 py-3 bg-[#FF5733] text-white font-medium rounded-lg hover:bg-[#E64A2E] transition-colors"
                 onClick={() => setIsModalOpen(true)}
               >
                 Submit Application
                 <FiChevronRight className="ml-2 w-5 h-5" />
               </button>
-              <a 
+              <a
                 href="https://in.indeed.com/cmp/Innomatrics-Technologies"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-6 py-3 bg-[#2557A7] text-white font-medium rounded-lg hover:bg-[#1E4B8F] transition-colors"
               >
                 Apply Now
-                
+
               </a>
             </div>
           </div>
@@ -601,7 +615,7 @@ Experience: ${formData.experience}
       {isModalOpen && !showSuccessPopup && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4 py-6">
           <div className="bg-white rounded-xl shadow-lg w-full max-w-md max-h-[90vh] overflow-y-auto p-5">
-            
+
             {/* Header */}
             <div className="flex justify-between items-center border-b border-red-500 pb-3 mb-4">
               <h2 className="text-xl font-semibold text-red-600">Fill this form</h2>
@@ -614,8 +628,8 @@ Experience: ${formData.experience}
             </div>
 
             {/* Form */}
-            <form 
-              onSubmit={handleSubmit} 
+            <form
+              onSubmit={handleSubmit}
               className="space-y-4"
             >
               {/* Full Name */}

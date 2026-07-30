@@ -124,7 +124,7 @@ const About = forwardRef((props, ref) => {
           <img
             src={aboutMe}
             alt="About Us"
-            className="w-[500px] h-[500px] rounded-lg"
+            className="w-full max-w-[500px] h-auto rounded-lg mx-auto"
           />
         </div>
       </div>
@@ -329,7 +329,7 @@ const About = forwardRef((props, ref) => {
           <img
             src={aboutCorporate}
             alt="About Us"
-            className="md:w-[700px] md:h-[400px] rounded-lg"
+            className="w-full md:max-w-[700px] h-auto rounded-lg mx-auto"
           />
         </div>
       </div>
@@ -350,7 +350,7 @@ const About = forwardRef((props, ref) => {
         </h4>
         <div
           className="flex gap-5 justify-between py-4 mt-3 
-        w-full max-w-[802px]
+        w-full
         mx-[10%] md:mx-[20%] 
          max-md:flex-wrap max-md:max-w-full"
         >

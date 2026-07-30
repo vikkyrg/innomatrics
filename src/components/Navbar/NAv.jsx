@@ -83,13 +83,12 @@ function NAv() {
       {/* Main Navigation */}
       <nav
         ref={navRef}
-        className={`w-full z-50 top-0 fixed transition-all duration-300 ${
-          scrolled || !isHomePage
-            ? "bg-gradient-to-r from-blue-300 via-blue-800 to-blue-100 shadow-lg backdrop-blur-sm"
-            : "bg-transparent"
+        className={`w-full z-50 top-0 fixed transition-all duration-300 ${scrolled || !isHomePage
+          ? "bg-gradient-to-r from-blue-300 via-blue-800 to-blue-100 shadow-lg backdrop-blur-sm"
+          : "bg-transparent"
           } ${showInfoBar ? "" : "top-0"}`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
           <div className="flex items-center justify-between h-20">
             {/* Logo with Company Name */}
             <div className="flex-shrink-0 flex items-center">
@@ -118,6 +117,7 @@ function NAv() {
                 className="relative"
                 onMouseEnter={() => setShowAbout(true)}
                 onMouseLeave={() => setShowAbout(false)}
+                onClick={closeMenu}
               >
                 <button className="nav-item flex items-center text-white hover:text-blue-200">
                   About Us
@@ -140,6 +140,7 @@ function NAv() {
                 className="relative"
                 onMouseEnter={() => setShowServices(true)}
                 onMouseLeave={() => setShowServices(false)}
+                onClick={closeMenu}
               >
                 <button className="nav-item flex items-center text-white hover:text-blue-200">
                   Services
@@ -165,6 +166,7 @@ function NAv() {
                 className="relative"
                 onMouseEnter={() => setShowIndustries(true)}
                 onMouseLeave={() => setShowIndustries(false)}
+                onClick={closeMenu}
               >
                 <Link to="/industries" className="nav-item flex items-center text-white hover:text-blue-200">
                   Industries
@@ -191,6 +193,7 @@ function NAv() {
                 className="relative"
                 onMouseEnter={() => setShowHireDevelopers(true)}
                 onMouseLeave={() => setShowHireDevelopers(false)}
+                onClick={closeMenu}
               >
                 <Link to="/hire-developers" className="nav-item flex items-center text-white hover:text-blue-200">
                   Hire Developers
@@ -278,7 +281,7 @@ function NAv() {
         </div>
 
         {/* Mobile menu */}
-        <div className={`${isOpen ? "block" : "hidden"} xl:hidden bg-blue-900`}>
+        <div className={`${isOpen ? "block" : "hidden"} xl:hidden bg-blue-900 max-h-[calc(100vh-80px)] overflow-y-auto pb-10`}>
           <div className="px-2 pt-2 pb-3 space-y-1">
             <div className="relative">
               <button

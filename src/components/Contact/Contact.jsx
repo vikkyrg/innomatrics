@@ -10,7 +10,7 @@ const Contact = forwardRef((props, ref) => {
   return (
     <div className="min-h-screen bg-gray-50" ref={ref}>
       <div 
-        className="relative py-20 bg-cover bg-center"
+        className="relative py-20 bg-cover bg-center min-h-screen flex items-center"
         style={{
           backgroundImage: "url('https://img.freepik.com/free-photo/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner_1258-63452.jpg')",
           backgroundBlendMode: "overlay",

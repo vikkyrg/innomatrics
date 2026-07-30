@@ -59,6 +59,7 @@ import AdminBlogForm from './components/Admin/AdminBlogForm';
 import BlogDetail from './components/Blog/BlogDetail';
 
 // Hire Developers
+import HireDevelopers from './components/HireDevelopers/HireDevelopers';
 import HireDeveloperDetail from './components/HireDevelopers/HireDeveloperDetail';
 
 function App() {
@@ -90,6 +91,7 @@ function App() {
           <Route path="blog" element={<BlogPage />} />
           <Route path="blog/:slug" element={<BlogDetail />} />
           <Route path="quote" element={<Quote />} />
+          <Route path="hire-developers" element={<HireDevelopers />} />
           <Route path="hire/:role" element={<HireDeveloperDetail />} />
 
           {/* Service Routes */}
@@ -99,7 +101,7 @@ function App() {
           <Route path="logodesign" element={<LogoDesign />} />
           <Route path="socialmedia" element={<SocialMedia />} />
           <Route path="devops" element={<DevOps />} />
-          
+
           <Route path="customsoftware" element={<CustomSoftware />} />
           <Route path="aiautomation" element={<AIAutomation />} />
           <Route path="saasproduct" element={<SaaSProduct />} />
