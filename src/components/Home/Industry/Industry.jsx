@@ -152,8 +152,8 @@ const Industry = () => {
                 <div
                   key={industry.id}
                   className={`flex items-center gap-2 py-2 px-3 cursor-pointer transition-all duration-300 hover:bg-gray-50 ${activeIndustry === industry.id
-                      ? 'border-l-4 border-[#FF4500] bg-gray-50'
-                      : 'border-l-4 border-transparent'
+                    ? 'border-l-4 border-[#FF4500] bg-gray-50'
+                    : 'border-l-4 border-transparent'
                     }`}
                   onMouseEnter={() => setActiveIndustry(industry.id)}
                 >

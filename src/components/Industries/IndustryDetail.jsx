@@ -1,664 +1,388 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { industryData } from '../../data/industryData';
+import { FaDesktop, FaMobile, FaCode, FaCloud, FaShieldAlt, FaChartLine, FaChevronDown, FaChevronUp, FaBrain, FaRocket, FaHeadset } from 'react-icons/fa';
 
 const IndustryDetail = () => {
   const { industry } = useParams();
-
-  const industryData = {
-    healthcare: {
-      title: "Healthcare Software Solutions",
-      heroImage: "https://burst.shopifycdn.com/photos/doctor-reaches-towards-shelf.jpg?width=1000&format=pjpg&exif=0&iptc=0",
-      description: "Transform healthcare delivery with our innovative digital solutions. We help healthcare providers streamline operations, enhance patient care, and improve medical outcomes through cutting-edge technology.",
-      features: [
-        "Electronic Health Records (EHR)",
-        "Telemedicine Solutions",
-        "Hospital Management Systems",
-        "Medical Billing Software",
-        "Patient Portal Development"
-      ],
-      benefits: [
-        {
-          title: "Enhanced Patient Care",
-          description: "Improve patient outcomes with streamlined workflows and better data management"
-        },
-        {
-          title: "Reduced Operational Costs",
-          description: "Automate routine tasks and optimize resource allocation"
-        },
-        {
-          title: "Better Data Security",
-          description: "Ensure HIPAA compliance and protect sensitive patient information"
-        },
-        {
-          title: "Improved Accessibility",
-          description: "Enable remote healthcare delivery and patient monitoring"
-        }
-      ],
-      caseStudies: [
-        {
-          title: "Major Hospital Chain",
-          challenge: "Managing patient records across multiple locations",
-          solution: "Implemented integrated EHR system",
-          result: "50% reduction in administrative time"
-        },
-        {
-          title: "Private Clinic Network",
-          challenge: "Patient appointment scheduling issues",
-          solution: "Custom telemedicine platform",
-          result: "30% increase in patient satisfaction"
-        }
-      ]
-    },
-    banking: {
-      title: "Banking & Financial Services Solutions",
-      heroImage: "https://www.shutterstock.com/image-photo/bfsi-banking-financial-services-insurance-600nw-2433179231.jpg",
-      description: "Empower your financial institution with secure, scalable, and intelligent digital solutions. We help banks and financial organizations drive innovation while maintaining the highest security standards.",
-      features: [
-        "Digital Banking Platforms",
-        "Payment Gateway Integration",
-        "Mobile Banking Apps",
-        "Fraud Detection Systems",
-        "Financial Analytics Tools"
-      ],
-      benefits: [
-        {
-          title: "Enhanced Security",
-          description: "State-of-the-art security measures to protect financial data"
-        },
-        {
-          title: "Digital Transformation",
-          description: "Modernize banking operations with cutting-edge technology"
-        },
-        {
-          title: "Customer Experience",
-          description: "Deliver seamless banking experience across all channels"
-        },
-        {
-          title: "Real-time Analytics",
-          description: "Make data-driven decisions with advanced analytics"
-        }
-      ],
-      caseStudies: [
-        {
-          title: "Regional Bank",
-          challenge: "Outdated mobile banking platform",
-          solution: "Modern mobile banking app development",
-          result: "200% increase in mobile transactions"
-        },
-        {
-          title: "Credit Union",
-          challenge: "Manual loan processing",
-          solution: "Automated loan management system",
-          result: "75% faster loan processing"
-        }
-      ]
-    },
-    ngo: {
-      title: "NGO Management Solutions",
-      heroImage: "https://www.shutterstock.com/image-vector/nongovernmental-organization-ngo-vector-illustration-260nw-1811798761.jpg",
-      description: "Support your nonprofit mission with our specialized NGO software solutions. We help organizations maximize their social impact through efficient digital tools and platforms.",
-      features: [
-        "Donor Management Systems",
-        "Project Tracking Tools",
-        "Volunteer Management",
-        "Fund Management",
-        "Impact Reporting Solutions"
-      ],
-      benefits: [
-        {
-          title: "Improved Donor Relations",
-          description: "Better donor engagement and retention through effective management"
-        },
-        {
-          title: "Efficient Operations",
-          description: "Streamline administrative tasks and project management"
-        },
-        {
-          title: "Enhanced Transparency",
-          description: "Clear reporting and tracking of funds and impact"
-        },
-        {
-          title: "Greater Impact",
-          description: "Maximize social impact through data-driven decisions"
-        }
-      ],
-      caseStudies: [
-        {
-          title: "International NGO",
-          challenge: "Tracking multiple global projects",
-          solution: "Centralized project management system",
-          result: "40% improvement in project efficiency"
-        },
-        {
-          title: "Local Nonprofit",
-          challenge: "Donor engagement and retention",
-          solution: "Integrated donor management platform",
-          result: "35% increase in recurring donations"
-        }
-      ]
-    },
-    travel: {
-      title: "Tours & Travel Solutions",
-      heroImage: "https://divyatourstravels.in/public/img/jk.jpg",
-      description: "Revolutionize travel experiences with our comprehensive digital solutions. We help travel businesses create seamless, engaging platforms that delight customers at every touchpoint.",
-      features: [
-        "Booking Management Systems",
-        "Travel Planning Platforms",
-        "Tour Package Management",
-        "Customer Experience Tools",
-        "Travel Analytics Solutions"
-      ],
-      benefits: [
-        {
-          title: "Streamlined Bookings",
-          description: "Efficient booking and reservation management"
-        },
-        {
-          title: "Enhanced Customer Experience",
-          description: "Personalized travel planning and recommendations"
-        },
-        {
-          title: "Operational Efficiency",
-          description: "Automated workflows and resource management"
-        },
-        {
-          title: "Data-Driven Insights",
-          description: "Better business decisions through analytics"
-        }
-      ],
-      caseStudies: [
-        {
-          title: "Travel Agency",
-          challenge: "Manual booking processes",
-          solution: "Digital booking platform",
-          result: "60% reduction in booking time"
-        },
-        {
-          title: "Tour Operator",
-          challenge: "Package management complexity",
-          solution: "Tour management system",
-          result: "45% increase in package sales"
-        }
-      ]
-    },
-    construction: {
-      title: "Construction Management Solutions",
-      heroImage: "https://plus.unsplash.com/premium_photo-1681691912442-68c4179c530c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y29uc3RydWN0aW9ufGVufDB8fDB8fHww",
-      description: "Streamline construction operations with our innovative digital solutions. We help construction firms optimize project management, resource allocation, and site operations.",
-      features: [
-        "Project Management Tools",
-        "Resource Planning Systems",
-        "Site Safety Monitoring",
-        "Document Management",
-        "Construction Analytics"
-      ],
-      benefits: [
-        {
-          title: "Project Efficiency",
-          description: "Better project planning and execution"
-        },
-        {
-          title: "Resource Optimization",
-          description: "Improved resource allocation and utilization"
-        },
-        {
-          title: "Enhanced Safety",
-          description: "Better safety monitoring and compliance"
-        },
-        {
-          title: "Cost Control",
-          description: "Improved budget management and cost tracking"
-        }
-      ],
-      caseStudies: [
-        {
-          title: "Construction Company",
-          challenge: "Project delays and cost overruns",
-          solution: "Integrated project management system",
-          result: "25% reduction in project delays"
-        },
-        {
-          title: "Building Contractor",
-          challenge: "Resource management issues",
-          solution: "Resource planning platform",
-          result: "30% improvement in resource utilization"
-        }
-      ]
-    },
-    security: {
-      title: "Security Solutions",
-      heroImage: "https://t4.ftcdn.net/jpg/04/72/18/19/360_F_472181971_ZCXWPAgsA2Yp6kEUhkSQDLvLvGuLhZxW.jpg",
-      description: "Enhance security operations with our advanced digital solutions. We provide cutting-edge software to help security firms maintain safety and compliance while improving operational efficiency.",
-      features: [
-        "Security Management Systems",
-        "Surveillance Integration",
-        "Access Control Solutions",
-        "Incident Management Tools",
-        "Security Analytics Platform"
-      ],
-      benefits: [
-        {
-          title: "Enhanced Security",
-          description: "Improved monitoring and threat detection"
-        },
-        {
-          title: "Quick Response",
-          description: "Faster incident response and resolution"
-        },
-        {
-          title: "Better Compliance",
-          description: "Ensure regulatory compliance and reporting"
-        },
-        {
-          title: "Operational Efficiency",
-          description: "Streamlined security operations and management"
-        }
-      ],
-      caseStudies: [
-        {
-          title: "Security Firm",
-          challenge: "Multiple site monitoring",
-          solution: "Integrated security management platform",
-          result: "40% improvement in incident response time"
-        },
-        {
-          title: "Corporate Security",
-          challenge: "Access control management",
-          solution: "Advanced access control system",
-          result: "50% reduction in security breaches"
-        }
-      ]
-    },
-    education: {
-      title: "Education Technology Solutions",
-      heroImage: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2000&auto=format&fit=crop",
-      description: "Empowering educational institutions with digital solutions that enhance learning experiences, streamline administration, and foster global collaboration.",
-      features: [
-        "Learning Management Systems (LMS)",
-        "Student Information Systems",
-        "E-learning Platforms",
-        "Virtual Classroom Solutions",
-        "Educational Analytics"
-      ],
-      benefits: [
-        {
-          title: "Enhanced Learning",
-          description: "Interactive and personalized learning experiences for students."
-        },
-        {
-          title: "Streamlined Administration",
-          description: "Automate administrative tasks and student records management."
-        },
-        {
-          title: "Remote Access",
-          description: "Enable learning from anywhere at any time."
-        },
-        {
-          title: "Data-Driven Insights",
-          description: "Track student progress and optimize teaching methods."
-        }
-      ],
-      caseStudies: []
-    },
-    manufacturing: {
-      title: "Manufacturing Software Solutions",
-      heroImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop",
-      description: "Optimizing manufacturing processes through smart automation, ERP integration, and data-driven insights to improve efficiency and output.",
-      features: [
-        "Manufacturing ERP Systems",
-        "Production Planning Tools",
-        "Inventory Management",
-        "Quality Control Systems",
-        "Supply Chain Automation"
-      ],
-      benefits: [
-        {
-          title: "Increased Efficiency",
-          description: "Streamline production workflows and reduce downtime."
-        },
-        {
-          title: "Inventory Optimization",
-          description: "Maintain optimal stock levels and reduce waste."
-        },
-        {
-          title: "Quality Assurance",
-          description: "Ensure consistent product quality with automated checks."
-        },
-        {
-          title: "Cost Reduction",
-          description: "Lower operational costs through resource optimization."
-        }
-      ],
-      caseStudies: []
-    },
-    garments: {
-      title: "Garment Industry Solutions",
-      heroImage: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=2000&auto=format&fit=crop",
-      description: "Providing tailored ERP and supply chain management software to streamline operations, inventory, and sales in the garment industry.",
-      features: [
-        "Garment ERP Systems",
-        "Inventory Tracking",
-        "Order Management",
-        "Vendor Management",
-        "Retail POS Integration"
-      ],
-      benefits: [
-        {
-          title: "Seamless Operations",
-          description: "Connect design, production, and retail seamlessly."
-        },
-        {
-          title: "Real-time Tracking",
-          description: "Track raw materials and finished goods in real-time."
-        },
-        {
-          title: "Faster Time-to-Market",
-          description: "Accelerate production cycles with better coordination."
-        },
-        {
-          title: "Enhanced Profitability",
-          description: "Optimize costs and maximize profit margins."
-        }
-      ],
-      caseStudies: []
-    },
-    logistics: {
-      title: "Logistics & Supply Chain Solutions",
-      heroImage: "https://images.unsplash.com/photo-1561518776-e76a5e48f731?q=80&w=2000&auto=format&fit=crop",
-      description: "Enhancing supply chain visibility and fleet management with robust logistics solutions designed for speed, accuracy, and reliability.",
-      features: [
-        "Fleet Management Systems",
-        "Warehouse Management (WMS)",
-        "Route Optimization",
-        "Real-time Tracking",
-        "Freight Management"
-      ],
-      benefits: [
-        {
-          title: "Improved Visibility",
-          description: "End-to-end visibility of your supply chain."
-        },
-        {
-          title: "Cost Savings",
-          description: "Reduce fuel consumption and operational costs."
-        },
-        {
-          title: "Faster Deliveries",
-          description: "Optimize routes for quicker turnaround times."
-        },
-        {
-          title: "Customer Satisfaction",
-          description: "Provide accurate tracking and timely deliveries."
-        }
-      ],
-      caseStudies: []
-    },
-    ecommerce: {
-      title: "E-Commerce Solutions",
-      heroImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2000&auto=format&fit=crop",
-      description: "Building scalable, secure, and user-centric e-commerce platforms that drive sales, improve customer retention, and expand market reach.",
-      features: [
-        "Custom E-commerce Platforms",
-        "Multi-vendor Marketplaces",
-        "Payment Gateway Integration",
-        "Inventory Synchronization",
-        "Mobile Commerce Apps"
-      ],
-      benefits: [
-        {
-          title: "Global Reach",
-          description: "Expand your business beyond geographical boundaries."
-        },
-        {
-          title: "Increased Sales",
-          description: "Drive conversions with user-friendly interfaces."
-        },
-        {
-          title: "Customer Insights",
-          description: "Understand buying behaviors through analytics."
-        },
-        {
-          title: "Seamless Management",
-          description: "Manage products, orders, and customers easily."
-        }
-      ],
-      caseStudies: []
-    },
-    "real-estate": {
-      title: "Real Estate Software Solutions",
-      heroImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2000&auto=format&fit=crop",
-      description: "Transforming real estate operations with innovative CRM, property management, and lead generation platforms.",
-      features: [
-        "Property Management Systems",
-        "Real Estate CRM",
-        "Virtual Tours Integration",
-        "Lead Generation Portals",
-        "Tenant Management"
-      ],
-      benefits: [
-        {
-          title: "Efficient Management",
-          description: "Streamline property and tenant management."
-        },
-        {
-          title: "Better Lead Conversion",
-          description: "Capture and nurture leads effectively."
-        },
-        {
-          title: "Enhanced Client Experience",
-          description: "Offer virtual tours and easy property search."
-        },
-        {
-          title: "Automated Workflows",
-          description: "Reduce manual paperwork and administrative tasks."
-        }
-      ],
-      caseStudies: []
-    },
-    restaurants: {
-      title: "Restaurant Management Solutions",
-      heroImage: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2000&auto=format&fit=crop",
-      description: "Delivering custom POS systems, online ordering platforms, and management dashboards tailored for the food and beverage industry.",
-      features: [
-        "Restaurant POS Systems",
-        "Online Ordering Platforms",
-        "Table Management",
-        "Inventory Tracking",
-        "Customer Loyalty Programs"
-      ],
-      benefits: [
-        {
-          title: "Faster Service",
-          description: "Speed up ordering and billing processes."
-        },
-        {
-          title: "Increased Revenue",
-          description: "Boost sales with online ordering and delivery."
-        },
-        {
-          title: "Better Inventory Control",
-          description: "Reduce food waste and track stock levels."
-        },
-        {
-          title: "Enhanced Customer Loyalty",
-          description: "Reward repeat customers and improve retention."
-        }
-      ],
-      caseStudies: []
-    },
-    retail: {
-      title: "Retail Technology Solutions",
-      heroImage: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2000&auto=format&fit=crop",
-      description: "Empowering retail businesses with omnichannel digital solutions, intelligent inventory management, and seamless customer experiences.",
-      features: [
-        "Omnichannel Retail Platforms",
-        "Retail POS Integration",
-        "Inventory Management",
-        "Customer Relationship Management",
-        "Retail Analytics"
-      ],
-      benefits: [
-        {
-          title: "Unified Experience",
-          description: "Connect in-store and online shopping seamlessly."
-        },
-        {
-          title: "Inventory Accuracy",
-          description: "Maintain accurate stock counts across channels."
-        },
-        {
-          title: "Personalized Marketing",
-          description: "Target customers based on purchase history."
-        },
-        {
-          title: "Data-Driven Decisions",
-          description: "Analyze sales trends and customer preferences."
-        }
-      ],
-      caseStudies: []
-    },
-    "professional-services": {
-      title: "Professional Services Solutions",
-      heroImage: "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2000&auto=format&fit=crop",
-      description: "Equipping professional service providers with digital tools for appointment scheduling, client management, and workflow automation.",
-      features: [
-        "Client Management Portals",
-        "Appointment Scheduling",
-        "Billing and Invoicing",
-        "Document Management",
-        "Workflow Automation"
-      ],
-      benefits: [
-        {
-          title: "Improved Client Relations",
-          description: "Offer seamless communication and service delivery."
-        },
-        {
-          title: "Time Savings",
-          description: "Automate scheduling and administrative tasks."
-        },
-        {
-          title: "Streamlined Billing",
-          description: "Ensure accurate and timely invoicing."
-        },
-        {
-          title: "Secure Data",
-          description: "Protect client information with secure document management."
-        }
-      ],
-      caseStudies: []
-    },
-    startups: {
-      title: "Startup Technology Solutions",
-      heroImage: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2000&auto=format&fit=crop",
-      description: "Partnering with startups to rapidly build, launch, and scale innovative digital products and platforms.",
-      features: [
-        "MVP Development",
-        "Scalable Architecture",
-        "Agile Product Development",
-        "Cloud Infrastructure Setup",
-        "Growth Marketing Tech"
-      ],
-      benefits: [
-        {
-          title: "Faster Time-to-Market",
-          description: "Launch your product quickly and efficiently."
-        },
-        {
-          title: "Scalability",
-          description: "Build on architecture that grows with your business."
-        },
-        {
-          title: "Cost-Effective",
-          description: "Optimize resources for maximum impact."
-        },
-        {
-          title: "Expert Guidance",
-          description: "Leverage technical expertise for product success."
-        }
-      ],
-      caseStudies: []
-    }
-  };
+  const [activeTab, setActiveTab] = useState(0);
+  const [activeOffering, setActiveOffering] = useState(0);
+  const [openFaqIndex, setOpenFaqIndex] = useState(null);
 
   const currentIndustry = industryData[industry?.toLowerCase()] || industryData.healthcare;
 
+  // SEO: Dynamic Meta Tags and JSON-LD
+  useEffect(() => {
+    // 1. Set Document Title
+    document.title = `${currentIndustry.title} IT Solutions & Services | Innomatrics`;
+    
+    // 2. Set Meta Description
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.name = 'description';
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.content = `Empowering the ${currentIndustry.title} sector with innovative digital transformation services, cloud solutions, and scalable enterprise applications.`;
+
+    // 3. Inject JSON-LD Structured Data
+    const scriptId = 'seo-structured-data';
+    let scriptTag = document.getElementById(scriptId);
+    if (!scriptTag) {
+      scriptTag = document.createElement('script');
+      scriptTag.id = scriptId;
+      scriptTag.type = 'application/ld+json';
+      document.head.appendChild(scriptTag);
+    }
+    
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": `${currentIndustry.title} IT Solutions`,
+      "provider": {
+        "@type": "Organization",
+        "name": "Innomatrics Technologies"
+      },
+      "description": currentIndustry.overview
+    };
+    
+    scriptTag.text = JSON.stringify(structuredData);
+
+    return () => {
+      // Cleanup on unmount or industry change
+      if (scriptTag) document.head.removeChild(scriptTag);
+    };
+  }, [currentIndustry]);
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <div className="relative h-[60vh] overflow-hidden">
-        <img 
-          src={currentIndustry.heroImage}
-          alt={currentIndustry.title}
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-black/50 flex items-center justify-center">
-          <div className="text-center text-white">
-            <h1 className="text-5xl font-bold mb-4">{currentIndustry.title}</h1>
-            <p className="text-xl max-w-3xl mx-auto px-4">
-              {currentIndustry.description}
+    <div className="min-h-screen bg-gray-50 font-sans text-gray-800">
+      
+      {/* 1. Hero Section */}
+      <section 
+        className="bg-cover bg-center relative h-[500px]" 
+        style={{
+          backgroundImage: `url('${currentIndustry.heroImage}')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/40"></div>
+        <div className="container mx-auto px-4 py-20 md:py-40 relative z-10 h-full flex flex-col justify-center">
+          <div className="flex flex-col my-[50px] md:my-[10px] items-start justify-start gap-4 text-start">
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-4xl md:text-6xl font-bold text-white leading-tight"
+            >
+              {currentIndustry.title}
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-xl md:text-2xl text-gray-200 max-w-2xl"
+            >
+              Transforming the {currentIndustry.title.split(' ')[0]} industry with digital innovation
+            </motion.p>
+            <motion.hr 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="border-sky-600 border-t-2 w-full md:w-[50%]" 
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* 2. Overview Section */}
+      <div className="bg-gray-50 py-16 md:py-20 border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
+          <h2 className="text-xl font-bold text-orange-500 uppercase mb-4">Overview</h2>
+          <p className="text-lg text-gray-800 leading-8 max-w-5xl">
+            {currentIndustry.overview}
+          </p>
+        </div>
+      </div>
+
+      {/* 4. Offerings Interactive Section */}
+      <div className="bg-gray-50 py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row gap-12 items-start">
+            
+            {/* Left Column: List */}
+            <div className="w-full lg:w-1/3">
+              <h2 className="text-2xl font-bold text-red-500 uppercase mb-8 tracking-wide">
+                Our Offerings
+              </h2>
+              <ul className="space-y-5 mb-8">
+                {currentIndustry.capabilities?.map((cap, index) => (
+                  <li 
+                    key={index}
+                    onClick={() => {
+                      // We need a state for this. Let's assume activeOffering state is added at the top.
+                      setActiveOffering(index);
+                    }}
+                    className={`cursor-pointer text-lg font-semibold transition-all duration-300 flex items-center ${
+                      activeOffering === index 
+                        ? 'text-red-500 transform translate-x-2' 
+                        : 'text-gray-700 hover:text-red-400'
+                    }`}
+                  >
+                    {activeOffering === index && <span className="mr-3">—</span>}
+                    {cap.title}
+                  </li>
+                ))}
+              </ul>
+              
+              <div className="animate-fade-in-up">
+                <p className="text-gray-600 text-base leading-relaxed">
+                  {currentIndustry.capabilities?.[activeOffering]?.description || 
+                   "Leverage digital technologies to fundamentally change how you operate and deliver value."}
+                </p>
+              </div>
+            </div>
+
+            {/* Right Column: Image */}
+            <div className="w-full lg:w-2/3">
+              <div className="relative rounded-xl overflow-hidden shadow-2xl h-[400px] md:h-[500px] group">
+                {(() => {
+                  const images = [
+                    'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1000&auto=format&fit=crop',
+                    'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1000&auto=format&fit=crop',
+                    'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1000&auto=format&fit=crop',
+                    'https://images.unsplash.com/photo-1530497610245-94d3c16cda28?q=80&w=1000&auto=format&fit=crop',
+                    'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000&auto=format&fit=crop',
+                    'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop'
+                  ];
+                  const currentImage = images[activeOffering % images.length];
+                  
+                  return (
+                    <motion.img 
+                      key={activeOffering} // Force re-render animation when activeOffering changes
+                      initial={{ opacity: 0, scale: 1.05 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.5 }}
+                      src={currentImage}
+                      alt={currentIndustry.capabilities?.[activeOffering]?.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  );
+                })()}
+                
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-6 md:p-8 pt-20">
+                  <motion.p 
+                    key={`desc-${activeOffering}`}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="text-white text-lg md:text-xl font-medium leading-relaxed"
+                  >
+                    Scalable solutions for {currentIndustry.title.split(' ')[0]} organizations: {currentIndustry.capabilities?.[activeOffering]?.description}
+                  </motion.p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      {/* 5. Success Story / Case Study Section */}
+      {currentIndustry.caseStudy && (
+        <div className="bg-blue-900 py-16 md:py-24 text-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-sm font-bold tracking-widest text-orange-500 uppercase mb-12 text-center">Featured Success Story</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className="relative h-80 md:h-full rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src={currentIndustry.caseStudy.image}
+                  alt={currentIndustry.caseStudy.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
+              <div className="space-y-8">
+                <h3 className="text-3xl md:text-4xl font-bold leading-tight">{currentIndustry.caseStudy.title}</h3>
+                
+                <div>
+                  <h4 className="text-orange-500 font-semibold mb-2">The Challenge</h4>
+                  <p className="text-gray-300 text-lg">{currentIndustry.caseStudy.challenge}</p>
+                </div>
+                
+                <div>
+                  <h4 className="text-orange-500 font-semibold mb-2">Our Solution</h4>
+                  <p className="text-gray-300 text-lg">{currentIndustry.caseStudy.solution}</p>
+                </div>
+                
+                <div className="bg-white/10 p-6 rounded-xl border border-white/20">
+                  <h4 className="text-white font-bold mb-2">The Impact</h4>
+                  <p className="text-blue-200 text-lg font-medium">{currentIndustry.caseStudy.result}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 6. Insights & Resources Section */}
+      {currentIndustry.insights && currentIndustry.insights.length > 0 && (
+        <div className="bg-gray-50 py-16 md:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold mb-12 text-gray-900">Latest Insights in {currentIndustry.title.split(' ')[0]}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {currentIndustry.insights.map((insight, index) => (
+                <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
+                  <div className="h-48 overflow-hidden relative">
+                    <img 
+                      src={insight.image} 
+                      alt={insight.title}
+                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <span className="text-sm text-gray-500 mb-2 block">{insight.date}</span>
+                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                      {insight.title}
+                    </h3>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 7. Why Partner With Us (Value Proposition) Section */}
+      <div className="bg-blue-900 py-20 md:py-32 relative overflow-hidden">
+        {/* Abstract background elements */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-600/20 blur-[100px]"></div>
+          <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-orange-500/10 blur-[100px]"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16 md:mb-24">
+            <h2 className="text-sm font-bold tracking-widest text-orange-500 uppercase mb-4">The Innomatrics Advantage</h2>
+            <h3 className="text-3xl md:text-5xl font-extrabold text-white mb-6">
+              Why Partner With Us for {currentIndustry.title.split(' ')[0]}?
+            </h3>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+              We combine deep industry knowledge with engineering excellence to deliver solutions that drive real business outcomes.
             </p>
           </div>
-        </div>
-      </div>
 
-      {/* Features Section */}
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold text-center mb-12">Key Features & Solutions</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {currentIndustry.features.map((feature, index) => (
-            <div 
-              key={index}
-              className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow"
-            >
-              <div className="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto">
-                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                </svg>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Card 1 */}
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 group">
+              <div className="w-14 h-14 bg-blue-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-500/40 transition-transform">
+                <FaBrain className="w-7 h-7 text-blue-400" />
               </div>
-              <h3 className="text-xl font-semibold text-center mb-2">{feature}</h3>
+              <h4 className="text-xl font-bold text-white mb-4">Domain Expertise</h4>
+              <p className="text-slate-400 leading-relaxed">
+                Deep understanding of {currentIndustry.title.split(' ')[0]} challenges, compliance requirements, and market dynamics.
+              </p>
             </div>
-          ))}
-        </div>
-      </div>
 
-      {/* Benefits Section */}
-      <div className="bg-blue-50 py-16">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Key Benefits</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {currentIndustry.benefits.map((benefit, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
-                <h3 className="text-xl font-bold text-blue-600 mb-4">{benefit.title}</h3>
-                <p className="text-gray-600">{benefit.description}</p>
+            {/* Card 2 */}
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 group">
+              <div className="w-14 h-14 bg-orange-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-orange-500/40 transition-transform">
+                <FaRocket className="w-7 h-7 text-orange-400" />
               </div>
-            ))}
+              <h4 className="text-xl font-bold text-white mb-4">Accelerated Delivery</h4>
+              <p className="text-slate-400 leading-relaxed">
+                Agile methodologies and pre-built accelerators ensuring faster time-to-market for your solutions.
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 group">
+              <div className="w-14 h-14 bg-indigo-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-indigo-500/40 transition-transform">
+                <FaChartLine className="w-7 h-7 text-indigo-400" />
+              </div>
+              <h4 className="text-xl font-bold text-white mb-4">Enterprise Scalability</h4>
+              <p className="text-slate-400 leading-relaxed">
+                Future-proof architectures designed to grow seamlessly as your business expands.
+              </p>
+            </div>
+
+            {/* Card 4 */}
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 group">
+              <div className="w-14 h-14 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-emerald-500/40 transition-transform">
+                <FaHeadset className="w-7 h-7 text-emerald-400" />
+              </div>
+              <h4 className="text-xl font-bold text-white mb-4">End-to-End Support</h4>
+              <p className="text-slate-400 leading-relaxed">
+                Dedicated engineering teams providing continuous maintenance, optimization, and 24/7 support.
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Case Studies Section */}
-     
+      {/* 8. FAQ Section for SEO */}
+      {currentIndustry.faqs && currentIndustry.faqs.length > 0 && (
+        <div className="bg-gray-50 py-16 md:py-24">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-extrabold text-blue-900 tracking-tight">
+                Frequently Asked Questions
+              </h2>
+            </div>
+            <div className="space-y-4">
+              {currentIndustry.faqs.map((faq, index) => (
+                <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden">
+                  <button
+                    onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
+                    className="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none"
+                  >
+                    <span className="text-lg font-semibold text-gray-900 pr-4">{faq.question}</span>
+                    {openFaqIndex === index ? (
+                      <FaChevronUp className="text-gray-400 w-5 h-5 flex-shrink-0" />
+                    ) : (
+                      <FaChevronDown className="text-gray-400 w-5 h-5 flex-shrink-0" />
+                    )}
+                  </button>
+                  <AnimatePresence>
+                    {openFaqIndex === index && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <div className="px-6 pb-5 text-gray-600 leading-relaxed border-t border-gray-50 pt-4">
+                          {faq.answer}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
 
-      {/* Call to Action Section */}
+      {/* 9. Call to Action Section */}
       <div className="bg-blue-600 py-16">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Transform Your Business?</h2>
-          <p className="text-blue-100 mb-8">
-            Let's discuss how our solutions can help you achieve your business goals.
+          <h2 className="text-3xl font-bold text-white mb-6">Ready to Transform Your Business?</h2>
+          <p className="text-blue-100 text-lg mb-10 max-w-2xl mx-auto">
+            Partner with us to leverage cutting-edge technology and engineering expertise to solve your most complex industry challenges.
           </p>
-          <div className="space-x-4">
+          <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
             <Link
               to="/contact"
-              className="inline-block bg-white text-blue-600 px-8 py-3 rounded-md font-semibold hover:bg-blue-50 transition-colors"
+              className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-blue-50 transition-colors shadow-lg"
             >
-              Contact Us
+              Contact Our Experts
             </Link>
             <Link
               to="/quote"
-              className="inline-block bg-transparent text-white px-8 py-3 rounded-md font-semibold border-2 border-white hover:bg-white hover:text-blue-600 transition-colors"
+              className="inline-block bg-transparent text-white px-8 py-4 rounded-lg font-bold border-2 border-white hover:bg-white/10 transition-colors"
             >
-              Get a Quote
+              Request a Quote
             </Link>
           </div>
         </div>
@@ -667,4 +391,4 @@ const IndustryDetail = () => {
   );
 };
 
-export default IndustryDetail; 
+export default IndustryDetail;

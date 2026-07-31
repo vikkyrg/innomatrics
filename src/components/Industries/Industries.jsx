@@ -134,12 +134,12 @@ const Industries = () => {
           <div className="w-full mx-auto">
             <h4 className="text-3xl text-red-500 font-semibold mb-8 text-left">Industries We Serve</h4>
             <p className="text-gray-700 text-lg leading-relaxed text-left">
-              We proudly serve a diverse range of industries with tailored digital marketing strategies designed to maximize results. 
-              Our expertise spans across e-commerce, helping brands boost product visibility and drive online sales with precision-targeted campaigns. 
-              In the healthcare sector, we build trust and engagement through informative and patient-focused digital communication. 
-              Educational institutions and platforms benefit from our enrollment-focused strategies that enhance reach and credibility. 
-              For real estate businesses, we generate high-quality leads and improve property exposure with visually impactful campaigns. 
-              Financial services and fintech companies rely on our secure and compliant marketing strategies to build customer confidence and promote growth. 
+              We proudly serve a diverse range of industries with tailored digital marketing strategies designed to maximize results.
+              Our expertise spans across e-commerce, helping brands boost product visibility and drive online sales with precision-targeted campaigns.
+              In the healthcare sector, we build trust and engagement through informative and patient-focused digital communication.
+              Educational institutions and platforms benefit from our enrollment-focused strategies that enhance reach and credibility.
+              For real estate businesses, we generate high-quality leads and improve property exposure with visually impactful campaigns.
+              Financial services and fintech companies rely on our secure and compliant marketing strategies to build customer confidence and promote growth.
               We also empower startups and tech ventures with growth-driven approaches that accelerate brand awareness and user acquisition.
             </p>
           </div>
@@ -154,8 +154,8 @@ const Industries = () => {
           </h4>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {industries.map((industry, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="group relative bg-white rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
               >
                 <div className="relative h-[300px] overflow-hidden">
@@ -174,8 +174,8 @@ const Industries = () => {
                   <p className="text-gray-700 text-lg mb-4">
                     {industry.subtitle}
                   </p>
-                  <Link 
-                    to={`/industries/${industry.id}`} 
+                  <Link
+                    to={`/industries/${industry.id}`}
                     className="inline-block mt-4 text-blue-600 font-semibold hover:text-blue-800 transition-colors"
                   >
                     Learn More →
