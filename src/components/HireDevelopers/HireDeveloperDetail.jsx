@@ -68,9 +68,9 @@ const HireDeveloperDetail = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-16 items-center">
             <div className="lg:w-1/2">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 relative inline-block">
+              <h2 className="text-3xl md:text-4xl font-bold text-orange-500 mb-6 relative inline-block">
                 Overview
-                <span className="absolute -bottom-2 left-0 w-1/3 h-1.5 bg-blue-600 rounded-full"></span>
+                <span className="absolute -bottom-2 left-0 w-1/3 h-1.5 bg-orange-500 rounded-full"></span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed mt-6 mb-8">
                 {data.description}
