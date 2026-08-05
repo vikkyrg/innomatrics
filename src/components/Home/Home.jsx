@@ -167,14 +167,25 @@ const Home = forwardRef((props, ref) => {
       {/* Industry Section */}
       <Industry />
 
-      {/* Remove Industry section */}
-      <div className="ServicesMission">
-        <div className="p-8 ">
-          <h2 className="text-4xl text-white text-center">Our Services</h2>
-
-          <ImageCardContainer />
+      {/* Our Services Section */}
+      <div className="bg-gray-50 py-20 relative border-t border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold tracking-wider uppercase mb-3">
+              What We Do
+            </span>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-[#07111F] mb-6">Our Services</h2>
+            <div className="w-24 h-1.5 bg-gradient-to-r from-blue-500 to-blue-800 mx-auto rounded-full"></div>
+            <p className="text-gray-600 mt-6 max-w-2xl mx-auto text-lg">
+              We engineer dynamic digital solutions designed to accelerate your business growth.
+            </p>
+          </div>
         </div>
+        <ImageCardContainer />
+      </div>
 
+      {/* Vision & Mission Section */}
+      <div className="ServicesMission">
         <div style={{ padding: "4%" }} className="flex flex-col sm:flex-row">
           <div style={{ flex: 1, marginRight: "2%" }}>
             <OurVision />

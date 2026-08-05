@@ -139,7 +139,7 @@ const WhyUs = () => {
             opacity: '0.3'
           }}
         />
-        
+
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-32">
           <div className="max-w-7xl">
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
@@ -154,24 +154,24 @@ const WhyUs = () => {
       </div>
 
       <div className="mb-20 px-6 md:px-8">
-  <h2 className="text-xl font-bold text-orange-600 mb-4 mt-8">WHY US</h2>
-  <p className="text-lg text-gray-900 leading-relaxed">
-    At Innomatrics, we combine deep technical expertise with a commitment to excellence. Our solutions are tailored to your business goals, ensuring maximum impact and value. From user-friendly interfaces to secure backend systems, we deliver products that are both powerful and reliable. With transparent communication, timely delivery, and a client-first mindset, we are a partner you can trust for long-term success.
-  </p>
-</div>
+        <h2 className="text-xl font-bold text-orange-600 mb-4 mt-8">WHY US</h2>
+        <p className="text-lg text-gray-900 leading-relaxed">
+          At Innomatrics, we combine deep technical expertise with a commitment to excellence. Our solutions are tailored to your business goals, ensuring maximum impact and value. From user-friendly interfaces to secure backend systems, we deliver products that are both powerful and reliable. With transparent communication, timely delivery, and a client-first mindset, we are a partner you can trust for long-term success.
+        </p>
+      </div>
 
       {/* Rest of your existing content */}
       <div className="py-20 bg-white ">
         <div className="max-w-7xl mt-[-80px] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Image Section */}
           <div className="relative aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-xl">
-                  <img
-                    src="https://t4.ftcdn.net/jpg/02/87/66/91/360_F_287669118_j5dQdApPRxoXuyXMrrGavM7uTydyh1AG.jpg"
-                    alt="Our team working"
-                    className="object-cover w-full h-full"
-                  />
-                  <div className="absolute inset-0 bg-blue-900 opacity-20"></div>
-                </div>
+            <img
+              src="https://t4.ftcdn.net/jpg/02/87/66/91/360_F_287669118_j5dQdApPRxoXuyXMrrGavM7uTydyh1AG.jpg"
+              alt="Our team working"
+              className="object-cover w-full h-full"
+            />
+            <div className="absolute inset-0 bg-blue-900 opacity-20"></div>
+          </div>
 
           {/* Content Section */}
           <div data-aos=" fade-left">
@@ -280,9 +280,8 @@ const WhyUs = () => {
                 whileHover="hover"
                 onHoverStart={() => setHoveredCard(index)}
                 onHoverEnd={() => setHoveredCard(null)}
-                className={`bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 ${
-                  hoveredCard === index ? "shadow-xl" : ""
-                }`}
+                className={`bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 ${hoveredCard === index ? "shadow-xl" : ""
+                  }`}
               >
                 <div className="p-8">
                   <div className="flex items-center justify-center h-16 w-16 bg-blue-100 rounded-full mb-6">

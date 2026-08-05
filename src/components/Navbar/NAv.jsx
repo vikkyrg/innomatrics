@@ -227,13 +227,6 @@ function NAv() {
                 >
                   Contact Us
                 </Link>
-
-                <Link
-                  to="/contact"
-                  className="nav-button secondary bg-red-500/90 hover:bg-red-600 text-white shadow-lg backdrop-blur-sm"
-                >
-                  Get a Quote
-                </Link>
               </div>
             </div>
 

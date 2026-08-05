@@ -88,7 +88,7 @@ const CompanyOverview = () => {
   return (
     <div className="min-h-screen bg-white">
       <NAv />
-      
+
       {/* Hero Section */}
       <div className="relative w-full bg-[#020A13]">
         <div
@@ -101,7 +101,7 @@ const CompanyOverview = () => {
             opacity: '0.2'
           }}
         />
-        
+
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-32">
           <div className="max-w-7xl">
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
@@ -117,11 +117,11 @@ const CompanyOverview = () => {
 
 
       <div className="mb-20 px-6 md:px-8">
-  <h2 className="text-xl font-bold text-orange-600 mb-4 mt-8">OVERVIEW</h2>
-  <p className="text-lg text-gray-900 leading-relaxed">
-    Innomatrics is a technology-driven company focused on delivering innovative, scalable, and customer-centric solutions. With a strong foundation in modern development practices and cloud infrastructure, we empower businesses to transform digitally and stay competitive. Our team specializes in crafting end-to-end software products tailored to meet diverse industry needs, ensuring efficiency, security, and long-term growth.
-  </p>
-</div>
+        <h2 className="text-xl font-bold text-orange-600 mb-4 mt-8">OVERVIEW</h2>
+        <p className="text-lg text-gray-900 leading-relaxed">
+          Innomatrics is a technology-driven company focused on delivering innovative, scalable, and customer-centric solutions. With a strong foundation in modern development practices and cloud infrastructure, we empower businesses to transform digitally and stay competitive. Our team specializes in crafting end-to-end software products tailored to meet diverse industry needs, ensuring efficiency, security, and long-term growth.
+        </p>
+      </div>
 
       {/* About Us Section */}
       <div className="py-20 bg-white">
@@ -158,37 +158,7 @@ const CompanyOverview = () => {
             </div>
           </div>
 
-          {/* Our Journey Section */}
-          <div className="mb-20">
-            <h2
-              className="text-4xl font-bold text-center text-red-600 mb-16"
-              data-aos="fade-up"
-            >
-              Our Journey
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {journeyImages.map((image, index) => (
-                <div
-                  key={index}
-                  className="group relative overflow-hidden rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300"
-                  data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
-                  data-aos-delay={index * 100}
-                >
-                  <img
-                    src={image.url}
-                    alt={image.title}
-                    className="w-full h-72 object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute bottom-0 left-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      <h3 className="text-xl font-bold mb-2">{image.title}</h3>
-                      <p className="text-sm">{image.description}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+
 
           {/* Our Expertise */}
           <div className="mb-20">
