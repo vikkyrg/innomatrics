@@ -250,8 +250,8 @@ const Ecommerce = forwardRef((props, ref) => {
                   <div className="text-gray-600 mt-2">Stores Launched</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-blue-600">$100M+</div>
-                  <div className="text-gray-600 mt-2">Processed Annually</div>
+                  <div className="text-4xl font-bold text-blue-600">100+</div>
+                  <div className="text-gray-600 mt-2">E-commerce Platforms Built</div>
                 </div>
                 <div className="text-center">
                   <div className="text-4xl font-bold text-blue-600">50+</div>
@@ -420,8 +420,8 @@ const Ecommerce = forwardRef((props, ref) => {
                 <div className="text-xl">Stores Launched</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold mb-2">$100M+</div>
-                <div className="text-xl">Processed Annually</div>
+                <div className="text-4xl font-bold mb-2">100+</div>
+                <div className="text-xl">E-commerce Platforms Built</div>
               </div>
               <div className="text-center">
                 <div className="text-4xl font-bold mb-2">50+</div>

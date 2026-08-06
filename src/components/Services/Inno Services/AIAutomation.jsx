@@ -254,8 +254,8 @@ const AIAutomation = forwardRef((props, ref) => {
                   <div className="text-gray-600 mt-2">Model Uptime</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-blue-600">10M+</div>
-                  <div className="text-gray-600 mt-2">Queries Processed</div>
+                  <div className="text-4xl font-bold text-blue-600">1000+</div>
+                  <div className="text-gray-600 mt-2">Automated Workflows</div>
                 </div>
                 <div className="text-center">
                   <div className="text-4xl font-bold text-blue-600">20+</div>
@@ -424,8 +424,8 @@ const AIAutomation = forwardRef((props, ref) => {
                 <div className="text-xl">Model Uptime</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold mb-2">10M+</div>
-                <div className="text-xl">Queries Processed</div>
+                <div className="text-4xl font-bold mb-2">1000+</div>
+                <div className="text-xl">Automated Workflows</div>
               </div>
               <div className="text-center">
                 <div className="text-4xl font-bold mb-2">20+</div>

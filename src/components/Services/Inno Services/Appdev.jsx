@@ -496,8 +496,8 @@ const AppDev = forwardRef((props, ref) => {
                 AI Integration
               </h3>
               <p className="text-sm mb-4">
-                "Developed ML-powered analytics platform processing 1M+ data
-                points daily with 99.9% accuracy in predictive modeling."
+                "Developed ML-powered analytics platform processing 10,000+ data
+                points daily for strategic decision-making."
               </p>
               <div className="text-blue-400 hover:text-blue-300 cursor-pointer inline-flex items-center">
                 Learn More <span className="ml-2">→</span>
@@ -555,7 +555,7 @@ const AppDev = forwardRef((props, ref) => {
             <p className="text-xl text-gray-700 text-center md:text-left md:ml-[-50px]">
               At Innomatrics Tech, we specialize in creating high-performance
               mobile applications that deliver exceptional user experiences and
-              measurable business results. With over 10 years of experience, our
+              measurable business results. With over 3 years of experience, our
               team of certified developers builds apps that are scalable,
               secure, and tailored to your specific industry needs.
               enterprise systems, we combine design thinking with
@@ -824,7 +824,7 @@ const AppDev = forwardRef((props, ref) => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl font-bold mb-2">5+</div>
+              <div className="text-4xl font-bold mb-2">3+</div>
               <div className="text-xl">Years in Mobile Development</div>
             </div>
             <div className="text-center">

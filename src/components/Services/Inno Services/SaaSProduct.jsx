@@ -52,7 +52,7 @@ const SaaSProduct = forwardRef((props, ref) => {
 
   const caseStudies = [
             { title: "B2B Project Management SaaS", description: "Built a comprehensive project management platform for agencies", result: "Scaled to 10,000+ active users", image: app },
-            { title: "Fintech Subscription Platform", description: "Developed a secure financial analytics SaaS tool", result: "Processed $5M+ in subscription revenue", image: app2 }
+            { title: "Fintech Subscription Platform", description: "Developed a secure financial analytics SaaS tool", result: "Processed 500+ secure transactions", image: app2 }
         ];
 
   // Map service titles to their corresponding images
@@ -250,8 +250,8 @@ const SaaSProduct = forwardRef((props, ref) => {
                   <div className="text-gray-600 mt-2">SaaS Platforms Built</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-blue-600">$50M+</div>
-                  <div className="text-gray-600 mt-2">Client Revenue Generated</div>
+                  <div className="text-4xl font-bold text-blue-600">50+</div>
+                  <div className="text-gray-600 mt-2">Enterprise Clients</div>
                 </div>
                 <div className="text-center">
                   <div className="text-4xl font-bold text-blue-600">99.9%</div>
@@ -420,8 +420,8 @@ const SaaSProduct = forwardRef((props, ref) => {
                 <div className="text-xl">SaaS Platforms Built</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold mb-2">$50M+</div>
-                <div className="text-xl">Client Revenue Generated</div>
+                <div className="text-4xl font-bold mb-2">50+</div>
+                <div className="text-xl">Enterprise Clients</div>
               </div>
               <div className="text-center">
                 <div className="text-4xl font-bold mb-2">99.9%</div>

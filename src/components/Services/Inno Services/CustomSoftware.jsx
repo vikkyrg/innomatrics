@@ -246,7 +246,7 @@ const CustomSoftware = forwardRef((props, ref) => {
               {/* Additional Stats Section */}
               <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8">
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-blue-600">10+</div>
+                  <div className="text-4xl font-bold text-blue-600">3+</div>
                   <div className="text-gray-600 mt-2">Years in Custom Dev</div>
                 </div>
                 <div className="text-center">
@@ -416,7 +416,7 @@ const CustomSoftware = forwardRef((props, ref) => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="text-center">
-                <div className="text-4xl font-bold mb-2">10+</div>
+                <div className="text-4xl font-bold mb-2">3+</div>
                 <div className="text-xl">Years in Custom Dev</div>
               </div>
               <div className="text-center">

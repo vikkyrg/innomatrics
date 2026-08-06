@@ -156,7 +156,7 @@ const IndustryDetail = () => {
                     'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000&auto=format&fit=crop',
                     'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop'
                   ];
-                  const currentImage = images[activeOffering % images.length];
+                  const currentImage = currentIndustry.capabilities?.[activeOffering]?.image || images[activeOffering % images.length];
                   
                   return (
                     <motion.img 

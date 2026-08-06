@@ -129,7 +129,7 @@ const Industry = () => {
       ]
     },
     {
-      id: 'tours',
+      id: 'travel',
       icon: <MdFlightTakeoff />,
       title: "Tours & Travels",
       description: "Transforming travel experiences through cutting-edge technology solutions that streamline bookings, enhance customer experiences, and revolutionize the way people explore the world.",

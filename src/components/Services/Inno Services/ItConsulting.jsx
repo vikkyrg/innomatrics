@@ -250,8 +250,8 @@ const ItConsulting = forwardRef((props, ref) => {
                   <div className="text-gray-600 mt-2">IT Roadmaps Delivered</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-blue-600">$10M+</div>
-                  <div className="text-gray-600 mt-2">Client IT Savings</div>
+                  <div className="text-4xl font-bold text-blue-600">50%</div>
+                  <div className="text-gray-600 mt-2">IT Cost Reduction</div>
                 </div>
                 <div className="text-center">
                   <div className="text-4xl font-bold text-blue-600">100%</div>
@@ -420,8 +420,8 @@ const ItConsulting = forwardRef((props, ref) => {
                 <div className="text-xl">IT Roadmaps Delivered</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold mb-2">$10M+</div>
-                <div className="text-xl">Client IT Savings</div>
+                <div className="text-4xl font-bold mb-2">50%</div>
+                <div className="text-xl">IT Cost Reduction</div>
               </div>
               <div className="text-center">
                 <div className="text-4xl font-bold mb-2">100%</div>

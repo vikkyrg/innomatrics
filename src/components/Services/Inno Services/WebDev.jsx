@@ -575,7 +575,7 @@ const WebDev = forwardRef((props, ref) => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="text-center">
-                <div className="text-4xl font-bold mb-2">5+</div>
+                <div className="text-4xl font-bold mb-2">3+</div>
                 <div className="text-xl">Years in Web Development</div>
               </div>
               <div className="text-center">

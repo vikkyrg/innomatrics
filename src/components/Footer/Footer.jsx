@@ -53,7 +53,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="bg-gradient-to-r from-blue-900 via-blue-800 to-purple-900 text-white">
+    <footer className="footer-gradient-animated bg-gradient-to-r from-blue-900 via-blue-800 to-purple-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Top Section with Logo and Description */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 mb-8">
@@ -73,7 +73,7 @@ const Footer = () => {
                 href="https://www.facebook.com/people/Innomatrics-Technologies/61560974679711/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="social-icon-link facebook"
+                className="social-icon-premium facebook"
                 title="Facebook"
               >
                 <FaFacebook size={20} />
@@ -82,7 +82,7 @@ const Footer = () => {
                 href="https://twitter.com/innomatricstech"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="social-icon-link twitter"
+                className="social-icon-premium twitter"
                 title="Twitter"
               >
                 <FontAwesomeIcon icon={faXTwitter} style={{ fontSize: '18px' }} />
@@ -91,7 +91,7 @@ const Footer = () => {
                 href="https://www.instagram.com/innomatrics_tech/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="social-icon-link instagram"
+                className="social-icon-premium instagram"
                 title="Instagram"
               >
                 <FaInstagram size={20} />
@@ -100,16 +100,16 @@ const Footer = () => {
                 href="https://www.linkedin.com/company/innomatricstech/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="social-icon-link linkedin"
+                className="social-icon-premium linkedin"
                 title="LinkedIn"
               >
                 <FaLinkedin size={20} />
               </a>
               <a
-                href="https://www.google.com/search?gs_ssp=eJzj4tVP1zc0LMs1Lcu2sMwxYLRSNaiwMDQwNTYzTDZPNE0yS04ytDKoME1KMrawNLRMSzE0N0kyMfGSyMzLy89NLCnKTC5WKElNzsjLz8lPz0wtBgCTQRi5&q=innomatrics+technologies&rlz=1C1VDKB_enIN1002IN1002&oq=innomatri&gs_lcrp=EgZjaHJvbWUqFQgCEC4YJxivARjHARiABBiKBRiOBTIGCAAQRRg8MgYIARBFGDwyFQgCEC4YJxivARjHARiABBiKBRiOBTIGCAMQRRg7MgYIBBBFGDsyBggFEEUYPDIGCAYQRRg8MgYIBxBFGD3SAQg0NDQwajBqN6gCALACAA&sourceid=chrome&ie=UTF-8"
+                href="https://www.google.com/search?q=innomatrics+technologies"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="social-icon-link google"
+                className="social-icon-premium google"
                 title="Google"
               >
                 <FaGoogle size={20} />
@@ -122,34 +122,34 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-6 text-white">Quick Links</h3>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-3">
               <li>
-                <Link to="/about/overview" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Overview</Link>
+                <Link to="/about/overview" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Overview</Link>
               </li>
               <li>
-                <Link to="/about/vision-mission" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Vision</Link>
+                <Link to="/about/vision-mission" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Vision</Link>
               </li>
               <li>
-                <Link to="/about/why-us" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Why Us</Link>
+                <Link to="/about/why-us" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Why Us</Link>
               </li>
               <li>
-                <Link to="/solutions" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Solutions</Link>
+                <Link to="/solutions" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Solutions</Link>
               </li>
               <li>
-                <Link to="/technologies" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Tech</Link>
+                <Link to="/technologies" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Tech</Link>
               </li>
               <li>
-                <Link to="/hire-developers" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Hire Devs</Link>
+                <Link to="/hire-developers" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Hire Devs</Link>
               </li>
               <li>
-                <Link to="/industries" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Industries</Link>
+                <Link to="/industries" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Industries</Link>
               </li>
               <li>
-                <Link to="/careers" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Careers</Link>
+                <Link to="/careers" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Careers</Link>
               </li>
               <li>
-                <Link to="/blog" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Blog</Link>
+                <Link to="/blog" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Blog</Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Contact</Link>
+                <Link to="/contact" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Contact</Link>
               </li>
             </ul>
           </div>
@@ -159,34 +159,34 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-6 text-white">Our Services</h3>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-3">
               <li>
-                <Link to="/webdev" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>Web Dev</Link>
+                <Link to="/webdev" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>Web Dev</Link>
               </li>
               <li>
-                <Link to="/appdev" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>App Dev</Link>
+                <Link to="/appdev" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>App Dev</Link>
               </li>
               <li>
-                <Link to="/customsoftware" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>Custom SW</Link>
+                <Link to="/customsoftware" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>Custom SW</Link>
               </li>
               <li>
-                <Link to="/aiautomation" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>AI & Auto</Link>
+                <Link to="/aiautomation" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>AI & Auto</Link>
               </li>
               <li>
-                <Link to="/ecommerce" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>E-Commerce</Link>
+                <Link to="/ecommerce" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>E-Commerce</Link>
               </li>
               <li>
-                <Link to="/cybersecurity" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>Cybersec</Link>
+                <Link to="/cybersecurity" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>Cybersec</Link>
               </li>
               <li>
-                <Link to="/digitalmarket" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>Marketing</Link>
+                <Link to="/digitalmarket" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>Marketing</Link>
               </li>
               <li>
-                <Link to="/logodesign" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>Logo Design</Link>
+                <Link to="/logodesign" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>Logo Design</Link>
               </li>
               <li>
-                <Link to="/socialmedia" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>Social Media</Link>
+                <Link to="/socialmedia" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>Social Media</Link>
               </li>
               <li>
-                <Link to="/devops" className="text-gray-300 hover:text-white hover:pl-1 transition-all duration-300 text-sm flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>DevOps</Link>
+                <Link to="/devops" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>DevOps</Link>
               </li>
             </ul>
           </div>
@@ -195,7 +195,7 @@ const Footer = () => {
           <div className="col-span-1 lg:col-span-3">
             <h3 className="text-lg font-semibold mb-4 text-white">Contact Us</h3>
             <ul className="space-y-4">
-              <li className="flex items-start">
+              <li className="flex items-start premium-contact-row">
                 <FaMapMarkerAlt className="text-blue-300 mt-1 mr-3" />
                 <span className="text-gray-300">
                   2nd Floor, Akshay Complex, No. 01,<br />
@@ -204,13 +204,13 @@ const Footer = () => {
                   Karnataka 560076
                 </span>
               </li>
-              <li className="flex items-center">
+              <li className="flex items-center premium-contact-row">
                 <FaPhone className="text-blue-300 mr-3" />
                 <a href="tel:+918431655799" className="text-gray-300 hover:text-white transition-colors">
                   +91 8431655799
                 </a>
               </li>
-              <li className="flex items-center">
+              <li className="flex items-center premium-contact-row">
                 <FaEnvelope className="text-blue-300 mr-3" />
                 <a href="mailto:hello@innomatricstech.com" className="text-gray-300 hover:text-white transition-colors">
                   hello@innomatricstech.com
