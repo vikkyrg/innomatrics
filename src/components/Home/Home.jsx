@@ -25,7 +25,7 @@ import ClientsCard from "../ClientsLogo/ClientsCard";
 import ClientsCarousel from "../ClientsLogo/ClientsCarousel";
 import Join from "./JoinTeam/Join";
 import CountRise from "./CountRise/CountRise";
-import Blog from "./Blog/Blog";
+
 import WhatsappFloatingIcon from "./WhatsappFloatingIcon";
 
 
@@ -195,11 +195,6 @@ const Home = forwardRef((props, ref) => {
           </div>
         </div>
       </div>
-      <div className="bg-white">
-        <Join />
-
-        <CountRise />
-      </div>
       <div className="ServicesMission flex flex-col items-center px-20 w-full max-md:px-5 max-md:max-w-full">
         <div className="text-3xl md:text-4xl font-bold text-center my-12 text-white mb-12">
           Our Clients
@@ -211,9 +206,13 @@ const Home = forwardRef((props, ref) => {
           <ClientsCarousel clientLogos={clientLogos} />
         </div>
       </div>
+      <div className="bg-white">
+        <Join />
 
-      {/* Add Blog Section */}
-      <Blog />
+        <CountRise />
+      </div>
+
+
       
       {/* WhatsApp Floating Icon */}
       <WhatsappFloatingIcon />

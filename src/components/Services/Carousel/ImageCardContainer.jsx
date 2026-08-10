@@ -20,7 +20,7 @@ const CustomPrevArrow = (props) => {
   return (
     <button
       onClick={onClick}
-      className="absolute top-1/2 -left-2 md:-left-6 lg:-left-12 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.3)] flex items-center justify-center text-blue-600 hover:text-blue-800 hover:bg-gray-50 transition-all focus:outline-none"
+      className="absolute -top-10 right-[56px] md:right-[68px] z-10 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.3)] flex items-center justify-center text-blue-600 hover:text-blue-800 hover:bg-gray-50 transition-all focus:outline-none"
     >
       <MdChevronLeft className="text-2xl md:text-3xl" />
     </button>
@@ -32,7 +32,7 @@ const CustomNextArrow = (props) => {
   return (
     <button
       onClick={onClick}
-      className="absolute top-1/2 -right-2 md:-right-6 lg:-right-12 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.3)] flex items-center justify-center text-blue-600 hover:text-blue-800 hover:bg-gray-50 transition-all focus:outline-none"
+      className="absolute -top-10 right-4 md:right-4 z-10 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.3)] flex items-center justify-center text-blue-600 hover:text-blue-800 hover:bg-gray-50 transition-all focus:outline-none"
     >
       <MdChevronRight className="text-2xl md:text-3xl" />
     </button>

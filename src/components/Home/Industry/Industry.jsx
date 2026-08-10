@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import CountUp from 'react-countup';
 import {
   MdLocalHospital,
   MdAccountBalance,
@@ -312,7 +313,7 @@ const Industry = () => {
               {industries.map(industry => (
                 <div 
                   key={industry.id}
-                  onClick={() => setActiveIndustry(industry.id)}
+                  onMouseEnter={() => setActiveIndustry(industry.id)}
                   className={`flex items-center justify-between px-5 py-4 rounded-xl cursor-pointer transition-all duration-300 ${
                     activeIndustry === industry.id 
                     ? 'bg-blue-600 text-white shadow-md' 
@@ -370,9 +371,9 @@ const Industry = () => {
                       >
                         Explore {industry.title.split(' ')[0]} Solutions <MdArrowForward />
                       </Link>
-                      <button className="bg-white border border-gray-300 text-gray-700 hover:border-blue-600 hover:text-blue-600 px-6 py-3 rounded-lg font-semibold transition-colors shadow-sm w-full">
+                      <Link to="/contact" className="bg-white border border-gray-300 text-gray-700 hover:border-blue-600 hover:text-blue-600 px-6 py-3 rounded-lg font-semibold transition-colors shadow-sm w-full text-center block">
                         Request Demo
-                      </button>
+                      </Link>
                     </div>
                   </div>
 
@@ -413,7 +414,9 @@ const Industry = () => {
                 <MdPeople className="text-3xl text-blue-600" />
               </div>
               <div>
-                <h4 className="text-3xl font-extrabold text-gray-900">20+</h4>
+                <h4 className="text-3xl font-extrabold text-gray-900">
+                  <CountUp end={20} duration={2.5} enableScrollSpy={true} suffix="+" />
+                </h4>
                 <p className="text-[13px] font-bold text-gray-800 uppercase tracking-wide mt-1">Industries Served</p>
                 <p className="text-xs text-gray-500 mt-0.5">Diverse domain expertise</p>
               </div>
@@ -424,7 +427,9 @@ const Industry = () => {
                 <MdWorkOutline className="text-3xl text-emerald-500" />
               </div>
               <div>
-                <h4 className="text-3xl font-extrabold text-emerald-500">150+</h4>
+                <h4 className="text-3xl font-extrabold text-emerald-500">
+                  <CountUp end={150} duration={2.5} enableScrollSpy={true} suffix="+" />
+                </h4>
                 <p className="text-[13px] font-bold text-gray-800 uppercase tracking-wide mt-1">Projects Delivered</p>
                 <p className="text-xs text-gray-500 mt-0.5">Successful solutions delivered</p>
               </div>
@@ -435,7 +440,9 @@ const Industry = () => {
                 <MdStars className="text-3xl text-purple-500" />
               </div>
               <div>
-                <h4 className="text-3xl font-extrabold text-purple-500">5+</h4>
+                <h4 className="text-3xl font-extrabold text-purple-500">
+                  <CountUp end={5} duration={2.5} enableScrollSpy={true} suffix="+" />
+                </h4>
                 <p className="text-[13px] font-bold text-gray-800 uppercase tracking-wide mt-1">Years of Experience</p>
                 <p className="text-xs text-gray-500 mt-0.5">Delivering excellence</p>
               </div>
@@ -446,7 +453,9 @@ const Industry = () => {
                 <MdSentimentSatisfiedAlt className="text-3xl text-orange-500" />
               </div>
               <div>
-                <h4 className="text-3xl font-extrabold text-orange-500">98%</h4>
+                <h4 className="text-3xl font-extrabold text-orange-500">
+                  <CountUp end={98} duration={2.5} enableScrollSpy={true} suffix="%" />
+                </h4>
                 <p className="text-[13px] font-bold text-gray-800 uppercase tracking-wide mt-1">Client Satisfaction</p>
                 <p className="text-xs text-gray-500 mt-0.5">Happy clients worldwide</p>
               </div>
