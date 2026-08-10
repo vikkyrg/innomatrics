@@ -19,6 +19,23 @@ import { Link } from "react-router-dom";
 
 
 import { SiMongodb, SiMysql } from "react-icons/si";
+import ai1 from "../../../assets/aiAutomationServices/ai_1.webp";
+import ai2 from "../../../assets/aiAutomationServices/ai_2.webp";
+import ai3 from "../../../assets/aiAutomationServices/ai_3.webp";
+import ai4 from "../../../assets/aiAutomationServices/ai_4.webp";
+import ai5 from "../../../assets/aiAutomationServices/ai_5.webp";
+import ai6 from "../../../assets/aiAutomationServices/ai_6.webp";
+import ai7 from "../../../assets/aiAutomationServices/ai_7.webp";
+import ai8 from "../../../assets/aiAutomationServices/ai_8.webp";
+import ai9 from "../../../assets/aiAutomationServices/ai_9.webp";
+import ai10 from "../../../assets/aiAutomationServices/ai_10.webp";
+import ai11 from "../../../assets/aiAutomationServices/ai_11.webp";
+import ai12 from "../../../assets/aiAutomationServices/ai_12.webp";
+import ai13 from "../../../assets/aiAutomationServices/ai_13.webp";
+import ai14 from "../../../assets/aiAutomationServices/ai_14.webp";
+
+import aiImageGenImg from "../../../assets/webServices/AI Image Generation Integration.jpg";
+import whatsappAiImg from "../../../assets/webServices/whatsapp ai chatbot.jpg";
 
 const ServicesCard = ({ title, description, image }) => (
   <div className="bg-white shadow-lg rounded-xl p-6 m-4 flex-1 transform hover:scale-105 transition-all duration-300 hover:shadow-xl border border-gray-100">
@@ -42,38 +59,30 @@ const AIAutomation = forwardRef((props, ref) => {
   ];
 
   const services = [
-            { icon: <FaRobot className="w-8 h-8 text-blue-600" />, title: "AI Chatbot Development", description: "Intelligent conversational agents that provide 24/7 customer support and engagement.", features: ["NLP integration", "Multi-channel support", "Seamless handoff", "Analytics dashboard"], image: w1 },
-            { icon: <FaCogs className="w-8 h-8 text-blue-600" />, title: "AI Agents for Business", description: "Autonomous AI agents designed to execute complex business workflows independently.", features: ["Task automation", "Decision making", "System integrations", "Continuous learning"], image: w2 },
-            { icon: <FaMobile className="w-8 h-8 text-blue-600" />, title: "WhatsApp AI Automation", description: "Automated business messaging and customer service directly on WhatsApp.", features: ["Automated replies", "Order tracking", "Broadcast campaigns", "CRM integration"], image: w3 },
-            { icon: <FaLightbulb className="w-8 h-8 text-blue-600" />, title: "Generative AI Solutions", description: "Custom solutions leveraging OpenAI and other LLMs for content generation.", features: ["Document processing", "Content generation", "Code assistance", "Image creation"], image: w4 },
-            { icon: <FaDesktop className="w-8 h-8 text-blue-600" />, title: "AI Document Processing", description: "Automated data extraction and processing from unstructured documents.", features: ["OCR technology", "Invoice parsing", "Contract analysis", "Data validation"], image: w5 },
-            { icon: <FaChartLine className="w-8 h-8 text-blue-600" />, title: "AI-Powered Analytics", description: "Predictive analytics and business intelligence driven by machine learning.", features: ["Sales forecasting", "Customer churn prediction", "Anomaly detection", "Visual dashboards"], image: w6 }
-        ];
+    { title: "AI Chatbot Development", icon: <FaRobot className="text-blue-600 text-2xl" />, description: "Intelligent conversational agents that provide 24/7 customer support and engagement.", features: ["NLP integration", "Multi-channel support", "Seamless handoff", "Analytics dashboard"], image: ai1 },
+    { title: "AI Customer Support", icon: <FaCheckCircle className="text-blue-600 text-2xl" />, description: "Automate and enhance customer service with advanced AI assistance.", features: ["24/7 Availability", "Ticket Routing", "Sentiment Analysis", "Knowledge Base Sync"], image: ai2 },
+    { title: "WhatsApp AI Chatbot", icon: <FaMobile className="text-blue-600 text-2xl" />, description: "Automated business messaging and customer service directly on WhatsApp.", features: ["Automated replies", "Order tracking", "Broadcast campaigns", "CRM integration"], image: whatsappAiImg },
+    { title: "AI Voice Agents", icon: <FaRobot className="text-blue-600 text-2xl" />, description: "Conversational voice AI that can handle inbound and outbound calls.", features: ["Natural Voice", "Call Routing", "Appointment Booking", "Speech-to-Text"], image: ai4 },
+    { title: "AI-Powered Business Automation", icon: <FaCogs className="text-blue-600 text-2xl" />, description: "Autonomous AI agents designed to execute complex business workflows independently.", features: ["Task automation", "Decision making", "System integrations", "Continuous learning"], image: ai5 },
+    { title: "Generative AI Integration", icon: <FaLightbulb className="text-blue-600 text-2xl" />, description: "Custom solutions leveraging generative AI and large language models.", features: ["Document processing", "Content generation", "Code assistance", "Image creation"], image: ai6 },
+    { title: "OpenAI API Integration", icon: <FaCode className="text-blue-600 text-2xl" />, description: "Seamless integration of OpenAI's powerful language models into your applications.", features: ["GPT-4 Access", "Fine-tuning", "Embeddings", "Token Optimization"], image: ai7 },
+    { title: "AI Document Processing", icon: <FaDesktop className="text-blue-600 text-2xl" />, description: "Automated data extraction and processing from unstructured documents.", features: ["OCR technology", "Invoice parsing", "Contract analysis", "Data validation"], image: ai8 },
+    { title: "AI Content Generation", icon: <FaPaintBrush className="text-blue-600 text-2xl" />, description: "Automate the creation of high-quality written and multimedia content.", features: ["SEO Optimization", "Tone Matching", "Bulk Generation", "Multilingual Support"], image: ai9 },
+    { title: "AI Image Generation Integration", icon: <FaSyncAlt className="text-blue-600 text-2xl" />, description: "Integrate powerful AI image generators like DALL-E and Midjourney into your workflow.", features: ["DALL-E API", "Stable Diffusion", "Batch Processing", "Style Transfer"], image: aiImageGenImg },
+    { title: "AI Recommendation Systems", icon: <FaChartLine className="text-blue-600 text-2xl" />, description: "Personalized recommendation engines to boost sales and user engagement.", features: ["Collaborative Filtering", "Real-time Processing", "A/B Testing", "Behavior Tracking"], image: ai11 },
+    { title: "AI-powered CRM", icon: <FaUsers className="text-blue-600 text-2xl" />, description: "Intelligent customer relationship management with predictive analytics.", features: ["Lead Scoring", "Churn Prediction", "Automated Outreach", "Sales Forecasting"], image: ai12 },
+    { title: "AI-powered Analytics", icon: <FaChartLineIcon className="text-blue-600 text-2xl" />, description: "Predictive analytics and business intelligence driven by machine learning.", features: ["Sales forecasting", "Anomaly detection", "Visual dashboards", "Trend Analysis"], image: ai13 },
+    { title: "Custom AI Solutions", icon: <FaRocket className="text-blue-600 text-2xl" />, description: "Tailor-made artificial intelligence solutions to solve your unique business challenges.", features: ["Custom Architecture", "Proprietary Models", "Secure Deployment", "Ongoing Training"], image: ai14 }
+  ];
 
-  const caseStudies = [
-            { title: "AI Customer Support Chatbot", description: "Deployed an intelligent chatbot for a major retail brand", result: "Resolved 70% of queries automatically", image: app },
-            { title: "Automated Invoice Processing", description: "Implemented AI document processing for an accounting firm", result: "Saved 200+ manual hours per month", image: app2 }
-        ];
-
-  // Map service titles to their corresponding images
   const serviceImages = {
     'default': app2,
-    'AI Chatbot Development': w1,
-    'AI Agents for Business': w2,
-    'WhatsApp AI Automation': w3,
-    'Generative AI Solutions': w4,
-    'AI Document Processing': w5,
-    'AI-Powered Analytics': w6
+    ...services.reduce((acc, curr) => ({ ...acc, [curr.title]: curr.image }), {})
   };
 
   const serviceDescriptions = {
     'default': "Automate repetitive work, qualify leads, analyze data, and build intelligent digital experiences with our practical AI solutions.",
-    'AI Chatbot Development': "Expert implementation of AI Chatbot Development tailored to your specific business requirements and industry standards.",
-    'AI Agents for Business': "Comprehensive AI Agents for Business solutions designed for scalability, security, and maximum performance.",
-    'WhatsApp AI Automation': "Advanced WhatsApp AI Automation integrations to streamline your workflows and boost operational efficiency.",
-    'Generative AI Solutions': "Future-proof Generative AI Solutions architectures that drive digital transformation and user engagement.",
-    'AI Document Processing': "Robust AI Document Processing frameworks customized for your enterprise needs with 24/7 reliability.",
-    'AI-Powered Analytics': "Cutting-edge AI-Powered Analytics strategies to keep your business ahead of the technological curve."
+    ...services.reduce((acc, curr) => ({ ...acc, [curr.title]: curr.description }), {})
   };
 
   useEffect(() => {
@@ -128,15 +137,8 @@ const AIAutomation = forwardRef((props, ref) => {
             {/* Left Content */}
             <div>
               <h3 className="text-2xl font-bold text-red-500 mb-6">OUR OFFERINGS</h3>
-              <div className="space-y-4">
-                {[
-                  'AI Chatbot Development',
-                  'AI Agents for Business',
-                  'WhatsApp AI Automation',
-                  'Generative AI Solutions',
-                  'AI Document Processing',
-                  'AI-Powered Analytics'
-                ].map((service) => (
+              <div className="space-y-4 max-h-[600px] overflow-y-auto pr-4 custom-scrollbar">
+                {services.map(s => s.title).map((service) => (
                   <div 
                     key={service}
                     onMouseEnter={() => setHoveredService(service.replace('— ', ''))}
@@ -373,36 +375,6 @@ const AIAutomation = forwardRef((props, ref) => {
                         </li>
                       ))}
                     </ul>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Case Studies */}
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold text-center text-red-600 mb-12">
-              Success Stories
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {caseStudies.map((caseStudy, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-xl overflow-hidden shadow-lg"
-                >
-                  <img
-                    src={caseStudy.image}
-                    alt={caseStudy.title}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                      {caseStudy.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4">{caseStudy.description}</p>
-                    <div className="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg inline-block">
-                      <strong>Result:</strong> {caseStudy.result}
-                    </div>
                   </div>
                 </div>
               ))}

@@ -1,5 +1,14 @@
+
+import hospitalImg from "../../../assets/webServices/hospital.jpg";
+import logisticImg from "../../../assets/webServices/logistic.jpg";
+import posImg from "../../../assets/webServices/pos.jpg";
+import projectMgmtImg from "../../../assets/webServices/project management.jpg";
+import restaurantImg from "../../../assets/webServices/resturent.jpg";
+import toursImg from "../../../assets/webServices/tours and travels.jpg";
+import transportImg from "../../../assets/webServices/transport.jpg";
+import erpImg from "../../../assets/webServices/ERP.jpg";
 import React, { forwardRef, useEffect, useState } from "react";
-import { FaCheckCircle, FaSyncAlt, FaPlug, FaCode, FaDesktop, FaMobile, FaShoppingCart, FaDatabase, FaCloud, FaLock, FaChartLine, FaUsers, FaShieldAlt, FaRocket, FaLightbulb, FaBuilding, FaChartLine as FaChartLineIcon, FaCogs, FaRobot, FaPaintBrush, FaBriefcase, FaReact, FaNodeJs, FaAngular, FaVuejs, FaPhp, FaPython } from "react-icons/fa";
+import { FaCheckCircle, FaSyncAlt, FaPlug, FaCode, FaDesktop, FaMobile, FaShoppingCart, FaDatabase, FaCloud, FaLock, FaChartLine, FaUsers, FaShieldAlt, FaRocket, FaLightbulb, FaBuilding, FaChartLine as FaChartLineIcon, FaCogs, FaRobot, FaPaintBrush, FaBriefcase, FaReact, FaNodeJs, FaAngular, FaVuejs, FaPhp, FaPython , FaHandshake, FaIndustry, FaMoneyBillWave, FaUtensils, FaTshirt, FaTruckLoading, FaTruck, FaPlane, FaTasks } from "react-icons/fa";
 import heroImg from "../../../assets/services_hero/hero_custom_software.png";
 
 import app from "../../../assets/services_cards/CustomSoftware_cs1.jpg";
@@ -19,6 +28,24 @@ import { Link } from "react-router-dom";
 
 
 import { SiMongodb, SiMysql } from "react-icons/si";
+import cs1 from "../../../assets/customSoftwareServices/cs_1.webp";
+import cs2 from "../../../assets/customSoftwareServices/cs_2.webp";
+import cs3 from "../../../assets/customSoftwareServices/cs_3.webp";
+import cs4 from "../../../assets/customSoftwareServices/cs_4.webp";
+import cs5 from "../../../assets/customSoftwareServices/cs_5.webp";
+import cs6 from "../../../assets/customSoftwareServices/cs_6.webp";
+import cs7 from "../../../assets/customSoftwareServices/cs_7.webp";
+import cs8 from "../../../assets/customSoftwareServices/cs_8.webp";
+import cs9 from "../../../assets/customSoftwareServices/cs_9.webp";
+import cs10 from "../../../assets/customSoftwareServices/cs_10.webp";
+import cs11 from "../../../assets/customSoftwareServices/cs_11.webp";
+import cs12 from "../../../assets/customSoftwareServices/cs_12.webp";
+import cs13 from "../../../assets/customSoftwareServices/cs_13.webp";
+import cs14 from "../../../assets/customSoftwareServices/cs_14.webp";
+import cs15 from "../../../assets/customSoftwareServices/cs_15.webp";
+import cs16 from "../../../assets/customSoftwareServices/cs_16.webp";
+
+import manufacturingImg from "../../../assets/webServices/manufacturing.jpg";
 
 const ServicesCard = ({ title, description, image }) => (
   <div className="bg-white shadow-lg rounded-xl p-6 m-4 flex-1 transform hover:scale-105 transition-all duration-300 hover:shadow-xl border border-gray-100">
@@ -42,12 +69,22 @@ const CustomSoftware = forwardRef((props, ref) => {
   ];
 
   const services = [
-            { icon: <FaDesktop className="w-8 h-8 text-blue-600" />, title: "Custom Business Software", description: "Tailored applications designed specifically for your unique operational workflows.", features: ["Scalable architecture", "Custom functionality", "Process automation", "API development"], image: w1 },
-            { icon: <FaUsers className="w-8 h-8 text-blue-600" />, title: "HRMS Software", description: "Comprehensive human resource management systems to streamline employee lifecycles.", features: ["Payroll processing", "Attendance tracking", "Performance management", "Employee portals"], image: w2 },
-            { icon: <FaDatabase className="w-8 h-8 text-blue-600" />, title: "Inventory Management", description: "Robust solutions to track stock, manage suppliers, and optimize supply chains.", features: ["Real-time tracking", "Barcode scanning", "Automated reordering", "Supplier portals"], image: w3 },
-            { icon: <FaShoppingCart className="w-8 h-8 text-blue-600" />, title: "POS Software", description: "Seamless point-of-sale systems for retail and restaurant businesses.", features: ["Sales tracking", "Multi-store support", "Customer loyalty", "Receipt generation"], image: w4 },
-            { icon: <FaChartLine className="w-8 h-8 text-blue-600" />, title: "Billing & Accounting", description: "Secure software for invoicing, tax compliance, and financial reporting.", features: ["Automated invoicing", "GST/Tax compliance", "Expense tracking", "Financial dashboards"], image: w5 },
-            { icon: <FaBuilding className="w-8 h-8 text-blue-600" />, title: "Hospital/School Management", description: "Industry-specific management solutions for healthcare and education sectors.", features: ["Patient/Student records", "Appointment/Timetable scheduling", "Billing integration", "Parent/Patient portals"], image: w6 }
+            { icon: <FaDesktop className="w-8 h-8 text-blue-600" />, title: "Custom Business Software", description: "Tailored applications designed specifically for your unique operational workflows.", features: ["Scalable architecture", "Custom functionality", "Process automation", "API development"], image: cs1 },
+            { icon: <FaUsers className="w-8 h-8 text-blue-600" />, title: "HRMS Software", description: "Comprehensive human resource management systems to streamline employee lifecycles.", features: ["Payroll processing", "Attendance tracking", "Performance management", "Employee portals"], image: cs2 },
+            { icon: <FaDatabase className="w-8 h-8 text-blue-600" />, title: "Inventory Management", description: "Robust solutions to track stock, manage suppliers, and optimize supply chains.", features: ["Real-time tracking", "Barcode scanning", "Automated reordering", "Supplier portals"], image: cs3 },
+            { icon: <FaShoppingCart className="w-8 h-8 text-blue-600" />, title: "POS Software", description: "Seamless point-of-sale systems for retail and restaurant businesses.", features: ["Sales tracking", "Multi-store support", "Customer loyalty", "Receipt generation"], image: posImg },
+            { icon: <FaChartLine className="w-8 h-8 text-blue-600" />, title: "Billing & Accounting", description: "Secure software for invoicing, tax compliance, and financial reporting.", features: ["Automated invoicing", "GST/Tax compliance", "Expense tracking", "Financial dashboards"], image: cs5 },
+            { icon: <FaBuilding className="w-8 h-8 text-blue-600" />, title: "Hospital/School Management", description: "Industry-specific management solutions for healthcare and education sectors.", features: ["Patient/Student records", "Appointment/Timetable scheduling", "Billing integration", "Parent/Patient portals"], image: hospitalImg },
+            { icon: <FaHandshake className="w-8 h-8 text-blue-600" />, title: "CRM Development", description: "Customer Relationship Management systems to boost sales and retention.", features: ["Lead management", "Sales pipeline tracking", "Customer analytics", "Email integration"], image: cs7 },
+            { icon: <FaIndustry className="w-8 h-8 text-blue-600" />, title: "ERP Development", description: "Enterprise Resource Planning software for complete business automation.", features: ["Resource tracking", "Financial management", "Supply chain integration", "Workflow automation"], image: erpImg },
+            { icon: <FaMoneyBillWave className="w-8 h-8 text-blue-600" />, title: "Payroll Software", description: "Automated payroll processing with built-in tax compliance and reporting.", features: ["Automated calculations", "Tax deductions", "Direct deposits", "Payslip generation"], image: cs9 },
+            { icon: <FaUtensils className="w-8 h-8 text-blue-600" />, title: "Restaurant Management", description: "All-in-one software for orders, kitchen displays, and table management.", features: ["Table reservation", "KOT management", "Menu engineering", "Inventory tracking"], image: restaurantImg },
+            { icon: <FaCogs className="w-8 h-8 text-blue-600" />, title: "Manufacturing ERP", description: "Specialized ERPs for manufacturing units to manage production lifecycles.", features: ["Production planning", "BOM management", "Quality control", "Machine maintenance"], image: manufacturingImg },
+            { icon: <FaTshirt className="w-8 h-8 text-blue-600" />, title: "Garment ERP", description: "Tailored ERP systems for the textile and garment manufacturing industry.", features: ["Dyeing management", "Stitching tracking", "Fabric inventory", "Export documentation"], image: cs12 },
+            { icon: <FaTruckLoading className="w-8 h-8 text-blue-600" />, title: "Logistics Management", description: "End-to-end logistics software for supply chain visibility and tracking.", features: ["Fleet tracking", "Route optimization", "Warehouse management", "Dispatch scheduling"], image: logisticImg },
+            { icon: <FaTruck className="w-8 h-8 text-blue-600" />, title: "Transport Management", description: "Comprehensive transportation software for fleet and driver management.", features: ["Vehicle maintenance", "Fuel tracking", "Driver logs", "Trip management"], image: transportImg },
+            { icon: <FaPlane className="w-8 h-8 text-blue-600" />, title: "Tours & Travels Software", description: "Booking and itinerary management tools for travel agencies and operators.", features: ["Itinerary builder", "Booking engine", "Agent portals", "Expense tracking"], image: toursImg },
+            { icon: <FaTasks className="w-8 h-8 text-blue-600" />, title: "Project Management Software", description: "Agile project tracking and team collaboration software.", features: ["Task assignment", "Time tracking", "Gantt charts", "Document sharing"], image: projectMgmtImg }
         ];
 
   const caseStudies = [
@@ -58,22 +95,12 @@ const CustomSoftware = forwardRef((props, ref) => {
   // Map service titles to their corresponding images
   const serviceImages = {
     'default': app2,
-    'Custom Business Software': w1,
-    'HRMS Software': w2,
-    'Inventory Management': w3,
-    'POS Software': w4,
-    'Billing & Accounting': w5,
-    'Hospital/School Management': w6
+    ...services.reduce((acc, curr) => ({ ...acc, [curr.title]: curr.image }), {})
   };
 
   const serviceDescriptions = {
     'default': "We build high-performance custom software that delivers exceptional user experiences and measurable business results.",
-    'Custom Business Software': "Expert implementation of Custom Business Software tailored to your specific business requirements and industry standards.",
-    'HRMS Software': "Comprehensive HRMS Software solutions designed for scalability, security, and maximum performance.",
-    'Inventory Management': "Advanced Inventory Management integrations to streamline your workflows and boost operational efficiency.",
-    'POS Software': "Future-proof POS Software architectures that drive digital transformation and user engagement.",
-    'Billing & Accounting': "Robust Billing & Accounting frameworks customized for your enterprise needs with 24/7 reliability.",
-    'Hospital/School Management': "Cutting-edge Hospital/School Management strategies to keep your business ahead of the technological curve."
+    ...services.reduce((acc, curr) => ({ ...acc, [curr.title]: curr.description }), {})
   };
 
   useEffect(() => {
@@ -128,18 +155,11 @@ const CustomSoftware = forwardRef((props, ref) => {
             {/* Left Content */}
             <div>
               <h3 className="text-2xl font-bold text-red-500 mb-6">OUR OFFERINGS</h3>
-              <div className="space-y-4">
-                {[
-                  'Custom Business Software',
-                  'HRMS Software',
-                  'Inventory Management',
-                  'POS Software',
-                  'Billing & Accounting',
-                  'Hospital/School Management'
-                ].map((service) => (
+              <div className="space-y-4 max-h-[600px] overflow-y-auto pr-4 custom-scrollbar">
+                {services.map(s => s.title).map((service) => (
                   <div 
                     key={service}
-                    onMouseEnter={() => setHoveredService(service.replace('— ', ''))}
+                    onMouseEnter={() => setHoveredService(service)}
                     onMouseLeave={() => setHoveredService(null)}
                     className="group"
                   >
@@ -149,7 +169,7 @@ const CustomSoftware = forwardRef((props, ref) => {
                   </div>
                 ))}
 
-                <p className="text-gray-600 mt-6">
+                <p className="text-gray-600 mt-6 pt-4 border-t border-gray-100">
                   Leverage digital technologies to fundamentally change how you operate and deliver value to customers. 
                   Embrace digital transformation to enhance your agility, creativity, and decision-making capabilities 
                   while improving growth opportunities.
@@ -246,7 +266,7 @@ const CustomSoftware = forwardRef((props, ref) => {
               {/* Additional Stats Section */}
               <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8">
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-blue-600">3+</div>
+                  <div className="text-4xl font-bold text-blue-600">5+</div>
                   <div className="text-gray-600 mt-2">Years in Custom Dev</div>
                 </div>
                 <div className="text-center">
@@ -416,7 +436,7 @@ const CustomSoftware = forwardRef((props, ref) => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="text-center">
-                <div className="text-4xl font-bold mb-2">3+</div>
+                <div className="text-4xl font-bold mb-2">5+</div>
                 <div className="text-xl">Years in Custom Dev</div>
               </div>
               <div className="text-center">

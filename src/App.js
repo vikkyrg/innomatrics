@@ -78,9 +78,9 @@ function App() {
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
-          <Route path="about/overview" element={<CompanyOverview />} />
-          <Route path="about/vision-mission" element={<VisionMission />} />
-          <Route path="about/why-us" element={<WhyUs />} />
+          <Route path="overview" element={<CompanyOverview />} />
+          <Route path="vision-mission" element={<VisionMission />} />
+          <Route path="why-us" element={<WhyUs />} />
           <Route path="services" element={<Services />} />
           <Route path="industries" element={<Industries />} />
           <Route path="industries/:industry" element={<IndustryDetail />} />
@@ -95,24 +95,24 @@ function App() {
           <Route path="hire/:role" element={<HireDeveloperDetail />} />
 
           {/* Service Routes */}
-          <Route path="webdev" element={<WebDev />} />
-          <Route path="appdev" element={<Appdev />} />
-          <Route path="digitalmarket" element={<DigitalMarket />} />
-          <Route path="logodesign" element={<LogoDesign />} />
-          <Route path="socialmedia" element={<SocialMedia />} />
-          <Route path="devops" element={<DevOps />} />
+          <Route path="web-development" element={<WebDev />} />
+          <Route path="app-development" element={<Appdev />} />
+          <Route path="digital-marketing" element={<DigitalMarket />} />
+          <Route path="logo-design" element={<LogoDesign />} />
+          <Route path="social-media" element={<SocialMedia />} />
+          <Route path="cloud-and-devops" element={<DevOps />} />
 
-          <Route path="customsoftware" element={<CustomSoftware />} />
-          <Route path="aiautomation" element={<AIAutomation />} />
-          <Route path="saasproduct" element={<SaaSProduct />} />
-          <Route path="ecommerce" element={<Ecommerce />} />
+          <Route path="custom-software" element={<CustomSoftware />} />
+          <Route path="ai-automation" element={<AIAutomation />} />
+          <Route path="saas-product" element={<SaaSProduct />} />
+          <Route path="e-commerce" element={<Ecommerce />} />
           <Route path="cybersecurity" element={<Cybersecurity />} />
-          <Route path="uiuxdesign" element={<UiUxDesign />} />
-          <Route path="apiintegration" element={<ApiIntegration />} />
-          <Route path="qatesting" element={<QaTesting />} />
-          <Route path="itconsulting" element={<ItConsulting />} />
-          <Route path="dedicatedteam" element={<DedicatedTeam />} />
-          <Route path="maintenancesupport" element={<MaintenanceSupport />} />
+          <Route path="ui-ux-design" element={<UiUxDesign />} />
+          <Route path="api-integration" element={<ApiIntegration />} />
+          <Route path="qa-testing" element={<QaTesting />} />
+          <Route path="it-consulting" element={<ItConsulting />} />
+          <Route path="dedicated-team" element={<DedicatedTeam />} />
+          <Route path="maintenance-support" element={<MaintenanceSupport />} />
 
           {/* Legal Routes */}
           <Route path="privacy" element={<PrivacyPolicy />} />

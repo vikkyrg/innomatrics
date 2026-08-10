@@ -1,17 +1,19 @@
+import heroImgNew from "../../../assets/new_category_images/QaTesting_hero.jpg";
+import diffImgNew from "../../../assets/new_category_images/QaTesting_diff.jpg";
 import React, { forwardRef, useEffect, useState } from "react";
 import { FaCheckCircle, FaSyncAlt, FaPlug, FaCode, FaDesktop, FaMobile, FaShoppingCart, FaDatabase, FaCloud, FaLock, FaChartLine, FaUsers, FaShieldAlt, FaRocket, FaLightbulb, FaBuilding, FaChartLine as FaChartLineIcon, FaCogs, FaRobot, FaPaintBrush, FaBriefcase, FaReact, FaNodeJs, FaAngular, FaVuejs, FaPhp, FaPython } from "react-icons/fa";
-import heroImg from "../../../assets/services_hero/hero_qa_testing.png";
 
-import app from "../../../assets/services_cards/QaTesting_cs1.jpg";
-import app2 from "../../../assets/services_cards/QaTesting_cs2.jpg";
+
+
+
 import w1 from "../../../assets/services_cards/QaTesting_w1.jpg";
 import w2 from "../../../assets/services_cards/QaTesting_w2.jpg";
 import w3 from "../../../assets/services_cards/QaTesting_w3.jpg";
 import w4 from "../../../assets/services_cards/QaTesting_w4.jpg";
 import w5 from "../../../assets/services_cards/QaTesting_w5.jpg";
 import w6 from "../../../assets/services_cards/QaTesting_w6.jpg";
-import introImg from "../../../assets/services_cards/QaTesting_intro.jpg";
-import diffImg from "../../../assets/services_cards/QaTesting_diff.jpg";
+
+
 
 
 import "./QaTesting.css";
@@ -19,6 +21,14 @@ import { Link } from "react-router-dom";
 
 
 import { SiMongodb, SiMysql } from "react-icons/si";
+import apiTestingImg from "../../../assets/aiAutomationServices/API Testing.jpg";
+import crossBrowserTestingImg from "../../../assets/aiAutomationServices/Cross-Browser Testing.jpg";
+import functionalTestingImg from "../../../assets/aiAutomationServices/Functional Testing.jpg";
+import mobileAppTestingImg from "../../../assets/aiAutomationServices/Mobile App Testing.jpg";
+import performanceTestingImg from "../../../assets/aiAutomationServices/Performance Testing.jpg";
+import qaAutomationImg from "../../../assets/aiAutomationServices/QA Automation.jpg";
+import webApplicationTestingImg from "../../../assets/aiAutomationServices/Web Application Testing.jpg";
+import manualTestingImg from "../../../assets/aiAutomationServices/7962d274d5aa35cdd41a073854e12d72.jpg";
 
 const ServicesCard = ({ title, description, image }) => (
   <div className="bg-white shadow-lg rounded-xl p-6 m-4 flex-1 transform hover:scale-105 transition-all duration-300 hover:shadow-xl border border-gray-100">
@@ -42,38 +52,26 @@ const QaTesting = forwardRef((props, ref) => {
   ];
 
   const services = [
-            { icon: <FaCheckCircle className="w-8 h-8 text-blue-600" />, title: "Automated Testing", description: "Implementation of automated test suites to ensure continuous quality during development.", features: ["Selenium/Cypress", "CI/CD integration", "Regression testing", "Automated reporting"], image: w1 },
-            { icon: <FaDesktop className="w-8 h-8 text-blue-600" />, title: "Functional & Manual Testing", description: "Rigorous manual exploration to validate user flows and business logic.", features: ["Test case creation", "Exploratory testing", "UAT support", "Edge case validation"], image: w2 },
-            { icon: <FaMobile className="w-8 h-8 text-blue-600" />, title: "Mobile App Testing", description: "Comprehensive testing across real devices, OS versions, and screen sizes.", features: ["Device farm testing", "iOS & Android validation", "Network condition testing", "Battery/Resource usage"], image: w3 },
-            { icon: <FaPlug className="w-8 h-8 text-blue-600" />, title: "API & Integration Testing", description: "Validating the reliability, performance, and security of your APIs.", features: ["Postman/SoapUI", "Data validation", "Error handling checks", "Response time analysis"], image: w4 },
-            { icon: <FaChartLine className="w-8 h-8 text-blue-600" />, title: "Performance & Load Testing", description: "Ensuring your application remains stable under heavy traffic and peak loads.", features: ["JMeter/Gatling", "Stress testing", "Scalability assessment", "Bottleneck identification"], image: w5 },
-            { icon: <FaShieldAlt className="w-8 h-8 text-blue-600" />, title: "Security & Penetration Testing", description: "Identifying and mitigating potential security vulnerabilities before they can be exploited.", features: ["Vulnerability scanning", "Ethical hacking", "OWASP Top 10 validation", "Compliance audits"], image: w6 }
-        ];
+    { title: "Manual Testing", icon: <FaDesktop className="text-blue-600 text-2xl" />, description: "Thorough, human-driven exploratory testing to ensure perfect user experiences.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: manualTestingImg },
+    { title: "Functional Testing", icon: <FaCogs className="text-blue-600 text-2xl" />, description: "Rigorous verification that all software features operate exactly as intended.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: functionalTestingImg },
+    { title: "Mobile App Testing", icon: <FaMobile className="text-blue-600 text-2xl" />, description: "Comprehensive testing across iOS and Android devices for flawless mobile performance.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: mobileAppTestingImg },
+    { title: "Web Application Testing", icon: <FaDesktop className="text-blue-600 text-2xl" />, description: "Ensuring web applications are secure, fast, and function correctly on all devices.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: webApplicationTestingImg },
+    { title: "API Testing", icon: <FaPlug className="text-blue-600 text-2xl" />, description: "Validating the functionality, reliability, and security of your backend APIs.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: apiTestingImg },
+    { title: "Cross-Browser Testing", icon: <FaDesktop className="text-blue-600 text-2xl" />, description: "Guaranteeing a consistent experience across Chrome, Safari, Firefox, and Edge.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: crossBrowserTestingImg },
+    { title: "Performance Testing", icon: <FaChartLineIcon className="text-blue-600 text-2xl" />, description: "Load and stress testing to ensure your software can handle high traffic volumes.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: performanceTestingImg },
+    { title: "Regression Testing", icon: <FaSyncAlt className="text-blue-600 text-2xl" />, description: "Automated and manual checks to ensure new updates don't break existing features.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=600&auto=format&fit=crop" },
+    { title: "User Acceptance Testing", icon: <FaUsers className="text-blue-600 text-2xl" />, description: "Final phase testing conducted from the perspective of the end-user.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=600&auto=format&fit=crop" },
+    { title: "QA Automation", icon: <FaRobot className="text-blue-600 text-2xl" />, description: "Building robust automated test suites to speed up delivery and reduce human error.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: qaAutomationImg }
+  ];
 
-  const caseStudies = [
-            { title: "E-Commerce Performance Testing", description: "Simulated high-traffic holiday sales events for a major retailer", result: "Ensured 100% uptime during peak loads", image: app },
-            { title: "Fintech Automated QA Pipeline", description: "Implemented end-to-end automated testing for a banking app", result: "Reduced release cycles from weeks to days", image: app2 }
-        ];
-
-  // Map service titles to their corresponding images
   const serviceImages = {
-    'default': app2,
-    'Automated Testing': w1,
-    'Functional & Manual Testing': w2,
-    'Mobile App Testing': w3,
-    'API & Integration Testing': w4,
-    'Performance & Load Testing': w5,
-    'Security & Penetration Testing': w6
+    'default': diffImgNew,
+    ...services.reduce((acc, curr) => ({ ...acc, [curr.title]: curr.image }), {})
   };
 
   const serviceDescriptions = {
-    'default': "We comprehensively test your applications for bugs, performance bottlenecks, and security flaws before they reach your users.",
-    'Automated Testing': "Expert implementation of Automated Testing tailored to your specific business requirements and industry standards.",
-    'Functional & Manual Testing': "Comprehensive Functional & Manual Testing solutions designed for scalability, security, and maximum performance.",
-    'Mobile App Testing': "Advanced Mobile App Testing integrations to streamline your workflows and boost operational efficiency.",
-    'API & Integration Testing': "Future-proof API & Integration Testing architectures that drive digital transformation and user engagement.",
-    'Performance & Load Testing': "Robust Performance & Load Testing frameworks customized for your enterprise needs with 24/7 reliability.",
-    'Security & Penetration Testing': "Cutting-edge Security & Penetration Testing strategies to keep your business ahead of the technological curve."
+    'default': "Explore our comprehensive suite of professional services designed to accelerate your digital transformation.",
+    ...services.reduce((acc, curr) => ({ ...acc, [curr.title]: curr.description }), {})
   };
 
   useEffect(() => {
@@ -87,7 +85,7 @@ const QaTesting = forwardRef((props, ref) => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url(${heroImg})`,
+            backgroundImage: `url(${heroImgNew})`,
           }}
         ></div>
         <div className="absolute inset-0"></div>
@@ -128,15 +126,8 @@ const QaTesting = forwardRef((props, ref) => {
             {/* Left Content */}
             <div>
               <h3 className="text-2xl font-bold text-red-500 mb-6">OUR OFFERINGS</h3>
-              <div className="space-y-4">
-                {[
-                  'Automated Testing',
-                  'Functional & Manual Testing',
-                  'Mobile App Testing',
-                  'API & Integration Testing',
-                  'Performance & Load Testing',
-                  'Security & Penetration Testing'
-                ].map((service) => (
+              <div className="space-y-4 max-h-[600px] overflow-y-auto pr-4 custom-scrollbar">
+                {services.map(s => s.title).map((service) => (
                   <div 
                     key={service}
                     onMouseEnter={() => setHoveredService(service.replace('— ', ''))}
@@ -275,7 +266,7 @@ const QaTesting = forwardRef((props, ref) => {
               </h3>
               <div className="relative rounded-lg overflow-hidden">
                 <img 
-                  src={diffImg}
+                  src={diffImgNew}
                   alt="Innomatrics Tech Professional"
                   className="w-full h-[400px] object-cover rounded-lg"
                 />
@@ -324,7 +315,7 @@ const QaTesting = forwardRef((props, ref) => {
             </div>
             <div className="w-full mt-16 md:w-1/2">
               <img
-                src={introImg}
+                src={heroImgNew}
                 alt="Innomatrics Digital Solutions"
                 className="w-full h-72 rounded-lg shadow-md"
               />
@@ -373,36 +364,6 @@ const QaTesting = forwardRef((props, ref) => {
                         </li>
                       ))}
                     </ul>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Case Studies */}
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold text-center text-red-600 mb-12">
-              Success Stories
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {caseStudies.map((caseStudy, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-xl overflow-hidden shadow-lg"
-                >
-                  <img
-                    src={caseStudy.image}
-                    alt={caseStudy.title}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                      {caseStudy.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4">{caseStudy.description}</p>
-                    <div className="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg inline-block">
-                      <strong>Result:</strong> {caseStudy.result}
-                    </div>
                   </div>
                 </div>
               ))}

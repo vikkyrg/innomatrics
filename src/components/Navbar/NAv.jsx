@@ -212,9 +212,6 @@ function NAv() {
                 </Link>
                 {showHireDevelopers && <HireDevelopersHover />}
               </div>
-              <Link to="/blog" className="nav-item text-white hover:text-blue-200">
-                Blog
-              </Link>
               <Link to="/careers" className="nav-item text-white hover:text-blue-200">
                 Careers
               </Link>
@@ -298,18 +295,21 @@ function NAv() {
               </button>
               {showAbout && (
                 <div className="bg-blue-800 rounded-md mt-1 py-2">
-                  <Link to="/about/overview" className="nav-item block pl-4" onClick={closeMenu}>
+                  <Link to="/overview" className="nav-item block pl-4" onClick={closeMenu}>
                     Company Overview
                   </Link>
                   <Link
-                    to="/about/vision-mission"
+                    to="/vision-mission"
                     className="nav-item block pl-4"
                     onClick={closeMenu}
                   >
                     Our Vision & Mission
                   </Link>
-                  <Link to="/about/why-us" className="nav-item block pl-4" onClick={closeMenu}>
+                  <Link to="/why-us" className="nav-item block pl-4" onClick={closeMenu}>
                     Why Us
+                  </Link>
+                  <Link to="/blog" className="nav-item block pl-4" onClick={closeMenu}>
+                    Blog
                   </Link>
                 </div>
               )}
@@ -336,55 +336,55 @@ function NAv() {
               </button>
               {showServices && (
                 <div className="bg-blue-800 rounded-md mt-1 py-2">
-                  <Link to="/webdev" className="nav-item block pl-4" onClick={closeMenu}>
+                  <Link to="/web-development" className="nav-item block pl-4" onClick={closeMenu}>
                     Web Development
                   </Link>
-                  <Link to="/appdev" className="nav-item block pl-4" onClick={closeMenu}>
+                  <Link to="/app-development" className="nav-item block pl-4" onClick={closeMenu}>
                     App Development
                   </Link>
-                  <Link to="/customsoftware" className="nav-item block pl-4" onClick={closeMenu}>
+                  <Link to="/custom-software" className="nav-item block pl-4" onClick={closeMenu}>
                     Custom Software
                   </Link>
-                  <Link to="/aiautomation" className="nav-item block pl-4" onClick={closeMenu}>
+                  <Link to="/ai-automation" className="nav-item block pl-4" onClick={closeMenu}>
                     AI & Automation
                   </Link>
-                  <Link to="/saasproduct" className="nav-item block pl-4" onClick={closeMenu}>
+                  <Link to="/saas-product" className="nav-item block pl-4" onClick={closeMenu}>
                     SaaS Product
                   </Link>
-                  <Link to="/ecommerce" className="nav-item block pl-4" onClick={closeMenu}>
+                  <Link to="/e-commerce" className="nav-item block pl-4" onClick={closeMenu}>
                     E-Commerce
                   </Link>
-                  <Link to="/devops" className="nav-item block pl-4" onClick={closeMenu}>
+                  <Link to="/cloud-and-devops" className="nav-item block pl-4" onClick={closeMenu}>
                     Cloud & DevOps
                   </Link>
                   <Link to="/cybersecurity" className="nav-item block pl-4" onClick={closeMenu}>
                     Cybersecurity
                   </Link>
-                  <Link to="/digitalmarket" className="nav-item block pl-4" onClick={closeMenu}>
+                  <Link to="/digital-marketing" className="nav-item block pl-4" onClick={closeMenu}>
                     Digital Marketing
                   </Link>
-                  <Link to="/uiuxdesign" className="nav-item block pl-4" onClick={closeMenu}>
+                  <Link to="/ui-ux-design" className="nav-item block pl-4" onClick={closeMenu}>
                     UI/UX Design
                   </Link>
-                  <Link to="/apiintegration" className="nav-item block pl-4" onClick={closeMenu}>
+                  <Link to="/api-integration" className="nav-item block pl-4" onClick={closeMenu}>
                     API Integration
                   </Link>
-                  <Link to="/qatesting" className="nav-item block pl-4" onClick={closeMenu}>
+                  <Link to="/qa-testing" className="nav-item block pl-4" onClick={closeMenu}>
                     QA Testing
                   </Link>
-                  <Link to="/itconsulting" className="nav-item block pl-4" onClick={closeMenu}>
+                  <Link to="/it-consulting" className="nav-item block pl-4" onClick={closeMenu}>
                     IT Consulting
                   </Link>
-                  <Link to="/dedicatedteam" className="nav-item block pl-4" onClick={closeMenu}>
+                  <Link to="/dedicated-team" className="nav-item block pl-4" onClick={closeMenu}>
                     Dedicated Team
                   </Link>
-                  <Link to="/maintenancesupport" className="nav-item block pl-4" onClick={closeMenu}>
+                  <Link to="/maintenance-support" className="nav-item block pl-4" onClick={closeMenu}>
                     Maintenance & Support
                   </Link>
-                  <Link to="/logodesign" className="nav-item block pl-4" onClick={closeMenu}>
+                  <Link to="/logo-design" className="nav-item block pl-4" onClick={closeMenu}>
                     Logo Design
                   </Link>
-                  <Link to="/socialmedia" className="nav-item block pl-4" onClick={closeMenu}>
+                  <Link to="/social-media" className="nav-item block pl-4" onClick={closeMenu}>
                     Social Media Marketing
                   </Link>
                 </div>
@@ -471,7 +471,6 @@ function NAv() {
               )}
             </div>
 
-            <MobileLink to="/blog">Blog</MobileLink>
             <MobileLink to="/careers">Careers</MobileLink>
             <div className="pt-4 flex flex-col items-center space-y-2 px-2">
               <Link

@@ -435,7 +435,7 @@ const Industry = () => {
                 <MdStars className="text-3xl text-purple-500" />
               </div>
               <div>
-                <h4 className="text-3xl font-extrabold text-purple-500">12+</h4>
+                <h4 className="text-3xl font-extrabold text-purple-500">5+</h4>
                 <p className="text-[13px] font-bold text-gray-800 uppercase tracking-wide mt-1">Years of Experience</p>
                 <p className="text-xs text-gray-500 mt-0.5">Delivering excellence</p>
               </div>

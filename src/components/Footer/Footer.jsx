@@ -122,13 +122,13 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-6 text-white">Quick Links</h3>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-3">
               <li>
-                <Link to="/about/overview" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Overview</Link>
+                <Link to="/overview" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Overview</Link>
               </li>
               <li>
-                <Link to="/about/vision-mission" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Vision</Link>
+                <Link to="/vision-mission" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Vision</Link>
               </li>
               <li>
-                <Link to="/about/why-us" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Why Us</Link>
+                <Link to="/why-us" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Why Us</Link>
               </li>
               <li>
                 <Link to="/solutions" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 shrink-0"></span>Solutions</Link>
@@ -159,34 +159,34 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-6 text-white">Our Services</h3>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-3">
               <li>
-                <Link to="/webdev" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>Web Dev</Link>
+                <Link to="/web-development" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>Web Dev</Link>
               </li>
               <li>
-                <Link to="/appdev" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>App Dev</Link>
+                <Link to="/app-development" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>App Dev</Link>
               </li>
               <li>
-                <Link to="/customsoftware" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>Custom SW</Link>
+                <Link to="/custom-software" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>Custom SW</Link>
               </li>
               <li>
-                <Link to="/aiautomation" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>AI & Auto</Link>
+                <Link to="/ai-automation" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>AI & Auto</Link>
               </li>
               <li>
-                <Link to="/ecommerce" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>E-Commerce</Link>
+                <Link to="/e-commerce" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>E-Commerce</Link>
               </li>
               <li>
                 <Link to="/cybersecurity" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>Cybersec</Link>
               </li>
               <li>
-                <Link to="/digitalmarket" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>Marketing</Link>
+                <Link to="/digital-marketing" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>Marketing</Link>
               </li>
               <li>
-                <Link to="/logodesign" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>Logo Design</Link>
+                <Link to="/logo-design" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>Logo Design</Link>
               </li>
               <li>
-                <Link to="/socialmedia" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>Social Media</Link>
+                <Link to="/social-media" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>Social Media</Link>
               </li>
               <li>
-                <Link to="/devops" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>DevOps</Link>
+                <Link to="/cloud-and-devops" className="premium-link text-gray-300 hover:text-white transition-all duration-300 text-sm flex items-center"><span className="premium-link-icon w-1.5 h-1.5 rounded-full bg-purple-500 mr-2 shrink-0"></span>DevOps</Link>
               </li>
             </ul>
           </div>

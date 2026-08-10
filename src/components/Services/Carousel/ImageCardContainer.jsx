@@ -66,7 +66,7 @@ const ImageCardContainer = () => {
     {
       imageUrl: c1,
       text: 'App Development',
-      linkUrl: "/appdev"
+      linkUrl: "/app-development"
     },
     {
       imageUrl: c2,
@@ -76,27 +76,27 @@ const ImageCardContainer = () => {
     {
       imageUrl: c3,
       text: 'Web Development',
-      linkUrl: "/webdev"
+      linkUrl: "/web-development"
     },
     {
       imageUrl: c4,
       text: 'Digital Marketing',
-      linkUrl: "/digitalmarket"
+      linkUrl: "/digital-marketing"
     },
     {
       imageUrl: c5,
       text: 'Logo Designing',
-      linkUrl: "/logodesign"
+      linkUrl: "/logo-design"
     },
     {
       imageUrl: c6,
       text: 'Social Media',
-      linkUrl: "/socialmedia"
+      linkUrl: "/social-media"
     },
     {
       imageUrl: c7,
       text: 'UI/UX Design',
-      linkUrl: "/uiuxdesign"
+      linkUrl: "/ui-ux-design"
     },
     {
       imageUrl: c8,
@@ -106,12 +106,12 @@ const ImageCardContainer = () => {
     {
       imageUrl: c9,
       text: 'IT Consulting',
-      linkUrl: "/itconsulting"
+      linkUrl: "/it-consulting"
     },
     {
       imageUrl: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=600&auto=format&fit=crop",
       text: 'QA Testing',
-      linkUrl: "/qatesting"
+      linkUrl: "/qa-testing"
     }
   ];
 

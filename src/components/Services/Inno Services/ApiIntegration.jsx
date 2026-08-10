@@ -1,17 +1,19 @@
+import heroImgNew from "../../../assets/new_category_images/ApiIntegration_hero.jpg";
+import diffImgNew from "../../../assets/new_category_images/ApiIntegration_diff.jpg";
 import React, { forwardRef, useEffect, useState } from "react";
 import { FaCheckCircle, FaSyncAlt, FaPlug, FaCode, FaDesktop, FaMobile, FaShoppingCart, FaDatabase, FaCloud, FaLock, FaChartLine, FaUsers, FaShieldAlt, FaRocket, FaLightbulb, FaBuilding, FaChartLine as FaChartLineIcon, FaCogs, FaRobot, FaPaintBrush, FaBriefcase, FaReact, FaNodeJs, FaAngular, FaVuejs, FaPhp, FaPython } from "react-icons/fa";
-import heroImg from "../../../assets/services_hero/hero_api_integration.png";
 
-import app from "../../../assets/services_cards/ApiIntegration_cs1.jpg";
-import app2 from "../../../assets/services_cards/ApiIntegration_cs2.jpg";
+
+
+
 import w1 from "../../../assets/services_cards/ApiIntegration_w1.jpg";
 import w2 from "../../../assets/services_cards/ApiIntegration_w2.jpg";
 import w3 from "../../../assets/services_cards/ApiIntegration_w3.jpg";
 import w4 from "../../../assets/services_cards/ApiIntegration_w4.jpg";
 import w5 from "../../../assets/services_cards/ApiIntegration_w5.jpg";
 import w6 from "../../../assets/services_cards/ApiIntegration_w6.jpg";
-import introImg from "../../../assets/services_cards/ApiIntegration_intro.jpg";
-import diffImg from "../../../assets/services_cards/ApiIntegration_diff.jpg";
+
+
 
 
 import "./ApiIntegration.css";
@@ -19,6 +21,18 @@ import { Link } from "react-router-dom";
 
 
 import { SiMongodb, SiMysql } from "react-icons/si";
+import restApiDevelopmentImg from "../../../assets/webServices/REST API Development.jpg";
+import apiIntegrationImg from "../../../assets/webServices/API Integration.jpg";
+import paymentGatewayIntegrationImg from "../../../assets/webServices/Payment Gateway Integration.jpg";
+import razorpayIntegrationImg from "../../../assets/webServices/Razorpay Integration.jpg";
+import whatsappApiImg from "../../../assets/webServices/WhatsApp API.jpg";
+import smsGatewayImg from "../../../assets/webServices/SMS Gateway.jpg";
+import emailApiImg from "../../../assets/webServices/Email API.jpg";
+import shippingApiImg from "../../../assets/webServices/transport.jpg";
+import busBookingApiImg from "../../../assets/webServices/Bus Booking API.jpg";
+import hotelBookingApiImg from "../../../assets/webServices/Hotel Booking API.jpg";
+import accountingSoftwareIntegrationImg from "../../../assets/webServices/Accounting Software Integration.jpg";
+import governmentEnterpriseApiIntegrationImg from "../../../assets/webServices/GovernmentEnterprise API Integration.jpg";
 
 const ServicesCard = ({ title, description, image }) => (
   <div className="bg-white shadow-lg rounded-xl p-6 m-4 flex-1 transform hover:scale-105 transition-all duration-300 hover:shadow-xl border border-gray-100">
@@ -42,38 +56,31 @@ const ApiIntegration = forwardRef((props, ref) => {
   ];
 
   const services = [
-            { icon: <FaCode className="w-8 h-8 text-blue-600" />, title: "REST API Development", description: "Custom, scalable RESTful APIs built to securely expose your application's functionality.", features: ["Standardized endpoints", "JSON/XML formats", "Robust authentication", "Comprehensive documentation"], image: w1 },
-            { icon: <FaPlug className="w-8 h-8 text-blue-600" />, title: "Payment Gateway Integration", description: "Secure integration with leading payment processors for global transaction capabilities.", features: ["Stripe/Razorpay/PayPal", "Subscription billing", "Multi-currency support", "PCI compliance"], image: w2 },
-            { icon: <FaShoppingCart className="w-8 h-8 text-blue-600" />, title: "E-Commerce APIs", description: "Connecting your storefront with external shipping, inventory, and marketing platforms.", features: ["Shopify/WooCommerce APIs", "Shipping carrier integration", "Inventory sync", "CRM connections"], image: w3 },
-            { icon: <FaDatabase className="w-8 h-8 text-blue-600" />, title: "ERP & CRM Integration", description: "Synchronizing data between your custom software and enterprise platforms like Salesforce or SAP.", features: ["Bi-directional sync", "Data mapping", "Automated workflows", "Real-time updates"], image: w4 },
-            { icon: <FaUsers className="w-8 h-8 text-blue-600" />, title: "Social Media & Communication APIs", description: "Integrating communication channels directly into your application.", features: ["WhatsApp Business API", "Twilio SMS", "Email services (SendGrid)", "Social logins"], image: w5 },
-            { icon: <FaCloud className="w-8 h-8 text-blue-600" />, title: "Government/Enterprise APIs", description: "Secure integration with specialized government or highly-regulated enterprise services.", features: ["High-security protocols", "Identity verification APIs", "Compliance tracking", "Encrypted payloads"], image: w6 }
-        ];
+    { title: "REST API Development", icon: <FaPlug className="text-blue-600 text-2xl" />, description: "Custom, secure, and scalable RESTful APIs to power your applications.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: restApiDevelopmentImg },
+    { title: "API Integration", icon: <FaSyncAlt className="text-blue-600 text-2xl" />, description: "Seamless integration of third-party APIs into your existing software ecosystem.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: apiIntegrationImg },
+    { title: "Payment Gateway Integration", icon: <FaShoppingCart className="text-blue-600 text-2xl" />, description: "Secure connections to global payment processors like Stripe, PayPal, and Razorpay.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: paymentGatewayIntegrationImg },
+    { title: "Razorpay Integration", icon: <FaLock className="text-blue-600 text-2xl" />, description: "Specialized implementation of Razorpay for seamless Indian payment processing.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: razorpayIntegrationImg },
+    { title: "WhatsApp API", icon: <FaMobile className="text-blue-600 text-2xl" />, description: "Automate messaging, notifications, and customer support directly through WhatsApp.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: whatsappApiImg },
+    { title: "SMS Gateway", icon: <FaMobile className="text-blue-600 text-2xl" />, description: "Integrate robust SMS delivery systems for OTPs, alerts, and marketing.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: smsGatewayImg },
+    { title: "Email API", icon: <FaDesktop className="text-blue-600 text-2xl" />, description: "Reliable transactional and marketing email integrations using SendGrid, AWS SES, etc.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: emailApiImg },
+    { title: "Google Maps Integration", icon: <FaDesktop className="text-blue-600 text-2xl" />, description: "Embed interactive maps, geolocation, and routing capabilities into your apps.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=600&auto=format&fit=crop" },
+    { title: "Shipping API", icon: <FaRocket className="text-blue-600 text-2xl" />, description: "Automate logistics with direct integrations to major shipping carriers.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: shippingApiImg },
+    { title: "Bus Booking API", icon: <FaDesktop className="text-blue-600 text-2xl" />, description: "Connect with bus aggregators to enable seamless ticket booking on your platform.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: busBookingApiImg },
+    { title: "Hotel Booking API", icon: <FaBuilding className="text-blue-600 text-2xl" />, description: "Integrate global hotel inventory and reservation systems directly into your app.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: hotelBookingApiImg },
+    { title: "CRM Integration", icon: <FaUsers className="text-blue-600 text-2xl" />, description: "Sync your software with leading CRMs like Salesforce, HubSpot, and Zoho.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop" },
+    { title: "ERP Integration", icon: <FaCogs className="text-blue-600 text-2xl" />, description: "Connect your front-end systems with complex backend Enterprise Resource Planning software.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop" },
+    { title: "Accounting Software Integration", icon: <FaChartLine className="text-blue-600 text-2xl" />, description: "Automate financial data flow with Tally, QuickBooks, or Xero integrations.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: accountingSoftwareIntegrationImg },
+    { title: "Government/Enterprise API Integration", icon: <FaShieldAlt className="text-blue-600 text-2xl" />, description: "Secure integration with official enterprise or government digital infrastructure.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: governmentEnterpriseApiIntegrationImg }
+  ];
 
-  const caseStudies = [
-            { title: "Global Payment Gateway Integration", description: "Integrated multiple payment providers for an international marketplace", result: "Enabled transactions in 50+ countries securely", image: app },
-            { title: "Legacy ERP Synchronization", description: "Built custom middleware to sync a modern web app with a legacy ERP", result: "Eliminated 100% of manual data entry", image: app2 }
-        ];
-
-  // Map service titles to their corresponding images
   const serviceImages = {
-    'default': app2,
-    'REST API Development': w1,
-    'Payment Gateway Integration': w2,
-    'E-Commerce APIs': w3,
-    'ERP & CRM Integration': w4,
-    'Social Media & Communication APIs': w5,
-    'Government/Enterprise APIs': w6
+    'default': diffImgNew,
+    ...services.reduce((acc, curr) => ({ ...acc, [curr.title]: curr.image }), {})
   };
 
   const serviceDescriptions = {
-    'default': "We seamlessly connect your software ecosystem, allowing your tools, databases, and third-party apps to communicate instantly.",
-    'REST API Development': "Expert implementation of REST API Development tailored to your specific business requirements and industry standards.",
-    'Payment Gateway Integration': "Comprehensive Payment Gateway Integration solutions designed for scalability, security, and maximum performance.",
-    'E-Commerce APIs': "Advanced E-Commerce APIs integrations to streamline your workflows and boost operational efficiency.",
-    'ERP & CRM Integration': "Future-proof ERP & CRM Integration architectures that drive digital transformation and user engagement.",
-    'Social Media & Communication APIs': "Robust Social Media & Communication APIs frameworks customized for your enterprise needs with 24/7 reliability.",
-    'Government/Enterprise APIs': "Cutting-edge Government/Enterprise APIs strategies to keep your business ahead of the technological curve."
+    'default': "Explore our comprehensive suite of professional services designed to accelerate your digital transformation.",
+    ...services.reduce((acc, curr) => ({ ...acc, [curr.title]: curr.description }), {})
   };
 
   useEffect(() => {
@@ -87,7 +94,7 @@ const ApiIntegration = forwardRef((props, ref) => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url(${heroImg})`,
+            backgroundImage: `url(${heroImgNew})`,
           }}
         ></div>
         <div className="absolute inset-0"></div>
@@ -128,15 +135,8 @@ const ApiIntegration = forwardRef((props, ref) => {
             {/* Left Content */}
             <div>
               <h3 className="text-2xl font-bold text-red-500 mb-6">OUR OFFERINGS</h3>
-              <div className="space-y-4">
-                {[
-                  'REST API Development',
-                  'Payment Gateway Integration',
-                  'E-Commerce APIs',
-                  'ERP & CRM Integration',
-                  'Social Media & Communication APIs',
-                  'Government/Enterprise APIs'
-                ].map((service) => (
+              <div className="space-y-4 max-h-[600px] overflow-y-auto pr-4 custom-scrollbar">
+                {services.map(s => s.title).map((service) => (
                   <div 
                     key={service}
                     onMouseEnter={() => setHoveredService(service.replace('— ', ''))}
@@ -275,7 +275,7 @@ const ApiIntegration = forwardRef((props, ref) => {
               </h3>
               <div className="relative rounded-lg overflow-hidden">
                 <img 
-                  src={diffImg}
+                  src={diffImgNew}
                   alt="Innomatrics Tech Professional"
                   className="w-full h-[400px] object-cover rounded-lg"
                 />
@@ -324,7 +324,7 @@ const ApiIntegration = forwardRef((props, ref) => {
             </div>
             <div className="w-full mt-16 md:w-1/2">
               <img
-                src={introImg}
+                src={heroImgNew}
                 alt="Innomatrics Digital Solutions"
                 className="w-full h-72 rounded-lg shadow-md"
               />
@@ -373,36 +373,6 @@ const ApiIntegration = forwardRef((props, ref) => {
                         </li>
                       ))}
                     </ul>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Case Studies */}
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold text-center text-red-600 mb-12">
-              Success Stories
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {caseStudies.map((caseStudy, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-xl overflow-hidden shadow-lg"
-                >
-                  <img
-                    src={caseStudy.image}
-                    alt={caseStudy.title}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                      {caseStudy.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4">{caseStudy.description}</p>
-                    <div className="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg inline-block">
-                      <strong>Result:</strong> {caseStudy.result}
-                    </div>
                   </div>
                 </div>
               ))}

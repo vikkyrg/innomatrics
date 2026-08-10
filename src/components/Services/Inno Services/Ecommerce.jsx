@@ -19,6 +19,29 @@ import { Link } from "react-router-dom";
 
 
 import { SiMongodb, SiMysql } from "react-icons/si";
+import ec1 from "../../../assets/ecommerceServices/ec_1.webp";
+import ec2 from "../../../assets/ecommerceServices/ec_2.webp";
+import ec3 from "../../../assets/ecommerceServices/ec_3.webp";
+import ec4 from "../../../assets/ecommerceServices/ec_4.webp";
+import ec5 from "../../../assets/ecommerceServices/ec_5.webp";
+import ec6 from "../../../assets/ecommerceServices/ec_6.webp";
+import ec7 from "../../../assets/ecommerceServices/ec_7.webp";
+import ec8 from "../../../assets/ecommerceServices/ec_8.webp";
+import ec9 from "../../../assets/ecommerceServices/ec_9.webp";
+import ec10 from "../../../assets/ecommerceServices/ec_10.webp";
+import ec11 from "../../../assets/ecommerceServices/ec_11.webp";
+import ec12 from "../../../assets/ecommerceServices/ec_12.webp";
+import ec13 from "../../../assets/ecommerceServices/ec_13.webp";
+
+import b2bImg from "../../../assets/webServices/B2B E-Commerce.jpg";
+import b2cImg from "../../../assets/webServices/B2C E-Commerce.jpg";
+import d2cImg from "../../../assets/webServices/D2C E-Commerce.jpg";
+import deliveryImg from "../../../assets/webServices/Delivery Integration.jpg";
+import ecWebImg from "../../../assets/webServices/E-Commerce Website.jpg";
+import vendorImg from "../../../assets/webServices/Multi-Vendor Marketplace.jpg";
+import paymentImg from "../../../assets/webServices/Payment Gateway Integration.jpg";
+
+import inventoryImg from "../../../assets/webServices/Inventory Integration.jpg";
 
 const ServicesCard = ({ title, description, image }) => (
   <div className="bg-white shadow-lg rounded-xl p-6 m-4 flex-1 transform hover:scale-105 transition-all duration-300 hover:shadow-xl border border-gray-100">
@@ -42,38 +65,29 @@ const Ecommerce = forwardRef((props, ref) => {
   ];
 
   const services = [
-            { icon: <FaShoppingCart className="w-8 h-8 text-blue-600" />, title: "Custom E-Commerce Websites", description: "Bespoke online stores tailored to your brand with advanced product catalogs.", features: ["Custom UI/UX", "Product filtering", "Cart optimization", "Mobile responsiveness"], image: w1 },
-            { icon: <FaBuilding className="w-8 h-8 text-blue-600" />, title: "Multi-Vendor Marketplaces", description: "Complex platforms allowing multiple sellers to manage their own products and sales.", features: ["Vendor dashboards", "Commission management", "Seller payouts", "Product moderation"], image: w2 },
-            { icon: <FaUsers className="w-8 h-8 text-blue-600" />, title: "B2B & B2C Portals", description: "Specialized commerce platforms tailored for wholesale (B2B) or retail (B2C) operations.", features: ["Bulk pricing", "Quote requests", "Account hierarchies", "Re-ordering logic"], image: w3 },
-            { icon: <FaMobile className="w-8 h-8 text-blue-600" />, title: "Mobile Commerce Apps", description: "Dedicated mobile shopping apps for iOS and Android to boost customer retention.", features: ["Push notifications", "One-click checkout", "Wishlists", "App analytics"], image: w4 },
-            { icon: <FaPlug className="w-8 h-8 text-blue-600" />, title: "Payment Gateway Integration", description: "Secure integration of multiple payment processors for smooth transactions.", features: ["Razorpay/Stripe", "Multi-currency", "EMI/BNPL options", "Fraud detection"], image: w5 },
-            { icon: <FaDatabase className="w-8 h-8 text-blue-600" />, title: "Inventory Integration", description: "Connecting your storefront with ERP and inventory management systems.", features: ["Real-time sync", "Multi-warehouse", "Shipping APIs", "Order tracking"], image: w6 }
-        ];
+    { title: "E-Commerce Website", icon: <FaShoppingCart className="text-blue-600 text-2xl" />, description: "Bespoke online stores tailored to your brand with advanced product catalogs.", features: ["Custom UI/UX", "Product filtering", "Cart optimization", "Mobile responsiveness"], image: ecWebImg },
+    { title: "Multi-Vendor Marketplace", icon: <FaUsers className="text-blue-600 text-2xl" />, description: "Complex platforms allowing multiple sellers to manage their own products and sales.", features: ["Vendor dashboards", "Commission management", "Seller payouts", "Product moderation"], image: vendorImg },
+    { title: "B2B E-Commerce", icon: <FaBuilding className="text-blue-600 text-2xl" />, description: "Specialized commerce platforms tailored for wholesale business-to-business operations.", features: ["Bulk pricing", "Quote requests", "Account hierarchies", "Re-ordering logic"], image: b2bImg },
+    { title: "B2C E-Commerce", icon: <FaShoppingCart className="text-blue-600 text-2xl" />, description: "Direct-to-consumer retail platforms optimized for maximum conversion and speed.", features: ["Personalization", "Loyalty Programs", "Abandoned Cart Recovery", "Social Proof"], image: b2cImg },
+    { title: "D2C E-Commerce", icon: <FaRocket className="text-blue-600 text-2xl" />, description: "Direct-to-consumer platforms for modern brands bypassing traditional retail channels.", features: ["Brand storytelling", "Subscription boxes", "Influencer tracking", "Omnichannel sync"], image: d2cImg },
+    { title: "Mobile Commerce Apps", icon: <FaMobile className="text-blue-600 text-2xl" />, description: "Dedicated mobile shopping apps for iOS and Android to boost customer retention.", features: ["Push notifications", "One-click checkout", "Wishlists", "App analytics"], image: ec6 },
+    { title: "Shopify Development", icon: <FaCode className="text-blue-600 text-2xl" />, description: "Custom theme development and app integration for the Shopify ecosystem.", features: ["Liquid templating", "Custom storefronts", "App development", "Store migration"], image: ec7 },
+    { title: "WooCommerce Development", icon: <FaPlug className="text-blue-600 text-2xl" />, description: "Powerful WordPress-based e-commerce solutions with complete ownership.", features: ["Plugin development", "Custom themes", "Performance tuning", "Headless WP"], image: ec8 },
+    { title: "Custom E-Commerce", icon: <FaDesktop className="text-blue-600 text-2xl" />, description: "Fully bespoke e-commerce architectures built from scratch for unique requirements.", features: ["Microservices", "React/Node.js stack", "Elastic search", "Custom workflows"], image: ec9 },
+    { title: "Payment Gateway Integration", icon: <FaLock className="text-blue-600 text-2xl" />, description: "Secure integration of multiple payment processors for smooth transactions.", features: ["Razorpay/Stripe", "Multi-currency", "EMI/BNPL options", "Fraud detection"], image: paymentImg },
+    { title: "Delivery Integration", icon: <FaSyncAlt className="text-blue-600 text-2xl" />, description: "Automated logistics and shipping carrier integration for seamless fulfillment.", features: ["Real-time rates", "Label generation", "Tracking portals", "Return management"], image: deliveryImg },
+    { title: "Inventory Integration", icon: <FaDatabase className="text-blue-600 text-2xl" />, description: "Connecting your storefront with ERP and inventory management systems.", features: ["Real-time sync", "Multi-warehouse", "Shipping APIs", "Order tracking"], image: inventoryImg },
+    { title: "Marketplace Admin Panel", icon: <FaChartLine className="text-blue-600 text-2xl" />, description: "Comprehensive back-office dashboards to manage the entire marketplace ecosystem.", features: ["Sales reports", "Vendor verification", "Dispute resolution", "Marketing tools"], image: ec13 }
+  ];
 
-  const caseStudies = [
-            { title: "Fashion Retail Multi-Vendor Platform", description: "Launched a marketplace for independent fashion designers", result: "Onboarded 500+ vendors in 6 months", image: app },
-            { title: "Electronics B2B Portal", description: "Custom B2B commerce platform for bulk electronics distribution", result: "Increased wholesale orders by 45%", image: app2 }
-        ];
-
-  // Map service titles to their corresponding images
   const serviceImages = {
     'default': app2,
-    'Custom E-Commerce Websites': w1,
-    'Multi-Vendor Marketplaces': w2,
-    'B2B & B2C Portals': w3,
-    'Mobile Commerce Apps': w4,
-    'Payment Gateway Integration': w5,
-    'Inventory Integration': w6
+    ...services.reduce((acc, curr) => ({ ...acc, [curr.title]: curr.image }), {})
   };
 
   const serviceDescriptions = {
     'default': "We build high-converting, lightning-fast eCommerce stores and multi-vendor marketplaces that drive massive sales.",
-    'Custom E-Commerce Websites': "Expert implementation of Custom E-Commerce Websites tailored to your specific business requirements and industry standards.",
-    'Multi-Vendor Marketplaces': "Comprehensive Multi-Vendor Marketplaces solutions designed for scalability, security, and maximum performance.",
-    'B2B & B2C Portals': "Advanced B2B & B2C Portals integrations to streamline your workflows and boost operational efficiency.",
-    'Mobile Commerce Apps': "Future-proof Mobile Commerce Apps architectures that drive digital transformation and user engagement.",
-    'Payment Gateway Integration': "Robust Payment Gateway Integration frameworks customized for your enterprise needs with 24/7 reliability.",
-    'Inventory Integration': "Cutting-edge Inventory Integration strategies to keep your business ahead of the technological curve."
+    ...services.reduce((acc, curr) => ({ ...acc, [curr.title]: curr.description }), {})
   };
 
   useEffect(() => {
@@ -128,15 +142,8 @@ const Ecommerce = forwardRef((props, ref) => {
             {/* Left Content */}
             <div>
               <h3 className="text-2xl font-bold text-red-500 mb-6">OUR OFFERINGS</h3>
-              <div className="space-y-4">
-                {[
-                  'Custom E-Commerce Websites',
-                  'Multi-Vendor Marketplaces',
-                  'B2B & B2C Portals',
-                  'Mobile Commerce Apps',
-                  'Payment Gateway Integration',
-                  'Inventory Integration'
-                ].map((service) => (
+              <div className="space-y-4 max-h-[600px] overflow-y-auto pr-4 custom-scrollbar">
+                {services.map(s => s.title).map((service) => (
                   <div 
                     key={service}
                     onMouseEnter={() => setHoveredService(service.replace('— ', ''))}
@@ -373,36 +380,6 @@ const Ecommerce = forwardRef((props, ref) => {
                         </li>
                       ))}
                     </ul>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Case Studies */}
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold text-center text-red-600 mb-12">
-              Success Stories
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {caseStudies.map((caseStudy, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-xl overflow-hidden shadow-lg"
-                >
-                  <img
-                    src={caseStudy.image}
-                    alt={caseStudy.title}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                      {caseStudy.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4">{caseStudy.description}</p>
-                    <div className="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg inline-block">
-                      <strong>Result:</strong> {caseStudy.result}
-                    </div>
                   </div>
                 </div>
               ))}

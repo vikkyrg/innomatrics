@@ -80,9 +80,17 @@
 }
 
 @keyframes subtleGradientPulse {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Premium Link Hovers */
@@ -137,18 +145,22 @@
   background: #1877F2;
   box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4);
 }
+
 .social-icon-premium.twitter:hover {
   background: #1da1f2;
   box-shadow: 0 5px 15px rgba(29, 161, 242, 0.4);
 }
+
 .social-icon-premium.instagram:hover {
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
   box-shadow: 0 5px 15px rgba(214, 36, 159, 0.4);
 }
+
 .social-icon-premium.linkedin:hover {
   background: #0077b5;
   box-shadow: 0 5px 15px rgba(0, 119, 181, 0.4);
 }
+
 .social-icon-premium.google:hover {
   background: white;
   color: #ea4335;

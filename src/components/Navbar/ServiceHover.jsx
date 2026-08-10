@@ -17,7 +17,7 @@ const ServiceHover = () => {
         {/* Left Side: Services Grid */}
         <div className="w-full xl:w-3/4 grid grid-cols-3 gap-y-6 gap-x-6">
           
-          <Link to="/webdev" className="flex items-start group">
+          <Link to="/web-development" className="flex items-start group">
             <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
               <FaLaptopCode className="text-blue-500 text-lg" />
             </div>
@@ -27,7 +27,7 @@ const ServiceHover = () => {
             </div>
           </Link>
 
-          <Link to="/appdev" className="flex items-start group">
+          <Link to="/app-development" className="flex items-start group">
             <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
               <FaMobileAlt className="text-purple-500 text-lg" />
             </div>
@@ -37,7 +37,7 @@ const ServiceHover = () => {
             </div>
           </Link>
 
-          <Link to="/customsoftware" className="flex items-start group">
+          <Link to="/custom-software" className="flex items-start group">
             <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
               <FaCode className="text-green-500 text-lg" />
             </div>
@@ -47,7 +47,7 @@ const ServiceHover = () => {
             </div>
           </Link>
 
-          <Link to="/aiautomation" className="flex items-start group">
+          <Link to="/ai-automation" className="flex items-start group">
             <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
               <FaRobot className="text-red-500 text-lg" />
             </div>
@@ -57,7 +57,7 @@ const ServiceHover = () => {
             </div>
           </Link>
 
-          <Link to="/saasproduct" className="flex items-start group">
+          <Link to="/saas-product" className="flex items-start group">
             <div className="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
               <FaCloud className="text-cyan-500 text-lg" />
             </div>
@@ -67,7 +67,7 @@ const ServiceHover = () => {
             </div>
           </Link>
 
-          <Link to="/ecommerce" className="flex items-start group">
+          <Link to="/e-commerce" className="flex items-start group">
             <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
               <FaShoppingCart className="text-orange-500 text-lg" />
             </div>
@@ -77,7 +77,7 @@ const ServiceHover = () => {
             </div>
           </Link>
 
-          <Link to="/devops" className="flex items-start group">
+          <Link to="/cloud-and-devops" className="flex items-start group">
             <div className="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
               <FaServer className="text-slate-500 text-lg" />
             </div>
@@ -97,7 +97,7 @@ const ServiceHover = () => {
             </div>
           </Link>
 
-          <Link to="/digitalmarket" className="flex items-start group">
+          <Link to="/digital-marketing" className="flex items-start group">
             <div className="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
               <FaBullhorn className="text-teal-500 text-lg" />
             </div>
@@ -107,7 +107,7 @@ const ServiceHover = () => {
             </div>
           </Link>
 
-          <Link to="/uiuxdesign" className="flex items-start group">
+          <Link to="/ui-ux-design" className="flex items-start group">
             <div className="w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
               <FaPaintBrush className="text-pink-500 text-lg" />
             </div>
@@ -117,7 +117,7 @@ const ServiceHover = () => {
             </div>
           </Link>
 
-          <Link to="/apiintegration" className="flex items-start group">
+          <Link to="/api-integration" className="flex items-start group">
             <div className="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
               <FaPlug className="text-yellow-500 text-lg" />
             </div>
@@ -127,7 +127,7 @@ const ServiceHover = () => {
             </div>
           </Link>
 
-          <Link to="/qatesting" className="flex items-start group">
+          <Link to="/qa-testing" className="flex items-start group">
             <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
               <FaVial className="text-emerald-500 text-lg" />
             </div>
@@ -137,7 +137,7 @@ const ServiceHover = () => {
             </div>
           </Link>
 
-          <Link to="/itconsulting" className="flex items-start group">
+          <Link to="/it-consulting" className="flex items-start group">
             <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
               <FaUserTie className="text-amber-500 text-lg" />
             </div>
@@ -147,7 +147,7 @@ const ServiceHover = () => {
             </div>
           </Link>
 
-          <Link to="/dedicatedteam" className="flex items-start group">
+          <Link to="/dedicated-team" className="flex items-start group">
             <div className="w-10 h-10 bg-violet-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
               <FaUsers className="text-violet-500 text-lg" />
             </div>
@@ -157,7 +157,7 @@ const ServiceHover = () => {
             </div>
           </Link>
 
-          <Link to="/maintenancesupport" className="flex items-start group">
+          <Link to="/maintenance-support" className="flex items-start group">
             <div className="w-10 h-10 bg-rose-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
               <FaTools className="text-rose-500 text-lg" />
             </div>
@@ -167,7 +167,7 @@ const ServiceHover = () => {
             </div>
           </Link>
 
-          <Link to="/logodesign" className="flex items-start group">
+          <Link to="/logo-design" className="flex items-start group">
             <div className="w-10 h-10 bg-fuchsia-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
               <FaPenNib className="text-fuchsia-500 text-lg" />
             </div>
@@ -177,7 +177,7 @@ const ServiceHover = () => {
             </div>
           </Link>
 
-          <Link to="/socialmedia" className="flex items-start group">
+          <Link to="/social-media" className="flex items-start group">
             <div className="w-10 h-10 bg-lime-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
               <FaShareAlt className="text-lime-500 text-lg" />
             </div>

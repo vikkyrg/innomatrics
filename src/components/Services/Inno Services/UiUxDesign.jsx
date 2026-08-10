@@ -1,17 +1,19 @@
+import heroImgNew from "../../../assets/new_category_images/UiUxDesign_hero.jpg";
+import diffImgNew from "../../../assets/new_category_images/UiUxDesign_diff.jpg";
 import React, { forwardRef, useEffect, useState } from "react";
 import { FaCheckCircle, FaSyncAlt, FaPlug, FaCode, FaDesktop, FaMobile, FaShoppingCart, FaDatabase, FaCloud, FaLock, FaChartLine, FaUsers, FaShieldAlt, FaRocket, FaLightbulb, FaBuilding, FaChartLine as FaChartLineIcon, FaCogs, FaRobot, FaPaintBrush, FaBriefcase, FaReact, FaNodeJs, FaAngular, FaVuejs, FaPhp, FaPython } from "react-icons/fa";
-import heroImg from "../../../assets/services_hero/hero_ui_ux.png";
 
-import app from "../../../assets/services_cards/UiUxDesign_cs1.jpg";
-import app2 from "../../../assets/services_cards/UiUxDesign_cs2.jpg";
+
+
+
 import w1 from "../../../assets/services_cards/UiUxDesign_w1.jpg";
 import w2 from "../../../assets/services_cards/UiUxDesign_w2.jpg";
 import w3 from "../../../assets/services_cards/UiUxDesign_w3.jpg";
 import w4 from "../../../assets/services_cards/UiUxDesign_w4.jpg";
 import w5 from "../../../assets/services_cards/UiUxDesign_w5.jpg";
 import w6 from "../../../assets/services_cards/UiUxDesign_w6.jpg";
-import introImg from "../../../assets/services_cards/UiUxDesign_intro.jpg";
-import diffImg from "../../../assets/services_cards/UiUxDesign_diff.jpg";
+
+
 
 
 import "./UiUxDesign.css";
@@ -19,6 +21,15 @@ import { Link } from "react-router-dom";
 
 
 import { SiMongodb, SiMysql } from "react-icons/si";
+import wireframingImg from "../../../assets/webServices/Wireframing.jpg";
+import websiteUiDesignImg from "../../../assets/webServices/Website UI Design.jpg";
+import uiuxDesignImg from "../../../assets/webServices/UIUX Design.jpg";
+import saasProductDesignImg from "../../../assets/webServices/SaaS Product Design.jpg";
+import mobileAppUiDesignImg from "../../../assets/webServices/Mobile App UI Design.jpg";
+import figmaPrototypingImg from "../../../assets/webServices/Figma Prototyping.jpg";
+import dashboardDesignImg from "../../../assets/webServices/Dashboard Design.jpg";
+import brandingVisualIdentityImg from "../../../assets/webServices/Branding & Visual Identity.jpg";
+import designSystemDevelopmentImg from "../../../assets/webServices/Website Security.jpg";
 
 const ServicesCard = ({ title, description, image }) => (
   <div className="bg-white shadow-lg rounded-xl p-6 m-4 flex-1 transform hover:scale-105 transition-all duration-300 hover:shadow-xl border border-gray-100">
@@ -42,38 +53,26 @@ const UiUxDesign = forwardRef((props, ref) => {
   ];
 
   const services = [
-            { icon: <FaDesktop className="w-8 h-8 text-blue-600" />, title: "Web Application UI Design", description: "Modern, responsive interfaces designed specifically for complex web applications and SaaS platforms.", features: ["Dashboard design", "Interactive elements", "Data visualization", "Responsive layouts"], image: w1 },
-            { icon: <FaMobile className="w-8 h-8 text-blue-600" />, title: "Mobile App UI Design", description: "Intuitive, gesture-friendly designs optimized for iOS and Android native experiences.", features: ["Touch targets", "Navigation patterns", "App onboarding", "Micro-animations"], image: w2 },
-            { icon: <FaLightbulb className="w-8 h-8 text-blue-600" />, title: "UX Research & Strategy", description: "Deep user research to ensure your product meets real user needs and solves actual problems.", features: ["User personas", "Journey mapping", "Usability testing", "Competitor analysis"], image: w3 },
-            { icon: <FaCogs className="w-8 h-8 text-blue-600" />, title: "Design Systems", description: "Comprehensive component libraries and style guides to ensure consistency across your digital products.", features: ["Typography scales", "Color palettes", "UI components", "Documentation"], image: w4 },
-            { icon: <FaCode className="w-8 h-8 text-blue-600" />, title: "Wireframing & Prototyping", description: "Interactive prototypes to visualize and test the product before writing a single line of code.", features: ["Low-fidelity wireframes", "High-fidelity prototypes", "Figma/XD", "User flow validation"], image: w5 },
-            { icon: <FaUsers className="w-8 h-8 text-blue-600" />, title: "Branding & Visual Identity", description: "Cohesive visual branding that resonates with your target audience and strengthens brand recall.", features: ["Logo integration", "Brand guidelines", "Typography", "Visual storytelling"], image: w6 }
-        ];
+    { title: "UI/UX Design", icon: <FaPaintBrush className="text-blue-600 text-2xl" />, description: "User-centric interfaces that combine stunning aesthetics with seamless usability.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: uiuxDesignImg },
+    { title: "Website UI Design", icon: <FaDesktop className="text-blue-600 text-2xl" />, description: "Beautiful, responsive website designs that captivate and convert visitors.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: websiteUiDesignImg },
+    { title: "Mobile App UI Design", icon: <FaMobile className="text-blue-600 text-2xl" />, description: "Intuitive mobile application interfaces optimized for iOS and Android.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: mobileAppUiDesignImg },
+    { title: "Dashboard Design", icon: <FaChartLine className="text-blue-600 text-2xl" />, description: "Clear, functional, and visually appealing admin panels and data dashboards.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: dashboardDesignImg },
+    { title: "SaaS Product Design", icon: <FaCloud className="text-blue-600 text-2xl" />, description: "End-to-end product design for scalable Software-as-a-Service platforms.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: saasProductDesignImg },
+    { title: "Design System Development", icon: <FaCogs className="text-blue-600 text-2xl" />, description: "Comprehensive component libraries and style guides for consistent branding.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: designSystemDevelopmentImg },
+    { title: "Figma Prototyping", icon: <FaDesktop className="text-blue-600 text-2xl" />, description: "Interactive, high-fidelity prototypes to visualize and test your product before coding.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: figmaPrototypingImg },
+    { title: "UX Research", icon: <FaUsers className="text-blue-600 text-2xl" />, description: "In-depth user research, testing, and persona development to inform design decisions.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=600&auto=format&fit=crop" },
+    { title: "Wireframing", icon: <FaCode className="text-blue-600 text-2xl" />, description: "Structural blueprints that define the layout and flow of your digital product.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: wireframingImg },
+    { title: "Branding & Visual Identity", icon: <FaLightbulb className="text-blue-600 text-2xl" />, description: "Cohesive brand identities, including logos, typography, and color palettes.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: brandingVisualIdentityImg }
+  ];
 
-  const caseStudies = [
-            { title: "SaaS Dashboard Redesign", description: "Completely revamped the UI/UX for a complex analytics platform", result: "Increased user retention by 45%", image: app },
-            { title: "E-Commerce Mobile App Design", description: "Designed an intuitive shopping experience for a fashion retailer", result: "Boosted mobile checkout completion by 30%", image: app2 }
-        ];
-
-  // Map service titles to their corresponding images
   const serviceImages = {
-    'default': app2,
-    'Web Application UI Design': w1,
-    'Mobile App UI Design': w2,
-    'UX Research & Strategy': w3,
-    'Design Systems': w4,
-    'Wireframing & Prototyping': w5,
-    'Branding & Visual Identity': w6
+    'default': diffImgNew,
+    ...services.reduce((acc, curr) => ({ ...acc, [curr.title]: curr.image }), {})
   };
 
   const serviceDescriptions = {
-    'default': "We design beautiful, intuitive, and highly-converting digital interfaces that your users will absolutely love.",
-    'Web Application UI Design': "Expert implementation of Web Application UI Design tailored to your specific business requirements and industry standards.",
-    'Mobile App UI Design': "Comprehensive Mobile App UI Design solutions designed for scalability, security, and maximum performance.",
-    'UX Research & Strategy': "Advanced UX Research & Strategy integrations to streamline your workflows and boost operational efficiency.",
-    'Design Systems': "Future-proof Design Systems architectures that drive digital transformation and user engagement.",
-    'Wireframing & Prototyping': "Robust Wireframing & Prototyping frameworks customized for your enterprise needs with 24/7 reliability.",
-    'Branding & Visual Identity': "Cutting-edge Branding & Visual Identity strategies to keep your business ahead of the technological curve."
+    'default': "Explore our comprehensive suite of professional services designed to accelerate your digital transformation.",
+    ...services.reduce((acc, curr) => ({ ...acc, [curr.title]: curr.description }), {})
   };
 
   useEffect(() => {
@@ -87,7 +86,7 @@ const UiUxDesign = forwardRef((props, ref) => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url(${heroImg})`,
+            backgroundImage: `url(${heroImgNew})`,
           }}
         ></div>
         <div className="absolute inset-0"></div>
@@ -128,15 +127,8 @@ const UiUxDesign = forwardRef((props, ref) => {
             {/* Left Content */}
             <div>
               <h3 className="text-2xl font-bold text-red-500 mb-6">OUR OFFERINGS</h3>
-              <div className="space-y-4">
-                {[
-                  'Web Application UI Design',
-                  'Mobile App UI Design',
-                  'UX Research & Strategy',
-                  'Design Systems',
-                  'Wireframing & Prototyping',
-                  'Branding & Visual Identity'
-                ].map((service) => (
+              <div className="space-y-4 max-h-[600px] overflow-y-auto pr-4 custom-scrollbar">
+                {services.map(s => s.title).map((service) => (
                   <div 
                     key={service}
                     onMouseEnter={() => setHoveredService(service.replace('— ', ''))}
@@ -275,7 +267,7 @@ const UiUxDesign = forwardRef((props, ref) => {
               </h3>
               <div className="relative rounded-lg overflow-hidden">
                 <img 
-                  src={diffImg}
+                  src={diffImgNew}
                   alt="Innomatrics Tech Professional"
                   className="w-full h-[400px] object-cover rounded-lg"
                 />
@@ -324,7 +316,7 @@ const UiUxDesign = forwardRef((props, ref) => {
             </div>
             <div className="w-full mt-16 md:w-1/2">
               <img
-                src={introImg}
+                src={heroImgNew}
                 alt="Innomatrics Digital Solutions"
                 className="w-full h-72 rounded-lg shadow-md"
               />
@@ -373,36 +365,6 @@ const UiUxDesign = forwardRef((props, ref) => {
                         </li>
                       ))}
                     </ul>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Case Studies */}
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold text-center text-red-600 mb-12">
-              Success Stories
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {caseStudies.map((caseStudy, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-xl overflow-hidden shadow-lg"
-                >
-                  <img
-                    src={caseStudy.image}
-                    alt={caseStudy.title}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                      {caseStudy.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4">{caseStudy.description}</p>
-                    <div className="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg inline-block">
-                      <strong>Result:</strong> {caseStudy.result}
-                    </div>
                   </div>
                 </div>
               ))}

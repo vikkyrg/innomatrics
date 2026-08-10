@@ -22,31 +22,31 @@ const WhatWeDo = () => {
     </li>
     </Link>
 
-    <Link to ="/webdev" onClick={()=> handleClick(webDevRef)}>
+    <Link to ="/web-development" onClick={()=> handleClick(webDevRef)}>
     <li className="mb-4">
       Web Development
     </li>
     </Link>
     
-    <Link to ="/appdev" onClick={()=> handleClick(appDevRef)}>
+    <Link to ="/app-development" onClick={()=> handleClick(appDevRef)}>
     <li className="mb-4">
       App Development
     </li>
     </Link>
 
-    <Link to ="/socialmedia" onClick={()=> handleClick(socialMediaRef)}>
+    <Link to ="/social-media" onClick={()=> handleClick(socialMediaRef)}>
     <li className="mb-4">
       Social Media Marketing
     </li>
     </Link>
 
-    <Link to = "/logodesign" onClick={()=> handleClick(logoDesRef)}>
+    <Link to = "/logo-design" onClick={()=> handleClick(logoDesRef)}>
     <li className="mb-4">
       Brand/Logo Design
     </li>
     </Link>
     
-    <Link to = "/digitalmarket" onClick={()=> handleClick(digitalMarktRef)}>
+    <Link to = "/digital-marketing" onClick={()=> handleClick(digitalMarktRef)}>
     <li className="mb-4">
       Digital Marketing
     </li>

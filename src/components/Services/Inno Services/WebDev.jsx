@@ -6,42 +6,60 @@ import w2 from "../../../assets/webServices/w2.jpg";
 import w3 from "../../../assets/webServices/w3.jpg";
 import w4 from "../../../assets/webServices/w4.webp";
 import w5 from "../../../assets/webServices/w5.jpg";
-import w6 from "../../../assets/webServices/w6.avif";
+import w6 from "../../../assets/webServices/w6.jpg";
+import w7 from "../../../assets/webServices/w7.jpg";
+import w8 from "../../../assets/webServices/w8.jpg";
+import w9 from "../../../assets/webServices/w9.jpg";
+import w10 from "../../../assets/webServices/w10.jpg";
+import w11 from "../../../assets/webServices/w11.jpg";
+import w12 from "../../../assets/webServices/w12.jpg";
+import w13 from "../../../assets/webServices/w13.jpg";
+import w14 from "../../../assets/webServices/w14.jpg";
+import w15 from "../../../assets/webServices/w15.jpg";
+import w16 from "../../../assets/webServices/w16.jpg";
+import w17 from "../../../assets/webServices/w17.jpg";
+import w18 from "../../../assets/webServices/w18.jpg";
 import { FaCheckCircle, FaSyncAlt, FaPlug } from "react-icons/fa";
 import "./WebDev.css";
 import { Link } from "react-router-dom";
 import {
-  FaCode,
-  FaDesktop,
-  FaMobile,
-  FaShoppingCart,
-  FaDatabase,
-  FaCloud,
-  FaLock,
-  FaChartLine,
-  FaUsers,
-  FaShieldAlt,
-  FaRocket,
-  FaLightbulb,
-  FaBuilding,
-  FaChartLine as FaChartLineIcon,
-  FaCogs,
+  FaCode, FaDesktop, FaMobile, FaShoppingCart, FaDatabase, FaCloud,
+  FaLock, FaChartLine, FaUsers, FaShieldAlt, FaRocket, FaLightbulb,
+  FaBuilding, FaCogs, FaStore, FaCalendarAlt, FaBullseye, FaPaintBrush, FaTools
 } from "react-icons/fa";
 import {
-  FaReact,
-  FaNodeJs,
-  FaAngular,
-  FaVuejs,
-  FaPhp,
-  FaPython,
+  FaReact, FaNodeJs, FaAngular, FaVuejs, FaPhp, FaPython
 } from "react-icons/fa";
-import { SiMongodb, SiMysql } from "react-icons/si";
+import { SiMongodb, SiMysql, SiNextdotjs, SiLaravel, SiWordpress } from "react-icons/si";
+import ws1 from "../../../assets/appServices/customDev.jpg";
+import ws2 from "../../../assets/appServices/strategicPlanApp.jpg";
+import ws3 from "../../../assets/appServices/flat-cms-web-template_23-2148825194.avif";
+import ws4 from "../../../assets/logoDesService/l1.jpg";
+import ws5 from "../../../assets/logoDesService/l2.avif";
+import ws6 from "../../../assets/logoDesService/l3.avif";
+import ws7 from "../../../assets/logoDesService/l4.jpg";
+import ws8 from "../../../assets/logoDesService/l5.avif";
+import ws9 from "../../../assets/appServices/online-shopping-concept-landing-page_23-2148253518.avif";
+import ws10 from "../../../assets/appServices/usercentric.webp";
+import ws11 from "../../../assets/appServices/crossPlatform.png";
+import ws12 from "../../../assets/digitalMarketing/d1.jpg";
+import ws13 from "../../../assets/digitalMarketing/d3.avif";
+import ws14 from "../../../assets/appServices/maintainenece.jpg";
+import ws15 from "../../../assets/appServices/qualityTest.png";
 
-const ServicesCard = ({ title, description, image }) => (
-  <div className="bg-white shadow-lg rounded-xl p-6 m-4 flex-1 transform hover:scale-105 transition-all duration-300 hover:shadow-xl border border-gray-100">
-    <img src={image} className="w-full h-32 object-contain mb-4" alt={title} />
+
+const ServicesCard = ({ title, description, image, imageComponent }) => (
+  <div className="bg-white shadow-lg rounded-xl p-6 m-4 flex-1 transform hover:scale-105 transition-all duration-300 hover:shadow-xl border border-gray-100 flex flex-col">
+    {imageComponent ? (
+      <div className="w-full h-40 mb-6 rounded-xl flex items-center justify-center overflow-hidden shadow-inner relative group">
+        {imageComponent}
+        <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none"></div>
+      </div>
+    ) : (
+      <img src={image} className="w-full h-40 object-cover rounded-xl mb-6" alt={title} />
+    )}
     <h3 className="text-lg font-semibold text-gray-800 mb-2">{title}</h3>
-    <p className="text-gray-600">{description}</p>
+    <p className="text-gray-600 leading-relaxed">{description}</p>
   </div>
 );
 
@@ -53,10 +71,7 @@ const WebDev = forwardRef((props, ref) => {
     { name: "Angular", icon: <FaAngular className="text-blue-600 text-2xl" /> },
     { name: "Vue.js", icon: <FaVuejs className="text-blue-600 text-2xl" /> },
     { name: "PHP/Laravel", icon: <FaPhp className="text-blue-600 text-2xl" /> },
-    {
-      name: "Python/Django",
-      icon: <FaPython className="text-blue-600 text-2xl" />,
-    },
+    { name: "Python/Django", icon: <FaPython className="text-blue-600 text-2xl" /> },
     { name: "MongoDB", icon: <SiMongodb className="text-blue-600 text-2xl" /> },
     { name: "MySQL", icon: <SiMysql className="text-blue-600 text-2xl" /> },
   ];
@@ -144,8 +159,113 @@ const WebDev = forwardRef((props, ref) => {
         "Security audits",
         "Compliance consulting",
       ],
+      image: ws1,
+    },
+    {
+      icon: <FaBuilding className="w-8 h-8 text-blue-600" />,
+      title: "Corporate Website Development",
+      description: "Professional, scalable, and secure websites tailored for large-scale corporate enterprises.",
+      features: ["Brand integration", "Scalable architecture", "Enterprise security", "Content management", "Analytics integration"],
       image: w6,
     },
+    {
+      icon: <FaChartLine className="w-8 h-8 text-blue-600" />,
+      title: "Business Website Development",
+      description: "Conversion-focused websites designed to generate leads and grow your business footprint.",
+      features: ["Lead generation", "Mobile responsive", "SEO optimized", "Fast loading", "CRM integration"],
+      image: w7,
+    },
+    {
+      icon: <FaCode className="w-8 h-8 text-blue-600" />,
+      title: "WordPress Development",
+      description: "Custom WordPress themes and plugins for dynamic, easy-to-manage content platforms.",
+      features: ["Custom themes", "Plugin development", "Performance tuning", "Security hardening", "Migration services"],
+      image: w8,
+    },
+    {
+      icon: <FaPhp className="w-8 h-8 text-blue-600" />,
+      title: "Custom PHP Development",
+      description: "Robust back-end systems and web applications built using advanced PHP frameworks.",
+      features: ["MVC architecture", "RESTful APIs", "Database optimization", "Legacy system upgrades", "Secure coding"],
+      image: w9,
+    },
+    {
+      icon: <FaReact className="w-8 h-8 text-blue-600" />,
+      title: "React.js Development",
+      description: "High-performance, interactive single-page applications built with React.",
+      features: ["SPAs", "Component reusability", "State management", "Fast rendering", "Interactive UIs"],
+      image: w10,
+    },
+    {
+      icon: <FaReact className="w-8 h-8 text-blue-600" />,
+      title: "Next.js Development",
+      description: "SEO-friendly, server-side rendered React applications using Next.js.",
+      features: ["Server-Side Rendering", "Static Site Generation", "API Routes", "SEO optimization", "Fast performance"],
+      image: w11,
+    },
+    {
+      icon: <FaPhp className="w-8 h-8 text-blue-600" />,
+      title: "Laravel Development",
+      description: "Elegant and scalable web applications powered by the Laravel PHP framework.",
+      features: ["Eloquent ORM", "Blade templating", "Authentication setup", "API integration", "Automated testing"],
+      image: w12,
+    },
+    {
+      icon: <FaNodeJs className="w-8 h-8 text-blue-600" />,
+      title: "Node.js Development",
+      description: "Fast, scalable, and real-time backend services using Node.js.",
+      features: ["Real-time apps", "Microservices", "REST APIs", "Socket.io", "High concurrency"],
+      image: w13,
+    },
+    {
+      icon: <FaShoppingCart className="w-8 h-8 text-blue-600" />,
+      title: "E-Commerce Website Development",
+      description: "Custom online stores that provide seamless shopping experiences and secure checkouts.",
+      features: ["Shopping cart", "Payment gateways", "Product management", "Order tracking", "Mobile commerce"],
+      image: w14,
+    },
+    {
+      icon: <FaShoppingCart className="w-8 h-8 text-blue-600" />,
+      title: "Multi-Vendor E-Commerce",
+      description: "Robust marketplace platforms allowing multiple vendors to sell their products in one place.",
+      features: ["Vendor dashboards", "Commission management", "Storefronts", "Unified checkout", "Admin panel"],
+      image: w15,
+    },
+    {
+      icon: <FaDesktop className="w-8 h-8 text-blue-600" />,
+      title: "Booking & Reservation Websites",
+      description: "Streamlined booking systems for hotels, events, clinics, and service providers.",
+      features: ["Calendar integration", "Availability checks", "Online payments", "Automated reminders", "User profiles"],
+      image: w16,
+    },
+    {
+      icon: <FaUsers className="w-8 h-8 text-blue-600" />,
+      title: "Portal Development",
+      description: "Secure web portals for B2B, B2C, patient, or employee management.",
+      features: ["Role-based access", "Data visualization", "Secure login", "Document management", "Internal communication"],
+      image: w17,
+    },
+    {
+      icon: <FaDesktop className="w-8 h-8 text-blue-600" />,
+      title: "Landing Page Development",
+      description: "High-converting, visually striking landing pages for campaigns and product launches.",
+      features: ["A/B testing", "Call-to-action optimization", "Analytics setup", "Fast loading", "Mobile responsiveness"],
+      image: w18,
+    },
+    {
+      icon: <FaSyncAlt className="w-8 h-8 text-blue-600" />,
+      title: "Website Redesign",
+      description: "Modernize your existing website with improved UI/UX and better performance.",
+      features: ["UI/UX overhaul", "Performance improvements", "Content migration", "Responsive design", "SEO retention"],
+      image: ws14,
+    },
+    {
+      icon: <FaCogs className="w-8 h-8 text-blue-600" />,
+      title: "Website Maintenance",
+      description: "Ongoing support, security updates, and performance optimization for your web assets.",
+      features: ["Security patches", "Uptime monitoring", "Content updates", "Bug fixing", "Monthly reports"],
+      image: ws15,
+    }
   ];
 
   const processSteps = [
@@ -193,41 +313,15 @@ const WebDev = forwardRef((props, ref) => {
     },
   ];
 
-  const caseStudies = [
-    {
-      title: "E-Commerce Platform for Retail Giant",
-      description:
-        "Built a scalable online store handling 50,000+ daily transactions",
-      result: "Increased conversions by 35%",
-      image: app,
-    },
-    {
-      title: "Enterprise SaaS Solution",
-      description: "Developed a custom SaaS platform for workforce management",
-      result: "Reduced operational costs by 40%",
-      image: app2,
-    },
-  ];
-
   // Map service titles to their corresponding images
   const serviceImages = {
     'default': app2,
-    'Custom Web Application Development': w1,
-    'E-Commerce Development': w2,
-    'Enterprise Solutions': w3,
-    'Cloud Solutions': w4,
-    'CMS Development': w5,
-    'Web Security Solutions': w6
+    ...services.reduce((acc, curr) => ({ ...acc, [curr.title]: curr.image }), {})
   };
 
   const serviceDescriptions = {
     'default': "Reduce the time it takes for business ideas to become reality in production applications. We'll help you define, design, enhance, develop and maintain applications to meet your specific business requirements.",
-    'Custom Web Application Development': "Tailored web applications designed for your unique business needs and workflows with scalable architecture and custom functionality.",
-    'E-Commerce Development': "Complete e-commerce solutions from storefront to checkout to inventory management with secure payment processing.",
-    'Enterprise Solutions': "Scalable solutions for large organizations with complex business processes and enterprise-level integrations.",
-    'Cloud Solutions': "Cloud-native applications and migration services for optimal scalability and performance in the cloud environment.",
-    'CMS Development': "Custom content management systems for effortless content control with SEO-friendly architecture.",
-    'Web Security Solutions': "Comprehensive security solutions to protect your web assets from vulnerabilities and threats."
+    ...services.reduce((acc, curr) => ({ ...acc, [curr.title]: curr.description }), {})
   };
 
   useEffect(() => {
@@ -283,18 +377,11 @@ const WebDev = forwardRef((props, ref) => {
             {/* Left Content */}
             <div>
               <h3 className="text-2xl font-bold text-red-500 mb-6">OUR OFFERINGS</h3>
-              <div className="space-y-4">
-                {[
-                  'Custom Web Application Development',
-                  'E-Commerce Development',
-                  'Enterprise Solutions',
-                  '— Cloud Solutions',
-                  'CMS Development',
-                  'Web Security Solutions'
-                ].map((service) => (
+              <div className="space-y-4 max-h-[600px] overflow-y-auto pr-4 custom-scrollbar">
+                {services.map(s => s.title).map((service) => (
                   <div 
                     key={service}
-                    onMouseEnter={() => setHoveredService(service.replace('— ', ''))}
+                    onMouseEnter={() => setHoveredService(service)}
                     onMouseLeave={() => setHoveredService(null)}
                     className="group"
                   >
@@ -490,6 +577,7 @@ const WebDev = forwardRef((props, ref) => {
             </div>
           </div>
 
+                            
           {/* Services Grid */}
           <div className="mb-20">
             <h2 className="text-3xl font-bold text-center text-red-600 mb-12">
@@ -499,26 +587,33 @@ const WebDev = forwardRef((props, ref) => {
               {services.map((service, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100"
+                  className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 flex flex-col"
                 >
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-6">
+                  {service.imageComponent ? (
+                    <div className="w-full h-48 flex items-center justify-center overflow-hidden relative group">
+                      {service.imageComponent}
+                      <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none"></div>
+                    </div>
+                  ) : (
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-48 object-cover"
+                    />
+                  )}
+                  <div className="p-6 flex flex-col flex-grow">
                     <div className="flex items-center mb-4">
                       <div className="mr-4">{service.icon}</div>
                       <h3 className="text-xl font-semibold text-gray-900">
                         {service.title}
                       </h3>
                     </div>
-                    <p className="text-gray-600 mb-6">{service.description}</p>
+                    <p className="text-gray-600 mb-6 flex-grow">{service.description}</p>
                     <ul className="space-y-3">
                       {service.features.map((feature, idx) => (
                         <li key={idx} className="flex items-center text-gray-600">
                           <svg
-                            className="w-4 h-4 text-blue-600 mr-2"
+                            className="w-4 h-4 text-blue-600 mr-2 flex-shrink-0"
                             fill="currentColor"
                             viewBox="0 0 20 20"
                           >
@@ -528,7 +623,7 @@ const WebDev = forwardRef((props, ref) => {
                               clipRule="evenodd"
                             />
                           </svg>
-                          {feature}
+                          <span>{feature}</span>
                         </li>
                       ))}
                     </ul>
@@ -538,35 +633,6 @@ const WebDev = forwardRef((props, ref) => {
             </div>
           </div>
 
-          {/* Case Studies */}
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold text-center text-red-600 mb-12">
-              Success Stories
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {caseStudies.map((caseStudy, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-xl overflow-hidden shadow-lg"
-                >
-                  <img
-                    src={caseStudy.image}
-                    alt={caseStudy.title}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                      {caseStudy.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4">{caseStudy.description}</p>
-                    <div className="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg inline-block">
-                      <strong>Result:</strong> {caseStudy.result}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
 
           {/* Why Choose Innomatrics */}
           <div className="mb-20 bg-blue-900 rounded-2xl p-12 text-white">
@@ -575,7 +641,7 @@ const WebDev = forwardRef((props, ref) => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="text-center">
-                <div className="text-4xl font-bold mb-2">3+</div>
+                <div className="text-4xl font-bold mb-2">5+</div>
                 <div className="text-xl">Years in Web Development</div>
               </div>
               <div className="text-center">

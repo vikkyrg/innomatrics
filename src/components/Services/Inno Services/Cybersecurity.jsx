@@ -1,17 +1,19 @@
+import heroImgNew from "../../../assets/new_category_images/Cybersecurity_hero.jpg";
+import diffImgNew from "../../../assets/new_category_images/Cybersecurity_diff.jpg";
 import React, { forwardRef, useEffect, useState } from "react";
-import { FaCheckCircle, FaSyncAlt, FaPlug, FaCode, FaDesktop, FaMobile, FaShoppingCart, FaDatabase, FaCloud, FaLock, FaChartLine, FaUsers, FaShieldAlt, FaRocket, FaLightbulb, FaBuilding, FaChartLine as FaChartLineIcon, FaCogs, FaRobot, FaPaintBrush, FaBriefcase, FaReact, FaNodeJs, FaAngular, FaVuejs, FaPhp, FaPython } from "react-icons/fa";
-import heroImg from "../../../assets/services_hero/hero_cybersecurity.png";
+import { FaCheckCircle, FaSyncAlt, FaPlug, FaCode, FaDesktop, FaMobile, FaShoppingCart, FaDatabase, FaCloud, FaLock, FaChartLine, FaUsers, FaShieldAlt, FaRocket, FaLightbulb, FaBuilding, FaChartLine as FaChartLineIcon, FaCogs, FaRobot, FaPaintBrush, FaBriefcase, FaReact, FaNodeJs, FaAngular, FaVuejs, FaPhp, FaPython, FaBug } from "react-icons/fa";
 
-import app from "../../../assets/services_cards/Cybersecurity_cs1.jpg";
-import app2 from "../../../assets/services_cards/Cybersecurity_cs2.jpg";
+
+
+
 import w1 from "../../../assets/services_cards/Cybersecurity_w1.jpg";
 import w2 from "../../../assets/services_cards/Cybersecurity_w2.jpg";
 import w3 from "../../../assets/services_cards/Cybersecurity_w3.jpg";
 import w4 from "../../../assets/services_cards/Cybersecurity_w4.jpg";
 import w5 from "../../../assets/services_cards/Cybersecurity_w5.jpg";
 import w6 from "../../../assets/services_cards/Cybersecurity_w6.jpg";
-import introImg from "../../../assets/services_cards/Cybersecurity_intro.jpg";
-import diffImg from "../../../assets/services_cards/Cybersecurity_diff.jpg";
+
+
 
 
 import "./Cybersecurity.css";
@@ -19,6 +21,12 @@ import { Link } from "react-router-dom";
 
 
 import { SiMongodb, SiMysql } from "react-icons/si";
+import wordpressSecurityImg from "../../../assets/webServices/WordPress Security.jpg";
+import securityAuditImg from "../../../assets/webServices/Security Audit.jpg";
+import malwareRemovalImg from "../../../assets/webServices/Malware Removal.jpg";
+import websiteSecurityImg from "../../../assets/webServices/Website Security.jpg";
+import sslHttpsSecurityImg from "../../../assets/webServices/SSL & HTTPS Security.jpg";
+import serverDeploymentImg from "../../../assets/webServices/Server Deployment.jpg";
 
 const ServicesCard = ({ title, description, image }) => (
   <div className="bg-white shadow-lg rounded-xl p-6 m-4 flex-1 transform hover:scale-105 transition-all duration-300 hover:shadow-xl border border-gray-100">
@@ -42,38 +50,26 @@ const Cybersecurity = forwardRef((props, ref) => {
   ];
 
   const services = [
-            { icon: <FaShieldAlt className="w-8 h-8 text-blue-600" />, title: "Website & App Security", description: "Implement robust security protocols to protect web and mobile applications from vulnerabilities.", features: ["WAF integration", "Malware scanning", "XSS protection", "SQL injection defense"], image: w1 },
-            { icon: <FaLock className="w-8 h-8 text-blue-600" />, title: "Security Audits", description: "Comprehensive assessments to identify and patch security gaps in your infrastructure.", features: ["Vulnerability assessment", "Code review", "Architecture review", "Compliance checking"], image: w2 },
-            { icon: <FaDatabase className="w-8 h-8 text-blue-600" />, title: "Data Protection", description: "Advanced encryption and data protection strategies to secure sensitive information.", features: ["End-to-end encryption", "Data masking", "Access control", "Backup strategies"], image: w3 },
-            { icon: <FaCloud className="w-8 h-8 text-blue-600" />, title: "Cloud Security", description: "Secure your cloud environments across AWS, Azure, and Google Cloud platforms.", features: ["IAM configuration", "Network security groups", "Cloud monitoring", "Threat detection"], image: w4 },
-            { icon: <FaSyncAlt className="w-8 h-8 text-blue-600" />, title: "Disaster Recovery", description: "Business continuity planning and automated backup solutions for rapid recovery.", features: ["Automated backups", "Failover systems", "Recovery testing", "Incident response"], image: w5 },
-            { icon: <FaDesktop className="w-8 h-8 text-blue-600" />, title: "SSL & Network Security", description: "Implementation of secure communication protocols and network defenses.", features: ["SSL/TLS configuration", "VPN setup", "Intrusion detection", "Firewall management"], image: w6 }
-        ];
+    { title: "Website Security", icon: <FaShieldAlt className="text-blue-600 text-2xl" />, description: "Comprehensive protection against modern web vulnerabilities and attacks.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: websiteSecurityImg },
+    { title: "WordPress Security", icon: <FaLock className="text-blue-600 text-2xl" />, description: "Hardening and securing WordPress installations against brute force and exploits.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: wordpressSecurityImg },
+    { title: "Security Audit", icon: <FaDesktop className="text-blue-600 text-2xl" />, description: "In-depth analysis of your systems to identify potential security weaknesses.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: securityAuditImg },
+    { title: "Vulnerability Assessment", icon: <FaBug className="text-blue-600 text-2xl" />, description: "Proactive scanning and assessment to discover and patch vulnerabilities.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: "https://images.unsplash.com/photo-1533750516457-a7f992034fec?q=80&w=600&auto=format&fit=crop" },
+    { title: "SSL & HTTPS Security", icon: <FaLock className="text-blue-600 text-2xl" />, description: "End-to-end encryption setup to protect data in transit.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: sslHttpsSecurityImg },
+    { title: "Firewall Configuration", icon: <FaShieldAlt className="text-blue-600 text-2xl" />, description: "Robust network and web application firewalls to block malicious traffic.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=600&auto=format&fit=crop" },
+    { title: "Malware Removal", icon: <FaSyncAlt className="text-blue-600 text-2xl" />, description: "Rapid detection and elimination of malicious software from compromised systems.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: malwareRemovalImg },
+    { title: "Backup & Recovery", icon: <FaDatabase className="text-blue-600 text-2xl" />, description: "Secure data backups and rapid restoration procedures for disaster recovery.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=600&auto=format&fit=crop" },
+    { title: "Security Monitoring", icon: <FaDesktop className="text-blue-600 text-2xl" />, description: "24/7 continuous monitoring for suspicious activities and potential breaches.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: serverDeploymentImg },
+    { title: "Data Protection Consulting", icon: <FaUsers className="text-blue-600 text-2xl" />, description: "Expert guidance on data privacy laws and compliance frameworks.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=600&auto=format&fit=crop" }
+  ];
 
-  const caseStudies = [
-            { title: "Financial Services Security Audit", description: "Conducted a full security audit and patched critical vulnerabilities for a fintech startup", result: "Achieved 100% compliance with industry standards", image: app },
-            { title: "Enterprise Cloud Security Implementation", description: "Secured a multi-cloud environment for a healthcare provider", result: "Zero security breaches post-implementation", image: app2 }
-        ];
-
-  // Map service titles to their corresponding images
   const serviceImages = {
-    'default': app2,
-    'Website & App Security': w1,
-    'Security Audits': w2,
-    'Data Protection': w3,
-    'Cloud Security': w4,
-    'Disaster Recovery': w5,
-    'SSL & Network Security': w6
+    'default': diffImgNew,
+    ...services.reduce((acc, curr) => ({ ...acc, [curr.title]: curr.image }), {})
   };
 
   const serviceDescriptions = {
-    'default': "We protect your applications, networks, and data from advanced cyber threats with enterprise-grade security protocols.",
-    'Website & App Security': "Expert implementation of Website & App Security tailored to your specific business requirements and industry standards.",
-    'Security Audits': "Comprehensive Security Audits solutions designed for scalability, security, and maximum performance.",
-    'Data Protection': "Advanced Data Protection integrations to streamline your workflows and boost operational efficiency.",
-    'Cloud Security': "Future-proof Cloud Security architectures that drive digital transformation and user engagement.",
-    'Disaster Recovery': "Robust Disaster Recovery frameworks customized for your enterprise needs with 24/7 reliability.",
-    'SSL & Network Security': "Cutting-edge SSL & Network Security strategies to keep your business ahead of the technological curve."
+    'default': "Explore our comprehensive suite of professional services designed to accelerate your digital transformation.",
+    ...services.reduce((acc, curr) => ({ ...acc, [curr.title]: curr.description }), {})
   };
 
   useEffect(() => {
@@ -87,7 +83,7 @@ const Cybersecurity = forwardRef((props, ref) => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url(${heroImg})`,
+            backgroundImage: `url(${heroImgNew})`,
           }}
         ></div>
         <div className="absolute inset-0"></div>
@@ -128,15 +124,8 @@ const Cybersecurity = forwardRef((props, ref) => {
             {/* Left Content */}
             <div>
               <h3 className="text-2xl font-bold text-red-500 mb-6">OUR OFFERINGS</h3>
-              <div className="space-y-4">
-                {[
-                  'Website & App Security',
-                  'Security Audits',
-                  'Data Protection',
-                  'Cloud Security',
-                  'Disaster Recovery',
-                  'SSL & Network Security'
-                ].map((service) => (
+              <div className="space-y-4 max-h-[600px] overflow-y-auto pr-4 custom-scrollbar">
+                {services.map(s => s.title).map((service) => (
                   <div 
                     key={service}
                     onMouseEnter={() => setHoveredService(service.replace('— ', ''))}
@@ -275,7 +264,7 @@ const Cybersecurity = forwardRef((props, ref) => {
               </h3>
               <div className="relative rounded-lg overflow-hidden">
                 <img 
-                  src={diffImg}
+                  src={diffImgNew}
                   alt="Innomatrics Tech Professional"
                   className="w-full h-[400px] object-cover rounded-lg"
                 />
@@ -324,7 +313,7 @@ const Cybersecurity = forwardRef((props, ref) => {
             </div>
             <div className="w-full mt-16 md:w-1/2">
               <img
-                src={introImg}
+                src={heroImgNew}
                 alt="Innomatrics Digital Solutions"
                 className="w-full h-72 rounded-lg shadow-md"
               />
@@ -373,36 +362,6 @@ const Cybersecurity = forwardRef((props, ref) => {
                         </li>
                       ))}
                     </ul>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Case Studies */}
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold text-center text-red-600 mb-12">
-              Success Stories
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {caseStudies.map((caseStudy, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-xl overflow-hidden shadow-lg"
-                >
-                  <img
-                    src={caseStudy.image}
-                    alt={caseStudy.title}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                      {caseStudy.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4">{caseStudy.description}</p>
-                    <div className="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg inline-block">
-                      <strong>Result:</strong> {caseStudy.result}
-                    </div>
                   </div>
                 </div>
               ))}

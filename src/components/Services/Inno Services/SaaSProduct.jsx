@@ -19,6 +19,20 @@ import { Link } from "react-router-dom";
 
 
 import { SiMongodb, SiMysql } from "react-icons/si";
+import saas1 from "../../../assets/saasServices/saas_1.webp";
+import saas2 from "../../../assets/saasServices/saas_2.webp";
+import saas3 from "../../../assets/saasServices/saas_3.webp";
+import saas4 from "../../../assets/saasServices/saas_4.webp";
+import saas5 from "../../../assets/saasServices/saas_5.webp";
+import saas6 from "../../../assets/saasServices/saas_6.webp";
+import saas7 from "../../../assets/saasServices/saas_7.webp";
+import saas8 from "../../../assets/saasServices/saas_8.webp";
+import saas9 from "../../../assets/saasServices/saas_9.webp";
+import saas10 from "../../../assets/saasServices/saas_10.webp";
+
+import tenantMgmtImg from "../../../assets/webServices/Tenant Management.jpg";
+import subSoftwareImg from "../../../assets/webServices/Subscription-Based Software.jpg";
+import cloudPlatformImg from "../../../assets/webServices/Cloud-Based Business Platforms.jpg";
 
 const ServicesCard = ({ title, description, image }) => (
   <div className="bg-white shadow-lg rounded-xl p-6 m-4 flex-1 transform hover:scale-105 transition-all duration-300 hover:shadow-xl border border-gray-100">
@@ -42,38 +56,26 @@ const SaaSProduct = forwardRef((props, ref) => {
   ];
 
   const services = [
-            { icon: <FaCloud className="w-8 h-8 text-blue-600" />, title: "SaaS Application Development", description: "End-to-end development of scalable, multi-tenant software-as-a-service platforms.", features: ["Multi-tenant architecture", "Microservices", "High availability", "Cloud deployment"], image: w1 },
-            { icon: <FaUsers className="w-8 h-8 text-blue-600" />, title: "Tenant Management Systems", description: "Robust admin portals for managing users, roles, and organizational structures.", features: ["Role-based access", "User onboarding", "Usage analytics", "Audit logs"], image: w2 },
-            { icon: <FaShoppingCart className="w-8 h-8 text-blue-600" />, title: "Subscription Integration", description: "Seamless implementation of recurring billing and subscription management.", features: ["Payment gateways", "Tiered pricing", "Usage-based billing", "Invoice automation"], image: w3 },
-            { icon: <FaPlug className="w-8 h-8 text-blue-600" />, title: "SaaS API Development", description: "Secure and well-documented APIs to allow external integrations with your product.", features: ["REST/GraphQL APIs", "Rate limiting", "API keys management", "Developer documentation"], image: w4 },
-            { icon: <FaDesktop className="w-8 h-8 text-blue-600" />, title: "SaaS Admin Panels", description: "Intuitive dashboards for administrators to monitor platform health and metrics.", features: ["Real-time metrics", "Revenue tracking", "System health monitoring", "User support tools"], image: w5 },
-            { icon: <FaMobile className="w-8 h-8 text-blue-600" />, title: "SaaS Mobile Apps", description: "Companion mobile applications for your SaaS platform to enable on-the-go access.", features: ["Cross-platform sync", "Push notifications", "Offline capabilities", "Biometric security"], image: w6 }
-        ];
+    { title: "SaaS Application Development", icon: <FaCloud className="text-blue-600 text-2xl" />, description: "End-to-end development of scalable, multi-tenant software-as-a-service platforms.", features: ["Multi-tenant architecture", "Microservices", "High availability", "Cloud deployment"], image: saas1 },
+    { title: "Multi-Tenant SaaS", icon: <FaUsers className="text-blue-600 text-2xl" />, description: "Architecture designed to serve multiple customers from a single shared instance.", features: ["Data Isolation", "Resource Pooling", "Custom Branding", "Scalability"], image: saas2 },
+    { title: "Subscription-Based Software", icon: <FaSyncAlt className="text-blue-600 text-2xl" />, description: "Software platforms powered by recurring subscription models and billing.", features: ["Plan Management", "Trial Periods", "Automated Billing", "Upgrade paths"], image: subSoftwareImg },
+    { title: "SaaS Admin Panels", icon: <FaDesktop className="text-blue-600 text-2xl" />, description: "Intuitive dashboards for administrators to monitor platform health and metrics.", features: ["Real-time metrics", "Revenue tracking", "System health monitoring", "User support tools"], image: saas4 },
+    { title: "SaaS Mobile Apps", icon: <FaMobile className="text-blue-600 text-2xl" />, description: "Companion mobile applications for your SaaS platform to enable on-the-go access.", features: ["Cross-platform sync", "Push notifications", "Offline capabilities", "Biometric security"], image: saas5 },
+    { title: "Payment & Subscription Integration", icon: <FaShoppingCart className="text-blue-600 text-2xl" />, description: "Seamless implementation of recurring billing and payment gateways.", features: ["Stripe/PayPal", "Tiered pricing", "Usage-based billing", "Invoice automation"], image: saas6 },
+    { title: "Tenant Management", icon: <FaBuilding className="text-blue-600 text-2xl" />, description: "Robust admin portals for managing organizations and client instances.", features: ["Tenant Provisioning", "Usage Analytics", "Data Export", "Account Suspension"], image: tenantMgmtImg },
+    { title: "Role-Based Access", icon: <FaLock className="text-blue-600 text-2xl" />, description: "Granular security permissions for complex organizational hierarchies.", features: ["RBAC", "Custom Permissions", "Audit Logs", "SSO Integration"], image: saas8 },
+    { title: "SaaS API Development", icon: <FaPlug className="text-blue-600 text-2xl" />, description: "Secure and well-documented APIs to allow external integrations with your product.", features: ["REST/GraphQL APIs", "Rate limiting", "API keys management", "Developer documentation"], image: saas9 },
+    { title: "Cloud-Based Business Platforms", icon: <FaCloud className="text-blue-600 text-2xl" />, description: "Comprehensive web platforms that digitize entire business operations.", features: ["High Availability", "Auto-scaling", "Disaster Recovery", "Global CDN"], image: cloudPlatformImg }
+  ];
 
-  const caseStudies = [
-            { title: "B2B Project Management SaaS", description: "Built a comprehensive project management platform for agencies", result: "Scaled to 10,000+ active users", image: app },
-            { title: "Fintech Subscription Platform", description: "Developed a secure financial analytics SaaS tool", result: "Processed 500+ secure transactions", image: app2 }
-        ];
-
-  // Map service titles to their corresponding images
   const serviceImages = {
     'default': app2,
-    'SaaS Application Development': w1,
-    'Tenant Management Systems': w2,
-    'Subscription Integration': w3,
-    'SaaS API Development': w4,
-    'SaaS Admin Panels': w5,
-    'SaaS Mobile Apps': w6
+    ...services.reduce((acc, curr) => ({ ...acc, [curr.title]: curr.image }), {})
   };
 
   const serviceDescriptions = {
     'default': "We build scalable, secure, and highly-performant SaaS platforms designed to handle thousands of concurrent users.",
-    'SaaS Application Development': "Expert implementation of SaaS Application Development tailored to your specific business requirements and industry standards.",
-    'Tenant Management Systems': "Comprehensive Tenant Management Systems solutions designed for scalability, security, and maximum performance.",
-    'Subscription Integration': "Advanced Subscription Integration integrations to streamline your workflows and boost operational efficiency.",
-    'SaaS API Development': "Future-proof SaaS API Development architectures that drive digital transformation and user engagement.",
-    'SaaS Admin Panels': "Robust SaaS Admin Panels frameworks customized for your enterprise needs with 24/7 reliability.",
-    'SaaS Mobile Apps': "Cutting-edge SaaS Mobile Apps strategies to keep your business ahead of the technological curve."
+    ...services.reduce((acc, curr) => ({ ...acc, [curr.title]: curr.description }), {})
   };
 
   useEffect(() => {
@@ -128,15 +130,8 @@ const SaaSProduct = forwardRef((props, ref) => {
             {/* Left Content */}
             <div>
               <h3 className="text-2xl font-bold text-red-500 mb-6">OUR OFFERINGS</h3>
-              <div className="space-y-4">
-                {[
-                  'SaaS Application Development',
-                  'Tenant Management Systems',
-                  'Subscription Integration',
-                  'SaaS API Development',
-                  'SaaS Admin Panels',
-                  'SaaS Mobile Apps'
-                ].map((service) => (
+              <div className="space-y-4 max-h-[600px] overflow-y-auto pr-4 custom-scrollbar">
+                {services.map(s => s.title).map((service) => (
                   <div 
                     key={service}
                     onMouseEnter={() => setHoveredService(service.replace('— ', ''))}
@@ -373,36 +368,6 @@ const SaaSProduct = forwardRef((props, ref) => {
                         </li>
                       ))}
                     </ul>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Case Studies */}
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold text-center text-red-600 mb-12">
-              Success Stories
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {caseStudies.map((caseStudy, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-xl overflow-hidden shadow-lg"
-                >
-                  <img
-                    src={caseStudy.image}
-                    alt={caseStudy.title}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                      {caseStudy.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4">{caseStudy.description}</p>
-                    <div className="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg inline-block">
-                      <strong>Result:</strong> {caseStudy.result}
-                    </div>
                   </div>
                 </div>
               ))}

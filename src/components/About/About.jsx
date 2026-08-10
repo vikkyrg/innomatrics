@@ -416,7 +416,7 @@ const About = forwardRef((props, ref) => {
               </div>
               <div className="flex flex-col bg-white p-8">
                 <dt className="text-sm font-semibold leading-6 text-gray-600">Years of Experience</dt>
-                <dd className="order-first text-3xl font-semibold tracking-tight text-indigo-600">10+</dd>
+                <dd className="order-first text-3xl font-semibold tracking-tight text-indigo-600">5+</dd>
               </div>
             </div>
           </div>

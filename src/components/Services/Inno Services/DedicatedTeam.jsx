@@ -1,17 +1,19 @@
+import heroImgNew from "../../../assets/new_category_images/DedicatedTeam_hero.jpg";
+import diffImgNew from "../../../assets/new_category_images/DedicatedTeam_diff.jpg";
 import React, { forwardRef, useEffect, useState } from "react";
 import { FaCheckCircle, FaSyncAlt, FaPlug, FaCode, FaDesktop, FaMobile, FaShoppingCart, FaDatabase, FaCloud, FaLock, FaChartLine, FaUsers, FaShieldAlt, FaRocket, FaLightbulb, FaBuilding, FaChartLine as FaChartLineIcon, FaCogs, FaRobot, FaPaintBrush, FaBriefcase, FaReact, FaNodeJs, FaAngular, FaVuejs, FaPhp, FaPython } from "react-icons/fa";
-import heroImg from "../../../assets/services_hero/hero_dedicated_team.png";
 
-import app from "../../../assets/services_cards/DedicatedTeam_cs1.jpg";
-import app2 from "../../../assets/services_cards/DedicatedTeam_cs2.jpg";
+
+
+
 import w1 from "../../../assets/services_cards/DedicatedTeam_w1.jpg";
 import w2 from "../../../assets/services_cards/DedicatedTeam_w2.jpg";
 import w3 from "../../../assets/services_cards/DedicatedTeam_w3.jpg";
 import w4 from "../../../assets/services_cards/DedicatedTeam_w4.jpg";
 import w5 from "../../../assets/services_cards/DedicatedTeam_w5.jpg";
 import w6 from "../../../assets/services_cards/DedicatedTeam_w6.jpg";
-import introImg from "../../../assets/services_cards/DedicatedTeam_intro.jpg";
-import diffImg from "../../../assets/services_cards/DedicatedTeam_diff.jpg";
+
+
 
 
 import "./DedicatedTeam.css";
@@ -19,6 +21,15 @@ import { Link } from "react-router-dom";
 
 
 import { SiMongodb, SiMysql } from "react-icons/si";
+import hireFlutterDeveloperImg from "../../../assets/digitalMarketing/Hire Flutter Developer.jpg";
+import hireReactDeveloperImg from "../../../assets/digitalMarketing/Hire React Developer.jpg";
+import hireNodejsDeveloperImg from "../../../assets/digitalMarketing/Hire Node.js Developer.jpg";
+import hirePhpLaravelDeveloperImg from "../../../assets/digitalMarketing/Hire PHPLaravel Developer.jpg";
+import hireUiUxDesignerImg from "../../../assets/digitalMarketing/Hire UIUX Designer.jpg";
+import hireQaTesterImg from "../../../assets/digitalMarketing/Hire QA Tester.jpg";
+import hireDevOpsEngineerImg from "../../../assets/digitalMarketing/Hire DevOps Engineer.jpg";
+import dedicatedProjectManagerImg from "../../../assets/digitalMarketing/Dedicated Project Manager.jpg";
+import fullDevelopmentTeamImg from "../../../assets/digitalMarketing/Full Development Team.jpg";
 
 const ServicesCard = ({ title, description, image }) => (
   <div className="bg-white shadow-lg rounded-xl p-6 m-4 flex-1 transform hover:scale-105 transition-all duration-300 hover:shadow-xl border border-gray-100">
@@ -42,38 +53,25 @@ const DedicatedTeam = forwardRef((props, ref) => {
   ];
 
   const services = [
-            { icon: <FaUsers className="w-8 h-8 text-blue-600" />, title: "Hire Full Development Teams", description: "Deploy a complete, self-managed team of developers, designers, and QA engineers.", features: ["Agile team setup", "Project managers included", "End-to-end delivery", "Seamless collaboration"], image: w1 },
-            { icon: <FaCode className="w-8 h-8 text-blue-600" />, title: "Hire React/Node.js Developers", description: "Expert JavaScript developers for building fast, scalable web applications.", features: ["Senior/Mid-level devs", "MERN stack experts", "API integration", "Performance optimization"], image: w2 },
-            { icon: <FaMobile className="w-8 h-8 text-blue-600" />, title: "Hire Flutter/React Native Developers", description: "Specialized mobile app developers for high-quality cross-platform applications.", features: ["iOS & Android expertise", "Native performance", "Custom UI/UX", "App store deployment"], image: w3 },
-            { icon: <FaDatabase className="w-8 h-8 text-blue-600" />, title: "Hire PHP/Laravel Developers", description: "Skilled backend developers for robust enterprise systems and web portals.", features: ["Custom API creation", "Database architecture", "Legacy support", "Security implementation"], image: w4 },
-            { icon: <FaPaintBrush className="w-8 h-8 text-blue-600" />, title: "Hire UI/UX Designers", description: "Creative professionals to design engaging, user-friendly digital experiences.", features: ["Figma/XD experts", "Prototyping", "User research", "Design systems"], image: w5 },
-            { icon: <FaCloud className="w-8 h-8 text-blue-600" />, title: "Hire DevOps Engineers", description: "Infrastructure specialists to manage your cloud deployments and CI/CD pipelines.", features: ["AWS/Azure/GCP", "Docker & Kubernetes", "Server monitoring", "Security compliance"], image: w6 }
-        ];
+    { title: "Hire Flutter Developer", icon: <FaMobile className="text-blue-600 text-2xl" />, description: "Expert Flutter developers for high-performance, cross-platform mobile apps.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: hireFlutterDeveloperImg },
+    { title: "Hire React Developer", icon: <FaReact className="text-blue-600 text-2xl" />, description: "Skilled frontend engineers specializing in dynamic, interactive React applications.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: hireReactDeveloperImg },
+    { title: "Hire Node.js Developer", icon: <FaNodeJs className="text-blue-600 text-2xl" />, description: "Backend specialists for scalable, high-speed API and server-side development.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: hireNodejsDeveloperImg },
+    { title: "Hire PHP/Laravel Developer", icon: <FaPhp className="text-blue-600 text-2xl" />, description: "Experienced PHP developers for robust web applications and custom eCommerce.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: hirePhpLaravelDeveloperImg },
+    { title: "Hire UI/UX Designer", icon: <FaPaintBrush className="text-blue-600 text-2xl" />, description: "Creative designers dedicated to crafting stunning, user-centric digital interfaces.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: hireUiUxDesignerImg },
+    { title: "Hire QA Tester", icon: <FaDesktop className="text-blue-600 text-2xl" />, description: "Meticulous quality assurance engineers to ensure bug-free software delivery.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: hireQaTesterImg },
+    { title: "Hire DevOps Engineer", icon: <FaCloud className="text-blue-600 text-2xl" />, description: "Infrastructure experts to manage cloud deployments, CI/CD, and server scaling.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: hireDevOpsEngineerImg },
+    { title: "Dedicated Project Manager", icon: <FaUsers className="text-blue-600 text-2xl" />, description: "Experienced leaders to oversee your team, manage timelines, and ensure delivery.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: dedicatedProjectManagerImg },
+    { title: "Full Development Team", icon: <FaBuilding className="text-blue-600 text-2xl" />, description: "A complete, managed squad of developers, designers, and managers for your project.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: fullDevelopmentTeamImg }
+  ];
 
-  const caseStudies = [
-            { title: "Team Augmentation for EdTech", description: "Provided a dedicated team of 5 developers to accelerate a product launch", result: "Delivered the MVP 2 months ahead of schedule", image: app },
-            { title: "Long-term Maintenance Team", description: "Setup a dedicated QA and support team for an e-commerce platform", result: "Reduced bug reports by 80%", image: app2 }
-        ];
-
-  // Map service titles to their corresponding images
   const serviceImages = {
-    'default': app2,
-    'Hire Full Development Teams': w1,
-    'Hire React/Node.js Developers': w2,
-    'Hire Flutter/React Native Developers': w3,
-    'Hire PHP/Laravel Developers': w4,
-    'Hire UI/UX Designers': w5,
-    'Hire DevOps Engineers': w6
+    'default': diffImgNew,
+    ...services.reduce((acc, curr) => ({ ...acc, [curr.title]: curr.image }), {})
   };
 
   const serviceDescriptions = {
-    'default': "Hire top-tier, dedicated software engineers and designers who work exclusively on your project as an extension of your company.",
-    'Hire Full Development Teams': "Expert implementation of Hire Full Development Teams tailored to your specific business requirements and industry standards.",
-    'Hire React/Node.js Developers': "Comprehensive Hire React/Node.js Developers solutions designed for scalability, security, and maximum performance.",
-    'Hire Flutter/React Native Developers': "Advanced Hire Flutter/React Native Developers integrations to streamline your workflows and boost operational efficiency.",
-    'Hire PHP/Laravel Developers': "Future-proof Hire PHP/Laravel Developers architectures that drive digital transformation and user engagement.",
-    'Hire UI/UX Designers': "Robust Hire UI/UX Designers frameworks customized for your enterprise needs with 24/7 reliability.",
-    'Hire DevOps Engineers': "Cutting-edge Hire DevOps Engineers strategies to keep your business ahead of the technological curve."
+    'default': "Explore our comprehensive suite of professional services designed to accelerate your digital transformation.",
+    ...services.reduce((acc, curr) => ({ ...acc, [curr.title]: curr.description }), {})
   };
 
   useEffect(() => {
@@ -87,7 +85,7 @@ const DedicatedTeam = forwardRef((props, ref) => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url(${heroImg})`,
+            backgroundImage: `url(${heroImgNew})`,
           }}
         ></div>
         <div className="absolute inset-0"></div>
@@ -128,15 +126,8 @@ const DedicatedTeam = forwardRef((props, ref) => {
             {/* Left Content */}
             <div>
               <h3 className="text-2xl font-bold text-red-500 mb-6">OUR OFFERINGS</h3>
-              <div className="space-y-4">
-                {[
-                  'Hire Full Development Teams',
-                  'Hire React/Node.js Developers',
-                  'Hire Flutter/React Native Developers',
-                  'Hire PHP/Laravel Developers',
-                  'Hire UI/UX Designers',
-                  'Hire DevOps Engineers'
-                ].map((service) => (
+              <div className="space-y-4 max-h-[600px] overflow-y-auto pr-4 custom-scrollbar">
+                {services.map(s => s.title).map((service) => (
                   <div 
                     key={service}
                     onMouseEnter={() => setHoveredService(service.replace('— ', ''))}
@@ -275,7 +266,7 @@ const DedicatedTeam = forwardRef((props, ref) => {
               </h3>
               <div className="relative rounded-lg overflow-hidden">
                 <img 
-                  src={diffImg}
+                  src={diffImgNew}
                   alt="Innomatrics Tech Professional"
                   className="w-full h-[400px] object-cover rounded-lg"
                 />
@@ -324,7 +315,7 @@ const DedicatedTeam = forwardRef((props, ref) => {
             </div>
             <div className="w-full mt-16 md:w-1/2">
               <img
-                src={introImg}
+                src={heroImgNew}
                 alt="Innomatrics Digital Solutions"
                 className="w-full h-72 rounded-lg shadow-md"
               />
@@ -373,36 +364,6 @@ const DedicatedTeam = forwardRef((props, ref) => {
                         </li>
                       ))}
                     </ul>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Case Studies */}
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold text-center text-red-600 mb-12">
-              Success Stories
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {caseStudies.map((caseStudy, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-xl overflow-hidden shadow-lg"
-                >
-                  <img
-                    src={caseStudy.image}
-                    alt={caseStudy.title}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                      {caseStudy.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4">{caseStudy.description}</p>
-                    <div className="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg inline-block">
-                      <strong>Result:</strong> {caseStudy.result}
-                    </div>
                   </div>
                 </div>
               ))}

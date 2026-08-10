@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaBuilding, FaBullseye, FaQuestionCircle, FaArrowRight } from 'react-icons/fa';
+import { FaBuilding, FaBullseye, FaQuestionCircle, FaArrowRight, FaBlog } from 'react-icons/fa';
 
 const AboutHover = () => {
   return (
@@ -11,7 +11,7 @@ const AboutHover = () => {
         {/* Left Side: Links Column */}
         <div className="w-full lg:w-2/3 flex flex-col gap-y-4">
           
-          <Link to="/about/overview" className="flex items-start group p-2 hover:bg-blue-50 rounded-lg transition-colors">
+          <Link to="/overview" className="flex items-start group p-2 hover:bg-blue-50 rounded-lg transition-colors">
             <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
               <FaBuilding className="text-blue-500 text-lg" />
             </div>
@@ -21,7 +21,7 @@ const AboutHover = () => {
             </div>
           </Link>
 
-          <Link to="/about/vision-mission" className="flex items-start group p-2 hover:bg-green-50 rounded-lg transition-colors">
+          <Link to="/vision-mission" className="flex items-start group p-2 hover:bg-green-50 rounded-lg transition-colors">
             <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
               <FaBullseye className="text-green-500 text-lg" />
             </div>
@@ -31,13 +31,23 @@ const AboutHover = () => {
             </div>
           </Link>
 
-          <Link to="/about/why-us" className="flex items-start group p-2 hover:bg-purple-50 rounded-lg transition-colors">
+          <Link to="/why-us" className="flex items-start group p-2 hover:bg-purple-50 rounded-lg transition-colors">
             <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
               <FaQuestionCircle className="text-purple-500 text-lg" />
             </div>
             <div>
               <h4 className="text-sm font-bold text-gray-900 group-hover:text-purple-600 transition-colors">Why Choose Us</h4>
               <p className="text-xs text-gray-500 mt-1 leading-relaxed">Discover what sets our agency apart from the rest</p>
+            </div>
+          </Link>
+
+          <Link to="/blog" className="flex items-start group p-2 hover:bg-orange-50 rounded-lg transition-colors">
+            <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
+              <FaBlog className="text-orange-500 text-lg" />
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">Blog</h4>
+              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Read our latest insights and articles</p>
             </div>
           </Link>
 
@@ -56,7 +66,7 @@ const AboutHover = () => {
           <p className="text-xs text-gray-500 leading-relaxed mb-4 flex-grow">
             We are a team of passionate tech experts driven to transform businesses.
           </p>
-          <Link to="/about/overview" className="text-sm text-blue-600 font-bold flex items-center hover:text-blue-800 transition-colors mt-auto">
+          <Link to="/overview" className="text-sm text-blue-600 font-bold flex items-center hover:text-blue-800 transition-colors mt-auto">
             Read More <FaArrowRight className="ml-1 w-3 h-3 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>

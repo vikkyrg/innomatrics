@@ -87,7 +87,7 @@ const Solutions = () => {
         desc: "Based on your goal to grow your digital presence, we recommend a data-driven Digital Growth Marketing strategy including Technical SEO, paid campaigns, and analytics optimization.",
         tech: ["SEO/SEM", "Google Analytics", "HubSpot", "Meta Ads", "A/B Testing"],
         timeframe: "1-2 months setup, ongoing optimization",
-        link: "/digitalmarket"
+        link: "/digital-marketing"
       };
     }
     if (configGoal === 'cloud') {
@@ -96,7 +96,7 @@ const Solutions = () => {
         desc: "Based on your need to scale infrastructure, we recommend our Cloud Migration and DevOps automation services to ensure 99.9% uptime and high security.",
         tech: ["AWS / Azure", "Docker", "Kubernetes", "Terraform", "CI/CD Pipelines"],
         timeframe: "2-4 months strategic deployment",
-        link: "/devops"
+        link: "/cloud-and-devops"
       };
     }
     if (configGoal === 'automation') {
@@ -105,7 +105,7 @@ const Solutions = () => {
         desc: "To eliminate manual bottlenecks, we recommend a custom ERP or automated CRM system designed specifically to streamline your team's daily workflows.",
         tech: ["Node.js", "PostgreSQL / MongoDB", "React / Next.js", "Python Automation", "Tailwind CSS"],
         timeframe: configTimeline === 'fast' ? "1-2 months MVP" : "3-5 months complete system",
-        link: "/customsoftware"
+        link: "/custom-software"
       };
     }
     if (configChannel === 'mobile') {
@@ -114,7 +114,7 @@ const Solutions = () => {
         desc: "To launch your new mobile product, we recommend a hybrid mobile application built with React Native or Flutter, maximizing reach on both iOS and Android.",
         tech: ["React Native", "Flutter", "Firebase", "Node.js API", "Push Notifications"],
         timeframe: configTimeline === 'fast' ? "2 months MVP" : "4-6 months full release",
-        link: "/appdev"
+        link: "/app-development"
       };
     }
     if (configChannel === 'web') {
@@ -123,7 +123,7 @@ const Solutions = () => {
         desc: "To build your customer-facing web platform, we recommend a high-performance Next.js or React frontend integrated with a robust backend.",
         tech: ["React.js", "Next.js", "Node.js / Express", "Tailwind CSS", "Vercel / AWS"],
         timeframe: configTimeline === 'fast' ? "1 month MVP" : "2-3 months detailed build",
-        link: "/webdev"
+        link: "/web-development"
       };
     }
     return {
@@ -131,7 +131,7 @@ const Solutions = () => {
       desc: "For a cross-platform or API-driven SaaS product, we recommend a modern microservices architecture with a responsive web portal and flexible database layer.",
       tech: ["Next.js", "Node.js / Express", "MongoDB / PostgreSQL", "Docker", "AWS / Cloudflare"],
       timeframe: "3-6 months end-to-end development",
-      link: "/saasproduct"
+      link: "/saas-product"
     };
   };
 
@@ -200,7 +200,7 @@ const Solutions = () => {
       solution: "Custom Web Development",
       description: "We build SEO-optimized, highly responsive, and blazing-fast web applications designed to convert visitors into loyal customers.",
       icon: <MdWeb className="text-2xl text-blue-500" />,
-      link: "/webdev",
+      link: "/web-development",
       bgColor: "bg-blue-50",
       image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=600&auto=format&fit=crop"
     },
@@ -209,7 +209,7 @@ const Solutions = () => {
       solution: "Mobile App Engineering",
       description: "Scalable, native-feeling Android and iOS mobile applications built with React Native, Flutter, and native frameworks for maximum performance.",
       icon: <MdSmartphone className="text-2xl text-green-500" />,
-      link: "/appdev",
+      link: "/app-development",
       bgColor: "bg-green-50",
       image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=600&auto=format&fit=crop"
     },
@@ -218,7 +218,7 @@ const Solutions = () => {
       solution: "ERP & Business Automation",
       description: "Custom ERP and CRM solutions engineered to automate data entry, streamline operations, and provide real-time business intelligence.",
       icon: <MdTrendingUp className="text-2xl text-purple-500" />,
-      link: "/customsoftware",
+      link: "/custom-software",
       bgColor: "bg-purple-50",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop"
     },
@@ -227,7 +227,7 @@ const Solutions = () => {
       solution: "Digital Growth Marketing",
       description: "Data-driven Technical SEO, paid advertising, and inbound marketing strategies guaranteed to increase your digital footprint and ROI.",
       icon: <MdCampaign className="text-2xl text-orange-500" />,
-      link: "/digitalmarket",
+      link: "/digital-marketing",
       bgColor: "bg-orange-50",
       image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=600&auto=format&fit=crop"
     },
@@ -236,7 +236,7 @@ const Solutions = () => {
       solution: "AI & Machine Learning",
       description: "Integrate predictive analytics, custom LLM chatbots, and intelligent computer vision into your existing enterprise architecture.",
       icon: <MdLightbulbOutline className="text-2xl text-red-500" />,
-      link: "/aiautomation",
+      link: "/ai-automation",
       bgColor: "bg-red-50",
       image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=600&auto=format&fit=crop"
     },
@@ -245,7 +245,7 @@ const Solutions = () => {
       solution: "SaaS Product Development",
       description: "End-to-end software architecture for cloud-native SaaS platforms, from database schema design to frontend deployment.",
       icon: <MdSettingsApplications className="text-2xl text-teal-500" />,
-      link: "/saasproduct",
+      link: "/saas-product",
       bgColor: "bg-teal-50",
       image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=600&auto=format&fit=crop"
     }

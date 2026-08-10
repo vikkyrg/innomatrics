@@ -1,309 +1,261 @@
-import React, { forwardRef, useState } from "react";
-import app from "../../../assets/digitalMarkt.webp";
-import app2 from "../../../assets/digitalMarkt2.webp";
-import approach from "../../../assets/digitalMarktApproach.webp";
-import { Link } from "react-router-dom";
-import "./DigitalMarket.css";
+import React, { forwardRef, useEffect, useState } from "react";
+import heroImgNew from "../../../assets/new_category_images/DigitalMarket_hero.jpg";
+import diffImgNew from "../../../assets/new_category_images/DigitalMarket_diff.jpg";
+import { FaCheckCircle, FaSyncAlt, FaPlug, FaCode, FaDesktop, FaMobile, FaShoppingCart, FaDatabase, FaCloud, FaLock, FaChartLine, FaUsers, FaShieldAlt, FaRocket, FaLightbulb, FaBuilding, FaChartLine as FaChartLineIcon, FaCogs, FaRobot, FaPaintBrush, FaBriefcase, FaReact, FaNodeJs, FaAngular, FaVuejs, FaPhp, FaPython } from "react-icons/fa";
 
-const ServicesCard = ({ title, description, image, icon }) => (
-  <div className="bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:shadow-2xl">
-    <div className="relative">
-      <img src={image} className="w-full h-48 object-cover" alt={title} />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
-    </div>
-    <div className="p-6">
-      <h3 className="text-xl font-semibold text-gray-900 mb-3">{title}</h3>
-      <p className="text-gray-600 text-sm leading-relaxed">{description}</p>
-    </div>
+import "./DigitalMarket.css";
+import { Link } from "react-router-dom";
+
+const ServicesCard = ({ title, description, image }) => (
+  <div className="bg-white shadow-lg rounded-xl p-6 m-4 flex-1 transform hover:scale-105 transition-all duration-300 hover:shadow-xl border border-gray-100">
+    <img src={image} className="w-full h-32 object-cover rounded mb-4" alt={title} />
+    <h3 className="text-lg font-semibold text-gray-800 mb-2">{title}</h3>
+    <p className="text-gray-600">{description}</p>
   </div>
 );
 
-const DigitalMarketing = forwardRef((props, ref) => {
+const DigitalMarket = forwardRef((props, ref) => {
   const [hoveredService, setHoveredService] = useState(null);
 
-  const offerings = {
-    items: [
-      "Search Engine Optimization (SEO)",
-      "Pay-Per-Click (PPC) Advertising",
-      "Social Media Marketing",
-      "Content Marketing",
-      "Email Marketing",
-      "Conversion Rate Optimization (CRO)"
-    ],
-    description: "At Innomatrics, we help businesses grow their online presence with data-driven strategies and creative campaigns. From SEO to social media and paid ads, we focus on driving measurable results.",
-    images: {
-      default: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop",
-      "Search Engine Optimization (SEO)": "https://w0.peakpx.com/wallpaper/1018/455/HD-wallpaper-search-engine-optimization-seo-marketing.jpg",
-      "Pay-Per-Click (PPC) Advertising": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop",
-      "Social Media Marketing": "https://img.freepik.com/premium-photo/social-media-icons-logos-with-3d-space-rocket-digital-social-media-marketing-background_125322-391.jpg",
-      "Content Marketing": "https://community.nasscom.in/sites/default/files/media/images/Content%20marketing.jpg",
-      "Email Marketing": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
-      "Conversion Rate Optimization (CRO)": "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-    },
-    descriptions: {
-      default: "At Innomatrics, we help businesses grow their online presence with data-driven strategies and creative campaigns.",
-      "Search Engine Optimization (SEO)": "Boost your organic visibility and drive qualified traffic with our comprehensive SEO strategies.",
-      "Pay-Per-Click (PPC) Advertising": "Get immediate results with targeted advertising campaigns that deliver measurable ROI.",
-      "Social Media Marketing": "Engage your audience and build brand loyalty through strategic social media campaigns.",
-      "Content Marketing": "Tell your brand story with compelling content that attracts and converts your target audience.",
-      "Email Marketing": "Nurture leads and drive conversions with personalized email marketing campaigns.",
-      "Conversion Rate Optimization (CRO)": "Turn more visitors into customers with data-driven optimization strategies."
-    }
-  };
-
   const services = [
-    {
-      title: "Search Engine Optimization (SEO)",
-      description: "Increase your website's visibility and rank higher in search engine results pages (SERPs) with our comprehensive SEO services, including keyword research, on-page optimization, link building, and content creation.",
-      image: "https://img.freepik.com/premium-photo/person-manage-search-engine-optimization-seo-digital-marketing-with-social-media-content_34141-1030.jpg",
-    },
-    {
-      title: "Pay-Per-Click (PPC) Advertising",
-      description: "Drive targeted traffic to your website and generate leads or sales with our expertly managed PPC campaigns on platforms like Google Ads, Bing Ads, and social media advertising.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
-    },
-    {
-      title: "Social Media Marketing",
-      description: "Build brand awareness, engage with your audience, and drive conversions through strategic social media marketing campaigns on platforms such as Facebook, Instagram, Twitter, LinkedIn, and more.",
-      image: "https://img.freepik.com/free-vector/social-media-marketing-mobile-phone-concept_23-2148434510.jpg",
-    },
-    {
-      title: "Content Marketing",
-      description: "Create valuable and relevant content that attracts, educates, and converts your audience, including blog posts, articles, infographics, videos, and more.",
-      image: "https://img.freepik.com/free-vector/content-marketing-concept-illustration_114360-7972.jpg",
-    },
-    {
-      title: "Email Marketing",
-      description: "Nurture leads and drive customer loyalty with personalized and targeted email marketing campaigns that deliver the right message to the right audience at the right time.",
-      image: "https://img.freepik.com/free-vector/email-marketing-internet-chatting-24-hours-support_335657-3009.jpg",
-    },
-    {
-      title: "Conversion Rate Optimization (CRO)",
-      description: "Optimize your website and marketing campaigns to improve conversion rates and maximize the return on your investment (ROI).",
-      image: "https://img.freepik.com/free-vector/conversion-rate-optimization-concept-illustration_114360-8723.jpg",
-    },
+    { title: "SEO", icon: <FaChartLine className="text-blue-600 text-2xl" />, description: "Boost your organic search rankings and drive targeted traffic to your website.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&auto=format&fit=crop" },
+    { title: "Local SEO", icon: <FaChartLineIcon className="text-blue-600 text-2xl" />, description: "Dominate local search results and attract customers in your geographical area.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=600&auto=format&fit=crop" },
+    { title: "Technical SEO", icon: <FaCode className="text-blue-600 text-2xl" />, description: "Optimize your website's technical foundation for better crawling and indexing.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?q=80&w=600&auto=format&fit=crop" },
+    { title: "Google Ads", icon: <FaChartLine className="text-blue-600 text-2xl" />, description: "High-converting pay-per-click campaigns on the Google Search Network.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: "https://images.unsplash.com/photo-1533750516457-a7f992034fec?q=80&w=600&auto=format&fit=crop" },
+    { title: "Meta Ads", icon: <FaMobile className="text-blue-600 text-2xl" />, description: "Targeted advertising campaigns across Facebook, Instagram, and the Meta ecosystem.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=600&auto=format&fit=crop" },
+    { title: "Social Media Marketing", icon: <FaUsers className="text-blue-600 text-2xl" />, description: "Strategic marketing campaigns to grow your brand presence on social platforms.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=600&auto=format&fit=crop" },
+    { title: "Social Media Management", icon: <FaDesktop className="text-blue-600 text-2xl" />, description: "Comprehensive management of your social profiles, content, and community.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=600&auto=format&fit=crop" },
+    { title: "Content Marketing", icon: <FaPaintBrush className="text-blue-600 text-2xl" />, description: "Engaging, high-quality content strategies to educate and convert your audience.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=600&auto=format&fit=crop" },
+    { title: "Google Business Profile Optimization", icon: <FaBuilding className="text-blue-600 text-2xl" />, description: "Maximize your visibility on Google Maps and local search results.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=600&auto=format&fit=crop" },
+    { title: "Lead Generation", icon: <FaRocket className="text-blue-600 text-2xl" />, description: "Data-driven strategies to capture and nurture high-quality business leads.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=600&auto=format&fit=crop" },
+    { title: "WhatsApp Marketing", icon: <FaMobile className="text-blue-600 text-2xl" />, description: "Direct, personalized marketing campaigns delivered straight to WhatsApp.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=600&auto=format&fit=crop" },
+    { title: "Email Marketing", icon: <FaDesktop className="text-blue-600 text-2xl" />, description: "Automated email sequences and newsletters to retain customers and drive sales.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop" },
+    { title: "Online Reputation Management", icon: <FaShieldAlt className="text-blue-600 text-2xl" />, description: "Monitor, manage, and improve your brand's digital reputation and reviews.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop" },
+    { title: "Conversion Rate Optimization", icon: <FaChartLineIcon className="text-blue-600 text-2xl" />, description: "A/B testing and UX improvements to turn more visitors into paying customers.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: "https://images.unsplash.com/photo-1607082349566-187342175e2f?q=80&w=600&auto=format&fit=crop" }
   ];
 
+  const serviceImages = {
+    'default': diffImgNew,
+    ...services.reduce((acc, curr) => ({ ...acc, [curr.title]: curr.image }), {})
+  };
+
+  const serviceDescriptions = {
+    'default': "At Innomatrics, we help businesses grow their online presence with data-driven strategies and creative campaigns.",
+    ...services.reduce((acc, curr) => ({ ...acc, [curr.title]: curr.description }), {})
+  };
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   return (
-    <div className="flex flex-col items-center pt:0 md:pt-10 pb-20 bg-white shadow-sm" ref={ref}>
+    <div className="min-h-screen bg-gray-50" ref={ref}>
       {/* Hero Section */}
-      <div
-        id="DigitalDiv" className="BgDiv relative flex flex-col items-start self-stretch px-20 py-20 font-medium text-center leading-[108%] min-h-[276px] text-zinc-900 max-md:px-5 max-md:max-w-full"
-        style={{ 
-          height: "60vh",
-          backgroundImage: "url('https://images.unsplash.com/photo-1634176866089-b633f4aec882?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          position: "relative"
-        }}
-      >
+      <div className="relative bg-blue-900 text-white py-32 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url(${heroImgNew})`,
+          }}
+        ></div>
         <div className="absolute inset-0 bg-black opacity-50"></div>
-        
-        <div className="flex flex-col my-12 items-start justify-start gap-4 text-start relative z-10">
-          <h1 className="text-3xl my-4 font-bold text-white md:text-white md:text-5xl">
-            Digital Marketing
-          </h1>
-          
-          <hr className="text-sky-600 w-[140%] " />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mt-16">
+            <h1 className="text-4xl font-bold sm:text-5xl md:text-6xl mb-8 text-left">
+              Digital Marketing Agency
+            </h1>
+            <p className="text-xl text-white max-w-1xl mt-2 text-left">
+              Data-driven strategies and creative campaigns to drive measurable growth and ROI.
+            </p>
+          </div>
         </div>
       </div>
 
       {/* Overview Section */}
-      <div className="mb-20 px-6 md:px-8">
-        <h2 className="text-xl font-bold text-orange-600 mb-4 mt-8">OVERVIEW</h2>
-        <p className="text-lg text-gray-900 leading-relaxed">
-          At Innomatrics, we understand the fast-changing landscape of the digital marketplace. To thrive in today's connected world, businesses must leverage data-driven strategies, enhance customer engagement, and optimize their digital platforms. Our team brings together deep expertise in digital technologies, domain knowledge, and hands-on experience to build scalable, measurable marketing solutions.
-        </p>
-      </div>
-
-      {/* Offerings Section with Hover Effect */}
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div>
-            <h3 className="text-2xl font-bold text-red-600 mb-6">OUR OFFERINGS</h3>
-            <div className="space-y-4">
-              {offerings.items.map((item) => (
-                <div 
-                  key={item}
-                  className="group relative"
-                  onMouseEnter={() => setHoveredService(item)}
-                  onMouseLeave={() => setHoveredService(null)}
-                >
-                  <h4 className="text-lg font-semibold text-gray-900 cursor-pointer group-hover:text-red-600 transition-colors duration-300">
-                    {item}
-                  </h4>
-                </div>
-              ))}
-
-              <p className="text-gray-600 mt-6">
-                {offerings.description}
-              </p>
-            </div>
-          </div>
-
-          
-
-          {/* Right Image */}
-          <div className="relative">
-            <img
-              src={hoveredService ? offerings.images[hoveredService] || offerings.images.default : offerings.images.default}
-              alt={hoveredService || "Our Digital Marketing Offerings"}
-              className="rounded-lg shadow-xl w-full object-cover transition-opacity duration-500"
-              style={{ height: '400px' }}
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6 rounded-b-lg">
-              <p className="text-white text-lg">
-                {hoveredService ? offerings.descriptions[hoveredService] || offerings.descriptions.default : offerings.descriptions.default}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="w-full px-4 py-16 bg-white">
+      <div className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-12">
-            <h2 className="text-xl font-bold text-red-500">THE INFINITE DIFFERENCE</h2>
-            <h3 className="text-4xl font-bold text-gray-900 mt-4">
-              Digital efficiency & enhanced marketing value
-              
-            </h3>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            {/* Left side - Hexagonal Image */}
-            <div className="relative">
-              <img 
-                src="https://img.freepik.com/free-photo/colleagues-giving-fist-bump_53876-15018.jpg?semt=ais_hybrid&w=740"
-                alt="Digital Marketing Innovation"
-                className="w-full rounded-lg shadow-xl object-cover h-[500px]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 to-transparent rounded-lg"></div>
-            </div>
-
-            {/* Right side - Features */}
-            <div className="space-y-8">
-              <div>
-                <h4 className="text-2xl text-red-500 font-semibold mb-4">Partnerships with Leading Platforms</h4>
-                <p className="text-gray-700">
-                  We have strategic partnerships with leading digital marketing platforms providing us with access to advanced tools, expert resources, and industry knowledge repositories.
-                </p>
-              </div>
-
-              <div>
-                <h4 className="text-2xl text-red-500 font-semibold mb-4">Advanced Marketing Tools</h4>
-                <p className="text-gray-700">
-                  Leverage our comprehensive suite of marketing automation tools based on common use cases to optimize your digital presence while keeping costs minimal.
-                </p>
-              </div>
-
-              <div>
-                <h4 className="text-2xl text-red-500 font-semibold mb-4">Proven ROI</h4>
-                <p className="text-gray-700">
-                  Our clients consistently achieve significant results, with typical cost savings between 40%-80% through our optimized digital marketing strategies.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-3 gap-6 mt-8">
-                <div className="bg-gray-50 p-4 rounded-lg text-center">
-                  <div className="text-3xl font-bold text-red-500">40%</div>
-                  <div className="text-sm text-gray-600">Minimum ROI</div>
-                </div>
-                <div className="bg-gray-50 p-4 rounded-lg text-center">
-                  <div className="text-3xl font-bold text-red-500">80%</div>
-                  <div className="text-sm text-gray-600">Maximum ROI</div>
-                </div>
-                <div className="bg-gray-50 p-4 rounded-lg text-center">
-                  <div className="text-3xl font-bold text-red-500">100+</div>
-                  <div className="text-sm text-gray-600">Active Projects</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Services Section */}
-      <div className="w-full px-4 py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-red-600 mb-4">
-              Services We Offer
-            </h2>
-            <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
-            <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-              Comprehensive digital marketing solutions to help your business grow online
+          {/* Top Paragraph */}
+          <div className="mb-20 px-4 md:px-4">
+            <h2 className="text-xl font-bold text-orange-600 mb-4">OVERVIEW</h2>
+            <p className="text-lg text-gray-900 leading-relaxed">
+              At Innomatrics, we understand the fast-changing landscape of the digital marketplace. To thrive in today's connected world, businesses must leverage data-driven strategies, enhance customer engagement, and optimize their digital platforms. Our team brings together deep expertise in digital technologies, domain knowledge, and hands-on experience to build scalable, measurable marketing solutions.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
-            {services.map((service, index) => (
-              <ServicesCard
-                key={index}
-                title={service.title}
-                description={service.description}
-                image={service.image}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Join Our Journey Section */}
-      <div className="w-full bg-gradient-to-r from-blue-50 to-white py-20 mt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="text-4xl font-bold text-red-600">Join Us On The Digital Marketing Journey</h2>
-              <p className="text-lg text-gray-600">
-                Ready to take your digital presence to the next level? Partner with Innomatrics for comprehensive digital marketing solutions that drive real results and sustainable growth for your business.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
-                    <svg className="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-                    </svg>
+            {/* Left Content */}
+            <div>
+              <h3 className="text-2xl font-bold text-red-500 mb-6">OUR OFFERINGS</h3>
+              <div className="space-y-4 max-h-[600px] overflow-y-auto pr-4 custom-scrollbar">
+                {services.map(s => s.title).map((service) => (
+                  <div 
+                    key={service}
+                    onMouseEnter={() => setHoveredService(service.replace('— ', ''))}
+                    onMouseLeave={() => setHoveredService(null)}
+                    className="group"
+                  >
+                    <h4 className="text-lg font-semibold text-gray-700 cursor-pointer group-hover:text-red-500 transition-colors duration-300">
+                      {service}
+                    </h4>
                   </div>
-                  <p className="text-gray-700">Data-Driven Marketing Strategies</p>
+                ))}
+
+                <p className="text-gray-600 mt-6">
+                  Leverage digital technologies to fundamentally change how you operate and deliver value to customers. 
+                  Embrace digital transformation to enhance your agility, creativity, and decision-making capabilities 
+                  while improving growth opportunities.
+                </p>
+              </div>
+            </div>
+
+            {/* Right Image */}
+            <div className="relative">
+              <img
+                src={serviceImages[hoveredService || 'default']}
+                alt={hoveredService ? `${hoveredService} Services` : "Digital Marketing Services"}
+                className="rounded-lg shadow-xl w-full object-cover transition-opacity duration-500"
+                style={{ height: '500px' }}
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6 rounded-b-lg">
+                <p className="text-white text-lg">
+                  {serviceDescriptions[hoveredService || 'default']}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Value Delivered Section */}
+          <div className="w-full px-4 py-16 bg-white">
+            <div className="max-w-7xl mx-auto">
+              <h2 className="text-xl font-bold text-orange-500 mb-4">VALUE DELIVERED</h2>
+              <h3 className="text-4xl font-bold text-gray-900 mb-12">
+                Digital efficiency & enhanced<br />marketing value
+              </h3>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                {/* Card 1 */}
+                <div className="bg-gradient-to-br from-blue-900 to-blue-800 rounded-lg p-8 text-white relative overflow-hidden group hover:shadow-xl transition-all duration-300">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-blue-700/20 rounded-full -mr-16 -mt-16"></div>
+                  <div className="relative z-10">
+                    <h4 className="text-xl font-semibold mb-4">Proven ROI</h4>
+                    <p className="text-blue-100 mb-4">
+                      Our clients consistently achieve significant results, with typical ROI increases between 40%-80%.
+                    </p>
+                    <div className="flex items-center gap-2 text-blue-200">
+                      <span className="text-3xl font-bold">40-80%</span>
+                      <span className="text-sm">ROI Boost</span>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
-                    <svg className="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
-                    </svg>
+
+                {/* Card 2 */}
+                <div className="bg-gradient-to-br from-blue-900 to-blue-800 rounded-lg p-8 text-white relative overflow-hidden group hover:shadow-xl transition-all duration-300">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-blue-700/20 rounded-full -mr-16 -mt-16"></div>
+                  <div className="relative z-10">
+                    <h4 className="text-xl font-semibold mb-4">Lead Generation</h4>
+                    <p className="text-blue-100 mb-4">
+                      Targeted strategies that drive high-quality leads and increase conversion rates significantly.
+                    </p>
+                    <div className="flex items-center gap-2 text-blue-200">
+                      <span className="text-3xl font-bold">3x</span>
+                      <span className="text-sm">More Leads</span>
+                    </div>
                   </div>
-                  <p className="text-gray-700">Measurable ROI and Growth</p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
-                    <svg className="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-                    </svg>
-                  </div>
-                  <p className="text-gray-700">Dedicated Marketing Experts</p>
                 </div>
               </div>
-              
+
+              {/* Additional Stats Section */}
+              <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-blue-600">40%</div>
+                  <div className="text-gray-600 mt-2">Minimum ROI</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-blue-600">80%</div>
+                  <div className="text-gray-600 mt-2">Maximum ROI</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-blue-600">100+</div>
+                  <div className="text-gray-600 mt-2">Active Projects</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-blue-600">50+</div>
+                  <div className="text-gray-600 mt-2">Marketing Experts</div>
+                </div>
+              </div>
             </div>
-            <div className="relative">
-              <div className="absolute inset-0 bg-blue-600/10 rounded-3xl transform rotate-3"></div>
-              <img 
-                src={app} 
-                alt="Digital Marketing Journey" 
-                className="relative rounded-3xl w-full h-[400px] object-cover shadow-xl"
-              />
+          </div>
+
+          {/* Services Grid */}
+          <div className="mb-20 mt-20">
+            <h2 className="text-3xl font-bold text-center text-red-600 mb-12">
+              Our Digital Marketing Services
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {services.map((service, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100"
+                >
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="p-6">
+                    <div className="flex items-center mb-4">
+                      <div className="mr-4">{service.icon}</div>
+                      <h3 className="text-xl font-semibold text-gray-900">
+                        {service.title}
+                      </h3>
+                    </div>
+                    <p className="text-gray-600 mb-6">{service.description}</p>
+                    <ul className="space-y-3">
+                      {service.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-center text-gray-600">
+                          <svg
+                            className="w-4 h-4 text-blue-600 mr-2"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA Section */}
+          <div className="text-center bg-white rounded-xl shadow-lg p-12">
+            <h2 className="text-3xl font-bold text-red-600 mb-4">
+              Ready to Grow Your Business?
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+              Let's discuss how Innomatrics Tech can help you achieve your digital
+              marketing goals with data-driven strategies.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Link
+                to="/contact"
+                className="inline-flex items-center px-8 py-3 border border-transparent text-lg font-bold rounded-md text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-300 shadow-md"
+              >
+                Start Your Project
+              </Link>
             </div>
           </div>
         </div>
       </div>
-
-      {/* New Digital Innovation Section */}
-     
     </div>
   );
 });
 
-export default DigitalMarketing;
+export default DigitalMarket;

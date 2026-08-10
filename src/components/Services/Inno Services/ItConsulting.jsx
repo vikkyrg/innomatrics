@@ -1,17 +1,19 @@
+import heroImgNew from "../../../assets/new_category_images/ItConsulting_hero.jpg";
+import diffImgNew from "../../../assets/new_category_images/ItConsulting_diff.jpg";
 import React, { forwardRef, useEffect, useState } from "react";
 import { FaCheckCircle, FaSyncAlt, FaPlug, FaCode, FaDesktop, FaMobile, FaShoppingCart, FaDatabase, FaCloud, FaLock, FaChartLine, FaUsers, FaShieldAlt, FaRocket, FaLightbulb, FaBuilding, FaChartLine as FaChartLineIcon, FaCogs, FaRobot, FaPaintBrush, FaBriefcase, FaReact, FaNodeJs, FaAngular, FaVuejs, FaPhp, FaPython } from "react-icons/fa";
-import heroImg from "../../../assets/services_hero/hero_it_consulting.png";
 
-import app from "../../../assets/services_cards/ItConsulting_cs1.jpg";
-import app2 from "../../../assets/services_cards/ItConsulting_cs2.jpg";
+
+
+
 import w1 from "../../../assets/services_cards/ItConsulting_w1.jpg";
 import w2 from "../../../assets/services_cards/ItConsulting_w2.jpg";
 import w3 from "../../../assets/services_cards/ItConsulting_w3.jpg";
 import w4 from "../../../assets/services_cards/ItConsulting_w4.jpg";
 import w5 from "../../../assets/services_cards/ItConsulting_w5.jpg";
 import w6 from "../../../assets/services_cards/ItConsulting_w6.jpg";
-import introImg from "../../../assets/services_cards/ItConsulting_intro.jpg";
-import diffImg from "../../../assets/services_cards/ItConsulting_diff.jpg";
+
+
 
 
 import "./ItConsulting.css";
@@ -19,6 +21,15 @@ import { Link } from "react-router-dom";
 
 
 import { SiMongodb, SiMysql } from "react-icons/si";
+import businessProcessAutomationImg from "../../../assets/appServices/Business Process Automation.jpg";
+import digitalTransformationImg from "../../../assets/appServices/Digital Transformation.jpg";
+import itInfrastructureConsultingImg from "../../../assets/appServices/IT Infrastructure Consulting.jpg";
+import legacySystemMigrationImg from "../../../assets/appServices/Legacy System Migration.jpg";
+import mvpConsultingImg from "../../../assets/appServices/MVP Consulting.jpg";
+import productStrategyImg from "../../../assets/appServices/Product Strategy.jpg";
+import softwareArchitectureConsultingImg from "../../../assets/appServices/Software Architecture Consulting.jpg";
+import technologyConsultingImg from "../../../assets/appServices/Technology Consulting.jpg";
+import technologyStackConsultingImg from "../../../assets/appServices/Technology Stack Consulting.jpg";
 
 const ServicesCard = ({ title, description, image }) => (
   <div className="bg-white shadow-lg rounded-xl p-6 m-4 flex-1 transform hover:scale-105 transition-all duration-300 hover:shadow-xl border border-gray-100">
@@ -42,38 +53,27 @@ const ItConsulting = forwardRef((props, ref) => {
   ];
 
   const services = [
-            { icon: <FaBriefcase className="w-8 h-8 text-blue-600" />, title: "Technology Consulting", description: "Expert advice on adopting new technologies and optimizing your existing tech stack.", features: ["Tech stack evaluation", "Feasibility studies", "Vendor selection", "Innovation workshops"], image: w1 },
-            { icon: <FaDesktop className="w-8 h-8 text-blue-600" />, title: "Digital Transformation", description: "Comprehensive strategies to digitize business processes and customer experiences.", features: ["Digital maturity assessment", "Change management", "Process digitization", "Transformation roadmaps"], image: w2 },
-            { icon: <FaCogs className="w-8 h-8 text-blue-600" />, title: "Software Architecture Consulting", description: "Designing robust, scalable architectures for complex enterprise systems.", features: ["Microservices design", "System audits", "Scalability planning", "Cloud architecture"], image: w3 },
-            { icon: <FaLightbulb className="w-8 h-8 text-blue-600" />, title: "Product Strategy & MVP Consulting", description: "Guidance for startups and enterprises to validate and launch successful products.", features: ["Market validation", "Feature prioritization", "MVP scoping", "Go-to-market strategy"], image: w4 },
-            { icon: <FaSyncAlt className="w-8 h-8 text-blue-600" />, title: "Legacy System Modernization", description: "Upgrading outdated systems to modern technologies safely and efficiently.", features: ["Code refactoring", "Data migration", "Performance tuning", "Security upgrades"], image: w5 },
-            { icon: <FaChartLine className="w-8 h-8 text-blue-600" />, title: "Business Process Automation", description: "Identifying and automating bottlenecks to improve overall business efficiency.", features: ["Workflow analysis", "RPA consulting", "Tool integration", "ROI tracking"], image: w6 }
-        ];
+    { title: "Technology Consulting", icon: <FaLightbulb className="text-blue-600 text-2xl" />, description: "Strategic guidance to help you choose the right technologies for your business goals.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: technologyConsultingImg },
+    { title: "Business Process Automation", icon: <FaCogs className="text-blue-600 text-2xl" />, description: "Identifying and automating repetitive workflows to save time and reduce costs.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: businessProcessAutomationImg },
+    { title: "Digital Transformation", icon: <FaRocket className="text-blue-600 text-2xl" />, description: "Comprehensive strategies to digitize your operations and modernize your business.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: digitalTransformationImg },
+    { title: "Software Architecture Consulting", icon: <FaDesktop className="text-blue-600 text-2xl" />, description: "Designing scalable, secure, and resilient architectures for complex applications.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: softwareArchitectureConsultingImg },
+    { title: "Technology Stack Consulting", icon: <FaCode className="text-blue-600 text-2xl" />, description: "Expert advice on selecting the optimal programming languages, frameworks, and databases.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: technologyStackConsultingImg },
+    { title: "IT Infrastructure Consulting", icon: <FaCloud className="text-blue-600 text-2xl" />, description: "Evaluating and optimizing your server, network, and cloud infrastructure.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: itInfrastructureConsultingImg },
+    { title: "Product Strategy", icon: <FaChartLine className="text-blue-600 text-2xl" />, description: "Aligning your software product roadmap with market demands and business objectives.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: productStrategyImg },
+    { title: "MVP Consulting", icon: <FaRocket className="text-blue-600 text-2xl" />, description: "Defining the core features needed to launch your Minimum Viable Product successfully.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: mvpConsultingImg },
+    { title: "Startup Technology Consulting", icon: <FaLightbulb className="text-blue-600 text-2xl" />, description: "Tailored technical guidance for founders and early-stage startups.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=600&auto=format&fit=crop" },
+    { title: "Software Modernization", icon: <FaSyncAlt className="text-blue-600 text-2xl" />, description: "Upgrading and refactoring legacy software to modern standards without downtime.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=600&auto=format&fit=crop" },
+    { title: "Legacy System Migration", icon: <FaDatabase className="text-blue-600 text-2xl" />, description: "Safely transitioning data and operations from outdated systems to new platforms.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: legacySystemMigrationImg }
+  ];
 
-  const caseStudies = [
-            { title: "Enterprise Digital Transformation", description: "Guided a traditional manufacturing company through a complete digital overhaul", result: "Increased overall productivity by 50%", image: app },
-            { title: "Legacy System Migration", description: "Modernized a 10-year-old financial system without zero downtime", result: "Reduced infrastructure costs by 35%", image: app2 }
-        ];
-
-  // Map service titles to their corresponding images
   const serviceImages = {
-    'default': app2,
-    'Technology Consulting': w1,
-    'Digital Transformation': w2,
-    'Software Architecture Consulting': w3,
-    'Product Strategy & MVP Consulting': w4,
-    'Legacy System Modernization': w5,
-    'Business Process Automation': w6
+    'default': diffImgNew,
+    ...services.reduce((acc, curr) => ({ ...acc, [curr.title]: curr.image }), {})
   };
 
   const serviceDescriptions = {
-    'default': "We provide strategic technology consulting to help you modernize legacy systems, optimize costs, and scale your business.",
-    'Technology Consulting': "Expert implementation of Technology Consulting tailored to your specific business requirements and industry standards.",
-    'Digital Transformation': "Comprehensive Digital Transformation solutions designed for scalability, security, and maximum performance.",
-    'Software Architecture Consulting': "Advanced Software Architecture Consulting integrations to streamline your workflows and boost operational efficiency.",
-    'Product Strategy & MVP Consulting': "Future-proof Product Strategy & MVP Consulting architectures that drive digital transformation and user engagement.",
-    'Legacy System Modernization': "Robust Legacy System Modernization frameworks customized for your enterprise needs with 24/7 reliability.",
-    'Business Process Automation': "Cutting-edge Business Process Automation strategies to keep your business ahead of the technological curve."
+    'default': "Explore our comprehensive suite of professional services designed to accelerate your digital transformation.",
+    ...services.reduce((acc, curr) => ({ ...acc, [curr.title]: curr.description }), {})
   };
 
   useEffect(() => {
@@ -87,7 +87,7 @@ const ItConsulting = forwardRef((props, ref) => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url(${heroImg})`,
+            backgroundImage: `url(${heroImgNew})`,
           }}
         ></div>
         <div className="absolute inset-0"></div>
@@ -128,15 +128,8 @@ const ItConsulting = forwardRef((props, ref) => {
             {/* Left Content */}
             <div>
               <h3 className="text-2xl font-bold text-red-500 mb-6">OUR OFFERINGS</h3>
-              <div className="space-y-4">
-                {[
-                  'Technology Consulting',
-                  'Digital Transformation',
-                  'Software Architecture Consulting',
-                  'Product Strategy & MVP Consulting',
-                  'Legacy System Modernization',
-                  'Business Process Automation'
-                ].map((service) => (
+              <div className="space-y-4 max-h-[600px] overflow-y-auto pr-4 custom-scrollbar">
+                {services.map(s => s.title).map((service) => (
                   <div 
                     key={service}
                     onMouseEnter={() => setHoveredService(service.replace('— ', ''))}
@@ -275,7 +268,7 @@ const ItConsulting = forwardRef((props, ref) => {
               </h3>
               <div className="relative rounded-lg overflow-hidden">
                 <img 
-                  src={diffImg}
+                  src={diffImgNew}
                   alt="Innomatrics Tech Professional"
                   className="w-full h-[400px] object-cover rounded-lg"
                 />
@@ -324,7 +317,7 @@ const ItConsulting = forwardRef((props, ref) => {
             </div>
             <div className="w-full mt-16 md:w-1/2">
               <img
-                src={introImg}
+                src={heroImgNew}
                 alt="Innomatrics Digital Solutions"
                 className="w-full h-72 rounded-lg shadow-md"
               />
@@ -373,36 +366,6 @@ const ItConsulting = forwardRef((props, ref) => {
                         </li>
                       ))}
                     </ul>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Case Studies */}
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold text-center text-red-600 mb-12">
-              Success Stories
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {caseStudies.map((caseStudy, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-xl overflow-hidden shadow-lg"
-                >
-                  <img
-                    src={caseStudy.image}
-                    alt={caseStudy.title}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                      {caseStudy.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4">{caseStudy.description}</p>
-                    <div className="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg inline-block">
-                      <strong>Result:</strong> {caseStudy.result}
-                    </div>
                   </div>
                 </div>
               ))}

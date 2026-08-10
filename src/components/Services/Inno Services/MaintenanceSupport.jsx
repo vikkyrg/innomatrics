@@ -1,17 +1,19 @@
+import heroImgNew from "../../../assets/new_category_images/MaintenanceSupport_hero.jpg";
+import diffImgNew from "../../../assets/new_category_images/MaintenanceSupport_diff.jpg";
 import React, { forwardRef, useEffect, useState } from "react";
 import { FaCheckCircle, FaSyncAlt, FaPlug, FaCode, FaDesktop, FaMobile, FaShoppingCart, FaDatabase, FaCloud, FaLock, FaChartLine, FaUsers, FaShieldAlt, FaRocket, FaLightbulb, FaBuilding, FaChartLine as FaChartLineIcon, FaCogs, FaRobot, FaPaintBrush, FaBriefcase, FaReact, FaNodeJs, FaAngular, FaVuejs, FaPhp, FaPython } from "react-icons/fa";
-import heroImg from "../../../assets/services_hero/hero_maintenance_support.png";
 
-import app from "../../../assets/services_cards/MaintenanceSupport_cs1.jpg";
-import app2 from "../../../assets/services_cards/MaintenanceSupport_cs2.jpg";
+
+
+
 import w1 from "../../../assets/services_cards/MaintenanceSupport_w1.jpg";
 import w2 from "../../../assets/services_cards/MaintenanceSupport_w2.jpg";
 import w3 from "../../../assets/services_cards/MaintenanceSupport_w3.jpg";
 import w4 from "../../../assets/services_cards/MaintenanceSupport_w4.jpg";
 import w5 from "../../../assets/services_cards/MaintenanceSupport_w5.jpg";
 import w6 from "../../../assets/services_cards/MaintenanceSupport_w6.jpg";
-import introImg from "../../../assets/services_cards/MaintenanceSupport_intro.jpg";
-import diffImg from "../../../assets/services_cards/MaintenanceSupport_diff.jpg";
+
+
 
 
 import "./MaintenanceSupport.css";
@@ -19,6 +21,18 @@ import { Link } from "react-router-dom";
 
 
 import { SiMongodb, SiMysql } from "react-icons/si";
+import amcPlansImg from "../../../assets/ecommerceServices/AMC Plans.jpg";
+import appMaintenanceImg from "../../../assets/ecommerceServices/App Maintenance.jpg";
+import backupManagementImg from "../../../assets/ecommerceServices/Backup Management.jpg";
+import cloudManagementImg from "../../../assets/ecommerceServices/Cloud Management.jpg";
+import managedItSupportImg from "../../../assets/ecommerceServices/Managed IT Support.jpg";
+import monthlyTechnicalSupportImg from "../../../assets/ecommerceServices/Monthly Technical Support.jpg";
+import performanceOptimizationImg from "../../../assets/ecommerceServices/Performance Optimization.jpg";
+import securityMonitoringImg from "../../../assets/ecommerceServices/Security Monitoring.jpg";
+import serverManagementImg from "../../../assets/ecommerceServices/Server Management.jpg";
+import softwareMaintenanceImg from "../../../assets/ecommerceServices/Software Maintenance.jpg";
+import websiteMaintenanceImg from "../../../assets/ecommerceServices/Website Maintenance.jpg";
+import wordPressMaintenanceImg from "../../../assets/ecommerceServices/WordPress Maintenance.jpg";
 
 const ServicesCard = ({ title, description, image }) => (
   <div className="bg-white shadow-lg rounded-xl p-6 m-4 flex-1 transform hover:scale-105 transition-all duration-300 hover:shadow-xl border border-gray-100">
@@ -42,38 +56,28 @@ const MaintenanceSupport = forwardRef((props, ref) => {
   ];
 
   const services = [
-            { icon: <FaCogs className="w-8 h-8 text-blue-600" />, title: "Website & App Maintenance", description: "Regular updates, bug fixes, and performance tuning for your applications.", features: ["Version updates", "Feature enhancements", "Bug tracking", "Content updates"], image: w1 },
-            { icon: <FaCloud className="w-8 h-8 text-blue-600" />, title: "Server & Cloud Management", description: "24/7 monitoring and management of your cloud infrastructure and servers.", features: ["AWS/Azure management", "Uptime monitoring", "Resource scaling", "Cost optimization"], image: w2 },
-            { icon: <FaShieldAlt className="w-8 h-8 text-blue-600" />, title: "Security Monitoring", description: "Continuous surveillance to detect and prevent security threats in real-time.", features: ["Malware scanning", "Firewall updates", "Threat mitigation", "Vulnerability patching"], image: w3 },
-            { icon: <FaSyncAlt className="w-8 h-8 text-blue-600" />, title: "Backup & Disaster Recovery", description: "Automated backup solutions to ensure your data is never lost.", features: ["Daily/Weekly backups", "Database snapshots", "Failover testing", "Rapid restoration"], image: w4 },
-            { icon: <FaChartLine className="w-8 h-8 text-blue-600" />, title: "Performance Optimization", description: "Proactive tuning to ensure fast load times and smooth user experiences.", features: ["Database optimization", "Code minification", "Caching strategies", "Core Web Vitals"], image: w5 },
-            { icon: <FaUsers className="w-8 h-8 text-blue-600" />, title: "AMC & Technical Support", description: "Annual maintenance contracts and dedicated helpdesk support for your team.", features: ["SLA-backed support", "Ticket management", "Priority resolution", "Monthly reporting"], image: w6 }
-        ];
+    { title: "Website Maintenance", icon: <FaDesktop className="text-blue-600 text-2xl" />, description: "Ongoing updates, bug fixes, and content management for your web presence.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: websiteMaintenanceImg },
+    { title: "App Maintenance", icon: <FaMobile className="text-blue-600 text-2xl" />, description: "Regular updates to ensure your mobile app stays compatible with new OS versions.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: appMaintenanceImg },
+    { title: "Software Maintenance", icon: <FaCode className="text-blue-600 text-2xl" />, description: "Continuous improvement and bug fixing for your custom enterprise software.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: softwareMaintenanceImg },
+    { title: "Server Management", icon: <FaDatabase className="text-blue-600 text-2xl" />, description: "Proactive server administration, patching, and optimization.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: serverManagementImg },
+    { title: "Cloud Management", icon: <FaCloud className="text-blue-600 text-2xl" />, description: "Managing and optimizing your AWS, Azure, or Google Cloud infrastructure.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: cloudManagementImg },
+    { title: "WordPress Maintenance", icon: <FaDesktop className="text-blue-600 text-2xl" />, description: "Keeping your WordPress core, plugins, and themes secure and up-to-date.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: wordPressMaintenanceImg },
+    { title: "Security Monitoring", icon: <FaShieldAlt className="text-blue-600 text-2xl" />, description: "24/7 surveillance to detect and block potential security threats.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: securityMonitoringImg },
+    { title: "Backup Management", icon: <FaLock className="text-blue-600 text-2xl" />, description: "Automated, secure data backups and routine restoration testing.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: backupManagementImg },
+    { title: "Performance Optimization", icon: <FaChartLineIcon className="text-blue-600 text-2xl" />, description: "Continuous tuning to ensure maximum speed and efficiency for your applications.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: performanceOptimizationImg },
+    { title: "Monthly Technical Support", icon: <FaUsers className="text-blue-600 text-2xl" />, description: "Dedicated hours of expert technical support available whenever you need it.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: monthlyTechnicalSupportImg },
+    { title: "AMC Plans", icon: <FaBuilding className="text-blue-600 text-2xl" />, description: "Annual Maintenance Contracts tailored to your business's specific IT needs.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: amcPlansImg },
+    { title: "Managed IT Support", icon: <FaCogs className="text-blue-600 text-2xl" />, description: "Comprehensive, outsourced IT department handling all your technological needs.", features: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"], image: managedItSupportImg }
+  ];
 
-  const caseStudies = [
-            { title: "24/7 Managed IT for Retailer", description: "Provided complete server and app maintenance for a high-traffic store", result: "Achieved 99.99% uptime during peak seasons", image: app },
-            { title: "App Performance Optimization", description: "Refactored and optimized a struggling legacy application", result: "Improved page load speed by 300%", image: app2 }
-        ];
-
-  // Map service titles to their corresponding images
   const serviceImages = {
-    'default': app2,
-    'Website & App Maintenance': w1,
-    'Server & Cloud Management': w2,
-    'Security Monitoring': w3,
-    'Backup & Disaster Recovery': w4,
-    'Performance Optimization': w5,
-    'AMC & Technical Support': w6
+    'default': diffImgNew,
+    ...services.reduce((acc, curr) => ({ ...acc, [curr.title]: curr.image }), {})
   };
 
   const serviceDescriptions = {
-    'default': "We keep your digital products running flawlessly with 24/7 monitoring, security patches, and performance optimizations.",
-    'Website & App Maintenance': "Expert implementation of Website & App Maintenance tailored to your specific business requirements and industry standards.",
-    'Server & Cloud Management': "Comprehensive Server & Cloud Management solutions designed for scalability, security, and maximum performance.",
-    'Security Monitoring': "Advanced Security Monitoring integrations to streamline your workflows and boost operational efficiency.",
-    'Backup & Disaster Recovery': "Future-proof Backup & Disaster Recovery architectures that drive digital transformation and user engagement.",
-    'Performance Optimization': "Robust Performance Optimization frameworks customized for your enterprise needs with 24/7 reliability.",
-    'AMC & Technical Support': "Cutting-edge AMC & Technical Support strategies to keep your business ahead of the technological curve."
+    'default': "Explore our comprehensive suite of professional services designed to accelerate your digital transformation.",
+    ...services.reduce((acc, curr) => ({ ...acc, [curr.title]: curr.description }), {})
   };
 
   useEffect(() => {
@@ -87,7 +91,7 @@ const MaintenanceSupport = forwardRef((props, ref) => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url(${heroImg})`,
+            backgroundImage: `url(${heroImgNew})`,
           }}
         ></div>
         <div className="absolute inset-0"></div>
@@ -128,15 +132,8 @@ const MaintenanceSupport = forwardRef((props, ref) => {
             {/* Left Content */}
             <div>
               <h3 className="text-2xl font-bold text-red-500 mb-6">OUR OFFERINGS</h3>
-              <div className="space-y-4">
-                {[
-                  'Website & App Maintenance',
-                  'Server & Cloud Management',
-                  'Security Monitoring',
-                  'Backup & Disaster Recovery',
-                  'Performance Optimization',
-                  'AMC & Technical Support'
-                ].map((service) => (
+              <div className="space-y-4 max-h-[600px] overflow-y-auto pr-4 custom-scrollbar">
+                {services.map(s => s.title).map((service) => (
                   <div 
                     key={service}
                     onMouseEnter={() => setHoveredService(service.replace('— ', ''))}
@@ -275,7 +272,7 @@ const MaintenanceSupport = forwardRef((props, ref) => {
               </h3>
               <div className="relative rounded-lg overflow-hidden">
                 <img 
-                  src={diffImg}
+                  src={diffImgNew}
                   alt="Innomatrics Tech Professional"
                   className="w-full h-[400px] object-cover rounded-lg"
                 />
@@ -324,7 +321,7 @@ const MaintenanceSupport = forwardRef((props, ref) => {
             </div>
             <div className="w-full mt-16 md:w-1/2">
               <img
-                src={introImg}
+                src={heroImgNew}
                 alt="Innomatrics Digital Solutions"
                 className="w-full h-72 rounded-lg shadow-md"
               />
@@ -373,36 +370,6 @@ const MaintenanceSupport = forwardRef((props, ref) => {
                         </li>
                       ))}
                     </ul>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Case Studies */}
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold text-center text-red-600 mb-12">
-              Success Stories
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {caseStudies.map((caseStudy, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-xl overflow-hidden shadow-lg"
-                >
-                  <img
-                    src={caseStudy.image}
-                    alt={caseStudy.title}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                      {caseStudy.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4">{caseStudy.description}</p>
-                    <div className="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg inline-block">
-                      <strong>Result:</strong> {caseStudy.result}
-                    </div>
                   </div>
                 </div>
               ))}
