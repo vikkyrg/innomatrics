@@ -180,9 +180,18 @@ const Footer = () => {
                 <h3 className="text-[15px] font-bold text-white">Company</h3>
               </div>
               <ul className="space-y-3 mb-6">
-                {['About Us', 'Why Choose Us', 'Our Team', 'Careers', 'Blog', 'Case Studies', 'News & Updates', 'Contact Us'].map((item, idx) => (
+                {[
+                  { name: 'About Us', path: '/about' },
+                  { name: 'Why Choose Us', path: '/why-us' },
+                  { name: 'Our Team', path: '/about' },
+                  { name: 'Careers', path: '/careers' },
+                  { name: 'Blog', path: '/blog' },
+                  { name: 'Case Studies', path: '#' },
+                  { name: 'News & Updates', path: '#' },
+                  { name: 'Contact Us', path: '/contact' }
+                ].map((item, idx) => (
                   <li key={idx}>
-                    <Link to={item === 'Contact Us' ? '/contact' : '#'} className="text-[13px] text-gray-300 hover:text-white transition-colors flex items-center"><span className="w-1 h-1 rounded-full bg-blue-500 mr-2"></span>{item}</Link>
+                    <Link to={item.path} className="text-[13px] text-gray-300 hover:text-white transition-colors flex items-center"><span className="w-1 h-1 rounded-full bg-blue-500 mr-2"></span>{item.name}</Link>
                   </li>
                 ))}
               </ul>
