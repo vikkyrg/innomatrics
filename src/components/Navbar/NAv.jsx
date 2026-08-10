@@ -101,15 +101,6 @@ function NAv() {
               </Link>
             </div>
 
-            {/* Mobile Contact Button */}
-            <div className="xl:hidden flex items-center">
-              <Link
-                to="/contact"
-                className="px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-lg hover:bg-red-500 transition duration-150 ease-in-out shadow-lg"
-              >
-                Contact Us
-              </Link>
-            </div>
 
             {/* Desktop Navigation */}
             <div className="hidden xl:flex xl:items-center xl:space-x-2">
