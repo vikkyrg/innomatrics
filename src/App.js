@@ -120,6 +120,9 @@ function App() {
           <Route path="content" element={<ContentDisclaimer />} />
           <Route path="refund" element={<RefundCancellationPolicy />} />
           <Route path="data" element={<DataRetentionPolicy />} />
+          
+          {/* Catch-all redirect */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
     </Router>
