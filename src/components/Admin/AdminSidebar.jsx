@@ -30,29 +30,30 @@ const AdminSidebar = ({ isOpen, toggleSidebar }) => {
       {/* Mobile Backdrop overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-40 bg-slate-950/60 backdrop-blur-sm lg:hidden"
+          className="fixed inset-0 z-40 bg-secondary-900/60 backdrop-blur-sm lg:hidden"
           onClick={toggleSidebar}
         />
       )}
 
       <aside
-        className={`fixed top-0 bottom-0 left-0 z-50 flex flex-col w-64 bg-slate-900 border-r border-slate-800 text-slate-300 transition-transform duration-300 transform lg:translate-x-0 ${
+        className={`fixed top-0 bottom-0 left-0 z-50 flex flex-col w-64 bg-white border-r border-secondary-200 transition-transform duration-300 transform lg:translate-x-0 ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
         {/* Brand/Logo Header */}
-        <div className="flex items-center gap-2 h-20 px-6 border-b border-slate-800">
-          <div className="w-10 h-10 rounded-xl bg-blue-600/10 border border-blue-500/25 flex items-center justify-center text-blue-400">
-            <ShieldAlert className="w-6 h-6" />
+        <div className="flex items-center gap-4 h-20 px-6 border-b border-secondary-200 bg-primary-900 relative overflow-hidden">
+          <div className="absolute top-[-50%] left-[-20%] w-[100px] h-[100px] bg-primary-400 blur-3xl opacity-20" />
+          <div className="w-10 h-10 bg-primary-800 border border-primary-700 flex items-center justify-center text-primary-300 shadow-inner relative z-10">
+            <ShieldAlert className="w-5 h-5" />
           </div>
-          <div>
-            <span className="font-bold text-white text-base tracking-wide block">Innomatrics</span>
-            <span className="text-[10px] uppercase font-semibold text-blue-400 tracking-wider">Admin Panel</span>
+          <div className="relative z-10">
+            <span className="font-extrabold text-white text-base tracking-wide block">Innomatrics</span>
+            <span className="text-[9px] uppercase font-bold text-primary-300 tracking-widest block mt-0.5">Admin Console</span>
           </div>
         </div>
 
         {/* Navigation Links */}
-        <nav className="flex-1 px-4 py-6 space-y-1.5 overflow-y-auto">
+        <nav className="flex-1 px-4 py-6 space-y-2 overflow-y-auto bg-white">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = location.pathname === item.path || (item.path === '/admin/blogs' && location.pathname.startsWith('/admin/blogs/'));
@@ -63,14 +64,14 @@ const AdminSidebar = ({ isOpen, toggleSidebar }) => {
                 onClick={() => {
                   if (window.innerWidth < 1024) toggleSidebar();
                 }}
-                className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-150 group ${
+                className={`flex items-center gap-3 px-4 py-3 text-xs font-bold uppercase tracking-widest transition-all duration-200 border ${
                   isActive
-                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/15'
-                    : 'hover:bg-slate-800/60 hover:text-white text-slate-400'
+                    ? 'bg-primary-50 border-primary-200 text-primary-900'
+                    : 'bg-white border-transparent text-secondary-500 hover:bg-secondary-50 hover:text-primary-800 hover:border-secondary-200'
                 }`}
               >
-                <Icon className={`w-5 h-5 transition-transform duration-200 group-hover:scale-105 ${
-                  isActive ? 'text-white' : 'text-slate-500 group-hover:text-slate-300'
+                <Icon className={`w-4 h-4 transition-transform duration-200 ${
+                  isActive ? 'text-primary-800' : 'text-secondary-400'
                 }`} />
                 {item.label}
               </Link>
@@ -79,19 +80,19 @@ const AdminSidebar = ({ isOpen, toggleSidebar }) => {
         </nav>
 
         {/* Bottom Actions Area */}
-        <div className="p-4 border-t border-slate-800 space-y-1.5">
+        <div className="p-4 border-t border-secondary-200 space-y-2 bg-secondary-50">
           <Link
             to="/"
-            className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-slate-400 hover:bg-slate-800/60 hover:text-white transition-all duration-150 group"
+            className="flex items-center gap-3 px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-secondary-600 hover:bg-white hover:text-primary-800 border border-transparent hover:border-secondary-200 transition-all duration-200 group"
           >
-            <ArrowLeft className="w-5 h-5 text-slate-500 group-hover:text-slate-300 group-hover:-translate-x-0.5 transition-transform" />
+            <ArrowLeft className="w-4 h-4 text-secondary-400 group-hover:text-primary-800 group-hover:-translate-x-1 transition-transform" />
             Go to Main Site
           </Link>
           <button
             onClick={handleLogout}
-            className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-rose-400 hover:bg-rose-950/20 hover:text-rose-300 transition-all duration-150 group"
+            className="w-full flex items-center gap-3 px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-red-600 hover:bg-white hover:text-red-700 border border-transparent hover:border-red-200 transition-all duration-200 group"
           >
-            <LogOut className="w-5 h-5 text-rose-500/80 group-hover:translate-x-0.5 transition-transform" />
+            <LogOut className="w-4 h-4 text-red-400 group-hover:text-red-600 group-hover:translate-x-1 transition-transform" />
             Sign Out
           </button>
         </div>

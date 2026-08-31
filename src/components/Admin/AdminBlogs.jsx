@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, Plus, Edit, Trash2, ExternalLink, Calendar, Check, AlertCircle } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import blogService from '../../utils/blogService';
 
 const AdminBlogs = () => {
@@ -59,46 +60,72 @@ const AdminBlogs = () => {
     return matchesSearch && matchesCategory;
   }).reverse(); // Most recent first
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1, transition: { staggerChildren: 0.05 } }
+  };
+  
+  const itemVariants = {
+    hidden: { opacity: 0, y: 10 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.3 } }
+  };
+
   return (
-    <div className="p-6 space-y-6 bg-slate-950 text-white min-h-[calc(100vh-80px)] relative">
+    <div className="p-6 lg:p-10 space-y-8 bg-secondary-50 text-secondary-900 min-h-[calc(100vh-80px)] relative font-sans">
       
       {/* Toast Notification */}
-      {toast && (
-        <div className={`fixed top-4 right-4 z-50 flex items-center gap-2.5 px-4.5 py-3 rounded-xl border shadow-xl transition-all duration-300 animate-slide-in ${
-          toast.type === 'success' 
-            ? 'bg-emerald-950 border-emerald-500/30 text-emerald-200' 
-            : 'bg-red-950 border-red-500/30 text-red-200'
-        }`}>
-          {toast.type === 'success' ? <Check className="w-5 h-5 text-emerald-400" /> : <AlertCircle className="w-5 h-5 text-red-400" />}
-          <span className="text-xs font-semibold">{toast.message}</span>
-        </div>
-      )}
+      <AnimatePresence>
+        {toast && (
+          <motion.div 
+            initial={{ opacity: 0, y: -20, x: '-50%' }}
+            animate={{ opacity: 1, y: 0, x: '-50%' }}
+            exit={{ opacity: 0, y: -20, x: '-50%' }}
+            className={`fixed top-8 left-1/2 z-50 flex items-center gap-3 px-6 py-4 border shadow-md ${
+              toast.type === 'success' 
+                ? 'bg-green-50 border-green-200 text-green-800' 
+                : 'bg-red-50 border-red-200 text-red-800'
+            }`}
+          >
+            {toast.type === 'success' ? <Check className="w-5 h-5 text-green-600" /> : <AlertCircle className="w-5 h-5 text-red-600" />}
+            <span className="text-xs font-bold uppercase tracking-widest">{toast.message}</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Action Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <motion.div 
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6"
+      >
         <div>
-          <h2 className="text-lg lg:text-xl font-bold">Manage Blog Posts</h2>
-          <p className="text-slate-400 text-xs mt-1">Create, update, delete or edit the status of your blogs.</p>
+          <h2 className="text-xl lg:text-2xl font-bold text-primary-900">Manage Blog Posts</h2>
+          <p className="text-secondary-500 text-sm mt-1 font-medium">Create, update, delete or edit the status of your blogs.</p>
         </div>
         <Link
           to="/admin/blogs/new"
-          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-lg shadow-blue-500/10 hover:shadow-blue-500/20 transition-all duration-150 shrink-0 self-start sm:self-auto"
+          className="inline-flex items-center gap-2 px-6 py-3.5 bg-primary-900 hover:bg-white border border-primary-900 hover:border-primary-900 text-white hover:text-primary-900 text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-sm shrink-0 self-start sm:self-auto"
         >
-          <Plus className="w-4.5 h-4.5" />
+          <Plus className="w-4 h-4" />
           Create Post
         </Link>
-      </div>
+      </motion.div>
 
       {/* Filter and Search Bar */}
-      <div className="flex flex-col md:flex-row gap-4 bg-slate-900 border border-slate-800 rounded-2xl p-4">
+      <motion.div 
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.1 }}
+        className="flex flex-col md:flex-row gap-4 bg-white border border-secondary-200 p-6 shadow-sm"
+      >
         {/* Search */}
-        <div className="relative flex-1">
-          <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-500">
-            <Search className="w-4.5 h-4.5" />
+        <div className="relative flex-1 group">
+          <span className="absolute inset-y-0 left-0 pl-4 flex items-center text-secondary-400 group-focus-within:text-primary-600 transition-colors">
+            <Search className="w-4 h-4" />
           </span>
           <input
             type="text"
-            className="w-full bg-slate-950 border border-slate-800 focus:border-blue-500 rounded-xl py-2 pl-10 pr-4 text-xs placeholder-slate-500 focus:outline-none transition-all duration-200"
+            className="w-full bg-secondary-50 border border-secondary-200 focus:border-primary-600 focus:ring-0 rounded-none py-3 pl-11 pr-4 text-sm text-secondary-900 placeholder-secondary-400 focus:outline-none transition-all duration-200 font-medium"
             placeholder="Search by title or description..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -106,10 +133,10 @@ const AdminBlogs = () => {
         </div>
 
         {/* Category Filter */}
-        <div className="flex items-center gap-2">
-          <span className="text-slate-400 text-xs shrink-0">Category:</span>
+        <div className="flex items-center gap-3">
+          <span className="text-secondary-500 text-[10px] font-bold uppercase tracking-widest shrink-0">Category:</span>
           <select
-            className="bg-slate-950 border border-slate-800 focus:border-blue-500 rounded-xl py-2 px-3 text-xs text-white focus:outline-none transition-all duration-200"
+            className="bg-secondary-50 border border-secondary-200 focus:border-primary-600 rounded-none py-3 px-4 text-xs font-bold text-secondary-900 focus:outline-none transition-all duration-200 min-w-[200px]"
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
           >
@@ -120,81 +147,91 @@ const AdminBlogs = () => {
             ))}
           </select>
         </div>
-      </div>
+      </motion.div>
 
       {/* Blogs Table Card */}
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-md">
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.2 }}
+        className="bg-white border border-secondary-200 shadow-sm overflow-hidden"
+      >
         <div className="overflow-x-auto">
           {filteredBlogs.length > 0 ? (
-            <table className="w-full border-collapse text-left">
+            <table className="w-full text-left">
               <thead>
-                <tr className="border-b border-slate-800 text-[11px] font-bold text-slate-400 uppercase tracking-wider bg-slate-900/40">
-                  <th className="py-4 px-6">Post Details</th>
-                  <th className="py-4 px-6">Category</th>
-                  <th className="py-4 px-6">Publish Status</th>
-                  <th className="py-4 px-6">Date Added</th>
-                  <th className="py-4 px-6 text-right">Actions</th>
+                <tr className="border-b border-secondary-200 text-[10px] font-bold text-secondary-500 uppercase tracking-widest bg-secondary-50">
+                  <th className="py-5 px-6">Post Details</th>
+                  <th className="py-5 px-6">Category</th>
+                  <th className="py-5 px-6">Status</th>
+                  <th className="py-5 px-6">Date Added</th>
+                  <th className="py-5 px-6 text-right">Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-800/60 text-xs">
+              <motion.tbody 
+                variants={containerVariants}
+                initial="hidden"
+                animate="show"
+                className="divide-y divide-secondary-100 text-sm"
+              >
                 {filteredBlogs.map((blog) => (
-                  <tr key={blog.id} className="hover:bg-slate-800/20 transition-colors">
+                  <motion.tr variants={itemVariants} key={blog.id} className="hover:bg-secondary-50 transition-colors group">
                     {/* Thumbnail + Title/Excerpt */}
-                    <td className="py-4 px-6 flex items-start gap-4 min-w-[280px] max-w-[450px]">
+                    <td className="py-5 px-6 flex items-start gap-4 min-w-[320px] max-w-[500px]">
                       <img
                         src={blog.image || 'https://images.unsplash.com/photo-1499750310107-5fef28a66643'}
                         alt={blog.title}
-                        className="w-16 h-12 rounded-xl object-cover bg-slate-800 border border-slate-700/50 shrink-0 mt-0.5"
+                        className="w-20 h-14 object-cover bg-secondary-100 border border-secondary-200 shrink-0 group-hover:border-primary-400 transition-colors"
                       />
-                      <div className="space-y-1">
-                        <h4 className="font-bold text-slate-100 hover:text-blue-400 transition-colors line-clamp-1">
+                      <div className="space-y-1.5">
+                        <h4 className="font-bold text-secondary-900 hover:text-primary-700 transition-colors line-clamp-1 leading-snug text-base">
                           <Link to={`/admin/blogs/edit/${blog.id}`}>{blog.title}</Link>
                         </h4>
-                        <p className="text-[11px] text-slate-400 line-clamp-2 leading-relaxed">
+                        <p className="text-[11px] text-secondary-500 line-clamp-2 leading-relaxed font-medium">
                           {blog.excerpt}
                         </p>
                       </div>
                     </td>
 
                     {/* Category */}
-                    <td className="py-4 px-6 whitespace-nowrap">
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-slate-800 border border-slate-700 text-slate-300">
+                    <td className="py-5 px-6 whitespace-nowrap">
+                      <span className="inline-flex items-center px-2 py-1 text-[9px] font-bold uppercase tracking-widest bg-white border border-secondary-200 text-secondary-600">
                         {blog.category}
                       </span>
                     </td>
 
                     {/* Status Publish Toggle */}
-                    <td className="py-4 px-6 whitespace-nowrap">
+                    <td className="py-5 px-6 whitespace-nowrap">
                       <button
                         onClick={() => handleToggleStatus(blog)}
-                        className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold uppercase transition-all duration-200 border ${
+                        className={`inline-flex items-center gap-2 px-3 py-1.5 text-[9px] font-bold uppercase tracking-widest transition-all duration-200 border ${
                           blog.status === 'Published'
-                            ? 'bg-emerald-950/40 border-emerald-500/20 text-emerald-400 hover:bg-emerald-950/80'
-                            : 'bg-amber-950/40 border-amber-500/20 text-amber-400 hover:bg-amber-950/80'
+                            ? 'bg-green-50 border-green-200 text-green-700 hover:bg-green-100'
+                            : 'bg-amber-50 border-amber-200 text-amber-700 hover:bg-amber-100'
                         }`}
                       >
-                        <span className={`w-1.5 h-1.5 rounded-full ${blog.status === 'Published' ? 'bg-emerald-400 animate-pulse' : 'bg-amber-400'}`} />
+                        <span className={`w-1.5 h-1.5 rounded-full ${blog.status === 'Published' ? 'bg-green-500' : 'bg-amber-500'}`} />
                         {blog.status}
                       </button>
                     </td>
 
                     {/* Created At */}
-                    <td className="py-4 px-6 text-slate-400 whitespace-nowrap">
-                      <div className="flex items-center gap-1.5">
-                        <Calendar className="w-3.5 h-3.5 text-slate-500" />
+                    <td className="py-5 px-6 text-secondary-500 whitespace-nowrap text-xs font-bold uppercase tracking-wider">
+                      <div className="flex items-center gap-2">
+                        <Calendar className="w-4 h-4 text-secondary-400" />
                         {blog.createdAt}
                       </div>
                     </td>
 
                     {/* Actions */}
-                    <td className="py-4 px-6 text-right whitespace-nowrap">
+                    <td className="py-5 px-6 text-right whitespace-nowrap">
                       <div className="inline-flex items-center gap-2">
                         {blog.status === 'Published' && (
                           <a
                             href={`/blog/${blog.slug}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-all duration-150"
+                            className="p-2 border border-secondary-200 text-secondary-400 hover:text-primary-700 hover:bg-white hover:border-primary-300 transition-all duration-150"
                             title="Preview on site"
                           >
                             <ExternalLink className="w-4 h-4" />
@@ -202,37 +239,37 @@ const AdminBlogs = () => {
                         )}
                         <Link
                           to={`/admin/blogs/edit/${blog.id}`}
-                          className="p-1.5 rounded-lg text-blue-400 hover:text-blue-300 hover:bg-slate-800 transition-all duration-150"
+                          className="p-2 border border-secondary-200 text-primary-600 hover:text-white hover:bg-primary-800 hover:border-primary-800 transition-all duration-150"
                           title="Edit"
                         >
                           <Edit className="w-4 h-4" />
                         </Link>
                         <button
                           onClick={() => handleDelete(blog.id, blog.title)}
-                          className="p-1.5 rounded-lg text-red-400 hover:text-red-300 hover:bg-slate-800 transition-all duration-150"
+                          className="p-2 border border-secondary-200 text-red-500 hover:text-white hover:bg-red-600 hover:border-red-600 transition-all duration-150"
                           title="Delete"
                         >
                           <Trash2 className="w-4 h-4" />
                         </button>
                       </div>
                     </td>
-                  </tr>
+                  </motion.tr>
                 ))}
-              </tbody>
+              </motion.tbody>
             </table>
           ) : (
-            <div className="py-16 text-center">
-              <p className="text-slate-500 text-sm">No blog posts found matching your search.</p>
+            <div className="py-20 text-center">
+              <p className="text-secondary-500 text-sm font-medium">No blog posts found matching your criteria.</p>
               <Link
                 to="/admin/blogs/new"
-                className="inline-flex items-center gap-2 mt-4 px-4 py-2 rounded-xl bg-slate-800 border border-slate-700 hover:bg-slate-700 text-white text-xs font-semibold transition-all duration-150"
+                className="inline-flex items-center gap-2 mt-6 px-6 py-3 bg-white border border-primary-900 hover:bg-primary-900 text-primary-900 hover:text-white text-xs font-bold uppercase tracking-widest transition-all duration-300"
               >
                 Create Your First Post
               </Link>
             </div>
           )}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

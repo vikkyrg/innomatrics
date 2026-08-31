@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { BookOpen, CheckCircle, FileEdit, Eye, PlusCircle, ArrowUpRight, TrendingUp } from 'lucide-react';
+import { motion } from 'framer-motion';
 import blogService from '../../utils/blogService';
 
 const AdminDashboard = () => {
@@ -30,36 +31,51 @@ const AdminDashboard = () => {
   // Filter last 3 blogs
   const recentBlogs = blogs.slice(-3).reverse();
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1, transition: { staggerChildren: 0.1 } }
+  };
+  
+  const itemVariants = {
+    hidden: { opacity: 0, y: 15 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.4 } }
+  };
+
   // Stats Card Component
-  const StatCard = ({ title, value, icon: Icon, color, subtext }) => (
-    <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex items-center justify-between shadow-md">
+  const StatCard = ({ title, value, icon: Icon, subtext }) => (
+    <motion.div variants={itemVariants} className="bg-white border border-secondary-200 p-6 flex items-center justify-between shadow-sm hover:shadow-md transition-shadow">
       <div>
-        <span className="text-slate-400 text-xs font-semibold uppercase tracking-wider block">{title}</span>
-        <span className="text-2xl lg:text-3xl font-extrabold text-white mt-1 block">{value}</span>
-        <span className="text-slate-500 text-[11px] mt-1.5 flex items-center gap-1">
-          <TrendingUp className="w-3.5 h-3.5 text-blue-500" />
+        <span className="text-secondary-500 text-[10px] font-bold uppercase tracking-widest block mb-2">{title}</span>
+        <span className="text-3xl lg:text-4xl font-extrabold text-primary-900 block font-mono">{value}</span>
+        <span className="text-secondary-600 text-[11px] mt-2 flex items-center gap-1 font-medium">
+          <TrendingUp className="w-3.5 h-3.5 text-primary-500" />
           {subtext}
         </span>
       </div>
-      <div className={`w-12 h-12 rounded-xl flex items-center justify-center border ${color}`}>
-        <Icon className="w-6 h-6" />
+      <div className="w-12 h-12 bg-secondary-50 border border-secondary-200 flex items-center justify-center text-primary-800">
+        <Icon className="w-5 h-5" />
       </div>
-    </div>
+    </motion.div>
   );
 
   return (
-    <div className="p-6 space-y-6 bg-slate-950 text-white min-h-[calc(100vh-80px)]">
+    <div className="p-6 lg:p-10 space-y-8 bg-secondary-50 text-secondary-900 min-h-[calc(100vh-80px)] font-sans">
       
       {/* Quick Action Banner */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 bg-slate-900 border border-slate-800 rounded-2xl p-6">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 bg-white border border-secondary-200 p-8 shadow-sm"
+      >
         <div>
-          <h2 className="text-lg lg:text-xl font-bold">Welcome back, Admin!</h2>
-          <p className="text-slate-400 text-xs mt-1">Here is a quick overview of your blog's current performance.</p>
+          <h2 className="text-xl lg:text-2xl font-bold text-primary-900">Welcome back, Admin!</h2>
+          <p className="text-secondary-500 text-sm mt-1 font-medium">Here is a quick overview of your blog's current performance.</p>
         </div>
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="flex flex-wrap items-center gap-4">
           <Link
             to="/admin/blogs/new"
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-lg shadow-blue-500/10 hover:shadow-blue-500/20 transition-all duration-150"
+            className="inline-flex items-center gap-2 px-5 py-3 bg-primary-900 hover:bg-primary-800 text-white text-xs font-bold uppercase tracking-widest transition-all duration-300 border border-primary-900 shadow-sm"
           >
             <PlusCircle className="w-4 h-4" />
             Create Post
@@ -68,150 +84,154 @@ const AdminDashboard = () => {
             href="/blog"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 border border-slate-700 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-semibold transition-all duration-150"
+            className="inline-flex items-center gap-2 px-5 py-3 bg-white border border-secondary-300 hover:border-primary-900 hover:bg-secondary-50 text-secondary-700 hover:text-primary-900 text-xs font-bold uppercase tracking-widest transition-all duration-300"
           >
             <ArrowUpRight className="w-4 h-4" />
             View Live Site
           </a>
         </div>
-      </div>
+      </motion.div>
 
       {/* Grid: Stat Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <motion.div 
+        variants={containerVariants}
+        initial="hidden"
+        animate="show"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+      >
         <StatCard
-          title="Total Blog Posts"
+          title="Total Posts"
           value={stats.total}
           icon={BookOpen}
-          color="bg-blue-600/10 border-blue-500/20 text-blue-400"
           subtext="Updated just now"
         />
         <StatCard
-          title="Published Articles"
+          title="Published"
           value={stats.published}
           icon={CheckCircle}
-          color="bg-emerald-600/10 border-emerald-500/20 text-emerald-400"
           subtext="Active on frontend"
         />
         <StatCard
           title="Saved Drafts"
           value={stats.drafts}
           icon={FileEdit}
-          color="bg-amber-600/10 border-amber-500/20 text-amber-400"
           subtext="Awaiting review"
         />
         <StatCard
           title="Total Readers"
           value={stats.views.toLocaleString()}
           icon={Eye}
-          color="bg-purple-600/10 border-purple-500/20 text-purple-400"
           subtext="+14.2% monthly traffic"
         />
-      </div>
+      </motion.div>
 
       {/* Grid: Analytics Chart & Recent Posts */}
-      <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+      <motion.div 
+        variants={containerVariants}
+        initial="hidden"
+        animate="show"
+        className="grid grid-cols-1 xl:grid-cols-3 gap-8"
+      >
         
         {/* Left/Center: Simulated Line Chart */}
-        <div className="xl:col-span-2 bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-6">
-          <div className="flex items-center justify-between border-b border-slate-800/80 pb-4">
+        <motion.div variants={itemVariants} className="xl:col-span-2 bg-white border border-secondary-200 p-8 shadow-sm">
+          <div className="flex items-center justify-between border-b border-secondary-200 pb-5 mb-6">
             <div>
-              <h3 className="font-bold text-sm lg:text-base">Traffic & Reader Analytics</h3>
-              <p className="text-slate-400 text-xs mt-0.5">Estimated visitor views in the last 6 months</p>
+              <h3 className="font-bold text-lg text-primary-900">Traffic Analytics</h3>
+              <p className="text-secondary-500 text-xs mt-1 font-medium">Estimated visitor views in the last 6 months</p>
             </div>
-            <span className="text-xs bg-slate-800 px-3 py-1 rounded-full border border-slate-700 text-slate-300">
+            <span className="text-[10px] font-bold uppercase tracking-widest bg-secondary-100 px-3 py-1.5 border border-secondary-200 text-secondary-600">
               Live Monitor
             </span>
           </div>
 
           {/* SVG Chart */}
-          <div className="relative h-64 w-full flex items-end">
+          <div className="relative h-72 w-full flex items-end">
             <svg className="w-full h-full" viewBox="0 0 600 240" fill="none" xmlns="http://www.w3.org/2000/svg">
               {/* Grids */}
-              <line x1="0" y1="200" x2="600" y2="200" stroke="#1e293b" strokeDasharray="4" />
-              <line x1="0" y1="150" x2="600" y2="150" stroke="#1e293b" strokeDasharray="4" />
-              <line x1="0" y1="100" x2="600" y2="100" stroke="#1e293b" strokeDasharray="4" />
-              <line x1="0" y1="50" x2="600" y2="50" stroke="#1e293b" strokeDasharray="4" />
+              <line x1="0" y1="200" x2="600" y2="200" stroke="#e2e8f0" strokeDasharray="4" />
+              <line x1="0" y1="150" x2="600" y2="150" stroke="#e2e8f0" strokeDasharray="4" />
+              <line x1="0" y1="100" x2="600" y2="100" stroke="#e2e8f0" strokeDasharray="4" />
+              <line x1="0" y1="50" x2="600" y2="50" stroke="#e2e8f0" strokeDasharray="4" />
 
               {/* Area Under Curve */}
               <path
                 d="M 50 200 C 130 180, 210 120, 290 140 C 370 160, 450 70, 550 50 L 550 200 Z"
                 fill="url(#chartGradient)"
-                opacity="0.15"
+                opacity="0.3"
               />
 
               {/* Path Line */}
               <path
                 d="M 50 200 C 130 180, 210 120, 290 140 C 370 160, 450 70, 550 50"
-                stroke="url(#lineGradient)"
+                stroke="#0f172a"
                 strokeWidth="3.5"
                 strokeLinecap="round"
               />
 
               {/* Data points */}
-              <circle cx="50" cy="200" r="5" fill="#3b82f6" stroke="#0f172a" strokeWidth="2" />
-              <circle cx="130" cy="180" r="5" fill="#3b82f6" stroke="#0f172a" strokeWidth="2" />
-              <circle cx="210" cy="120" r="5" fill="#3b82f6" stroke="#0f172a" strokeWidth="2" />
-              <circle cx="290" cy="140" r="5" fill="#3b82f6" stroke="#0f172a" strokeWidth="2" />
-              <circle cx="370" cy="160" r="5" fill="#3b82f6" stroke="#0f172a" strokeWidth="2" />
-              <circle cx="450" cy="70" r="5" fill="#3b82f6" stroke="#0f172a" strokeWidth="2" />
-              <circle cx="550" cy="50" r="5" fill="#3b82f6" stroke="#0f172a" strokeWidth="2" />
+              <circle cx="50" cy="200" r="5" fill="#ffffff" stroke="#0f172a" strokeWidth="3" />
+              <circle cx="130" cy="180" r="5" fill="#ffffff" stroke="#0f172a" strokeWidth="3" />
+              <circle cx="210" cy="120" r="5" fill="#ffffff" stroke="#0f172a" strokeWidth="3" />
+              <circle cx="290" cy="140" r="5" fill="#ffffff" stroke="#0f172a" strokeWidth="3" />
+              <circle cx="370" cy="160" r="5" fill="#ffffff" stroke="#0f172a" strokeWidth="3" />
+              <circle cx="450" cy="70" r="5" fill="#ffffff" stroke="#0f172a" strokeWidth="3" />
+              <circle cx="550" cy="50" r="5" fill="#ffffff" stroke="#0f172a" strokeWidth="3" />
 
               {/* Labels */}
-              <text x="50" y="225" fill="#64748b" fontSize="10" textAnchor="middle">Dec</text>
-              <text x="130" y="225" fill="#64748b" fontSize="10" textAnchor="middle">Jan</text>
-              <text x="210" y="225" fill="#64748b" fontSize="10" textAnchor="middle">Feb</text>
-              <text x="290" y="225" fill="#64748b" fontSize="10" textAnchor="middle">Mar</text>
-              <text x="370" y="225" fill="#64748b" fontSize="10" textAnchor="middle">Apr</text>
-              <text x="450" y="225" fill="#64748b" fontSize="10" textAnchor="middle">May</text>
-              <text x="550" y="225" fill="#64748b" fontSize="10" textAnchor="middle">Jun</text>
+              <text x="50" y="225" fill="#64748b" fontSize="10" fontWeight="bold" textAnchor="middle">DEC</text>
+              <text x="130" y="225" fill="#64748b" fontSize="10" fontWeight="bold" textAnchor="middle">JAN</text>
+              <text x="210" y="225" fill="#64748b" fontSize="10" fontWeight="bold" textAnchor="middle">FEB</text>
+              <text x="290" y="225" fill="#64748b" fontSize="10" fontWeight="bold" textAnchor="middle">MAR</text>
+              <text x="370" y="225" fill="#64748b" fontSize="10" fontWeight="bold" textAnchor="middle">APR</text>
+              <text x="450" y="225" fill="#64748b" fontSize="10" fontWeight="bold" textAnchor="middle">MAY</text>
+              <text x="550" y="225" fill="#64748b" fontSize="10" fontWeight="bold" textAnchor="middle">JUN</text>
 
               {/* Definitions */}
               <defs>
-                <linearGradient id="lineGradient" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="#3b82f6" />
-                  <stop offset="100%" stopColor="#6366f1" />
-                </linearGradient>
                 <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#3b82f6" />
-                  <stop offset="100%" stopColor="#3b82f6" stopOpacity="0" />
+                  <stop offset="0%" stopColor="#94a3b8" />
+                  <stop offset="100%" stopColor="#94a3b8" stopOpacity="0" />
                 </linearGradient>
               </defs>
             </svg>
           </div>
-        </div>
+        </motion.div>
 
         {/* Right: Recent Blog Posts */}
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4">
-          <div className="flex items-center justify-between border-b border-slate-800/80 pb-4">
+        <motion.div variants={itemVariants} className="bg-white border border-secondary-200 p-8 shadow-sm">
+          <div className="flex items-center justify-between border-b border-secondary-200 pb-5 mb-6">
             <div>
-              <h3 className="font-bold text-sm lg:text-base">Recent Work</h3>
-              <p className="text-slate-400 text-xs mt-0.5">Recently added blog posts</p>
+              <h3 className="font-bold text-lg text-primary-900">Recent Work</h3>
+              <p className="text-secondary-500 text-xs mt-1 font-medium">Recently added posts</p>
             </div>
-            <Link to="/admin/blogs" className="text-blue-400 hover:text-blue-300 text-xs font-semibold">
+            <Link to="/admin/blogs" className="text-primary-800 hover:text-primary-600 text-[10px] font-bold uppercase tracking-widest border border-secondary-200 px-3 py-1.5 hover:bg-secondary-50 transition-colors">
               See All
             </Link>
           </div>
 
-          <div className="divide-y divide-slate-800/70 space-y-3.5">
+          <div className="divide-y divide-secondary-100 space-y-4">
             {recentBlogs.length > 0 ? (
               recentBlogs.map((blog) => (
-                <div key={blog.id} className="flex items-start gap-3.5 pt-3.5 first:pt-0">
-                  <img
-                    src={blog.image || 'https://images.unsplash.com/photo-1499750310107-5fef28a66643'}
-                    alt={blog.title}
-                    className="w-14 h-14 rounded-xl object-cover bg-slate-800 border border-slate-700/50 shrink-0"
-                  />
-                  <div className="space-y-1 overflow-hidden">
-                    <span className="text-[10px] bg-slate-800 px-2 py-0.5 border border-slate-700/60 rounded-full font-semibold text-slate-300">
+                <div key={blog.id} className="flex items-start gap-4 pt-4 first:pt-0 group">
+                  <div className="w-16 h-16 border border-secondary-200 shrink-0 overflow-hidden bg-secondary-50">
+                    <img
+                      src={blog.image || 'https://images.unsplash.com/photo-1499750310107-5fef28a66643'}
+                      alt={blog.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="space-y-1.5 overflow-hidden">
+                    <span className="text-[9px] bg-secondary-50 px-2 py-0.5 border border-secondary-200 font-bold text-secondary-500 uppercase tracking-widest">
                       {blog.category}
                     </span>
-                    <h4 className="text-xs font-bold text-slate-100 line-clamp-1 hover:text-blue-400 leading-snug">
+                    <h4 className="text-sm font-bold text-primary-900 line-clamp-1 group-hover:text-primary-700 transition-colors leading-snug">
                       <Link to={`/admin/blogs/edit/${blog.id}`}>{blog.title}</Link>
                     </h4>
-                    <p className="text-[10px] text-slate-400 flex items-center justify-between">
+                    <p className="text-[10px] font-bold text-secondary-500 flex items-center justify-between uppercase tracking-wider">
                       <span>{blog.createdAt}</span>
-                      <span className={`px-1.5 py-0.5 rounded font-mono font-semibold uppercase ${
-                        blog.status === 'Published' ? 'text-emerald-400 bg-emerald-950/20' : 'text-amber-400 bg-amber-950/20'
+                      <span className={`px-2 py-1 border ${
+                        blog.status === 'Published' ? 'text-primary-800 bg-primary-50 border-primary-200' : 'text-amber-700 bg-amber-50 border-amber-200'
                       }`}>
                         {blog.status}
                       </span>
@@ -220,14 +240,14 @@ const AdminDashboard = () => {
                 </div>
               ))
             ) : (
-              <div className="py-6 text-center text-slate-500 text-xs">
+              <div className="py-8 text-center text-secondary-500 text-sm font-medium italic border border-dashed border-secondary-300">
                 No blog posts found. Create one to get started!
               </div>
             )}
           </div>
-        </div>
+        </motion.div>
 
-      </div>
+      </motion.div>
 
     </div>
   );

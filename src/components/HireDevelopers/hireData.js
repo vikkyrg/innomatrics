@@ -5,7 +5,7 @@ export const hireDevelopersData = {
     title: "Hire Dedicated React Developers",
     subtitle: "Accelerate your web development with pre-vetted, elite ReactJS programmers specializing in custom SPA and enterprise solutions.",
     description: "When you hire React developers from Innomatrics, you gain access to a talent pool of top 1% engineers. We specialize in building highly interactive, SEO-friendly, and globally scalable web applications using ReactJS, Next.js for Server-Side Rendering (SSR), and advanced state management tools like Redux. Whether you need a dedicated offshore team or a single remote React expert, our developers deliver blazing-fast Core Web Vitals and intuitive user experiences.",
-    heroImage: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=1000&auto=format&fit=crop", 
+    heroImage: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=2000&auto=format&fit=crop", 
     skills: ["React.js & Hooks API", "Next.js (SSR & SSG)", "Redux Toolkit / Zustand", "Tailwind CSS / Material UI", "GraphQL & RESTful APIs", "Jest / Cypress Automation"],
     whyUs: [
       "Top 1% vetted React engineers with 5+ years of enterprise experience",
@@ -19,7 +19,7 @@ export const hireDevelopersData = {
       { title: "Fixed Price React App", description: "Best for building a complete Single Page Application (SPA) from scratch with well-defined wireframes and user stories." }
     ],
     guarantee: {
-      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=2000&auto=format&fit=crop",
       quote: "\"Their React developers delivered a highly interactive UI that boosted our user engagement by 40%.\"",
       title: "The React Excellence Guarantee",
       points: [
@@ -36,7 +36,7 @@ export const hireDevelopersData = {
     title: "Hire Expert Node.js Developers",
     subtitle: "Power your digital ecosystem with lightning-fast, highly concurrent Node.js backend architectures and microservices.",
     description: "Backend performance dictates business scalability. Hire Node.js developers from Innomatrics to build lightweight, event-driven, and data-intensive real-time APIs. Our remote Node.js experts excel in crafting microservices capable of handling millions of concurrent requests, integrating secure enterprise data pipelines, and deploying auto-scaling cloud infrastructure on AWS and Azure.",
-    heroImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1000&auto=format&fit=crop", 
+    heroImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2000&auto=format&fit=crop", 
     skills: ["Node.js & Express / NestJS", "Microservices Architecture", "PostgreSQL / MongoDB / Redis", "Socket.io (Real-time Apps)", "AWS / Docker / Kubernetes", "High-Security API Design"],
     whyUs: [
       "Masters of event-driven, non-blocking I/O backend architectures",
@@ -50,7 +50,7 @@ export const hireDevelopersData = {
       { title: "Fixed Price API", description: "A structured, fixed-cost model for developing a specific RESTful API or backend service with precise endpoints." }
     ],
     guarantee: {
-      image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1000&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2000&auto=format&fit=crop",
       quote: "\"The backend architecture they built handles our peak traffic flawlessly with zero downtime.\"",
       title: "The Node.js Reliability Guarantee",
       points: [
@@ -67,7 +67,7 @@ export const hireDevelopersData = {
     title: "Hire Top Mobile App Developers",
     subtitle: "Transform your visionary concepts into stunning, chart-topping iOS, Android, and cross-platform applications.",
     description: "Looking to build a mobile app that dominates the App Store? Hire mobile app developers who specialize in crafting pixel-perfect, native experiences. From high-performance iOS apps in Swift to robust Android solutions in Kotlin, and cost-effective cross-platform development using React Native and Flutter, our mobile engineering team delivers flawless, native-feeling experiences tailored to your business goals.",
-    heroImage: "https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=1000&auto=format&fit=crop", 
+    heroImage: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2000&auto=format&fit=crop", 
     skills: ["React Native & Expo", "Flutter & Dart", "Swift (iOS Native)", "Kotlin (Android Native)", "Mobile UI/UX & Animations", "App Store Optimization (ASO)"],
     whyUs: [
       "Deep expertise across Native iOS/Android and Cross-platform frameworks",
@@ -81,7 +81,7 @@ export const hireDevelopersData = {
       { title: "Fixed Price MVP", description: "Launch your v1.0 mobile app on the App Store with a guaranteed budget and a strict go-to-market timeline." }
     ],
     guarantee: {
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1000&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2000&auto=format&fit=crop",
       quote: "\"Our app went from concept to #1 in our category thanks to their brilliant mobile engineering.\"",
       title: "The Mobile Excellence Guarantee",
       points: [
@@ -98,7 +98,7 @@ export const hireDevelopersData = {
     title: "Hire Full-Stack Engineers",
     subtitle: "Versatile, end-to-end software engineers capable of architecting your entire technology stack from database to browser.",
     description: "Bridge the gap between frontend beauty and backend brains. When you hire full-stack developers from our team, you get versatile engineers proficient in MERN and MEAN stacks. They take complete technical ownership of your product, seamlessly integrating complex server logic with dynamic user interfaces to drastically accelerate your time-to-market and reduce development silos.",
-    heroImage: "https://images.unsplash.com/photo-1550439062-609e1531270e?q=80&w=1000&auto=format&fit=crop", 
+    heroImage: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2000&auto=format&fit=crop", 
     skills: ["MERN / MEAN Stack Mastery", "Advanced Database Schema Design", "Cloud Infrastructure (AWS/GCP)", "REST & GraphQL API Integration", "DevOps & CI/CD Pipelines", "System Architecture & Security"],
     whyUs: [
       "Holistic product development expertise from database architecture to UI rendering",
@@ -112,7 +112,7 @@ export const hireDevelopersData = {
       { title: "Fixed Price Software", description: "Ideal for delivering a comprehensive web platform or SaaS product with thoroughly mapped out system requirements." }
     ],
     guarantee: {
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2000&auto=format&fit=crop",
       quote: "\"Having a full-stack expert reduced our development time by half while maintaining incredible quality.\"",
       title: "The Full-Stack Guarantee",
       points: [
@@ -129,7 +129,7 @@ export const hireDevelopersData = {
     title: "Hire AI & ML Engineers",
     subtitle: "Future-proof your enterprise with state-of-the-art Artificial Intelligence, Machine Learning, and LLM integrations.",
     description: "Don't just keep up with the future—invent it. Hire AI engineers and Machine Learning experts to build intelligent systems that automate complex workflows and extract actionable insights from big data. We specialize in advanced Natural Language Processing (NLP), custom Large Language Model (LLM) fine-tuning, computer vision, and predictive analytics to give your business a massive competitive advantage.",
-    heroImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1000&auto=format&fit=crop", 
+    heroImage: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2000&auto=format&fit=crop", 
     skills: ["Machine & Deep Learning Models", "NLP & Custom LLMs (OpenAI/Llama)", "Computer Vision & Image Processing", "Python (TensorFlow/PyTorch)", "Data Engineering & Pipelines", "Predictive Analytics & BI"],
     whyUs: [
       "Proven track record of deploying production-ready, scalable AI models",
@@ -143,7 +143,7 @@ export const hireDevelopersData = {
       { title: "Fixed Price PoC", description: "A low-risk model to develop a Proof of Concept (PoC) for an AI feature before committing to enterprise-scale rollout." }
     ],
     guarantee: {
-      image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=1000&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2000&auto=format&fit=crop",
       quote: "\"The custom AI model they built for us automated 60% of our manual data processing.\"",
       title: "The AI Innovation Guarantee",
       points: [
@@ -160,7 +160,7 @@ export const hireDevelopersData = {
     title: "Hire UI/UX Designers",
     subtitle: "Craft intuitive, human-centered designs that captivate audiences, reduce friction, and skyrocket conversions.",
     description: "Design isn't just how it looks; it's how it works and converts. Hire UI/UX designers from Innomatrics who fuse deep psychological user research with breathtaking aesthetics. We craft ADA-accessible, responsive digital experiences that reduce user friction, boost engagement metrics, and maximize your Return on Investment (ROI) across web and mobile platforms.",
-    heroImage: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=1000&auto=format&fit=crop", 
+    heroImage: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2000&auto=format&fit=crop", 
     skills: ["User Research & Persona Development", "Wireframing & High-fidelity Prototyping", "Figma & Adobe Creative Suite", "Micro-interactions & UI Animation", "Usability & A/B Testing", "Scalable Enterprise Design Systems"],
     whyUs: [
       "Data-driven design approach strictly backed by user psychology",
@@ -174,7 +174,7 @@ export const hireDevelopersData = {
       { title: "Fixed Price Redesign", description: "Complete, end-to-end UX/UI redesign of your application with guaranteed deliverables and handoff files." }
     ],
     guarantee: {
-      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1000&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2000&auto=format&fit=crop",
       quote: "\"The UX overhaul completely transformed our app, doubling our user retention rate.\"",
       title: "The Design Excellence Guarantee",
       points: [
@@ -191,7 +191,7 @@ export const hireDevelopersData = {
     title: "Hire Digital Marketing Strategists",
     subtitle: "Accelerate your brand's growth with data-driven marketing, Technical SEO, and proven ROI-focused paid campaigns.",
     description: "We don't just generate clicks; we generate paying customers. Hire our dedicated digital marketing experts to dominate search engine rankings (SEO), build viral social media presence, and execute high-converting Google and Meta ad campaigns. From inbound content strategy to complex email automation journeys, we build your brand's digital legacy with measurable results.",
-    heroImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop", 
+    heroImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000&auto=format&fit=crop", 
     skills: ["Advanced Technical SEO & Link Building", "PPC (Google Ads & Meta Ads)", "Social Media Growth Strategy", "Content & Inbound Marketing", "Email Automation & Lead Nurturing", "CRO & Advanced Web Analytics"],
     whyUs: [
       "Proven marketing strategies with measurable, scalable ROI",
@@ -205,7 +205,7 @@ export const hireDevelopersData = {
       { title: "Fixed Price Campaign", description: "A highly targeted, fixed-cost model for executing a specific ad campaign, product launch, or technical SEO overhaul." }
     ],
     guarantee: {
-      image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=1000&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000&auto=format&fit=crop",
       quote: "\"Their data-driven campaigns reduced our acquisition cost by 40% while scaling our leads.\"",
       title: "The Growth & ROI Guarantee",
       points: [
@@ -222,7 +222,7 @@ export const hireDevelopersData = {
     title: "Hire a Dedicated Tech Team",
     subtitle: "Your fully-equipped, extended engineering squad ready to build, deploy, and scale your software vision.",
     description: "Bypass the recruitment nightmare and the costs of in-house hiring. Hire a complete, cohesive unit of senior software developers, visionary UI/UX designers, rigorous QA engineers, and agile project managers. We plug directly into your operations as an offshore development center, delivering enterprise-grade software on time, on budget, and beyond expectations.",
-    heroImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop", 
+    heroImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2000&auto=format&fit=crop", 
     skills: ["Full Product Lifecycle Management", "Agile & Scrum Methodologies", "Dedicated Tech Leads & Product Managers", "Automated QA & Manual Testing", "Scalable Cloud Architecture", "Continuous Delivery (CI/CD)"],
     whyUs: [
       "Instant access to a pre-vetted, highly cohesive talent pool",
@@ -236,7 +236,7 @@ export const hireDevelopersData = {
       { title: "Project-Based (Fixed)", description: "Hand us the requirements, and we will assemble the perfect team to deliver your entire product at a guaranteed fixed cost." }
     ],
     guarantee: {
-      image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1000&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2000&auto=format&fit=crop",
       quote: "\"Having a dedicated team transformed our delivery speed. It feels like they sit right next to us.\"",
       title: "The Dedicated Partnership Guarantee",
       points: [

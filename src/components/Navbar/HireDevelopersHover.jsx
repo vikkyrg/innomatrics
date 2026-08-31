@@ -1,119 +1,71 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaReact, FaNodeJs, FaMobileAlt, FaRobot, FaLaptopCode, FaPalette, FaUsers, FaArrowRight } from 'react-icons/fa';
+import { FaReact, FaNodeJs, FaMobileAlt, FaRobot, FaLaptopCode, FaPalette, FaUsers, FaArrowRight, FaChartLine } from 'react-icons/fa';
 
 const HireDevelopersHover = () => {
+  const column1 = [
+    { name: 'Hire React Developers', path: '/hire/react-developers', icon: <FaReact size={18} />, desc: 'Top-tier React professionals' },
+    { name: 'Hire Mobile App Developers', path: '/hire/mobile-app-developers', icon: <FaMobileAlt size={18} />, desc: 'iOS & Android specialists' },
+    { name: 'Hire AI Engineers', path: '/hire/ai-engineers', icon: <FaRobot size={18} />, desc: 'Machine learning experts' },
+    { name: 'Hire Digital Marketers', path: '/hire/digital-marketers', icon: <FaChartLine size={18} />, desc: 'Growth and SEO strategies' },
+  ];
+
+  const column2 = [
+    { name: 'Hire Node.js Developers', path: '/hire/nodejs-developers', icon: <FaNodeJs size={18} />, desc: 'Scalable backend engineers' },
+    { name: 'Hire Full Stack Developers', path: '/hire/full-stack-developers', icon: <FaLaptopCode size={18} />, desc: 'End-to-end digital solutions' },
+    { name: 'Hire UI/UX Designers', path: '/hire/ui-ux-designers', icon: <FaPalette size={18} />, desc: 'Creative design specialists' },
+    { name: 'Hire Dedicated Team', path: '/hire/development-team', icon: <FaUsers size={18} />, desc: 'Fully integrated tech talent' },
+  ];
+
+  const renderLink = (item, idx) => (
+    <Link key={idx} to={item.path} className="flex items-start group p-3 hover:bg-secondary-50 transition-colors border border-transparent hover:border-secondary-200 rounded-md">
+      <div className="mt-1 mr-3 shrink-0 w-10 h-10 rounded-lg flex items-center justify-center bg-secondary-100 text-secondary-600 group-hover:bg-primary-50 group-hover:text-primary-600 transition-colors">
+        {item.icon}
+      </div>
+      <div>
+        <h4 className="text-sm font-semibold text-primary-900 group-hover:text-primary-800 transition-colors">{item.name}</h4>
+        <p className="text-xs text-secondary-600 mt-1 leading-relaxed">{item.desc}</p>
+      </div>
+    </Link>
+  );
+
   return (
     <div className="absolute top-full right-0 w-[950px] z-50 animate-fadeIn cursor-default pt-4">
-      <div className="bg-white shadow-2xl rounded-2xl overflow-hidden border border-gray-100">
-        {/* Top Section: Grid and Card */}
+      <div className="bg-white shadow-md rounded-md border border-secondary-200 max-h-[85vh] overflow-y-auto">
         <div className="flex flex-col lg:flex-row p-6 gap-6 relative">
-        
-        {/* Left Side: Developer Links Grid */}
-        <div className="w-full lg:w-2/3 grid grid-cols-2 gap-y-4 gap-x-6">
           
-          <Link to="/hire/react-developers" className="flex items-start group p-2 hover:bg-blue-50 rounded-lg transition-colors">
-            <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaReact className="text-blue-500 text-lg" />
+          {/* Left Side: Developer Links 2 Column Grid */}
+          <div className="w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-4">
+            
+            <div className="flex flex-col gap-2">
+              {column1.map(renderLink)}
             </div>
-            <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Hire React Developers</h4>
-              <p className="text-xs text-gray-500 mt-0.5">Top-tier React professionals</p>
-            </div>
-          </Link>
 
-          <Link to="/hire/nodejs-developers" className="flex items-start group p-2 hover:bg-green-50 rounded-lg transition-colors">
-            <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaNodeJs className="text-green-500 text-lg" />
+            <div className="flex flex-col gap-2">
+              {column2.map(renderLink)}
             </div>
-            <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-green-600 transition-colors">Hire Node.js Developers</h4>
-              <p className="text-xs text-gray-500 mt-0.5">Scalable backend engineers</p>
-            </div>
-          </Link>
 
-          <Link to="/hire/mobile-app-developers" className="flex items-start group p-2 hover:bg-purple-50 rounded-lg transition-colors">
-            <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaMobileAlt className="text-purple-500 text-lg" />
-            </div>
-            <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-purple-600 transition-colors">Hire Mobile App Developers</h4>
-              <p className="text-xs text-gray-500 mt-0.5">iOS & Android specialists</p>
-            </div>
-          </Link>
-
-          <Link to="/hire/full-stack-developers" className="flex items-start group p-2 hover:bg-orange-50 rounded-lg transition-colors">
-            <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaLaptopCode className="text-orange-500 text-lg" />
-            </div>
-            <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">Hire Full Stack Developers</h4>
-              <p className="text-xs text-gray-500 mt-0.5">End-to-end digital solutions</p>
-            </div>
-          </Link>
-
-          <Link to="/hire/ai-engineers" className="flex items-start group p-2 hover:bg-red-50 rounded-lg transition-colors">
-            <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaRobot className="text-red-500 text-lg" />
-            </div>
-            <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-red-600 transition-colors">Hire AI Engineers</h4>
-              <p className="text-xs text-gray-500 mt-0.5">Machine learning experts</p>
-            </div>
-          </Link>
-
-          <Link to="/hire/ui-ux-designers" className="flex items-start group p-2 hover:bg-pink-50 rounded-lg transition-colors">
-            <div className="w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaPalette className="text-pink-500 text-lg" />
-            </div>
-            <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-pink-600 transition-colors">Hire UI/UX Designers</h4>
-              <p className="text-xs text-gray-500 mt-0.5">Creative design specialists</p>
-            </div>
-          </Link>
-
-          <Link to="/hire/digital-marketers" className="flex items-start group p-2 hover:bg-teal-50 rounded-lg transition-colors">
-            <div className="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaRobot className="text-teal-500 text-lg" />
-            </div>
-            <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-teal-600 transition-colors">Hire Digital Marketers</h4>
-              <p className="text-xs text-gray-500 mt-0.5">Growth and SEO strategies</p>
-            </div>
-          </Link>
-
-          <Link to="/hire/development-team" className="flex items-start group p-2 hover:bg-blue-50 rounded-lg transition-colors">
-            <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaUsers className="text-blue-500 text-lg" />
-            </div>
-            <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Hire Dedicated Team</h4>
-              <p className="text-xs text-gray-500 mt-0.5">Fully integrated tech talent</p>
-            </div>
-          </Link>
-
-        </div>
-
-        {/* Right Side: Feature Card */}
-        <div className="w-full lg:w-1/3 bg-gray-50 rounded-xl p-5 border border-gray-100 flex flex-col group hover:shadow-md transition-shadow">
-          <div className="h-32 rounded-lg overflow-hidden mb-4">
-            <img 
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&auto=format&fit=crop" 
-              alt="Software Development Team" 
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            />
           </div>
-          <h4 className="font-bold text-gray-900 mb-2">Hire Software Development Team</h4>
-          <p className="text-xs text-gray-500 leading-relaxed mb-4 flex-grow">
-            Hire software development team merging tech brilliance with business impact.
-          </p>
-          <Link to="/hire/development-team" className="text-sm text-blue-600 font-bold flex items-center hover:text-blue-800 transition-colors">
-            Explore Inside <FaArrowRight className="ml-1 w-3 h-3 group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </div>
+
+          {/* Right Side: Feature Card */}
+          <div className="w-full lg:w-1/3 bg-secondary-50 p-5 border border-secondary-200 rounded-md flex flex-col group hover:shadow-md transition-shadow">
+            <div className="h-40 rounded-md overflow-hidden mb-5 border border-secondary-200">
+              <img 
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&auto=format&fit=crop" 
+                alt="Software Development Team" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <h4 className="font-bold text-primary-900 mb-2 text-lg">Hire Software Development Team</h4>
+            <p className="text-sm text-secondary-600 leading-relaxed mb-6 flex-grow">
+              Merge tech brilliance with business impact by augmenting your staff with our elite engineers.
+            </p>
+            <Link to="/hire-developers" className="text-sm text-primary-800 font-bold flex items-center hover:text-primary-600 transition-colors mt-auto group/link uppercase tracking-wider">
+              Explore Inside <FaArrowRight className="ml-2 w-3.5 h-3.5 group-hover/link:translate-x-1.5 transition-transform" />
+            </Link>
+          </div>
 
         </div>
-
       </div>
     </div>
   );

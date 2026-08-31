@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import NAv from "../Navbar/NAv";
 import axios from "axios";
+import { motion } from "framer-motion";
+import ServiceHero from "../Services/components/ServiceHero";
+import CTASection from "../Services/components/CTASection";
 
 const BlogPage = () => {
   const categories = [
@@ -39,139 +41,108 @@ const BlogPage = () => {
     : blogPosts.filter(post => post.category === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-white">
-      <NAv />
+    <div className="bg-white font-sans overflow-x-hidden">
+      
       {/* Hero Section */}
-      <div className="relative w-full bg-black">
-        <div
-          className="absolute inset-0 w-full h-full"
-          style={{
-            backgroundImage: "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI5AocHjcxxSmI7XkK2pdNC55VdzKkJjS6QW4OGsLhOYkin71AJL0jN69ULuO_PETJ8dM&usqp=CAU')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            opacity: '0.2'
-          }}
-        />
-        
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-32">
-          <div className="max-w-7xl">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-              Blog & Insights
-            </h1>
-            <div className="w-32 h-0.5 bg-white mt-8"></div>
+      <ServiceHero 
+        breadcrumbTitle="Blog & Insights"
+        title="Blog & Insights"
+        description="Discover the latest trends, insights, and perspectives on technology, business, and innovation."
+        backgroundImage="https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=2000&auto=format&fit=crop"
+        primaryCTA="Explore Topics"
+        primaryLink="#topics"
+      />
+
+      <div className="section-padding bg-white border-b border-secondary-200">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto text-center">
+            <span className="text-primary-800 font-bold uppercase tracking-widest text-xs mb-4 block">Innomatrics Blog</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-secondary-900 mb-8 tracking-tight">
+              Insights driving digital innovation.
+            </h2>
+            <div className="prose prose-lg text-secondary-600 max-w-none">
+              <p className="leading-relaxed mb-6 font-normal text-xl">
+                Welcome to the official blog of Innomatrics. Here, we share valuable insights, tech trends, and practical solutions that are driving innovation across industries.
+              </p>
+              <p className="leading-relaxed font-normal text-lg">
+                Whether you're a startup looking to scale, a business undergoing digital transformation, or a developer eager to explore cutting-edge technologies, our team regularly publishes content designed for you. Learn from real-world case studies and expert opinions that reflect our passion for technology and customer success.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-  <div className="py-16 space-y-8">
-    <div className="w-full mx-auto">
-      <h4 className="text-3xl text-red-500 font-semibold mb-8 text-left">Innomatrics Blog</h4>
-      <p className="text-gray-700 text-lg leading-relaxed text-left">
-        Welcome to the official blog of <span className="font-semibold text-blue-600">Innomatrics</span>, your trusted software development partner.
-        Here, we share valuable insights, tech trends, and practical solutions that are driving innovation across industries.
-        Whether you're a startup looking to scale, a business undergoing digital transformation, or a developer eager to explore cutting-edge technologies, our blog is designed for you.
-        <br /><br />
-        At Innomatrics, we believe in empowering businesses through smart, scalable, and future-ready software solutions.
-        Our team regularly publishes content on web development, mobile apps, UI/UX design, cloud computing, cybersecurity, AI integration, and much more.
-        Stay connected with our blog to learn from real-world case studies, expert opinions, and company updates that reflect our passion for technology and customer success.
-      </p>
-    </div>
-  </div>
-</div>
 
-      {/* Category Filter */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="flex flex-wrap gap-2 justify-start">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
-                selectedCategory === category
-                  ? "bg-blue-600 text-white"
-                  : "bg-white text-gray-700 hover:bg-blue-50"
-              } border border-gray-200`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Blog Posts Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {loading ? (
-          <div className="flex justify-center items-center py-20">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredPosts.map((post) => (
-              <article
-                key={post._id}
-                className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+      <div id="topics" className="section-padding bg-secondary-50 border-b border-secondary-200">
+        <div className="container-custom">
+          
+          {/* Category Filter */}
+          <div className="flex flex-wrap gap-3 justify-center mb-16">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-5 py-2.5 text-xs font-bold uppercase tracking-widest transition-colors duration-200 border ${ selectedCategory === category ? "bg-primary-900 text-white border-primary-900" : "bg-white text-secondary-700 border-secondary-200 hover:bg-secondary-100" }`}
               >
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute top-4 right-4">
-                  <span className="inline-flex items-center rounded-full bg-blue-600 px-3 py-1 text-sm font-medium text-white">
-                    {post.category}
-                  </span>
-                </div>
-              </div>
-
-              <div className="p-6">
-                <h3 className="mt-2 text-xl font-semibold text-gray-900 group-hover:text-blue-600 line-clamp-2">
-                  <Link to={`/blog/${post.slug || post.title.toLowerCase().replace(/\s+/g, '-')}`} className="hover:text-blue-600 transition-colors duration-200">
-                    {post.title}
-                  </Link>
-                </h3>
-
-                <p className="mt-3 text-base text-gray-500 line-clamp-3">
-                  {post.excerpt}
-                </p>
-
-                <div className="mt-4 flex items-center justify-between">
-                  <Link 
-                    to={`/blog/${post.slug || post.title.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1"
-                  >
-                    Read More 
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </article>
-          ))}
+                {category}
+              </button>
+            ))}
           </div>
-        )}
 
-        {/* Newsletter Section */}
-        <div className="mt-16 bg-blue-900 rounded-2xl p-8 text-center">
-          <h2 className="text-2xl font-bold text-white">Subscribe to Our Newsletter</h2>
-          <p className="mt-2 text-blue-200">Get the latest insights delivered directly to your inbox</p>
-          <form className="mt-6 flex max-w-md mx-auto gap-x-4">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm sm:leading-6"
-            />
-            <button
-              type="submit"
-              className="flex-none rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600"
-            >
-              Subscribe
-            </button>
-          </form>
+          {/* Blog Posts Grid */}
+          {loading ? (
+            <div className="flex justify-center items-center py-20">
+              <div className="animate-spin h-12 w-12 border-b-2 border-primary-900"></div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-secondary-200 gap-0">
+              {filteredPosts.map((post, i) => (
+                <motion.article
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: i * 0.05 }}
+                  key={post._id}
+                  className="group relative bg-white border-b border-r border-secondary-200 overflow-hidden flex flex-col h-full"
+                >
+                  <Link to={`/blog/${post.slug || post.title.toLowerCase().replace(/\s+/g, '-')}`} className="block h-full flex flex-col">
+                    <div className="relative h-56 overflow-hidden border-b border-secondary-200">
+                      <img
+                        src={post.image}
+                        alt={post.title}
+ className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+                      />
+                      <div className="absolute inset-0 bg-primary-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
+                      <div className="absolute top-4 right-4">
+                        <span className="inline-flex items-center bg-primary-900 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white shadow-sm">
+                          {post.category}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="p-8 flex flex-col flex-grow bg-white group-hover:bg-secondary-50 transition-colors duration-300">
+                      <h3 className="text-xl font-bold text-secondary-900 mb-3 group-hover:text-primary-800 transition-colors line-clamp-2">
+                        {post.title}
+                      </h3>
+                      <p className="text-secondary-600 text-sm leading-relaxed flex-grow line-clamp-3 mb-6 font-normal">
+                        {post.excerpt}
+                      </p>
+
+                      <div className="mt-auto">
+                        <span className="text-primary-800 group-hover:text-primary-600 text-xs font-bold uppercase tracking-widest inline-flex items-center transition-colors">
+                          Read Full Article
+                          <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                </motion.article>
+              ))}
+            </div>
+          )}
         </div>
       </div>
+
+      <CTASection />
     </div>
   );
 };

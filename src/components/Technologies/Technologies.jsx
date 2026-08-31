@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import NAv from '../Navbar/NAv';
 import { 
   SiFlutter, 
   SiReact, 
@@ -27,6 +26,8 @@ import {
   SiTensorflow,
   SiPytorch
 } from 'react-icons/si';
+import ServiceHero from '../Services/components/ServiceHero';
+import CTASection from '../Services/components/CTASection';
 
 const Technologies = () => {
   const [activeCategory, setActiveCategory] = useState('Frontend');
@@ -86,104 +87,61 @@ const Technologies = () => {
   const filteredTech = techStack.filter(tech => tech.category === activeCategory);
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <NAv />
+    <div className="bg-white font-sans">
       
-      {/* Hero Section */}
-      <div className="relative w-full bg-[#0f172a] pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-blue-600 rounded-full mix-blend-screen filter blur-[100px] opacity-20 animate-pulse"></div>
-          <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-purple-600 rounded-full mix-blend-screen filter blur-[100px] opacity-20 animate-pulse" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-        </div>
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-8">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-blue-900/50 text-blue-300 text-sm font-semibold mb-6 border border-blue-700/50 backdrop-blur-md uppercase tracking-wider">
-            Our Expertise
+      <ServiceHero 
+        breadcrumbTitle="Technologies"
+        title="Our Technology Stack"
+        description="We leverage the latest, enterprise-grade frameworks and tools to build secure, scalable, and high-performance digital solutions."
+        backgroundImage="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1000&auto=format&fit=crop"
+        primaryCTA="Discuss Your Project"
+        secondaryCTA="View Services"
+        primaryLink="/contact"
+        secondaryLink="/services"
+      />
+
+      <div className="section-padding bg-secondary-50 border-b border-secondary-200">
+        <div className="container-custom">
+          
+          <div className="bg-white border border-secondary-200 p-2 md:p-4 rounded-md shadow-sm mb-16 flex flex-wrap justify-center gap-2 md:gap-4">
+            {categories.map((category, index) => (
+              <button
+                key={index}
+                onClick={() => setActiveCategory(category)}
+                className={`px-6 py-3 rounded-md font-bold text-sm md:text-base transition-all duration-300 ${ 
+                  activeCategory === category 
+                  ? "bg-primary-900 text-white shadow-md transform scale-105" 
+                  : "bg-white text-secondary-600 hover:bg-secondary-50 hover:text-primary-700 border border-transparent" 
+                }`}
+              >
+                {category}
+              </button>
+            ))}
           </div>
-          <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg">
-            Our Technology <br className="hidden md:block"/> 
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Stack & Tools</span>
-          </h1>
-        </div>
-      </div>
 
-      {/* Categories / Tabs Navigation */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20">
-        <div className="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] p-2 md:p-4 border border-gray-100 flex flex-wrap justify-center gap-2 md:gap-4">
-          {categories.map((category, index) => (
-            <button
-              key={index}
-              onClick={() => setActiveCategory(category)}
-              className={`px-6 py-3 rounded-xl font-bold text-sm md:text-base transition-all duration-300 shadow-sm ${
-                activeCategory === category 
-                  ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md transform scale-105" 
-                  : "bg-gray-50 text-gray-600 hover:bg-gray-100 hover:text-blue-600 border border-transparent"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-      </div>
+          <div className="text-center mb-12">
+            <h2 className="text-2xl font-bold text-primary-900 mb-4">{activeCategory} Technologies</h2>
+            <div className="w-16 h-1 bg-primary-600 mx-auto"></div>
+          </div>
 
-      {/* Tech Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 min-h-[400px]">
-        
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl font-extrabold text-gray-900 mb-4">{activeCategory} Technologies</h2>
-          <div className="w-16 h-1 bg-blue-600 mx-auto rounded-full"></div>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-          {filteredTech.map((tech, index) => (
-            <div 
-              key={index}
-              className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 flex flex-col items-center justify-center text-center border border-gray-100 group"
-            >
-              <div className="mb-6 transform group-hover:scale-125 transition-transform duration-500">
-                {tech.icon}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 border-t border-l border-secondary-200 gap-0">
+            {filteredTech.map((tech, index) => (
+              <div 
+                key={index}
+                className="bg-white p-10 flex flex-col items-center justify-center text-center border-b border-r border-secondary-200 hover:bg-secondary-50 transition-colors group"
+              >
+                <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300 drop-shadow-sm">
+                  {tech.icon}
+                </div>
+                <h3 className="text-lg font-bold text-secondary-800 group-hover:text-primary-900 transition-colors">{tech.name}</h3>
               </div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors">{tech.name}</h3>
-            </div>
-          ))}
-        </div>
-        
-        {/* Empty state safeguard */}
-        {filteredTech.length === 0 && (
-          <div className="text-center py-20">
-            <p className="text-xl text-gray-500">More technologies coming soon!</p>
+            ))}
           </div>
-        )}
+
+        </div>
       </div>
 
-      {/* CTA Section */}
-      <section className="relative bg-gradient-to-br from-blue-700 to-indigo-900 py-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-        </div>
-        
-        <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-          <h2 className="text-4xl font-extrabold text-white mb-6 drop-shadow-md">
-            Ready to Build Your Project?
-          </h2>
-          <p className="text-blue-100 mb-10 text-xl font-light">
-            Whether you need a full-stack engineering team or specialized experts, we're ready to help you scale.
-          </p>
-          <div className="flex justify-center">
-            <a
-              href="/contact"
-              className="bg-white text-blue-700 px-10 py-4 rounded-full font-bold text-lg hover:bg-blue-50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 inline-flex items-center"
-            >
-              Consult an Expert
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </section>
+      <CTASection />
 
     </div>
   );

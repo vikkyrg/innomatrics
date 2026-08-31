@@ -10,187 +10,187 @@ import {
 
 const ServiceHover = () => {
   return (
-    <div className="absolute top-full left-0 lg:-left-32 w-[1100px] z-50 animate-fadeIn cursor-default pt-4">
-      <div className="bg-white shadow-2xl rounded-2xl overflow-hidden border border-gray-100">
+    <div className="absolute top-full left-0 lg:-left-32 w-[900px] z-50 animate-fadeIn cursor-default pt-4">
+      <div className="bg-white shadow-md rounded-md border border-secondary-200 max-h-[85vh] overflow-y-auto">
         <div className="flex flex-col xl:flex-row p-6 gap-6 relative">
         
         {/* Left Side: Services Grid */}
         <div className="w-full xl:w-3/4 grid grid-cols-3 gap-y-6 gap-x-6">
           
-          <Link to="/web-development" className="flex items-start group">
-            <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaLaptopCode className="text-blue-500 text-lg" />
+          <Link to="/web-development" className="flex items-start group p-3 hover:bg-secondary-50 transition-colors border border-transparent hover:border-secondary-200 rounded-md">
+            <div className="mt-1 mr-3 shrink-0 w-10 h-10 rounded-lg flex items-center justify-center bg-secondary-100 text-secondary-600 group-hover:bg-primary-50 group-hover:text-primary-600 transition-colors">
+              <FaLaptopCode size={18} />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Web Development</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Modern & responsive sites</p>
+              <h4 className="text-sm font-semibold text-primary-900 group-hover:text-primary-800 transition-colors">Web Development</h4>
+              <p className="text-xs text-secondary-600 mt-1 leading-relaxed">Modern & responsive sites</p>
             </div>
           </Link>
 
-          <Link to="/app-development" className="flex items-start group">
-            <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaMobileAlt className="text-purple-500 text-lg" />
+          <Link to="/app-development" className="flex items-start group p-3 hover:bg-secondary-50 transition-colors border border-transparent hover:border-secondary-200 rounded-md">
+            <div className="mt-1 mr-3 shrink-0 w-10 h-10 rounded-lg flex items-center justify-center bg-secondary-100 text-secondary-600 group-hover:bg-primary-50 group-hover:text-primary-600 transition-colors">
+              <FaMobileAlt size={18} />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-purple-600 transition-colors">App Development</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">iOS & Android solutions</p>
+              <h4 className="text-sm font-semibold text-primary-900 group-hover:text-primary-800 transition-colors">App Development</h4>
+              <p className="text-xs text-secondary-600 mt-1 leading-relaxed">iOS & Android solutions</p>
             </div>
           </Link>
 
-          <Link to="/custom-software" className="flex items-start group">
-            <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaCode className="text-green-500 text-lg" />
+          <Link to="/custom-software" className="flex items-start group p-3 hover:bg-secondary-50 transition-colors border border-transparent hover:border-secondary-200 rounded-md">
+            <div className="mt-1 mr-3 shrink-0 w-10 h-10 rounded-lg flex items-center justify-center bg-secondary-100 text-secondary-600 group-hover:bg-primary-50 group-hover:text-primary-600 transition-colors">
+              <FaCode size={18} />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-green-600 transition-colors">Custom Software</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Tailored enterprise solutions</p>
+              <h4 className="text-sm font-semibold text-primary-900 group-hover:text-primary-800 transition-colors">Custom Software</h4>
+              <p className="text-xs text-secondary-600 mt-1 leading-relaxed">Tailored enterprise solutions</p>
             </div>
           </Link>
 
-          <Link to="/ai-automation" className="flex items-start group">
-            <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaRobot className="text-red-500 text-lg" />
+          <Link to="/ai-automation" className="flex items-start group p-3 hover:bg-secondary-50 transition-colors border border-transparent hover:border-secondary-200 rounded-md">
+            <div className="mt-1 mr-3 shrink-0 w-10 h-10 rounded-lg flex items-center justify-center bg-secondary-100 text-secondary-600 group-hover:bg-primary-50 group-hover:text-primary-600 transition-colors">
+              <FaRobot size={18} />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-red-600 transition-colors">AI & Automation</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Smart business processes</p>
+              <h4 className="text-sm font-semibold text-primary-900 group-hover:text-primary-800 transition-colors">AI & Automation</h4>
+              <p className="text-xs text-secondary-600 mt-1 leading-relaxed">Smart business processes</p>
             </div>
           </Link>
 
-          <Link to="/saas-product" className="flex items-start group">
-            <div className="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaCloud className="text-cyan-500 text-lg" />
+          <Link to="/saas-product" className="flex items-start group p-3 hover:bg-secondary-50 transition-colors border border-transparent hover:border-secondary-200 rounded-md">
+            <div className="mt-1 mr-3 shrink-0 w-10 h-10 rounded-lg flex items-center justify-center bg-secondary-100 text-secondary-600 group-hover:bg-primary-50 group-hover:text-primary-600 transition-colors">
+              <FaCloud size={18} />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-cyan-600 transition-colors">SaaS Product</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Cloud-native applications</p>
+              <h4 className="text-sm font-semibold text-primary-900 group-hover:text-primary-800 transition-colors">SaaS Product</h4>
+              <p className="text-xs text-secondary-600 mt-1 leading-relaxed">Cloud-native applications</p>
             </div>
           </Link>
 
-          <Link to="/e-commerce" className="flex items-start group">
-            <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaShoppingCart className="text-orange-500 text-lg" />
+          <Link to="/e-commerce" className="flex items-start group p-3 hover:bg-secondary-50 transition-colors border border-transparent hover:border-secondary-200 rounded-md">
+            <div className="mt-1 mr-3 shrink-0 w-10 h-10 rounded-lg flex items-center justify-center bg-secondary-100 text-secondary-600 group-hover:bg-primary-50 group-hover:text-primary-600 transition-colors">
+              <FaShoppingCart size={18} />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">E-Commerce</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Online retail platforms</p>
+              <h4 className="text-sm font-semibold text-primary-900 group-hover:text-primary-800 transition-colors">E-Commerce</h4>
+              <p className="text-xs text-secondary-600 mt-1 leading-relaxed">Online retail platforms</p>
             </div>
           </Link>
 
-          <Link to="/cloud-and-devops" className="flex items-start group">
-            <div className="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaServer className="text-slate-500 text-lg" />
+          <Link to="/cloud-and-devops" className="flex items-start group p-3 hover:bg-secondary-50 transition-colors border border-transparent hover:border-secondary-200 rounded-md">
+            <div className="mt-1 mr-3 shrink-0 w-10 h-10 rounded-lg flex items-center justify-center bg-secondary-100 text-secondary-600 group-hover:bg-primary-50 group-hover:text-primary-600 transition-colors">
+              <FaServer size={18} />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-slate-600 transition-colors">Cloud & DevOps</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Scalable infrastructure</p>
+              <h4 className="text-sm font-semibold text-primary-900 group-hover:text-primary-800 transition-colors">Cloud & DevOps</h4>
+              <p className="text-xs text-secondary-600 mt-1 leading-relaxed">Scalable infrastructure</p>
             </div>
           </Link>
 
-          <Link to="/cybersecurity" className="flex items-start group">
-            <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaShieldAlt className="text-indigo-500 text-lg" />
+          <Link to="/cybersecurity" className="flex items-start group p-3 hover:bg-secondary-50 transition-colors border border-transparent hover:border-secondary-200 rounded-md">
+            <div className="mt-1 mr-3 shrink-0 w-10 h-10 rounded-lg flex items-center justify-center bg-secondary-100 text-secondary-600 group-hover:bg-primary-50 group-hover:text-primary-600 transition-colors">
+              <FaShieldAlt size={18} />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">Cybersecurity</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Digital asset protection</p>
+              <h4 className="text-sm font-semibold text-primary-900 group-hover:text-primary-800 transition-colors">Cybersecurity</h4>
+              <p className="text-xs text-secondary-600 mt-1 leading-relaxed">Digital asset protection</p>
             </div>
           </Link>
 
-          <Link to="/digital-marketing" className="flex items-start group">
-            <div className="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaBullhorn className="text-teal-500 text-lg" />
+          <Link to="/digital-marketing" className="flex items-start group p-3 hover:bg-secondary-50 transition-colors border border-transparent hover:border-secondary-200 rounded-md">
+            <div className="mt-1 mr-3 shrink-0 w-10 h-10 rounded-lg flex items-center justify-center bg-secondary-100 text-secondary-600 group-hover:bg-primary-50 group-hover:text-primary-600 transition-colors">
+              <FaBullhorn size={18} />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-teal-600 transition-colors">Digital Marketing</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Data-driven growth</p>
+              <h4 className="text-sm font-semibold text-primary-900 group-hover:text-primary-800 transition-colors">Digital Marketing</h4>
+              <p className="text-xs text-secondary-600 mt-1 leading-relaxed">Data-driven growth</p>
             </div>
           </Link>
 
-          <Link to="/ui-ux-design" className="flex items-start group">
-            <div className="w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaPaintBrush className="text-pink-500 text-lg" />
+          <Link to="/ui-ux-design" className="flex items-start group p-3 hover:bg-secondary-50 transition-colors border border-transparent hover:border-secondary-200 rounded-md">
+            <div className="mt-1 mr-3 shrink-0 w-10 h-10 rounded-lg flex items-center justify-center bg-secondary-100 text-secondary-600 group-hover:bg-primary-50 group-hover:text-primary-600 transition-colors">
+              <FaPaintBrush size={18} />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-pink-600 transition-colors">UI/UX Design</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">User-centric experiences</p>
+              <h4 className="text-sm font-semibold text-primary-900 group-hover:text-primary-800 transition-colors">UI/UX Design</h4>
+              <p className="text-xs text-secondary-600 mt-1 leading-relaxed">User-centric experiences</p>
             </div>
           </Link>
 
-          <Link to="/api-integration" className="flex items-start group">
-            <div className="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaPlug className="text-yellow-500 text-lg" />
+          <Link to="/api-integration" className="flex items-start group p-3 hover:bg-secondary-50 transition-colors border border-transparent hover:border-secondary-200 rounded-md">
+            <div className="mt-1 mr-3 shrink-0 w-10 h-10 rounded-lg flex items-center justify-center bg-secondary-100 text-secondary-600 group-hover:bg-primary-50 group-hover:text-primary-600 transition-colors">
+              <FaPlug size={18} />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-yellow-600 transition-colors">API Integration</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Seamless connectivity</p>
+              <h4 className="text-sm font-semibold text-primary-900 group-hover:text-primary-800 transition-colors">API Integration</h4>
+              <p className="text-xs text-secondary-600 mt-1 leading-relaxed">Seamless connectivity</p>
             </div>
           </Link>
 
-          <Link to="/qa-testing" className="flex items-start group">
-            <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaVial className="text-emerald-500 text-lg" />
+          <Link to="/qa-testing" className="flex items-start group p-3 hover:bg-secondary-50 transition-colors border border-transparent hover:border-secondary-200 rounded-md">
+            <div className="mt-1 mr-3 shrink-0 w-10 h-10 rounded-lg flex items-center justify-center bg-secondary-100 text-secondary-600 group-hover:bg-primary-50 group-hover:text-primary-600 transition-colors">
+              <FaVial size={18} />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-emerald-600 transition-colors">QA Testing</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Reliable performance</p>
+              <h4 className="text-sm font-semibold text-primary-900 group-hover:text-primary-800 transition-colors">QA Testing</h4>
+              <p className="text-xs text-secondary-600 mt-1 leading-relaxed">Reliable performance</p>
             </div>
           </Link>
 
-          <Link to="/it-consulting" className="flex items-start group">
-            <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaUserTie className="text-amber-500 text-lg" />
+          <Link to="/it-consulting" className="flex items-start group p-3 hover:bg-secondary-50 transition-colors border border-transparent hover:border-secondary-200 rounded-md">
+            <div className="mt-1 mr-3 shrink-0 w-10 h-10 rounded-lg flex items-center justify-center bg-secondary-100 text-secondary-600 group-hover:bg-primary-50 group-hover:text-primary-600 transition-colors">
+              <FaUserTie size={18} />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-amber-600 transition-colors">IT Consulting</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Strategic technology advice</p>
+              <h4 className="text-sm font-semibold text-primary-900 group-hover:text-primary-800 transition-colors">IT Consulting</h4>
+              <p className="text-xs text-secondary-600 mt-1 leading-relaxed">Strategic technology advice</p>
             </div>
           </Link>
 
-          <Link to="/dedicated-team" className="flex items-start group">
-            <div className="w-10 h-10 bg-violet-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaUsers className="text-violet-500 text-lg" />
+          <Link to="/dedicated-team" className="flex items-start group p-3 hover:bg-secondary-50 transition-colors border border-transparent hover:border-secondary-200 rounded-md">
+            <div className="mt-1 mr-3 shrink-0 w-10 h-10 rounded-lg flex items-center justify-center bg-secondary-100 text-secondary-600 group-hover:bg-primary-50 group-hover:text-primary-600 transition-colors">
+              <FaUsers size={18} />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-violet-600 transition-colors">Dedicated Team</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Extended engineering capacity</p>
+              <h4 className="text-sm font-semibold text-primary-900 group-hover:text-primary-800 transition-colors">Dedicated Team</h4>
+              <p className="text-xs text-secondary-600 mt-1 leading-relaxed">Extended engineering capacity</p>
             </div>
           </Link>
 
-          <Link to="/maintenance-support" className="flex items-start group">
-            <div className="w-10 h-10 bg-rose-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaTools className="text-rose-500 text-lg" />
+          <Link to="/maintenance-support" className="flex items-start group p-3 hover:bg-secondary-50 transition-colors border border-transparent hover:border-secondary-200 rounded-md">
+            <div className="mt-1 mr-3 shrink-0 w-10 h-10 rounded-lg flex items-center justify-center bg-secondary-100 text-secondary-600 group-hover:bg-primary-50 group-hover:text-primary-600 transition-colors">
+              <FaTools size={18} />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-rose-600 transition-colors">Maintenance & Support</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">24/7 reliability</p>
+              <h4 className="text-sm font-semibold text-primary-900 group-hover:text-primary-800 transition-colors">Maintenance & Support</h4>
+              <p className="text-xs text-secondary-600 mt-1 leading-relaxed">24/7 reliability</p>
             </div>
           </Link>
 
-          <Link to="/logo-design" className="flex items-start group">
-            <div className="w-10 h-10 bg-fuchsia-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaPenNib className="text-fuchsia-500 text-lg" />
+          <Link to="/logo-design" className="flex items-start group p-3 hover:bg-secondary-50 transition-colors border border-transparent hover:border-secondary-200 rounded-md">
+            <div className="mt-1 mr-3 shrink-0 w-10 h-10 rounded-lg flex items-center justify-center bg-secondary-100 text-secondary-600 group-hover:bg-primary-50 group-hover:text-primary-600 transition-colors">
+              <FaPenNib size={18} />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-fuchsia-600 transition-colors">Logo Design</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Brand identity creation</p>
+              <h4 className="text-sm font-semibold text-primary-900 group-hover:text-primary-800 transition-colors">Logo Design</h4>
+              <p className="text-xs text-secondary-600 mt-1 leading-relaxed">Brand identity creation</p>
             </div>
           </Link>
 
-          <Link to="/social-media" className="flex items-start group">
-            <div className="w-10 h-10 bg-lime-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaShareAlt className="text-lime-500 text-lg" />
+          <Link to="/social-media" className="flex items-start group p-3 hover:bg-secondary-50 transition-colors border border-transparent hover:border-secondary-200 rounded-md">
+            <div className="mt-1 mr-3 shrink-0 w-10 h-10 rounded-lg flex items-center justify-center bg-secondary-100 text-secondary-600 group-hover:bg-primary-50 group-hover:text-primary-600 transition-colors">
+              <FaShareAlt size={18} />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-lime-600 transition-colors">Social Media</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Engaging audience growth</p>
+              <h4 className="text-sm font-semibold text-primary-900 group-hover:text-primary-800 transition-colors">Social Media</h4>
+              <p className="text-xs text-secondary-600 mt-1 leading-relaxed">Engaging audience growth</p>
             </div>
           </Link>
 
         </div>
 
         {/* Right Side: Feature Card */}
-        <div className="w-full xl:w-1/4 bg-gray-50 rounded-xl p-5 border border-gray-100 flex flex-col group hover:shadow-md transition-shadow">
+        <div className="w-full xl:w-1/4 bg-secondary-50 rounded-md p-5 border border-gray-100 flex flex-col group hover:shadow-md transition-shadow">
           <div className="h-48 rounded-lg overflow-hidden mb-4">
             <img 
               src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop" 
@@ -198,11 +198,11 @@ const ServiceHover = () => {
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
           </div>
-          <h4 className="font-bold text-gray-900 mb-2 text-lg">End-to-End Solutions</h4>
-          <p className="text-sm text-gray-500 leading-relaxed mb-6 flex-grow">
+          <h4 className="font-bold text-primary-900 mb-2 text-lg">End-to-End Solutions</h4>
+          <p className="text-sm text-secondary-600 leading-relaxed mb-6 flex-grow">
             From design to deployment, our comprehensive digital services cover every aspect of modern technology.
           </p>
-          <Link to="/services" className="text-blue-600 font-bold flex items-center hover:text-blue-800 transition-colors mt-auto group/link">
+          <Link to="/services" className="text-primary-700 font-bold flex items-center hover:text-blue-800 transition-colors mt-auto group/link">
             View All Services <FaArrowRight className="ml-2 w-4 h-4 group-hover/link:translate-x-2 transition-transform" />
           </Link>
         </div>

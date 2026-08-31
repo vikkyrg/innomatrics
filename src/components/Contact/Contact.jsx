@@ -1,26 +1,24 @@
 import React, { forwardRef, useEffect } from 'react';
-import './Contact.css';
-import InquiryAndMapComponent from './InquiryForm/InquiryForm';
-
+import InquiryAndMapComponent from './components/InquiryForm/InquiryForm';
+import ServiceHero from '../Services/components/ServiceHero';
 const Contact = forwardRef((props, ref) => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50" ref={ref}>
-      <div 
-        className="relative py-20 bg-cover bg-center min-h-screen flex items-center"
-        style={{
-          backgroundImage: "url('https://img.freepik.com/free-photo/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner_1258-63452.jpg')",
-          backgroundBlendMode: "overlay",
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-7xl mx-auto">
-            <InquiryAndMapComponent />
-          </div>
+    <div className="bg-white min-h-screen" ref={ref}>
+      <ServiceHero 
+        breadcrumbTitle="Get In Touch"
+        title="Contact Us"
+        description="Partner with us to engineer your next enterprise breakthrough."
+        backgroundImage="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2000&auto=format&fit=crop"
+        primaryCTA="Send Inquiry"
+        primaryLink="#inquiry"
+      />
+      <div id="inquiry" className="section-padding bg-secondary-50 border-b border-secondary-200">
+        <div className="container-custom">
+          <InquiryAndMapComponent />
         </div>
       </div>
     </div>

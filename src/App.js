@@ -1,6 +1,11 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import React from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+
+import Preloader from './components/common/Preloader';
+import ScrollToTopButton from './components/common/ScrollToTopButton';
+import NotFound from './components/common/NotFound';
 
 // Layouts
 import MainLayout from './components/layouts/MainLayout';
@@ -20,27 +25,27 @@ import Solutions from './components/Solutions/Solutions';
 import Contact from './components/Contact/Contact';
 import Career from './components/Career/Career';
 import BlogPage from './components/Blog/BlogPage';
-import Quote from './components/Quote/Quote';
+import Quote from './components/common/Quote/Quote';
 
 // Service Pages
-import WebDev from './components/Services/Inno Services/WebDev';
-import Appdev from './components/Services/Inno Services/Appdev';
-import DigitalMarket from './components/Services/Inno Services/DigitalMarket';
-import LogoDesign from './components/Services/Inno Services/LogoDesign';
-import SocialMedia from './components/Services/Inno Services/SocialMedia';
-import DevOps from './components/Services/Inno Services/DevOps';
+import WebDev from './components/Services/ServicePages/WebDev';
+import Appdev from './components/Services/ServicePages/Appdev';
+import DigitalMarket from './components/Services/ServicePages/DigitalMarket';
+import LogoDesign from './components/Services/ServicePages/LogoDesign';
+import SocialMedia from './components/Services/ServicePages/SocialMedia';
+import DevOps from './components/Services/ServicePages/DevOps';
 
-import CustomSoftware from './components/Services/Inno Services/CustomSoftware';
-import AIAutomation from './components/Services/Inno Services/AIAutomation';
-import SaaSProduct from './components/Services/Inno Services/SaaSProduct';
-import Ecommerce from './components/Services/Inno Services/Ecommerce';
-import Cybersecurity from './components/Services/Inno Services/Cybersecurity';
-import UiUxDesign from './components/Services/Inno Services/UiUxDesign';
-import ApiIntegration from './components/Services/Inno Services/ApiIntegration';
-import QaTesting from './components/Services/Inno Services/QaTesting';
-import ItConsulting from './components/Services/Inno Services/ItConsulting';
-import DedicatedTeam from './components/Services/Inno Services/DedicatedTeam';
-import MaintenanceSupport from './components/Services/Inno Services/MaintenanceSupport';
+import CustomSoftware from './components/Services/ServicePages/CustomSoftware';
+import AIAutomation from './components/Services/ServicePages/AIAutomation';
+import SaaSProduct from './components/Services/ServicePages/SaaSProduct';
+import Ecommerce from './components/Services/ServicePages/Ecommerce';
+import Cybersecurity from './components/Services/ServicePages/Cybersecurity';
+import UiUxDesign from './components/Services/ServicePages/UiUxDesign';
+import ApiIntegration from './components/Services/ServicePages/ApiIntegration';
+import QaTesting from './components/Services/ServicePages/QaTesting';
+import ItConsulting from './components/Services/ServicePages/ItConsulting';
+import DedicatedTeam from './components/Services/ServicePages/DedicatedTeam';
+import MaintenanceSupport from './components/Services/ServicePages/MaintenanceSupport';
 
 // Legal Pages
 import PrivacyPolicy from './components/Footer/Legal/PrivacyPolicy';
@@ -62,10 +67,27 @@ import BlogDetail from './components/Blog/BlogDetail';
 import HireDevelopers from './components/HireDevelopers/HireDevelopers';
 import HireDeveloperDetail from './components/HireDevelopers/HireDeveloperDetail';
 
-function App() {
+// Page Transition Wrapper
+const PageWrapper = ({ children }) => {
   return (
-    <Router>
-      <Routes>
+    <motion.div
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -15 }}
+      transition={{ duration: 0.3 }}
+      className="page-transition-wrapper w-full h-full"
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+const AnimatedRoutes = () => {
+  const location = useLocation();
+
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
         {/* Admin Routes */}
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin" element={<AdminLayout />}>
@@ -74,57 +96,70 @@ function App() {
           <Route path="blogs" element={<AdminBlogs />} />
           <Route path="blogs/new" element={<AdminBlogForm />} />
           <Route path="blogs/edit/:id" element={<AdminBlogForm />} />
-        </Route>        {/* Main Website Routes */}
+        </Route>
+
+        {/* Main Website Routes */}
         <Route path="/" element={<MainLayout />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="overview" element={<CompanyOverview />} />
-          <Route path="vision-mission" element={<VisionMission />} />
-          <Route path="why-us" element={<WhyUs />} />
-          <Route path="services" element={<Services />} />
-          <Route path="industries" element={<Industries />} />
-          <Route path="industries/:industry" element={<IndustryDetail />} />
-          <Route path="technologies" element={<Technologies />} />
-          <Route path="solutions" element={<Solutions />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="careers" element={<Career />} />
-          <Route path="blog" element={<BlogPage />} />
-          <Route path="blog/:slug" element={<BlogDetail />} />
-          <Route path="quote" element={<Quote />} />
-          <Route path="hire-developers" element={<HireDevelopers />} />
-          <Route path="hire/:role" element={<HireDeveloperDetail />} />
+          <Route index element={<PageWrapper><Home /></PageWrapper>} />
+          <Route path="about" element={<PageWrapper><About /></PageWrapper>} />
+          <Route path="overview" element={<PageWrapper><CompanyOverview /></PageWrapper>} />
+          <Route path="vision-mission" element={<PageWrapper><VisionMission /></PageWrapper>} />
+          <Route path="why-us" element={<PageWrapper><WhyUs /></PageWrapper>} />
+          <Route path="services" element={<PageWrapper><Services /></PageWrapper>} />
+          <Route path="industries" element={<PageWrapper><Industries /></PageWrapper>} />
+          <Route path="industries/:industry" element={<PageWrapper><IndustryDetail /></PageWrapper>} />
+          <Route path="technologies" element={<PageWrapper><Technologies /></PageWrapper>} />
+          <Route path="solutions" element={<PageWrapper><Solutions /></PageWrapper>} />
+          <Route path="contact" element={<PageWrapper><Contact /></PageWrapper>} />
+          <Route path="careers" element={<PageWrapper><Career /></PageWrapper>} />
+          <Route path="blog" element={<PageWrapper><BlogPage /></PageWrapper>} />
+          <Route path="blog/:slug" element={<PageWrapper><BlogDetail /></PageWrapper>} />
+          <Route path="quote" element={<PageWrapper><Quote /></PageWrapper>} />
+          <Route path="hire-developers" element={<PageWrapper><HireDevelopers /></PageWrapper>} />
+          <Route path="hire/:role" element={<PageWrapper><HireDeveloperDetail /></PageWrapper>} />
 
           {/* Service Routes */}
-          <Route path="web-development" element={<WebDev />} />
-          <Route path="app-development" element={<Appdev />} />
-          <Route path="digital-marketing" element={<DigitalMarket />} />
-          <Route path="logo-design" element={<LogoDesign />} />
-          <Route path="social-media" element={<SocialMedia />} />
-          <Route path="cloud-and-devops" element={<DevOps />} />
+          <Route path="web-development" element={<PageWrapper><WebDev /></PageWrapper>} />
+          <Route path="app-development" element={<PageWrapper><Appdev /></PageWrapper>} />
+          <Route path="digital-marketing" element={<PageWrapper><DigitalMarket /></PageWrapper>} />
+          <Route path="logo-design" element={<PageWrapper><LogoDesign /></PageWrapper>} />
+          <Route path="social-media" element={<PageWrapper><SocialMedia /></PageWrapper>} />
+          <Route path="cloud-and-devops" element={<PageWrapper><DevOps /></PageWrapper>} />
 
-          <Route path="custom-software" element={<CustomSoftware />} />
-          <Route path="ai-automation" element={<AIAutomation />} />
-          <Route path="saas-product" element={<SaaSProduct />} />
-          <Route path="e-commerce" element={<Ecommerce />} />
-          <Route path="cybersecurity" element={<Cybersecurity />} />
-          <Route path="ui-ux-design" element={<UiUxDesign />} />
-          <Route path="api-integration" element={<ApiIntegration />} />
-          <Route path="qa-testing" element={<QaTesting />} />
-          <Route path="it-consulting" element={<ItConsulting />} />
-          <Route path="dedicated-team" element={<DedicatedTeam />} />
-          <Route path="maintenance-support" element={<MaintenanceSupport />} />
+          <Route path="custom-software" element={<PageWrapper><CustomSoftware /></PageWrapper>} />
+          <Route path="ai-automation" element={<PageWrapper><AIAutomation /></PageWrapper>} />
+          <Route path="saas-product" element={<PageWrapper><SaaSProduct /></PageWrapper>} />
+          <Route path="e-commerce" element={<PageWrapper><Ecommerce /></PageWrapper>} />
+          <Route path="cybersecurity" element={<PageWrapper><Cybersecurity /></PageWrapper>} />
+          <Route path="ui-ux-design" element={<PageWrapper><UiUxDesign /></PageWrapper>} />
+          <Route path="api-integration" element={<PageWrapper><ApiIntegration /></PageWrapper>} />
+          <Route path="qa-testing" element={<PageWrapper><QaTesting /></PageWrapper>} />
+          <Route path="it-consulting" element={<PageWrapper><ItConsulting /></PageWrapper>} />
+          <Route path="dedicated-team" element={<PageWrapper><DedicatedTeam /></PageWrapper>} />
+          <Route path="maintenance-support" element={<PageWrapper><MaintenanceSupport /></PageWrapper>} />
 
           {/* Legal Routes */}
-          <Route path="privacy" element={<PrivacyPolicy />} />
-          <Route path="terms" element={<TermsOfService />} />
-          <Route path="content" element={<ContentDisclaimer />} />
-          <Route path="refund" element={<RefundCancellationPolicy />} />
-          <Route path="data" element={<DataRetentionPolicy />} />
+          <Route path="privacy" element={<PageWrapper><PrivacyPolicy /></PageWrapper>} />
+          <Route path="terms" element={<PageWrapper><TermsOfService /></PageWrapper>} />
+          <Route path="content" element={<PageWrapper><ContentDisclaimer /></PageWrapper>} />
+          <Route path="refund" element={<PageWrapper><RefundCancellationPolicy /></PageWrapper>} />
+          <Route path="data" element={<PageWrapper><DataRetentionPolicy /></PageWrapper>} />
           
-          {/* Catch-all redirect */}
-          <Route path="*" element={<Navigate to="/" replace />} />
+          {/* Catch-all Not Found Route */}
+          <Route path="*" element={<PageWrapper><NotFound /></PageWrapper>} />
         </Route>
       </Routes>
+    </AnimatePresence>
+  );
+};
+
+function App() {
+  return (
+    <Router>
+      <Preloader />
+
+      <ScrollToTopButton />
+      <AnimatedRoutes />
     </Router>
   );
 }

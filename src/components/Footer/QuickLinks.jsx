@@ -14,8 +14,8 @@ const QuickLinks = () => {
   return (
     <div>
       <h2 className="mb-6 text-sm font-semibold text-white uppercase dark:text-white">Navigation</h2>
-            <ul className="Qlinks text-sm md:text-base text-gray-500 dark:text-gray-400 font-medium">
-              <li className="mb-4  ">
+            <ul className="Qlinks text-sm md:text-base text-secondary-600 dark:text-gray-400 font-medium">
+              <li className="mb-4">
                 <Link to="/" onClick={() => handleClick(homeRef)} className="navbar-links">Home</Link>
               </li>
               <li className="mb-4">

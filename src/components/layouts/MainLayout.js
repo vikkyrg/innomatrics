@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import NAv from '../Navbar/NAv';
 import Footer from '../Footer/Footer';
-import ChatSupport from '../Chat/ChatSupport';
+import ChatSupport from '../common/Chat/ChatSupport';
 
 const MainLayout = () => {
   const location = useLocation();
@@ -12,9 +12,11 @@ const MainLayout = () => {
   }, [location.pathname]);
 
   return (
-    <div className="App overflow-clip">
+    <div className="App overflow-clip bg-secondary-50 min-h-screen flex flex-col">
       <NAv />
-      <Outlet />
+      <main className="w-full flex-grow relative">
+        <Outlet />
+      </main>
       <Footer />
       <ChatSupport />
     </div>

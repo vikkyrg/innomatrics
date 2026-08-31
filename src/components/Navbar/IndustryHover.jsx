@@ -8,196 +8,85 @@ import {
 } from 'react-icons/fa';
 
 const IndustryHover = () => {
+  const column1 = [
+    { name: 'Healthcare', path: '/industries/healthcare', icon: <FaHeartbeat size={18} />, desc: 'Medical & wellness tech' },
+    { name: 'Banking & Finance', path: '/industries/banking', icon: <FaUniversity size={18} />, desc: 'Secure fintech solutions' },
+    { name: 'Tours & Travel', path: '/industries/travel', icon: <FaPlane size={18} />, desc: 'Booking & discovery platforms' },
+    { name: 'Education', path: '/industries/education', icon: <FaGraduationCap size={18} />, desc: 'EdTech & learning platforms' },
+    { name: 'Logistics', path: '/industries/logistics', icon: <FaTruck size={18} />, desc: 'Supply chain optimization' },
+    { name: 'Restaurants', path: '/industries/restaurants', icon: <FaUtensils size={18} />, desc: 'Dining & delivery tech' },
+  ];
+
+  const column2 = [
+    { name: 'NGO', path: '/industries/ngo', icon: <FaHandsHelping size={18} />, desc: 'Non-profit digital impact' },
+    { name: 'Construction', path: '/industries/construction', icon: <FaHardHat size={18} />, desc: 'Project & resource management' },
+    { name: 'Security', path: '/industries/security', icon: <FaShieldAlt size={18} />, desc: 'Protection & monitoring systems' },
+    { name: 'Manufacturing', path: '/industries/manufacturing', icon: <FaIndustry size={18} />, desc: 'Industrial automation' },
+    { name: 'E-Commerce', path: '/industries/ecommerce', icon: <FaShoppingCart size={18} />, desc: 'Digital retail storefronts' },
+    { name: 'Retail', path: '/industries/retail', icon: <FaStore size={18} />, desc: 'Omnichannel shopping' },
+  ];
+
+  const column3 = [
+    { name: 'Real Estate', path: '/industries/real-estate', icon: <FaBuilding size={18} />, desc: 'Property & broker platforms' },
+    { name: 'Professional Services', path: '/industries/professional-services', icon: <FaUserTie size={18} />, desc: 'Consulting & agency tools' },
+    { name: 'Startups', path: '/industries/startups', icon: <FaRocket size={18} />, desc: 'Agile MVP development' },
+    // If Garments needs to be kept:
+    { name: 'Garments', path: '/industries/garments', icon: <FaTshirt size={18} />, desc: 'Fashion & apparel tech' },
+  ];
+
+  const renderLink = (item, idx) => (
+    <Link key={idx} to={item.path} className="flex items-start group p-3 hover:bg-secondary-50 transition-colors border border-transparent hover:border-secondary-200 rounded-md">
+      <div className="mt-1 mr-3 shrink-0 w-10 h-10 rounded-lg flex items-center justify-center bg-secondary-100 text-secondary-600 group-hover:bg-primary-50 group-hover:text-primary-600 transition-colors">
+        {item.icon}
+      </div>
+      <div>
+        <h4 className="text-sm font-semibold text-primary-900 group-hover:text-primary-800 transition-colors">{item.name}</h4>
+        <p className="text-xs text-secondary-600 mt-1 leading-relaxed">{item.desc}</p>
+      </div>
+    </Link>
+  );
+
   return (
-    <div className="absolute top-full left-1/2 transform -translate-x-[40%] w-[1100px] z-50 animate-fadeIn cursor-default pt-4">
-      <div className="bg-white shadow-2xl rounded-2xl overflow-hidden border border-gray-100">
+    <div className="absolute top-full left-0 lg:-left-[200px] xl:-left-[300px] w-[900px] z-50 animate-fadeIn cursor-default pt-4">
+      <div className="bg-white shadow-md rounded-md border border-secondary-200 max-h-[85vh] overflow-y-auto">
         <div className="flex flex-col xl:flex-row p-6 gap-6 relative">
-        
-        {/* Left Side: Grid */}
-        <div className="w-full xl:w-3/4 grid grid-cols-3 gap-y-6 gap-x-6">
           
-          <Link to="/industries/healthcare" className="flex items-start group">
-            <div className="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaHeartbeat className="text-red-500 text-lg" />
+          {/* Left Side: 3 Column Grid */}
+          <div className="w-full xl:w-3/4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-2 gap-x-4">
+            
+            <div className="flex flex-col gap-2">
+              {column1.map(renderLink)}
             </div>
-            <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-red-600 transition-colors">Healthcare</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Medical & wellness tech</p>
-            </div>
-          </Link>
 
-          <Link to="/industries/banking" className="flex items-start group">
-            <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaUniversity className="text-green-500 text-lg" />
+            <div className="flex flex-col gap-2">
+              {column2.map(renderLink)}
             </div>
-            <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-green-600 transition-colors">Banking & Finance</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Secure fintech solutions</p>
-            </div>
-          </Link>
 
-          <Link to="/industries/ngo" className="flex items-start group">
-            <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaHandsHelping className="text-blue-500 text-lg" />
+            <div className="flex flex-col gap-2">
+              {column3.map(renderLink)}
             </div>
-            <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-blue-600 transition-colors">NGO</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Non-profit digital impact</p>
-            </div>
-          </Link>
 
-          <Link to="/industries/travel" className="flex items-start group">
-            <div className="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaPlane className="text-cyan-500 text-lg" />
-            </div>
-            <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-cyan-600 transition-colors">Tours & Travel</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Booking & discovery platforms</p>
-            </div>
-          </Link>
-
-          <Link to="/industries/construction" className="flex items-start group">
-            <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaHardHat className="text-orange-500 text-lg" />
-            </div>
-            <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-orange-600 transition-colors">Construction</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Project & resource management</p>
-            </div>
-          </Link>
-
-          <Link to="/industries/security" className="flex items-start group">
-            <div className="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaShieldAlt className="text-slate-500 text-lg" />
-            </div>
-            <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-slate-600 transition-colors">Security</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Protection & monitoring systems</p>
-            </div>
-          </Link>
-
-          <Link to="/industries/education" className="flex items-start group">
-            <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaGraduationCap className="text-indigo-500 text-lg" />
-            </div>
-            <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-indigo-600 transition-colors">Education</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">EdTech & learning platforms</p>
-            </div>
-          </Link>
-
-          <Link to="/industries/manufacturing" className="flex items-start group">
-            <div className="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaIndustry className="text-amber-500 text-lg" />
-            </div>
-            <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-amber-600 transition-colors">Manufacturing</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Industrial automation</p>
-            </div>
-          </Link>
-
-          <Link to="/industries/garments" className="flex items-start group">
-            <div className="w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaTshirt className="text-pink-500 text-lg" />
-            </div>
-            <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-pink-600 transition-colors">Garments</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Fashion & apparel tech</p>
-            </div>
-          </Link>
-
-          <Link to="/industries/logistics" className="flex items-start group">
-            <div className="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaTruck className="text-yellow-500 text-lg" />
-            </div>
-            <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-yellow-600 transition-colors">Logistics</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Supply chain optimization</p>
-            </div>
-          </Link>
-
-          <Link to="/industries/ecommerce" className="flex items-start group">
-            <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaShoppingCart className="text-purple-500 text-lg" />
-            </div>
-            <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-purple-600 transition-colors">E-Commerce</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Digital retail storefronts</p>
-            </div>
-          </Link>
-
-          <Link to="/industries/real-estate" className="flex items-start group">
-            <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaBuilding className="text-emerald-500 text-lg" />
-            </div>
-            <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-emerald-600 transition-colors">Real Estate</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Property & broker platforms</p>
-            </div>
-          </Link>
-
-          <Link to="/industries/restaurants" className="flex items-start group">
-            <div className="w-10 h-10 bg-rose-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaUtensils className="text-rose-500 text-lg" />
-            </div>
-            <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-rose-600 transition-colors">Restaurants</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Dining & delivery tech</p>
-            </div>
-          </Link>
-
-          <Link to="/industries/retail" className="flex items-start group">
-            <div className="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaStore className="text-teal-500 text-lg" />
-            </div>
-            <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-teal-600 transition-colors">Retail</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Omnichannel shopping</p>
-            </div>
-          </Link>
-
-          <Link to="/industries/professional-services" className="flex items-start group">
-            <div className="w-10 h-10 bg-violet-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaUserTie className="text-violet-500 text-lg" />
-            </div>
-            <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-violet-600 transition-colors">Professional Services</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Consulting & agency tools</p>
-            </div>
-          </Link>
-
-          <Link to="/industries/startups" className="flex items-start group">
-            <div className="w-10 h-10 bg-fuchsia-100 rounded-lg flex items-center justify-center shrink-0 mr-4 group-hover:scale-110 transition-transform">
-              <FaRocket className="text-fuchsia-500 text-lg" />
-            </div>
-            <div>
-              <h4 className="text-sm font-bold text-gray-900 group-hover:text-fuchsia-600 transition-colors">Startups</h4>
-              <p className="text-xs text-gray-500 mt-1 leading-relaxed">Agile MVP development</p>
-            </div>
-          </Link>
-
-        </div>
-
-        {/* Right Side: Feature Card */}
-        <div className="w-full xl:w-1/4 bg-gray-50 rounded-xl p-5 border border-gray-100 flex flex-col group hover:shadow-md transition-shadow">
-          <div className="h-48 rounded-lg overflow-hidden mb-4">
-            <img 
-              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=600&auto=format&fit=crop" 
-              alt="Industry Solutions" 
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            />
           </div>
-          <h4 className="font-bold text-gray-900 mb-2 text-lg">Industry Expertise</h4>
-          <p className="text-sm text-gray-500 leading-relaxed mb-6 flex-grow">
-            Tailored software solutions designed specifically for your industry's unique challenges.
-          </p>
-          <Link to="/industries" className="text-blue-600 font-bold flex items-center hover:text-blue-800 transition-colors mt-auto group/link">
-            Explore Industries <FaArrowRight className="ml-2 w-4 h-4 group-hover/link:translate-x-2 transition-transform" />
-          </Link>
-        </div>
+
+          {/* Right Side: Feature Card */}
+          <div className="w-full xl:w-1/4 bg-secondary-50 rounded-md p-5 border border-secondary-200 flex flex-col group hover:shadow-md transition-shadow">
+            <div className="h-48 rounded-md overflow-hidden mb-5 border border-secondary-200">
+              <img 
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=600&auto=format&fit=crop" 
+                alt="Industry Solutions" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <h4 className="font-bold text-primary-900 mb-2 text-lg">Industry Expertise</h4>
+            <p className="text-sm text-secondary-600 leading-relaxed mb-6 flex-grow">
+              Tailored software solutions designed specifically for your industry's unique challenges and goals.
+            </p>
+            <Link to="/industries" className="text-primary-800 font-bold flex items-center hover:text-primary-600 transition-colors mt-auto group/link text-sm uppercase tracking-wider">
+              Explore All <FaArrowRight className="ml-2 w-3.5 h-3.5 group-hover/link:translate-x-1.5 transition-transform" />
+            </Link>
+          </div>
 
         </div>
-
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import NAv from "../Navbar/NAv";
+import SectionHeader from '../Services/components/SectionHeader';
 
 const Industries = () => {
   const industries = [
@@ -102,87 +102,101 @@ const Industries = () => {
     }
   ];
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
-      <NAv />
 
       {/* Hero Section */}
-      <div className="relative w-full bg-black">
+      <div className="relative min-h-[500px] flex items-center bg-primary-900 border-b border-primary-800 overflow-hidden">
         <div
-          className="absolute inset-0 w-full h-full"
+          className="absolute inset-0 w-full h-full opacity-20 mix-blend-overlay"
           style={{
             backgroundImage: "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI5AocHjcxxSmI7XkK2pdNC55VdzKkJjS6QW4OGsLhOYkin71AJL0jN69ULuO_PETJ8dM&usqp=CAU')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            opacity: '0.2'
           }}
         />
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-32">
-          <div className="max-w-7xl mx-auto text-center">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+        <div className="container-custom relative z-10 py-24 lg:py-32">
+          <div className="max-w-3xl">
+            <span className="inline-block w-fit px-2 py-1 bg-primary-800 text-primary-200 text-xs font-semibold tracking-widest uppercase mb-8 border border-primary-700">
+              Domains
+            </span>
+            <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-6 tracking-tight leading-[1.1]">
               Industries We Serve
             </h1>
-            <div className="w-32 h-0.5 bg-white mt-8 mx-auto"></div>
-          </div>
-        </div>
-      </div>
-
-      {/* Description Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="py-16 space-y-8">
-          <div className="w-full mx-auto">
-            <h4 className="text-3xl text-red-500 font-semibold mb-8 text-left">Industries We Serve</h4>
-            <p className="text-gray-700 text-lg leading-relaxed text-left">
-              We proudly serve a diverse range of industries with tailored digital marketing strategies designed to maximize results.
-              Our expertise spans across e-commerce, helping brands boost product visibility and drive online sales with precision-targeted campaigns.
-              In the healthcare sector, we build trust and engagement through informative and patient-focused digital communication.
-              Educational institutions and platforms benefit from our enrollment-focused strategies that enhance reach and credibility.
-              For real estate businesses, we generate high-quality leads and improve property exposure with visually impactful campaigns.
-              Financial services and fintech companies rely on our secure and compliant marketing strategies to build customer confidence and promote growth.
-              We also empower startups and tech ventures with growth-driven approaches that accelerate brand awareness and user acquisition.
+            <p className="text-xl md:text-2xl text-primary-200 leading-relaxed font-normal">
+              Empowering diverse sectors with specialized technology solutions.
             </p>
           </div>
         </div>
       </div>
 
+      {/* Description Section */}
+      <div className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="max-w-4xl">
+            <span className="text-primary-800 font-bold uppercase tracking-widest text-xs mb-4 block">
+              Global Reach
+            </span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-secondary-900 mb-8 tracking-tight">
+              Driving Digital Excellence
+            </h2>
+            <div className="prose prose-lg text-secondary-600 max-w-none">
+              <p className="leading-relaxed mb-6">
+                We proudly serve a diverse range of industries with tailored digital transformation strategies designed to maximize results. 
+                Our expertise spans across e-commerce, helping brands boost product visibility and drive online sales with precision-targeted engineering. 
+                In the healthcare sector, we build trust and engagement through secure, patient-focused digital communication platforms.
+              </p>
+              <p className="leading-relaxed">
+                Financial services and fintech companies rely on our secure and compliant enterprise architectures to build customer confidence and promote growth. 
+                We also empower startups and tech ventures with scalable approaches that accelerate deployment and user acquisition.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Industries Grid */}
-      <div className="bg-gray-50 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h4 className="text-3xl font-semibold text-red-500 mb-12 text-left">
-            Explore Industries
-          </h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="section-padding bg-secondary-50 border-t border-secondary-200">
+        <div className="container-custom">
+          <SectionHeader 
+            eyebrow="Sectors"
+            title="Explore Industries"
+            description="Our specialized expertise spans across multiple domains."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-secondary-200">
             {industries.map((industry, index) => (
-              <div
+              <Link
                 key={index}
-                className="group relative bg-white rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+                to={`/industries/${industry.id}`}
+                className="group relative bg-white border-b border-r border-secondary-200 overflow-hidden flex flex-col h-[450px]"
               >
-                <div className="relative h-[300px] overflow-hidden">
+                <div className="relative h-48 overflow-hidden border-b border-secondary-200">
                   <img
                     src={industry.image}
                     alt={industry.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+ className="w-full h-full object-cover transition-all duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <div className="absolute inset-0 bg-primary-900/10 group-hover:bg-transparent transition-colors duration-500" />
                 </div>
 
-                <div className="p-8 relative">
-                  <h3 className="text-2xl font-bold text-[#FF4500] mb-4">
+                <div className="p-8 flex flex-col flex-grow bg-white group-hover:bg-secondary-50 transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-secondary-900 mb-3 group-hover:text-primary-800 transition-colors">
                     {industry.title}
                   </h3>
-                  <p className="text-gray-700 text-lg mb-4">
+                  <p className="text-secondary-600 text-sm leading-relaxed mb-6 flex-grow">
                     {industry.subtitle}
                   </p>
-                  <Link
-                    to={`/industries/${industry.id}`}
-                    className="inline-block mt-4 text-blue-600 font-semibold hover:text-blue-800 transition-colors"
-                  >
-                    Learn More →
-                  </Link>
-                  <div className="absolute bottom-0 left-0 w-full h-1 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                  <span className="text-primary-800 group-hover:text-primary-600 text-xs font-bold uppercase tracking-widest inline-flex items-center mt-auto transition-colors">
+                    Learn More 
+                    <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                  </span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

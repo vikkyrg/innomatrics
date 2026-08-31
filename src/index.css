@@ -1,47 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  ::selection {
+    @apply bg-primary-900 text-white;
+  }
+  
   body {
-    @apply antialiased text-gray-900 overflow-x-hidden;
+    @apply font-sans antialiased text-secondary-800 bg-secondary-50 overflow-x-hidden leading-relaxed;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight text-secondary-900 leading-snug;
+  }
+  
+  h1 { @apply text-4xl md:text-5xl lg:text-6xl; }
+  h2 { @apply text-3xl md:text-4xl; }
+  h3 { @apply text-2xl md:text-3xl; }
+  
+  p {
+    @apply mb-4;
   }
 }
 
 @layer components {
+  /* Button System */
   .btn-primary {
-    @apply inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500;
+    @apply inline-flex items-center justify-center px-8 py-3.5 border border-transparent text-sm font-semibold rounded-lg shadow-sm text-on-primary bg-primary hover:bg-primary/90 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-container transition-all duration-200;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500;
+    @apply inline-flex items-center justify-center px-8 py-3.5 border border-outline-variant text-sm font-semibold rounded-lg text-secondary bg-surface hover:bg-surface-container-low hover:border-outline focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-container transition-all duration-200 shadow-sm;
   }
 
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-8 py-3.5 border-2 border-primary text-sm font-semibold rounded-lg text-primary bg-transparent hover:bg-primary/5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-container transition-all duration-200;
+  }
+
+  /* Form System */
   .input-primary {
-    @apply block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm;
+    @apply block w-full px-4 py-3 bg-surface border border-outline-variant rounded-lg shadow-sm placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent sm:text-sm transition-all duration-200;
   }
 
+  .label-primary {
+    @apply block text-sm font-semibold text-on-surface-variant mb-1.5;
+  }
+
+  /* Card System */
   .card {
-    @apply bg-white shadow-sm rounded-lg p-6;
+    @apply bg-surface-container-lowest shadow-card hover:shadow-card-hover rounded-2xl p-8 border border-outline-variant/30 transition-all duration-300;
+  }
+
+  .glass-card {
+    @apply bg-surface-container-lowest/70 backdrop-blur-md border border-outline-variant/30 shadow-card hover:shadow-card-hover rounded-2xl p-8 transition-all duration-300;
+  }
+
+  /* Layout */
+  .section-padding {
+    @apply py-20 md:py-32;
+  }
+  
+  .container-custom {
+    @apply max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12;
   }
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-100;
+  @apply bg-secondary-100 border-l border-secondary-200;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-gray-400 rounded-full;
+  @apply bg-primary-900 border border-primary-800 rounded-none;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-gray-500;
+  @apply bg-primary-800;
 }
 
 /* Success Message Animation */

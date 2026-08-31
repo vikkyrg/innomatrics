@@ -1,11 +1,10 @@
-import React, { forwardRef, useEffect, useState } from "react";
-import "./Home.css";
+import React, { forwardRef } from "react";
 import { Link } from "react-router-dom";
-import HeroSlider from "./HeroSlider/HeroSlider";
-import Industry from "./Industry/Industry";
+import { motion } from "framer-motion";
+import HeroSlider from "./components/HeroSlider/HeroSlider";
+import Industry from "./components/Industry/Industry";
 
 import c1 from "../../assets/portfolioLogo/MRItow.jpg";
-import test from "../../assets/portfolio/test.png";
 import c2 from "../../assets/portfolioLogo/RoyalKing.jpg";
 import c3 from "../../assets/portfolioLogo/chanconst.jpg";
 import c4 from "../../assets/portfolioLogo/dstudio.jpg";
@@ -17,207 +16,200 @@ import c9 from "../../assets/portfolioLogo/skb.jpg";
 import c10 from "../../assets/portfolioLogo/thriupathiTours.jpg";
 import c11 from "../../assets/portfolioLogo/vklights.jpg";
 
-// import { Carousel } from "flowbite-react";
-import ImageCardContainer from "../Services/Carousel/ImageCardContainer";
-import OurVision from "./Our Vision/OurVision";
-import OurMission from "./Our Mission/OurMission";
-import ClientsCard from "../ClientsLogo/ClientsCard";
-import ClientsCarousel from "../ClientsLogo/ClientsCarousel";
-import Join from "./JoinTeam/Join";
-import CountRise from "./CountRise/CountRise";
-
+import ImageCardContainer from "../Services/components/Carousel/ImageCardContainer";
+import OurVision from "./components/OurVision/OurVision";
+import OurMission from "./components/OurMission/OurMission";
+import ClientsCarousel from "../common/ClientsLogo/ClientsCarousel";
+import Join from "./components/JoinTeam/Join";
+import CountRise from "./components/CountRise/CountRise";
 import WhatsappFloatingIcon from "./WhatsappFloatingIcon";
-
 
 const Home = forwardRef((props, ref) => {
   const clientLogos = [
-    {
-      image: c1,
-    },
-    {
-      image: c2,
-    },
-    {
-      image: c3,
-    },
-    {
-      image: c4,
-    },
-    {
-      image: c5,
-    },
-    {
-      image: c6,
-    },
-    {
-      image: c7,
-    },
-    {
-      image: c8,
-    },
-    {
-      image: c9,
-    },
-    {
-      image: c10,
-    },
-    {
-      image: c11,
-    },
+    { image: c1 }, { image: c2 }, { image: c3 }, { image: c4 },
+    { image: c5 }, { image: c6 }, { image: c7 }, { image: c8 },
+    { image: c9 }, { image: c10 }, { image: c11 },
   ];
 
-  const [isAnimating, setIsAnimating] = useState(true);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsAnimating((prevState) => !prevState); // Toggle animation state
-    }, 1000); // Adjust the delay according to your preference (in milliseconds)
-
-    // Cleanup function to clear the interval when the component unmounts
-    return () => clearInterval(interval);
-  }, []); // Empty dependency array ensures this effect runs only once on mount
   return (
-    <div ref={ref} className="overflow-hidden">
+    <div ref={ref} className="overflow-hidden bg-white">
+      {/* 1. Hero Section */}
       <HeroSlider />
 
-      {/* Why Choose Us Section */}
-      <div className="bg-white py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center">
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-              Why Choose Innomatrics Technologies?
-            </h2>
-            <p className="mt-4 text-lg text-gray-500">
-              We bring together expertise, innovation, and dedication to deliver exceptional results
-            </p>
+      {/* 2. Trust Bar (Clients) */}
+      <motion.div 
+        className="bg-secondary-50 border-b border-secondary-200 py-10"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="container-custom">
+          <p className="text-center text-xs font-bold text-secondary-500 tracking-[0.2em] uppercase mb-8">
+            Trusted by innovative enterprises worldwide
+          </p>
+          <div className="max-w-6xl mx-auto">
+            <ClientsCarousel clientLogos={clientLogos} />
           </div>
+        </div>
+      </motion.div>
 
-          <div className="mt-20 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {/* Card 1 */}
-            <div className="pt-6">
-              <div className="flow-root bg-gray-50 rounded-lg px-6 pb-8">
-                <div className="-mt-6">
-                  <div>
-                    <div className="relative h-48 w-full overflow-hidden rounded-lg shadow-lg">
-                      <img
-                        src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                        alt="Expert Team"
-                        className="w-full h-full object-cover transform transition-transform duration-300 hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    </div>
-                  </div>
-                  <h3 className="mt-8 text-lg font-bold text-[#00235B]  tracking-tight">Expert Team</h3>
-                  <p className="mt-5 text-base text-gray-600 font-medium leading-relaxed">
-                    Our team consists of highly skilled professionals with years of experience in delivering cutting-edge solutions.
-                  </p>
-                </div>
+      {/* 3. Value Proposition */}
+      <div className="section-padding bg-white border-b border-secondary-200">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+            
+            {/* Left: Sticky Header */}
+            <div className="lg:col-span-5 relative">
+              <div className="sticky top-32">
+                <span className="text-primary-800 font-bold uppercase tracking-widest text-xs mb-4 block">
+                  Why Innomatrics
+                </span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-secondary-900 mb-6 tracking-tight leading-tight">
+                  Engineered for<br/>Enterprise Scale.
+                </h2>
+                <p className="text-lg text-secondary-600 leading-relaxed font-normal mb-8 max-w-md">
+                  We bring together deep industry expertise, technological innovation, and an unwavering dedication to delivering exceptional business outcomes for global enterprises.
+                </p>
+                <Link to="/about" className="inline-flex items-center gap-2 text-primary-800 font-bold uppercase tracking-widest text-sm hover:text-primary-600 transition-colors">
+                  Read our story
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </Link>
               </div>
             </div>
 
-            {/* Card 2 */}
-            <div className="pt-6">
-              <div className="flow-root bg-gray-50 rounded-lg px-6 pb-8">
-                <div className="-mt-6">
-                  <div>
-                    <div className="relative h-48 w-full overflow-hidden rounded-lg shadow-lg">
-                      <img
-                        src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                        alt="Quality Assurance"
-                        className="w-full h-full object-cover transform transition-transform duration-300 hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+            {/* Right: Vertical Features list */}
+            <div className="lg:col-span-7">
+              <div className="flex flex-col border-t border-secondary-200">
+                
+                {/* Feature 1 */}
+                <motion.div 
+                  className="py-12 border-b border-secondary-200 group"
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                >
+                  <div className="flex flex-col sm:flex-row gap-6 sm:gap-12">
+                    <div className="text-4xl font-extrabold text-secondary-300 group-hover:text-primary-800 transition-colors font-mono">01</div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-secondary-900 mb-4">World-Class Talent</h3>
+                      <p className="text-secondary-600 leading-relaxed font-normal text-lg">
+                        Our global team consists of highly skilled engineers, designers, and strategists with years of experience delivering scalable enterprise solutions. We don't just write code; we build architectures designed to last.
+                      </p>
                     </div>
                   </div>
-                  <h3 className="mt-8 text-lg font-bold text-[#00235B]  tracking-tight">Quality Assurance</h3>
+                </motion.div>
 
+                {/* Feature 2 */}
+                <motion.div 
+                  className="py-12 border-b border-secondary-200 group"
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                  <div className="flex flex-col sm:flex-row gap-6 sm:gap-12">
+                    <div className="text-4xl font-extrabold text-secondary-300 group-hover:text-primary-800 transition-colors font-mono">02</div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-secondary-900 mb-4">Uncompromising Quality</h3>
+                      <p className="text-secondary-600 leading-relaxed font-normal text-lg">
+                        We implement rigorous engineering standards and continuous testing protocols to ensure flawless performance and enterprise-grade security. Every deployment is hardened and battle-tested.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
 
-                  <p className="mt-5 text-base text-gray-600 font-medium leading-relaxed">
-                    We follow rigorous quality control processes to ensure the highest standards in every project we deliver.
-                  </p>
+                {/* Feature 3 */}
+                <motion.div 
+                  className="py-12 border-b border-secondary-200 group"
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                >
+                  <div className="flex flex-col sm:flex-row gap-6 sm:gap-12">
+                    <div className="text-4xl font-extrabold text-secondary-300 group-hover:text-primary-800 transition-colors font-mono">03</div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-secondary-900 mb-4">Rapid Delivery</h3>
+                      <p className="text-secondary-600 leading-relaxed font-normal text-lg">
+                        Leveraging agile methodologies, we accelerate time-to-market without compromising on architecture, scalability, or code quality. Move fast and build robustly.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
 
-                </div>
               </div>
             </div>
 
-            {/* Card 3 */}
-            <div className="pt-6">
-              <div className="flow-root bg-gray-50 rounded-lg px-6 pb-8">
-                <div className="-mt-6">
-                  <div>
-                    <div className="relative h-48 w-full overflow-hidden rounded-lg shadow-lg">
-                      <img
-                        src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                        alt="Timely Delivery"
-                        className="w-full h-full object-cover transform transition-transform duration-300 hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    </div>
-                  </div>
-                  <h3 className="mt-8 text-lg font-bold text-[#00235B]  tracking-tight">Timely Delivery</h3>
-                  <p className="mt-5 text-base text-gray-600 font-medium leading-relaxed">
-                    We understand the importance of time and ensure project completion within agreed timelines.
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
 
-      {/* Industry Section */}
-      <Industry />
-
-      {/* Our Services Section */}
-      <div className="bg-gray-50 py-20 relative border-t border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <span className="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold tracking-wider uppercase mb-3">
-              What We Do
+      {/* 4. Capabilities Section */}
+      <motion.div 
+        className="section-padding bg-secondary-50 border-t border-secondary-200"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="container-custom">
+          <motion.div 
+            className="text-center max-w-4xl mx-auto mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="text-primary-800 font-bold uppercase tracking-widest text-xs mb-4 block">
+              Capabilities
             </span>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-[#07111F] mb-6">Our Services</h2>
-            <div className="w-24 h-1.5 bg-gradient-to-r from-blue-500 to-blue-800 mx-auto rounded-full"></div>
-            <p className="text-gray-600 mt-6 max-w-2xl mx-auto text-lg">
-              We engineer dynamic digital solutions designed to accelerate your business growth.
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-secondary-900 mb-6 tracking-tight">
+              End-to-End Digital Solutions
+            </h2>
+            <p className="text-lg md:text-xl text-secondary-600 leading-relaxed">
+              We engineer scalable platforms and robust digital ecosystems designed to accelerate enterprise growth and modernization.
             </p>
-          </div>
+          </motion.div>
         </div>
         <ImageCardContainer />
-      </div>
+      </motion.div>
 
-      {/* Vision & Mission Section */}
-      <div className="ServicesMission">
-        <div style={{ padding: "4%" }} className="flex flex-col sm:flex-row">
-          <div style={{ flex: 1, marginRight: "2%" }}>
-            <OurVision />
+      {/* 5. Industry Section */}
+      <Industry />
+
+      {/* 6. Impact / Stats Section */}
+      <CountRise />
+
+      {/* 7. Corporate Overview (Vision/Mission) */}
+      <div className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="text-center max-w-4xl mx-auto mb-16">
+            <span className="text-primary-800 font-bold uppercase tracking-widest text-xs mb-4 block">
+              Corporate Overview
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-secondary-900 mb-6 tracking-tight">
+              Our Purpose & Direction
+            </h2>
           </div>
-          <div style={{ flex: 1 }}>
-            <OurMission />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 max-w-5xl mx-auto border border-secondary-200">
+            <div>
+              <OurVision />
+            </div>
+            <div>
+              <OurMission />
+            </div>
           </div>
         </div>
       </div>
-      <div className="ServicesMission flex flex-col items-center px-20 w-full max-md:px-5 max-md:max-w-full">
-        <div className="text-3xl md:text-4xl font-bold text-center my-12 text-white mb-12">
-          Our Clients
-        </div>
-        <div className="mt-1.5 text-lg leading-4 text-center text-white max-md:max-w-full">
-          We have been working with some of the best players in the industry
-        </div>
-        <div className="flex gap-5 justify-between py-4 mt-3 w-full max-w-[802px] max-md:flex-wrap max-md:max-w-full">
-          <ClientsCarousel clientLogos={clientLogos} />
-        </div>
-      </div>
-      <div className="bg-white">
-        <Join />
 
-        <CountRise />
-      </div>
+      {/* 8. Careers / Join */}
+      <Join />
 
-
-      
       {/* WhatsApp Floating Icon */}
       <WhatsappFloatingIcon />
     </div>
-
   );
 });
 

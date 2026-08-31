@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ShieldCheck, Mail, Lock, AlertCircle, Loader2 } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const AdminLogin = () => {
   const [email, setEmail] = useState('');
@@ -32,102 +33,113 @@ const AdminLogin = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 flex items-center justify-center p-4 relative overflow-hidden">
-      {/* Background Graphic Blobs */}
-      <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] rounded-full bg-blue-600/20 blur-3xl" />
-      <div className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-indigo-600/20 blur-3xl" />
-
+    <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4 relative font-sans">
+      
       {/* Main Login Card */}
-      <div className="w-full max-w-md bg-slate-800/80 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-8 shadow-2xl relative z-10 transition-all duration-300">
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="w-full max-w-md bg-white border border-secondary-200 shadow-xl relative z-10"
+      >
         
         {/* Header */}
-        <div className="text-center mb-8">
-          <div className="mx-auto w-16 h-16 bg-blue-600/10 border border-blue-500/25 rounded-2xl flex items-center justify-center mb-4 text-blue-400">
+        <div className="bg-primary-900 p-10 border-b border-primary-800 text-center relative overflow-hidden">
+          <div className="absolute top-[-20%] left-[-10%] w-[120px] h-[120px] bg-primary-400 blur-3xl opacity-20" />
+          <div className="mx-auto w-16 h-16 bg-primary-800 border border-primary-700 flex items-center justify-center mb-6 text-primary-300 shadow-inner">
             <ShieldCheck className="w-8 h-8" />
           </div>
-          <h2 className="text-2xl font-bold text-white tracking-tight">Admin Console</h2>
-          <p className="text-slate-400 text-sm mt-1">Access the Innomatrics blog manager</p>
+          <h2 className="text-2xl font-extrabold text-white tracking-tight">Admin Console</h2>
+          <p className="text-primary-300 text-xs font-bold uppercase tracking-widest mt-2">Secure Access Area</p>
         </div>
 
-        {/* Error Alert */}
-        {error && (
-          <div className="mb-6 p-4 rounded-xl bg-red-950/50 border border-red-500/30 flex items-start gap-3 text-red-200 text-sm animate-shake">
-            <AlertCircle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
+        <div className="p-10">
+          {/* Error Alert */}
+          {error && (
+            <motion.div 
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              className="mb-8 p-4 bg-red-50 border border-red-200 flex items-start gap-3 text-red-800 text-sm"
+            >
+              <AlertCircle className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
+              <div>
+                <span className="font-bold block uppercase tracking-wider text-[10px] text-red-500 mb-1">Authentication Failed</span>
+                {error}
+              </div>
+            </motion.div>
+          )}
+
+          {/* Login Form */}
+          <form onSubmit={handleLogin} className="space-y-6">
             <div>
-              <span className="font-semibold block">Authentication Failed</span>
-              {error}
+              <label className="block text-[10px] font-bold text-secondary-500 uppercase tracking-widest mb-2">
+                Email Address
+              </label>
+              <div className="relative group">
+                <span className="absolute inset-y-0 left-0 pl-4 flex items-center text-secondary-400 group-focus-within:text-primary-600 transition-colors">
+                  <Mail className="w-4 h-4" />
+                </span>
+                <input
+                  type="email"
+                  required
+                  className="w-full bg-white border border-secondary-300 focus:border-primary-600 focus:ring-0 py-3 pl-12 pr-4 text-secondary-900 placeholder-secondary-400 focus:outline-none transition-all duration-200 text-sm font-medium"
+                  placeholder="admin@example.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  disabled={isLoading}
+                />
+              </div>
             </div>
-          </div>
-        )}
 
-        {/* Login Form */}
-        <form onSubmit={handleLogin} className="space-y-5">
-          <div>
-            <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-              Email Address
-            </label>
-            <div className="relative">
-              <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-500">
-                <Mail className="w-5 h-5" />
-              </span>
-              <input
-                type="email"
-                required
-                className="w-full bg-slate-900/60 border border-slate-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 rounded-xl py-3 pl-11 pr-4 text-white placeholder-slate-500 focus:outline-none transition-all duration-200 text-sm"
-                placeholder="admin@example.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                disabled={isLoading}
-              />
+            <div>
+              <label className="block text-[10px] font-bold text-secondary-500 uppercase tracking-widest mb-2">
+                Password
+              </label>
+              <div className="relative group">
+                <span className="absolute inset-y-0 left-0 pl-4 flex items-center text-secondary-400 group-focus-within:text-primary-600 transition-colors">
+                  <Lock className="w-4 h-4" />
+                </span>
+                <input
+                  type="password"
+                  required
+                  className="w-full bg-white border border-secondary-300 focus:border-primary-600 focus:ring-0 py-3 pl-12 pr-4 text-secondary-900 placeholder-secondary-400 focus:outline-none transition-all duration-200 text-sm font-medium"
+                  placeholder="••••••••"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  disabled={isLoading}
+                />
+              </div>
             </div>
-          </div>
 
-          <div>
-            <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-              Password
-            </label>
-            <div className="relative">
-              <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-500">
-                <Lock className="w-5 h-5" />
-              </span>
-              <input
-                type="password"
-                required
-                className="w-full bg-slate-900/60 border border-slate-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 rounded-xl py-3 pl-11 pr-4 text-white placeholder-slate-500 focus:outline-none transition-all duration-200 text-sm"
-                placeholder="••••••••"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                disabled={isLoading}
-              />
+            {/* Guide Credentials Hint */}
+            <div className="p-4 bg-secondary-50 border border-secondary-200 text-xs text-secondary-600 leading-relaxed font-medium">
+              <span className="font-bold text-primary-800 uppercase tracking-widest text-[10px] block mb-2">Demo Sign-in Credentials</span>
+              <div className="grid grid-cols-2 gap-2">
+                <div>Email:</div>
+                <div className="font-mono text-secondary-900">admin@example.com</div>
+                <div>Password:</div>
+                <div className="font-mono text-secondary-900">admin123</div>
+              </div>
             </div>
-          </div>
 
-          {/* Guide Credentials Hint */}
-          <div className="p-3 bg-slate-900/40 border border-slate-700/30 rounded-xl text-[11px] text-slate-400 leading-relaxed">
-            <span className="font-semibold text-blue-400">Demo Sign-in Credentials:</span>
-            <br />
-            Email: <span className="font-mono text-slate-300">admin@example.com</span>
-            <br />
-            Password: <span className="font-mono text-slate-300">admin123</span>
-          </div>
-
-          {/* Submit Button */}
-          <button
-            type="submit"
-            disabled={isLoading}
-            className="w-full mt-6 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold py-3.5 px-4 rounded-xl shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30 focus:outline-none transition-all duration-200 flex items-center justify-center gap-2 text-sm disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {isLoading ? (
-              <>
-                <Loader2 className="w-5 h-5 animate-spin" />
-                Signing you in...
-              </>
-            ) : (
-              'Sign In'
-            )}
-          </button>
-        </form>
-      </div>
+            {/* Submit Button */}
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="w-full mt-8 bg-primary-900 hover:bg-white text-white hover:text-primary-900 border border-primary-900 font-bold uppercase tracking-widest text-xs py-4 px-4 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {isLoading ? (
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                  Authenticating...
+                </>
+              ) : (
+                'Sign In to Console'
+              )}
+            </button>
+          </form>
+        </div>
+      </motion.div>
     </div>
   );
 };

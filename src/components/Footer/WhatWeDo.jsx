@@ -15,7 +15,7 @@ const WhatWeDo = () => {
   return (
     <div>
       <h2 className="mb-6 text-sm font-semibold text-white uppercase dark:text-white">What We Do</h2>
-  <ul className="miniServices text-gray-500 dark:text-gray-400 font-medium">
+  <ul className="miniServices text-secondary-600 dark:text-gray-400 font-medium">
   <Link to ="/webdesign" onClick={()=> handleClick(webDesRef)}>
     <li className="mb-4">
       Web Design
