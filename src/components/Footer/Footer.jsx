@@ -5,12 +5,13 @@ import {
   FaFacebook,
   FaLinkedin,
   FaInstagram,
-  
   FaMapMarkerAlt,
   FaPhoneAlt,
   FaEnvelope,
-  
-  
+  FaBuilding,
+  FaLaptopCode,
+  FaIndustry,
+  FaUsers
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
@@ -49,66 +50,110 @@ const Footer = () => {
 
       {/* Main Footer Links */}
       <div className="container-custom pt-10 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[1.5fr_1fr_1fr_1fr_1fr_1.25fr] gap-x-8 gap-y-12">
           
-          {/* Brand & About */}
-          <div className="lg:col-span-4 pr-0 lg:pr-12">
+          {/* Brand & Socials */}
+          <div className="flex flex-col">
             <Link to="/" className="flex items-center mb-6" onClick={scrollToTop}>
-              <img src={logo} alt="Innomatrics Logo" className="h-14 w-auto mr-3" />
+              <img src={logo} alt="Innomatrics Logo" className="h-10 w-auto mr-3" />
               <div className="flex flex-col items-start leading-none mt-1">
-                <span className="text-2xl font-extrabold tracking-wider text-white leading-none uppercase">INNOMATRICS</span>
-                <span className="text-[0.65rem] font-bold tracking-[0.2em] text-primary-500 leading-none mt-1">TECHNOLOGIES</span>
+                <span className="text-xl font-extrabold tracking-wider text-white leading-none uppercase">INNOMATRICS</span>
+                <span className="text-[0.55rem] font-bold tracking-[0.2em] text-primary-500 leading-none mt-1">TECHNOLOGIES</span>
               </div>
             </Link>
-            <p className="text-secondary-400 leading-relaxed mb-8">
+            <p className="text-secondary-400 text-sm leading-relaxed mb-6 text-justify">
               We empower global enterprises with innovative technology solutions. From strategic consulting to complex implementations, we engineer digital products that drive sustainable growth.
             </p>
-            <div className="flex items-center gap-4">
-              <a href="https://www.linkedin.com/company/innomatricstech/" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-secondary-800 flex items-center justify-center text-secondary-300 hover:bg-primary-600 hover:text-white transition-all">
-                <FaLinkedin size={18} />
+            <div className="flex flex-wrap gap-3">
+              <a href="https://www.linkedin.com/company/innomatricstech/" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full bg-secondary-800 flex items-center justify-center text-secondary-300 hover:bg-primary-600 hover:text-white transition-all">
+                <FaLinkedin size={14} />
               </a>
-              <a href="https://twitter.com/innomatricstech" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-secondary-800 flex items-center justify-center text-secondary-300 hover:bg-primary-600 hover:text-white transition-all">
-                <FaXTwitter size={18} />
+              <a href="https://twitter.com/innomatricstech" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full bg-secondary-800 flex items-center justify-center text-secondary-300 hover:bg-primary-600 hover:text-white transition-all">
+                <FaXTwitter size={14} />
               </a>
-              <a href="https://www.facebook.com/people/Innomatrics-Technologies/61560974679711/" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-secondary-800 flex items-center justify-center text-secondary-300 hover:bg-primary-600 hover:text-white transition-all">
-                <FaFacebook size={18} />
+              <a href="https://www.facebook.com/people/Innomatrics-Technologies/61560974679711/" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full bg-secondary-800 flex items-center justify-center text-secondary-300 hover:bg-primary-600 hover:text-white transition-all">
+                <FaFacebook size={14} />
               </a>
-              <a href="https://www.instagram.com/innomatrics_tech/" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-secondary-800 flex items-center justify-center text-secondary-300 hover:bg-primary-600 hover:text-white transition-all">
-                <FaInstagram size={18} />
+              <a href="https://www.instagram.com/innomatrics_tech/" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full bg-secondary-800 flex items-center justify-center text-secondary-300 hover:bg-primary-600 hover:text-white transition-all">
+                <FaInstagram size={14} />
               </a>
             </div>
           </div>
 
-          {/* Services */}
-          <div className="lg:col-span-3">
-            <h4 className="text-white font-bold mb-6 text-lg">Services</h4>
-            <ul className="space-y-4">
-              <li><Link to="/web-development" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Enterprise Web Development</Link></li>
-              <li><Link to="/custom-software" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Custom Software Solutions</Link></li>
-              <li><Link to="/ai-automation" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>AI & Automation</Link></li>
-              <li><Link to="/cloud-and-devops" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Cloud Architecture & DevOps</Link></li>
-              <li><Link to="/cybersecurity" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Cybersecurity Services</Link></li>
-              <li><Link to="/it-consulting" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>IT Strategic Consulting</Link></li>
-            </ul>
-          </div>
-
           {/* Company */}
-          <div className="lg:col-span-2">
-            <h4 className="text-white font-bold mb-6 text-lg">Company</h4>
-            <ul className="space-y-4">
-              <li><Link to="/about" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>About Us</Link></li>
-
+          <div>
+            <h4 className="text-white font-bold mb-5 text-sm uppercase tracking-widest flex items-center gap-2">
+              <FaBuilding className="text-primary-500" /> Company
+            </h4>
+            <ul className="space-y-3 mb-4 text-sm">
+              <li><Link to="/overview" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>About Us</Link></li>
+              <li><Link to="/why-us" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Why Choose Us</Link></li>
+              <li><Link to="/vision-mission" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Vision & Mission</Link></li>
               <li><Link to="/careers" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Careers</Link></li>
-              <li><Link to="/industries" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Industries</Link></li>
               <li><Link to="/blog" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Insights & Blog</Link></li>
-              <li><Link to="/contact" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Contact</Link></li>
             </ul>
+            <Link to="/about" className="inline-flex items-center text-sm font-bold text-primary-400 hover:text-primary-300 transition-colors" onClick={scrollToTop}>
+              Explore More <span className="ml-1">›</span>
+            </Link>
           </div>
 
-          {/* Contact */}
-          <div className="lg:col-span-3">
-            <h4 className="text-white font-bold mb-6 text-lg">Global Headquarters</h4>
-            <ul className="space-y-4">
+          {/* Services */}
+          <div>
+            <h4 className="text-white font-bold mb-5 text-sm uppercase tracking-widest flex items-center gap-2">
+              <FaLaptopCode className="text-primary-500" /> Services
+            </h4>
+            <ul className="space-y-3 mb-4 text-sm">
+              <li><Link to="/web-development" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Web Development</Link></li>
+              <li><Link to="/app-development" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>App Development</Link></li>
+              <li><Link to="/custom-software" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Custom Software</Link></li>
+              <li><Link to="/ai-automation" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>AI & Automation</Link></li>
+              <li><Link to="/cloud-and-devops" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Cloud & DevOps</Link></li>
+            </ul>
+            <Link to="/services" className="inline-flex items-center text-sm font-bold text-primary-400 hover:text-primary-300 transition-colors" onClick={scrollToTop}>
+              View All Services <span className="ml-1">›</span>
+            </Link>
+          </div>
+
+          {/* Industries */}
+          <div>
+            <h4 className="text-white font-bold mb-5 text-sm uppercase tracking-widest flex items-center gap-2">
+              <FaIndustry className="text-primary-500" /> Industries
+            </h4>
+            <ul className="space-y-3 mb-4 text-sm">
+              <li><Link to="/industries/healthcare" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Healthcare</Link></li>
+              <li><Link to="/industries/education" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Education</Link></li>
+              <li><Link to="/industries/ecommerce" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>E-Commerce</Link></li>
+              <li><Link to="/industries/real-estate" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Real Estate</Link></li>
+              <li><Link to="/industries/banking" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Finance & Banking</Link></li>
+            </ul>
+            <Link to="/industries" className="inline-flex items-center text-sm font-bold text-primary-400 hover:text-primary-300 transition-colors" onClick={scrollToTop}>
+              View All Industries <span className="ml-1">›</span>
+            </Link>
+          </div>
+
+          {/* Hire Developers */}
+          <div>
+            <h4 className="text-white font-bold mb-5 text-sm uppercase tracking-widest flex items-center gap-2">
+              <FaUsers className="text-primary-500" /> Developers
+            </h4>
+            <ul className="space-y-3 mb-4 text-sm">
+              <li><Link to="/hire/react-developers" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>React Developers</Link></li>
+              <li><Link to="/hire/mobile-app-developers" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Mobile Developers</Link></li>
+              <li><Link to="/hire/ai-engineers" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>AI Engineers</Link></li>
+              <li><Link to="/hire/nodejs-developers" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Node.js Developers</Link></li>
+              <li><Link to="/hire/development-team" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Dedicated Team</Link></li>
+            </ul>
+            <Link to="/hire-developers" className="inline-flex items-center text-sm font-bold text-primary-400 hover:text-primary-300 transition-colors" onClick={scrollToTop}>
+              View All Developers <span className="ml-1">›</span>
+            </Link>
+          </div>
+
+          {/* Get in Touch */}
+          <div>
+            <h4 className="text-white font-bold mb-5 text-sm uppercase tracking-widest flex items-center gap-2">
+              <FaEnvelope className="text-primary-500" /> Get In Touch
+            </h4>
+            <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3 text-secondary-400">
                 <FaMapMarkerAlt className="mt-1 flex-shrink-0 text-primary-500" />
                 <span className="leading-relaxed">
@@ -134,11 +179,11 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-secondary-800 py-6">
-        <div className="container-custom flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="container-custom flex flex-col items-center justify-center gap-4 text-center">
           <p className="text-secondary-500 text-sm">
             &copy; {new Date().getFullYear()} Innomatrics Technologies. All Rights Reserved.
           </p>
-          <div className="flex gap-6 text-sm">
+          <div className="flex gap-6 text-sm justify-center">
             <Link to="/privacy" className="text-secondary-500 hover:text-white transition-colors" onClick={scrollToTop}>Privacy Policy</Link>
             <Link to="/terms" className="text-secondary-500 hover:text-white transition-colors" onClick={scrollToTop}>Terms of Service</Link>
             <button onClick={() => setIsMapVisible(true)} className="text-secondary-500 hover:text-white transition-colors">Sitemap</button>
