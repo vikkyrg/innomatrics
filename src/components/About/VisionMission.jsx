@@ -188,9 +188,9 @@ const VisionMission = () => {
 
       <div className="section-padding bg-white">
         <div className="container-custom">
-          <div className="mb-20 text-center max-w-4xl mx-auto">
+          <div className="mb-20 text-center w-full px-4 md:px-8 lg:px-12">
             <span className="text-primary-600 font-bold uppercase tracking-widest text-sm mb-4 block">Vision & Mission</span>
-            <p className="text-xl text-secondary-700 leading-relaxed">
+            <p className="text-xl text-secondary-700 leading-relaxed text-justify">
               Our vision is to be a catalyst for digital transformation by providing reliable and future-ready technology solutions.
               We strive to become a globally recognized brand known for innovation, integrity, and measurable impact in the tech space.
               Our mission is to deliver innovative, scalable, and efficient software that empowers businesses to achieve their full potential
@@ -285,7 +285,7 @@ const VisionMission = () => {
 
         {/* Image Gallery Section */}
         <div className="py-12">
-          <h2 className="text-3xl font-bold text-center text-red-600 mb-12">Milestones of Innovation & Impact</h2>
+          <h2 className="text-3xl font-bold text-center text-secondary-900 mb-12">Milestones of Innovation & Impact</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-secondary-200 mb-20 gap-0">
 
             {/* Card 1 */}

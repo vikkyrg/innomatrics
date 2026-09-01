@@ -184,7 +184,7 @@ const Career = () => {
       {/* Intro Section */}
       <div className="section-padding bg-white border-b border-secondary-200">
         <div className="container-custom">
-          <div className="max-w-4xl">
+          <div className="w-full px-4 md:px-8 lg:px-12">
             <span className="text-primary-800 font-bold uppercase tracking-widest text-xs mb-4 block">
               Life at Innomatrics
             </span>
@@ -192,7 +192,7 @@ const Career = () => {
               The work we do impacts the world, and the future.
             </h2>
             <div className="prose prose-lg text-secondary-600 max-w-none">
-              <p className="leading-relaxed">
+              <p className="leading-relaxed text-justify">
                 At Innomatrics, we take pride in fostering a workplace where passion drives progress. Our commitment to excellence is reflected in our diverse, inclusive, and collaborative teams — all working toward a shared vision of delivering impactful, high-quality solutions consistently.
               </p>
             </div>

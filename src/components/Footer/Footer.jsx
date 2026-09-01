@@ -34,7 +34,7 @@ const Footer = () => {
     <footer className="bg-secondary-900 text-secondary-200 border-t border-secondary-800">
       {/* Top CTA Banner */}
       <div className="border-b border-secondary-800/50">
-        <div className="container-custom py-12 lg:py-16">
+        <div className="container-custom py-8 lg:py-10">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="text-center lg:text-left max-w-2xl">
               <h2 className="text-3xl font-bold text-white mb-4">Ready to accelerate your digital transformation?</h2>
@@ -48,7 +48,7 @@ const Footer = () => {
       </div>
 
       {/* Main Footer Links */}
-      <div className="container-custom py-16">
+      <div className="container-custom pt-10 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
           
           {/* Brand & About */}

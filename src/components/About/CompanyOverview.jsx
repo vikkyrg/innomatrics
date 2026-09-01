@@ -52,11 +52,14 @@ const CompanyOverview = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mb-20 text-center max-w-4xl mx-auto"
+            className="mb-20 text-center w-full px-4 md:px-8 lg:px-12"
           >
             <span className="text-primary-800 font-bold uppercase tracking-widest text-xs mb-4 block">Overview</span>
-            <p className="text-xl text-secondary-600 leading-relaxed font-normal">
+            <p className="text-xl text-secondary-600 leading-relaxed font-normal mb-6 text-justify">
               Innomatrics is a technology-driven company focused on delivering innovative, scalable, and customer-centric solutions. With a strong foundation in modern development practices and cloud infrastructure, we empower businesses to transform digitally and stay competitive. Our team specializes in crafting end-to-end software products tailored to meet diverse industry needs, ensuring efficiency, security, and long-term growth.
+            </p>
+            <p className="text-xl text-secondary-600 leading-relaxed font-normal text-justify">
+              We leverage deep industry expertise to bridge the gap between complex business logic and state-of-the-art technological capabilities. Our agile methodology, commitment to enterprise-grade security architecture, and rigorous quality assurance processes ensure that every solution we deliver is robust and designed to scale seamlessly. By partnering with us, you gain a dedicated team of experts committed to turning visionary concepts into tangible digital realities that accelerate your business outcomes.
             </p>
           </motion.div>
 

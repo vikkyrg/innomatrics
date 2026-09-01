@@ -10,7 +10,7 @@ const SectionHeader = ({ eyebrow, title, description, align = "center", theme = 
   const isDark = theme === "dark";
 
   return (
-    <div className={`max-w-3xl mb-16 ${alignmentClasses[align]}`}>
+    <div className={`w-full px-4 md:px-8 lg:px-12 mb-16 ${alignmentClasses[align]}`}>
       {eyebrow && (
         <span className={`${isDark ? 'text-primary-400' : 'text-primary-800'} font-bold uppercase tracking-widest text-xs mb-4 block`}>
           {eyebrow}
