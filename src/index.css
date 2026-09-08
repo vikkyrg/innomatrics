@@ -16,7 +16,6 @@
   body {
     @apply font-sans antialiased text-secondary-800 bg-secondary-50 overflow-x-hidden leading-relaxed;
   }
-  
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold tracking-tight text-secondary-900 leading-snug;
   }
@@ -27,6 +26,17 @@
   
   p {
     @apply mb-4;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 

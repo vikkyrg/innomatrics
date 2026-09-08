@@ -23,6 +23,7 @@ import ClientsCarousel from "../common/ClientsLogo/ClientsCarousel";
 import Join from "./components/JoinTeam/Join";
 import CountRise from "./components/CountRise/CountRise";
 import WhatsappFloatingIcon from "./WhatsappFloatingIcon";
+import AnimatedSectionBackground from "../common/AnimatedSectionBackground";
 
 const Home = forwardRef((props, ref) => {
   const clientLogos = [
@@ -44,7 +45,7 @@ const Home = forwardRef((props, ref) => {
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.6 }}
       >
-        <div className="container-custom">
+        <div className="container-custom relative z-10">
           <p className="text-center text-xs font-bold text-secondary-500 tracking-[0.2em] uppercase mb-8">
             Trusted by innovative enterprises worldwide
           </p>
@@ -55,8 +56,9 @@ const Home = forwardRef((props, ref) => {
       </motion.div>
 
       {/* 3. Value Proposition */}
-      <div className="section-padding bg-white border-b border-secondary-200">
-        <div className="container-custom">
+      <div className="section-padding bg-white border-b border-secondary-200 relative">
+        <AnimatedSectionBackground variant="default" />
+        <div className="container-custom relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
             
             {/* Left: Sticky Header */}
@@ -157,7 +159,7 @@ const Home = forwardRef((props, ref) => {
         <div className="container-custom">
           <motion.div 
             className="text-center max-w-4xl mx-auto mb-16"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
@@ -183,8 +185,9 @@ const Home = forwardRef((props, ref) => {
       <CountRise />
 
       {/* 7. Corporate Overview (Vision/Mission) */}
-      <div className="section-padding bg-white">
-        <div className="container-custom">
+      <div className="section-padding bg-white relative">
+        <AnimatedSectionBackground variant="industries" />
+        <div className="container-custom relative z-10">
           <div className="text-center max-w-4xl mx-auto mb-16">
             <span className="text-primary-800 font-bold uppercase tracking-widest text-xs mb-4 block">
               Corporate Overview

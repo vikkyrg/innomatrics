@@ -14,12 +14,12 @@ import { FaLaptopCode } from 'react-icons/fa';
 const BentoCard = ({ linkUrl, icon: Icon, title, description, isLarge }) => {
   return (
     <Link to={linkUrl} className={`group block h-full ${isLarge ? 'md:col-span-2' : ''}`}>
-      <div className={`h-full bg-white border border-secondary-200 p-8 flex flex-col transition-colors duration-300 hover:border-primary-600 ${isLarge ? 'bg-secondary-50 border-secondary-200' : ''}`}>
+      <div className={`h-full bg-white border border-secondary-200 p-8 flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover hover:border-primary-400 ${isLarge ? 'bg-secondary-50 border-secondary-200' : ''}`}>
         <div className="flex justify-between items-start mb-12">
-          <div className="w-10 h-10 flex items-center justify-center text-primary-900 bg-secondary-100">
+          <div className="w-10 h-10 flex items-center justify-center text-primary-900 bg-secondary-100 transition-transform duration-300 group-hover:scale-105">
             <Icon className="text-xl" />
           </div>
-          <MdArrowForward className="text-secondary-300 group-hover:text-primary-600 transform group-hover:translate-x-1 transition-all" />
+          <MdArrowForward className="text-secondary-300 group-hover:text-primary-600 transform group-hover:translate-x-1 transition-transform duration-300" />
         </div>
         
         <div className="mt-auto">

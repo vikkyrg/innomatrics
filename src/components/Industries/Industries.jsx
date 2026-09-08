@@ -138,20 +138,20 @@ const Industries = () => {
       {/* Description Section */}
       <div className="section-padding bg-white">
         <div className="container-custom">
-          <div className="max-w-4xl">
+          <div className="text-center w-full px-4 md:px-[10%]">
             <span className="text-primary-800 font-bold uppercase tracking-widest text-xs mb-4 block">
               Global Reach
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-secondary-900 mb-8 tracking-tight">
               Driving Digital Excellence
             </h2>
-            <div className="prose prose-lg text-secondary-600 max-w-none">
-              <p className="leading-relaxed mb-6">
+            <div className="text-secondary-600">
+              <p className="text-lg leading-relaxed mb-6 text-justify">
                 We proudly serve a diverse range of industries with tailored digital transformation strategies designed to maximize results. 
                 Our expertise spans across e-commerce, helping brands boost product visibility and drive online sales with precision-targeted engineering. 
                 In the healthcare sector, we build trust and engagement through secure, patient-focused digital communication platforms.
               </p>
-              <p className="leading-relaxed">
+              <p className="text-lg leading-relaxed text-justify">
                 Financial services and fintech companies rely on our secure and compliant enterprise architectures to build customer confidence and promote growth. 
                 We also empower startups and tech ventures with scalable approaches that accelerate deployment and user acquisition.
               </p>
@@ -179,7 +179,8 @@ const Industries = () => {
                   <img
                     src={industry.image}
                     alt={industry.title}
- className="w-full h-full object-cover transition-all duration-500"
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-all duration-500"
                   />
                   <div className="absolute inset-0 bg-primary-900/10 group-hover:bg-transparent transition-colors duration-500" />
                 </div>

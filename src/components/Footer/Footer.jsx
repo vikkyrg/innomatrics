@@ -92,7 +92,7 @@ const Footer = () => {
               <li><Link to="/careers" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Careers</Link></li>
               <li><Link to="/blog" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Insights & Blog</Link></li>
             </ul>
-            <Link to="/about" className="inline-flex items-center text-sm font-bold text-primary-400 hover:text-primary-300 transition-colors" onClick={scrollToTop}>
+            <Link to="/about" className="inline-flex items-center text-sm font-bold text-white hover:text-gray-200 transition-colors" onClick={scrollToTop}>
               Explore More <span className="ml-1">›</span>
             </Link>
           </div>
@@ -109,7 +109,7 @@ const Footer = () => {
               <li><Link to="/ai-automation" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>AI & Automation</Link></li>
               <li><Link to="/cloud-and-devops" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Cloud & DevOps</Link></li>
             </ul>
-            <Link to="/services" className="inline-flex items-center text-sm font-bold text-primary-400 hover:text-primary-300 transition-colors" onClick={scrollToTop}>
+            <Link to="/services" className="inline-flex items-center text-sm font-bold text-white hover:text-gray-200 transition-colors" onClick={scrollToTop}>
               View All Services <span className="ml-1">›</span>
             </Link>
           </div>
@@ -126,7 +126,7 @@ const Footer = () => {
               <li><Link to="/industries/real-estate" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Real Estate</Link></li>
               <li><Link to="/industries/banking" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Finance & Banking</Link></li>
             </ul>
-            <Link to="/industries" className="inline-flex items-center text-sm font-bold text-primary-400 hover:text-primary-300 transition-colors" onClick={scrollToTop}>
+            <Link to="/industries" className="inline-flex items-center text-sm font-bold text-white hover:text-gray-200 transition-colors" onClick={scrollToTop}>
               View All Industries <span className="ml-1">›</span>
             </Link>
           </div>
@@ -143,7 +143,7 @@ const Footer = () => {
               <li><Link to="/hire/nodejs-developers" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Node.js Developers</Link></li>
               <li><Link to="/hire/development-team" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Dedicated Team</Link></li>
             </ul>
-            <Link to="/hire-developers" className="inline-flex items-center text-sm font-bold text-primary-400 hover:text-primary-300 transition-colors" onClick={scrollToTop}>
+            <Link to="/hire-developers" className="inline-flex items-center text-sm font-bold text-white hover:text-gray-200 transition-colors" onClick={scrollToTop}>
               View All Developers <span className="ml-1">›</span>
             </Link>
           </div>

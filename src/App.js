@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 import Preloader from './components/common/Preloader';
 import ScrollToTopButton from './components/common/ScrollToTopButton';
+import ScrollToTop from './components/common/ScrollToTop';
 import NotFound from './components/common/NotFound';
 
 // Layouts
@@ -86,7 +87,7 @@ const AnimatedRoutes = () => {
   const location = useLocation();
 
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence mode="wait" onExitComplete={() => window.scrollTo(0, 0)}>
       <Routes location={location} key={location.pathname}>
         {/* Admin Routes */}
         <Route path="/admin/login" element={<AdminLogin />} />
@@ -157,7 +158,6 @@ function App() {
   return (
     <Router>
       <Preloader />
-
       <ScrollToTopButton />
       <AnimatedRoutes />
     </Router>

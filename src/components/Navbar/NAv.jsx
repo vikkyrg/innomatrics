@@ -78,13 +78,9 @@ function NAv() {
               <Link to="/" className="flex items-center group">
                 <img
                   src={logo}
-                  className="h-12 w-12 md:h-16 md:w-16 object-contain group-hover:scale-105 transition-transform duration-300"
+                  className="h-16 w-16 md:h-24 md:w-24 object-contain group-hover:scale-110 transition-transform duration-300"
                   alt="Innomatrics Logo"
                 />
-                <div className="ml-2 sm:ml-3 flex flex-col items-start leading-none mt-1">
-                  <span className="text-lg sm:text-2xl font-extrabold tracking-wider text-secondary-900 leading-none uppercase">INNOMATRICS</span>
-                  <span className="text-[0.5rem] sm:text-[0.65rem] font-bold tracking-[0.2em] text-primary-600 leading-none mt-0.5 sm:mt-1">TECHNOLOGIES</span>
-                </div>
               </Link>
             </div>
 

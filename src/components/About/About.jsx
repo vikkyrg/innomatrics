@@ -113,7 +113,7 @@ const About = forwardRef((props, ref) => {
                 <img
                   src={aboutMe}
                   alt="About Us"
- className="w-full h-auto object-cover transition-all duration-500 group-hover:scale-105"
+                  className="w-full h-auto object-cover transition-all duration-500 group-hover:scale-105"
                 />
               </div>
             </div>
