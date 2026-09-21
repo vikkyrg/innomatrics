@@ -2,11 +2,13 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useParams } from 'react-router-dom';
 
 import Preloader from './components/common/Preloader';
 import ScrollToTopButton from './components/common/ScrollToTopButton';
 import ScrollToTop from './components/common/ScrollToTop';
 import NotFound from './components/common/NotFound';
+import { industryData } from './data/industryData';
 
 // Layouts
 import MainLayout from './components/layouts/MainLayout';
@@ -67,6 +69,15 @@ import BlogDetail from './components/Blog/BlogDetail';
 // Hire Developers
 import HireDevelopers from './components/HireDevelopers/HireDevelopers';
 import HireDeveloperDetail from './components/HireDevelopers/HireDeveloperDetail';
+import { hireDevelopersData } from './components/HireDevelopers/hireData';
+
+// Redirects legacy nested URLs (/industries/:slug, /hire/:slug) to the flat URLs
+const legacySlugMap = { banking: 'banking-finance', travel: 'tours-travel' };
+const LegacySlugRedirect = () => {
+  const params = useParams();
+  const raw = params.industry || params.role;
+  return <Navigate to={`/${legacySlugMap[raw] || raw}`} replace />;
+};
 
 // Page Transition Wrapper
 const PageWrapper = ({ children }) => {
@@ -108,7 +119,14 @@ const AnimatedRoutes = () => {
           <Route path="why-us" element={<PageWrapper><WhyUs /></PageWrapper>} />
           <Route path="services" element={<PageWrapper><Services /></PageWrapper>} />
           <Route path="industries" element={<PageWrapper><Industries /></PageWrapper>} />
-          <Route path="industries/:industry" element={<PageWrapper><IndustryDetail /></PageWrapper>} />
+          {/* Flat industry detail routes: /healthcare, /startups, /ngo, ... */}
+          {Object.keys(industryData).map((slug) => (
+            <Route
+              key={slug}
+              path={`/${slug}`}
+              element={<PageWrapper><IndustryDetail industrySlug={slug} /></PageWrapper>}
+            />
+          ))}
           <Route path="technologies" element={<PageWrapper><Technologies /></PageWrapper>} />
           <Route path="solutions" element={<PageWrapper><Solutions /></PageWrapper>} />
           <Route path="contact" element={<PageWrapper><Contact /></PageWrapper>} />
@@ -117,7 +135,17 @@ const AnimatedRoutes = () => {
           <Route path="blog/:slug" element={<PageWrapper><BlogDetail /></PageWrapper>} />
           <Route path="quote" element={<PageWrapper><Quote /></PageWrapper>} />
           <Route path="hire-developers" element={<PageWrapper><HireDevelopers /></PageWrapper>} />
-          <Route path="hire/:role" element={<PageWrapper><HireDeveloperDetail /></PageWrapper>} />
+          {/* Flat hire-developer routes: /react-developers, /ui-ux-designers, ... */}
+          {Object.keys(hireDevelopersData).map((slug) => (
+            <Route
+              key={slug}
+              path={`/${slug}`}
+              element={<PageWrapper><HireDeveloperDetail roleSlug={slug} /></PageWrapper>}
+            />
+          ))}
+          {/* Backward-compatible redirects for old nested URLs */}
+          <Route path="industries/:industry" element={<LegacySlugRedirect />} />
+          <Route path="hire/:role" element={<LegacySlugRedirect />} />
 
           {/* Service Routes */}
           <Route path="web-development" element={<PageWrapper><WebDev /></PageWrapper>} />

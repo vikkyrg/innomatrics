@@ -88,7 +88,7 @@ const Industry = () => {
       ]
     },
     {
-      id: 'banking',
+      id: 'banking-finance',
       icon: <MdAccountBalance />,
       title: "Banking & Finance",
       description: "Pioneering transformative shifts in the financial landscape by harnessing the collective expertise of our seasoned professionals in banking, financial services, insurance, and payments.",
@@ -124,7 +124,7 @@ const Industry = () => {
       ]
     },
     {
-      id: 'travel',
+      id: 'tours-travel',
       icon: <MdFlightTakeoff />,
       title: "Tours & Travels",
       description: "Transforming travel experiences through cutting-edge technology solutions that streamline bookings, enhance customer experiences, and revolutionize the way people explore the world.",
@@ -360,7 +360,7 @@ const Industry = () => {
 
                       <div className="flex flex-col items-start gap-4 w-full sm:w-auto mt-auto">
                         <Link 
-                          to={`/industries/${industry.id}`} 
+                          to={`/${industry.id}`} 
                           className="btn-primary w-full text-center px-8 py-3 text-sm flex items-center justify-center gap-2 group"
                         >
                           Explore {industry.title.split(' ')[0]} Solutions <MdArrowForward className="transform group-hover:translate-x-1 transition-transform" />

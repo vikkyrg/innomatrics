@@ -4,17 +4,17 @@ import { FaReact, FaNodeJs, FaMobileAlt, FaRobot, FaLaptopCode, FaPalette, FaUse
 
 const HireDevelopersHover = () => {
   const column1 = [
-    { name: 'Hire React Developers', path: '/hire/react-developers', icon: <FaReact size={18} />, desc: 'Top-tier React professionals' },
-    { name: 'Hire Mobile App Developers', path: '/hire/mobile-app-developers', icon: <FaMobileAlt size={18} />, desc: 'iOS & Android specialists' },
-    { name: 'Hire AI Engineers', path: '/hire/ai-engineers', icon: <FaRobot size={18} />, desc: 'Machine learning experts' },
-    { name: 'Hire Digital Marketers', path: '/hire/digital-marketers', icon: <FaChartLine size={18} />, desc: 'Growth and SEO strategies' },
+    { name: 'Hire React Developers', path: '/react-developers', icon: <FaReact size={18} />, desc: 'Top-tier React professionals' },
+    { name: 'Hire Mobile App Developers', path: '/mobile-app-developers', icon: <FaMobileAlt size={18} />, desc: 'iOS & Android specialists' },
+    { name: 'Hire AI Engineers', path: '/ai-engineers', icon: <FaRobot size={18} />, desc: 'Machine learning experts' },
+    { name: 'Hire Digital Marketers', path: '/digital-marketers', icon: <FaChartLine size={18} />, desc: 'Growth and SEO strategies' },
   ];
 
   const column2 = [
-    { name: 'Hire Node.js Developers', path: '/hire/nodejs-developers', icon: <FaNodeJs size={18} />, desc: 'Scalable backend engineers' },
-    { name: 'Hire Full Stack Developers', path: '/hire/full-stack-developers', icon: <FaLaptopCode size={18} />, desc: 'End-to-end digital solutions' },
-    { name: 'Hire UI/UX Designers', path: '/hire/ui-ux-designers', icon: <FaPalette size={18} />, desc: 'Creative design specialists' },
-    { name: 'Hire Dedicated Team', path: '/hire/development-team', icon: <FaUsers size={18} />, desc: 'Fully integrated tech talent' },
+    { name: 'Hire Node.js Developers', path: '/nodejs-developers', icon: <FaNodeJs size={18} />, desc: 'Scalable backend engineers' },
+    { name: 'Hire Full Stack Developers', path: '/full-stack-developers', icon: <FaLaptopCode size={18} />, desc: 'End-to-end digital solutions' },
+    { name: 'Hire UI/UX Designers', path: '/ui-ux-designers', icon: <FaPalette size={18} />, desc: 'Creative design specialists' },
+    { name: 'Hire Dedicated Team', path: '/development-team', icon: <FaUsers size={18} />, desc: 'Fully integrated tech talent' },
   ];
 
   const renderLink = (item, idx) => (

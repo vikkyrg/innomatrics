@@ -60,7 +60,7 @@ const HireDevelopers = () => {
                         {data.subtitle}
                       </p>
                     </div>
-                    <Link to={`/hire/${key}`} className="inline-flex items-center text-primary-800 font-bold hover:text-primary-600 transition-colors mt-auto group/link text-sm uppercase tracking-wider">
+                    <Link to={`/${key}`} className="inline-flex items-center text-primary-800 font-bold hover:text-primary-600 transition-colors mt-auto group/link text-sm uppercase tracking-wider">
                       Explore Profile 
                       <svg className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />

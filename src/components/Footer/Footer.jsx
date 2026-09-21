@@ -120,11 +120,11 @@ const Footer = () => {
               <FaIndustry className="text-primary-500" /> Industries
             </h4>
             <ul className="space-y-3 mb-4 text-sm">
-              <li><Link to="/industries/healthcare" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Healthcare</Link></li>
-              <li><Link to="/industries/education" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Education</Link></li>
-              <li><Link to="/industries/ecommerce" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>E-Commerce</Link></li>
-              <li><Link to="/industries/real-estate" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Real Estate</Link></li>
-              <li><Link to="/industries/banking" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Finance & Banking</Link></li>
+              <li><Link to="/healthcare" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Healthcare</Link></li>
+              <li><Link to="/education" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Education</Link></li>
+              <li><Link to="/ecommerce" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>E-Commerce</Link></li>
+              <li><Link to="/real-estate" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Real Estate</Link></li>
+              <li><Link to="/banking-finance" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Finance & Banking</Link></li>
             </ul>
             <Link to="/industries" className="inline-flex items-center text-sm font-bold text-white hover:text-gray-200 transition-colors" onClick={scrollToTop}>
               View All Industries <span className="ml-1">›</span>
@@ -137,11 +137,11 @@ const Footer = () => {
               <FaUsers className="text-primary-500" /> Developers
             </h4>
             <ul className="space-y-3 mb-4 text-sm">
-              <li><Link to="/hire/react-developers" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>React Developers</Link></li>
-              <li><Link to="/hire/mobile-app-developers" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Mobile Developers</Link></li>
-              <li><Link to="/hire/ai-engineers" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>AI Engineers</Link></li>
-              <li><Link to="/hire/nodejs-developers" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Node.js Developers</Link></li>
-              <li><Link to="/hire/development-team" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Dedicated Team</Link></li>
+              <li><Link to="/react-developers" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>React Developers</Link></li>
+              <li><Link to="/mobile-app-developers" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Mobile Developers</Link></li>
+              <li><Link to="/ai-engineers" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>AI Engineers</Link></li>
+              <li><Link to="/nodejs-developers" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Node.js Developers</Link></li>
+              <li><Link to="/development-team" className="text-secondary-400 hover:text-primary-400 transition-colors" onClick={scrollToTop}>Dedicated Team</Link></li>
             </ul>
             <Link to="/hire-developers" className="inline-flex items-center text-sm font-bold text-white hover:text-gray-200 transition-colors" onClick={scrollToTop}>
               View All Developers <span className="ml-1">›</span>

@@ -8,11 +8,12 @@ import SectionHeader from '../Services/components/SectionHeader';
 import CTASection from '../Services/components/CTASection';
 import FAQ from '../Services/components/FAQ';
 
-const IndustryDetail = () => {
-  const { industry } = useParams();
+const IndustryDetail = ({ industrySlug: slugProp }) => {
+  const params = useParams();
+  const slug = (slugProp || params.industry)?.toLowerCase();
   const [activeOffering, setActiveOffering] = useState(0);
 
-  const currentIndustry = industryData[industry?.toLowerCase()] || industryData.healthcare;
+  const currentIndustry = industryData[slug] || industryData.healthcare;
 
   useEffect(() => {
     document.title = `${currentIndustry.title} IT Solutions & Services | Innomatrics`;

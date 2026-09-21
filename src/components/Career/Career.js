@@ -5,6 +5,7 @@ import emailjs from "@emailjs/browser";
 import ServiceHero from "../Services/components/ServiceHero";
 import SectionHeader from "../Services/components/SectionHeader";
 import CTASection from "../Services/components/CTASection";
+import JoinOurTeam from "./JoinOurTeam";
 
 import ashok from "../../assets/profile.jpeg";
 import dev1 from "../../assets/dev1.jpeg";
@@ -166,6 +167,11 @@ const Career = () => {
   const nextValueSlide = () => setCurrentValueSlide((prev) => (prev + 1) % valueSlides.length);
   const prevValueSlide = () => setCurrentValueSlide((prev) => (prev === 0 ? valueSlides.length - 1 : prev - 1));
 
+  // Smooth-scroll to the Join Our Team / application section (no route change)
+  const scrollToJobApplication = () => {
+    document.getElementById("job-application")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <div className="bg-white font-sans overflow-x-hidden">
       
@@ -178,7 +184,7 @@ const Career = () => {
         primaryCTA="Explore Openings"
         secondaryCTA="Submit Application"
         primaryLink="#openings"
-        onSecondaryClick={() => setIsModalOpen(true)}
+        onSecondaryClick={scrollToJobApplication}
       />
 
       {/* Intro Section */}
@@ -357,6 +363,9 @@ const Career = () => {
 
       {/* CTA Section */}
       <CTASection />
+
+      {/* Join Our Team CTA (immediately before the footer) */}
+      <JoinOurTeam />
 
       {/* Success Popup */}
       <AnimatePresence>

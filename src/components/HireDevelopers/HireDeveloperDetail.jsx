@@ -7,8 +7,9 @@ import ServiceHero from '../Services/components/ServiceHero';
 import SectionHeader from '../Services/components/SectionHeader';
 import CTASection from '../Services/components/CTASection';
 
-const HireDeveloperDetail = () => {
-  const { role } = useParams();
+const HireDeveloperDetail = ({ roleSlug }) => {
+  const { role: roleParam } = useParams();
+  const role = roleSlug || roleParam;
   const navigate = useNavigate();
   const [data, setData] = useState(null);
 

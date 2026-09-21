@@ -11,7 +11,7 @@ const Industries = () => {
       image: "https://images.pexels.com/photos/5998472/pexels-photo-5998472.jpeg"
     },
     {
-      id: 'banking',
+      id: 'banking-finance',
       title: "BANKING",
       subtitle: "We empower the BFSI sector with secure, scalable, and intelligent digital solutions.",
       image: "https://images.pexels.com/photos/4386373/pexels-photo-4386373.jpeg"
@@ -23,7 +23,7 @@ const Industries = () => {
       image: "https://images.pexels.com/photos/6646934/pexels-photo-6646934.jpeg"
     },
     {
-      id: 'travel',
+      id: 'tours-travel',
       title: "TOURS AND TRAVELS",
       subtitle: "We help tours and travel businesses create immersive digital experiences that attract, engage, and retain customers.",
       image: "https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg"
@@ -172,7 +172,7 @@ const Industries = () => {
             {industries.map((industry, index) => (
               <Link
                 key={index}
-                to={`/industries/${industry.id}`}
+                to={`/${industry.id}`}
                 className="group relative bg-white border-b border-r border-secondary-200 overflow-hidden flex flex-col h-[450px]"
               >
                 <div className="relative h-48 overflow-hidden border-b border-secondary-200">

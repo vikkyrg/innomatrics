@@ -59,7 +59,7 @@ export const industryData = {
       }
     ]
   },
-  banking: {
+  'banking-finance': {
     title: "Banking, Financial Services & Insurance",
     heroImage: "https://images.unsplash.com/photo-1501167786227-4cba60f6d58f?q=80&w=1200&auto=format&fit=crop",
     faqs: [
@@ -299,7 +299,7 @@ export const industryData = {
       }
     ]
   },
-  travel: {
+  'tours-travel': {
     title: "Tours & Travels",
     heroImage: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1200&auto=format&fit=crop",
     faqs: [

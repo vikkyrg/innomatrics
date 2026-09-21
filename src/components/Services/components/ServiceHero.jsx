@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ServiceHero = ({ breadcrumbTitle, title, description, primaryCTA = "Request a Quote", primaryLink = "/quote", secondaryCTA = "Contact Us", secondaryLink = "/contact", backgroundImage }) => {
+const ServiceHero = ({ breadcrumbTitle, title, description, primaryCTA = "Request a Quote", primaryLink = "/quote", secondaryCTA = "Contact Us", secondaryLink = "/contact", onSecondaryClick, backgroundImage }) => {
   return (
     <div className="relative w-full min-h-[500px] flex items-center bg-primary-900 border-b border-primary-800">
       <div className="absolute inset-0 bg-primary-900 overflow-hidden">
@@ -51,11 +51,21 @@ const ServiceHero = ({ breadcrumbTitle, title, description, primaryCTA = "Reques
                 {primaryCTA}
               </button>
             </Link>
-            <Link to={secondaryLink}>
-              <button className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-transparent border border-primary-500 text-white hover:bg-primary-800 text-sm font-bold uppercase tracking-widest px-8 py-4 transition-colors">
+            {onSecondaryClick ? (
+              <button
+                type="button"
+                onClick={onSecondaryClick}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-transparent border border-primary-500 text-white hover:bg-primary-800 text-sm font-bold uppercase tracking-widest px-8 py-4 transition-colors"
+              >
                 {secondaryCTA}
               </button>
-            </Link>
+            ) : (
+              <Link to={secondaryLink}>
+                <button className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-transparent border border-primary-500 text-white hover:bg-primary-800 text-sm font-bold uppercase tracking-widest px-8 py-4 transition-colors">
+                  {secondaryCTA}
+                </button>
+              </Link>
+            )}
           </div>
         </div>
       </div>

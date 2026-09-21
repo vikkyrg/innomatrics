@@ -9,29 +9,29 @@ import {
 
 const IndustryHover = () => {
   const column1 = [
-    { name: 'Healthcare', path: '/industries/healthcare', icon: <FaHeartbeat size={18} />, desc: 'Medical & wellness tech' },
-    { name: 'Banking & Finance', path: '/industries/banking', icon: <FaUniversity size={18} />, desc: 'Secure fintech solutions' },
-    { name: 'Tours & Travel', path: '/industries/travel', icon: <FaPlane size={18} />, desc: 'Booking & discovery platforms' },
-    { name: 'Education', path: '/industries/education', icon: <FaGraduationCap size={18} />, desc: 'EdTech & learning platforms' },
-    { name: 'Logistics', path: '/industries/logistics', icon: <FaTruck size={18} />, desc: 'Supply chain optimization' },
-    { name: 'Restaurants', path: '/industries/restaurants', icon: <FaUtensils size={18} />, desc: 'Dining & delivery tech' },
+    { name: 'Healthcare', path: '/healthcare', icon: <FaHeartbeat size={18} />, desc: 'Medical & wellness tech' },
+    { name: 'Banking & Finance', path: '/banking-finance', icon: <FaUniversity size={18} />, desc: 'Secure fintech solutions' },
+    { name: 'Tours & Travel', path: '/tours-travel', icon: <FaPlane size={18} />, desc: 'Booking & discovery platforms' },
+    { name: 'Education', path: '/education', icon: <FaGraduationCap size={18} />, desc: 'EdTech & learning platforms' },
+    { name: 'Logistics', path: '/logistics', icon: <FaTruck size={18} />, desc: 'Supply chain optimization' },
+    { name: 'Restaurants', path: '/restaurants', icon: <FaUtensils size={18} />, desc: 'Dining & delivery tech' },
   ];
 
   const column2 = [
-    { name: 'NGO', path: '/industries/ngo', icon: <FaHandsHelping size={18} />, desc: 'Non-profit digital impact' },
-    { name: 'Construction', path: '/industries/construction', icon: <FaHardHat size={18} />, desc: 'Project & resource management' },
-    { name: 'Security', path: '/industries/security', icon: <FaShieldAlt size={18} />, desc: 'Protection & monitoring systems' },
-    { name: 'Manufacturing', path: '/industries/manufacturing', icon: <FaIndustry size={18} />, desc: 'Industrial automation' },
-    { name: 'E-Commerce', path: '/industries/ecommerce', icon: <FaShoppingCart size={18} />, desc: 'Digital retail storefronts' },
-    { name: 'Retail', path: '/industries/retail', icon: <FaStore size={18} />, desc: 'Omnichannel shopping' },
+    { name: 'NGO', path: '/ngo', icon: <FaHandsHelping size={18} />, desc: 'Non-profit digital impact' },
+    { name: 'Construction', path: '/construction', icon: <FaHardHat size={18} />, desc: 'Project & resource management' },
+    { name: 'Security', path: '/security', icon: <FaShieldAlt size={18} />, desc: 'Protection & monitoring systems' },
+    { name: 'Manufacturing', path: '/manufacturing', icon: <FaIndustry size={18} />, desc: 'Industrial automation' },
+    { name: 'E-Commerce', path: '/ecommerce', icon: <FaShoppingCart size={18} />, desc: 'Digital retail storefronts' },
+    { name: 'Retail', path: '/retail', icon: <FaStore size={18} />, desc: 'Omnichannel shopping' },
   ];
 
   const column3 = [
-    { name: 'Real Estate', path: '/industries/real-estate', icon: <FaBuilding size={18} />, desc: 'Property & broker platforms' },
-    { name: 'Professional Services', path: '/industries/professional-services', icon: <FaUserTie size={18} />, desc: 'Consulting & agency tools' },
-    { name: 'Startups', path: '/industries/startups', icon: <FaRocket size={18} />, desc: 'Agile MVP development' },
+    { name: 'Real Estate', path: '/real-estate', icon: <FaBuilding size={18} />, desc: 'Property & broker platforms' },
+    { name: 'Professional Services', path: '/professional-services', icon: <FaUserTie size={18} />, desc: 'Consulting & agency tools' },
+    { name: 'Startups', path: '/startups', icon: <FaRocket size={18} />, desc: 'Agile MVP development' },
     // If Garments needs to be kept:
-    { name: 'Garments', path: '/industries/garments', icon: <FaTshirt size={18} />, desc: 'Fashion & apparel tech' },
+    { name: 'Garments', path: '/garments', icon: <FaTshirt size={18} />, desc: 'Fashion & apparel tech' },
   ];
 
   const renderLink = (item, idx) => (
