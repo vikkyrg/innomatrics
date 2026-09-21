@@ -1,0 +1,50 @@
+{
+  "AIAutomation.jsx": [
+    "AI Chatbot Development"
+  ],
+  "ApiIntegration.jsx": [
+    "REST API Development"
+  ],
+  "Appdev.jsx": [
+    "Custom App Development"
+  ],
+  "CustomSoftware.jsx": [
+    "Custom Business Software"
+  ],
+  "Cybersecurity.jsx": [
+    "Website Security"
+  ],
+  "DedicatedTeam.jsx": [
+    "Hire Flutter Developer"
+  ],
+  "DevOps.jsx": [
+    "AWS Cloud Services"
+  ],
+  "DigitalMarket.jsx": [
+    "SEO"
+  ],
+  "Ecommerce.jsx": [
+    "E-Commerce Website"
+  ],
+  "ItConsulting.jsx": [
+    "Technology Consulting"
+  ],
+  "LogoDesign.jsx": [
+    "Custom Logo Design"
+  ],
+  "MaintenanceSupport.jsx": [
+    "Website Maintenance"
+  ],
+  "QaTesting.jsx": [
+    "Manual Testing"
+  ],
+  "SaaSProduct.jsx": [
+    "SaaS Application Development"
+  ],
+  "SocialMedia.jsx": [
+    "Social Media Strategy"
+  ],
+  "UiUxDesign.jsx": [
+    "UI/UX Design"
+  ]
+}

@@ -43,77 +43,77 @@ const ItConsulting = forwardRef((props, ref) => {
         icon: <FaLightbulb className="w-8 h-8" />,
         title: "Technology Consulting",
         description: "Strategic guidance to help you choose the right technologies for your business goals.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Strategic Planning", "Technology Assessment", "Process Optimization", "Digital Transformation"],
         image: technologyConsultingImg
       },
       {
         icon: <FaCogs className="w-8 h-8" />,
         title: "Business Process Automation",
         description: "Identifying and automating repetitive workflows to save time and reduce costs.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Architecture Review", "Vendor Selection", "IT Strategy", "Risk Management"],
         image: businessProcessAutomationImg
       },
       {
         icon: <FaRocket className="w-8 h-8" />,
         title: "Digital Transformation",
         description: "Comprehensive strategies to digitize your operations and modernize your business.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Cloud Strategy", "Migration Planning", "Infrastructure Audit", "Cost Optimization"],
         image: digitalTransformationImg
       },
       {
         icon: <FaDesktop className="w-8 h-8" />,
         title: "Software Architecture Consulting",
         description: "Designing scalable, secure, and resilient architectures for complex applications.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Cybersecurity Assessment", "Compliance Check", "Security Roadmap", "Threat Modeling"],
         image: softwareArchitectureConsultingImg
       },
       {
         icon: <FaCode className="w-8 h-8" />,
         title: "Technology Stack Consulting",
         description: "Expert advice on selecting the optimal programming languages, frameworks, and databases.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Software Selection", "Make vs Buy Analysis", "ERP Consulting", "CRM Strategy"],
         image: technologyStackConsultingImg
       },
       {
         icon: <FaCloud className="w-8 h-8" />,
         title: "IT Infrastructure Consulting",
         description: "Evaluating and optimizing your server, network, and cloud infrastructure.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Data Strategy", "Analytics Planning", "Business Intelligence", "Data Governance"],
         image: itInfrastructureConsultingImg
       },
       {
         icon: <FaChartLine className="w-8 h-8" />,
         title: "Product Strategy",
         description: "Aligning your software product roadmap with market demands and business objectives.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Agile Coaching", "DevOps Strategy", "Team Structuring", "Delivery Optimization"],
         image: productStrategyImg
       },
       {
         icon: <FaRocket className="w-8 h-8" />,
         title: "MVP Consulting",
         description: "Defining the core features needed to launch your Minimum Viable Product successfully.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["IT Service Management", "ITIL Framework", "Helpdesk Optimization", "SLA Definition"],
         image: mvpConsultingImg
       },
       {
         icon: <FaLightbulb className="w-8 h-8" />,
         title: "Startup Technology Consulting",
         description: "Tailored technical guidance for founders and early-stage startups.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Disaster Recovery Plan", "Business Continuity", "Backup Strategy", "Crisis Management"],
         image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=600&auto=format&fit=crop"
       },
       {
         icon: <FaSyncAlt className="w-8 h-8" />,
         title: "Software Modernization",
         description: "Upgrading and refactoring legacy software to modern standards without downtime.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Enterprise Architecture", "System Integration Plan", "Legacy Modernization", "Tech Debt Reduction"],
         image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=600&auto=format&fit=crop"
       },
       {
         icon: <FaDatabase className="w-8 h-8" />,
         title: "Legacy System Migration",
         description: "Safely transitioning data and operations from outdated systems to new platforms.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Strategic Planning", "Technology Assessment", "Process Optimization", "Digital Transformation"],
         image: legacySystemMigrationImg
       }
     ],

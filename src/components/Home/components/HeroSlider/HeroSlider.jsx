@@ -27,10 +27,10 @@ const HeroSlider = () => {
       <motion.div
         key={currentBg}
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.35 }}
+        animate={{ opacity: 0.55 }}
         transition={{ duration: 1.5 }}
-        className="absolute inset-0 bg-cover bg-center pointer-events-none mix-blend-luminosity"
-        style={{ backgroundImage: `url('${bgImages[currentBg]}')` }}
+        className="absolute inset-0 bg-cover bg-center pointer-events-none"
+        style={{ backgroundImage: `url('${bgImages[currentBg]}')`, filter: "saturate(1.3)" }}
       ></motion.div>
 
       {/* Soft Gradient Overlay for depth */}

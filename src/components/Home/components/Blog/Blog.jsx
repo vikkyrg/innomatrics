@@ -11,7 +11,7 @@ const Blog = () => {
     {
       title: "How AI is Transforming Digital Marketing",
       excerpt: "Discover how artificial intelligence is revolutionizing digital marketing strategies and customer engagement.",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyYUBp-sS7gkr50RwnCu5hElWKdKNuk3eqbw&s"
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
     },
     {
       title: "Mobile App Development: Native vs Cross-Platform",

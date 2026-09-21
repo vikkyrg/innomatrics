@@ -40,70 +40,70 @@ const Cybersecurity = forwardRef((props, ref) => {
         icon: <FaShieldAlt className="w-8 h-8" />,
         title: "Website Security",
         description: "Comprehensive protection against modern web vulnerabilities and attacks.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Threat Detection", "Vulnerability Scanning", "24/7 Monitoring", "Incident Response"],
         image: websiteSecurityImg
       },
       {
         icon: <FaLock className="w-8 h-8" />,
         title: "WordPress Security",
         description: "Hardening and securing WordPress installations against brute force and exploits.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Data Encryption", "Access Control", "Compliance Auditing", "Risk Assessment"],
         image: wordpressSecurityImg
       },
       {
         icon: <FaDesktop className="w-8 h-8" />,
         title: "Security Audit",
         description: "In-depth analysis of your systems to identify potential security weaknesses.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Network Security", "Endpoint Protection", "Malware Analysis", "Security Training"],
         image: securityAuditImg
       },
       {
         icon: <FaBug className="w-8 h-8" />,
         title: "Vulnerability Assessment",
         description: "Proactive scanning and assessment to discover and patch vulnerabilities.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Firewall Setup", "Intrusion Detection", "Log Analysis", "Zero-Day Protection"],
         image: "https://images.unsplash.com/photo-1533750516457-a7f992034fec?q=80&w=600&auto=format&fit=crop"
       },
       {
         icon: <FaLock className="w-8 h-8" />,
         title: "SSL & HTTPS Security",
         description: "End-to-end encryption setup to protect data in transit.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Penetration Testing", "Security Architecture", "Patch Management", "Threat Intelligence"],
         image: sslHttpsSecurityImg
       },
       {
         icon: <FaShieldAlt className="w-8 h-8" />,
         title: "Firewall Configuration",
         description: "Robust network and web application firewalls to block malicious traffic.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Cloud Security", "Identity Management", "DDoS Mitigation", "Secure Architecture"],
         image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=600&auto=format&fit=crop"
       },
       {
         icon: <FaSyncAlt className="w-8 h-8" />,
         title: "Malware Removal",
         description: "Rapid detection and elimination of malicious software from compromised systems.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Phishing Protection", "Ransomware Defense", "Security Posture", "Data Loss Prevention"],
         image: malwareRemovalImg
       },
       {
         icon: <FaDatabase className="w-8 h-8" />,
         title: "Backup & Recovery",
         description: "Secure data backups and rapid restoration procedures for disaster recovery.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Web App Firewall", "Code Review", "Secure Configuration", "SSL Certificates"],
         image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=600&auto=format&fit=crop"
       },
       {
         icon: <FaDesktop className="w-8 h-8" />,
         title: "Security Monitoring",
         description: "24/7 continuous monitoring for suspicious activities and potential breaches.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["API Security", "Database Encryption", "Traffic Filtering", "Continuous Auditing"],
         image: serverDeploymentImg
       },
       {
         icon: <FaUsers className="w-8 h-8" />,
         title: "Data Protection Consulting",
         description: "Expert guidance on data privacy laws and compliance frameworks.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Disaster Recovery", "Business Continuity", "Forensic Analysis", "Security Operations"],
         image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=600&auto=format&fit=crop"
       }
     ],

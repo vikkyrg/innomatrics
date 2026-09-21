@@ -44,70 +44,70 @@ const QaTesting = forwardRef((props, ref) => {
         icon: <FaDesktop className="w-8 h-8" />,
         title: "Manual Testing",
         description: "Thorough, human-driven exploratory testing to ensure perfect user experiences.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Automated Testing", "Manual Inspection", "Bug Tracking", "Performance Optimization"],
         image: manualTestingImg
       },
       {
         icon: <FaCogs className="w-8 h-8" />,
         title: "Functional Testing",
         description: "Rigorous verification that all software features operate exactly as intended.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Regression Testing", "Security Testing", "Usability Checks", "Test Automation"],
         image: functionalTestingImg
       },
       {
         icon: <FaMobile className="w-8 h-8" />,
         title: "Mobile App Testing",
         description: "Comprehensive testing across iOS and Android devices for flawless mobile performance.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Functional Testing", "Unit Tests", "Integration Testing", "System Verification"],
         image: mobileAppTestingImg
       },
       {
         icon: <FaDesktop className="w-8 h-8" />,
         title: "Web Application Testing",
         description: "Ensuring web applications are secure, fast, and function correctly on all devices.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Load Testing", "Stress Analysis", "Scalability Testing", "Spike Testing"],
         image: webApplicationTestingImg
       },
       {
         icon: <FaPlug className="w-8 h-8" />,
         title: "API Testing",
         description: "Validating the functionality, reliability, and security of your backend APIs.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Mobile App QA", "Device Compatibility", "OS Version Testing", "Network Simulation"],
         image: apiTestingImg
       },
       {
         icon: <FaDesktop className="w-8 h-8" />,
         title: "Cross-Browser Testing",
         description: "Guaranteeing a consistent experience across Chrome, Safari, Firefox, and Edge.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Cross-Browser Testing", "Responsive Checks", "UI Validation", "Layout Verification"],
         image: crossBrowserTestingImg
       },
       {
         icon: <FaChartLine className="w-8 h-8" />,
         title: "Performance Testing",
         description: "Load and stress testing to ensure your software can handle high traffic volumes.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["API Testing", "Endpoint Verification", "Payload Validation", "Response Time Checks"],
         image: performanceTestingImg
       },
       {
         icon: <FaSyncAlt className="w-8 h-8" />,
         title: "Regression Testing",
         description: "Automated and manual checks to ensure new updates don't break existing features.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Acceptance Testing", "User Scenarios", "Business Logic Checks", "End-to-End Testing"],
         image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=600&auto=format&fit=crop"
       },
       {
         icon: <FaUsers className="w-8 h-8" />,
         title: "User Acceptance Testing",
         description: "Final phase testing conducted from the perspective of the end-user.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Accessibility Testing", "Screen Reader Checks", "Keyboard Navigation", "Contrast Ratios"],
         image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=600&auto=format&fit=crop"
       },
       {
         icon: <FaRobot className="w-8 h-8" />,
         title: "QA Automation",
         description: "Building robust automated test suites to speed up delivery and reduce human error.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Test Case Design", "Test Planning", "Defect Management", "Quality Metrics"],
         image: qaAutomationImg
       }
     ],

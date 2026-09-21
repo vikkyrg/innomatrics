@@ -27,7 +27,7 @@ Using machine learning models, companies can analyze vast amounts of customer da
 
 In the realm of paid advertising, programmatic bidding algorithms analyze customer behavior patterns to place ads where they are most likely to yield high returns, reducing wasteful ad spend and optimizing conversion rates automatically.`,
     category: "Digital Marketing",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyYUBp-sS7gkr50RwnCu5hElWKdKNuk3eqbw&s",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
     status: "Published",
     createdAt: "2024-04-02"
   },

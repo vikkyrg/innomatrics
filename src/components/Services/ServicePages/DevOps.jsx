@@ -49,105 +49,105 @@ const DevOps = forwardRef((props, ref) => {
         icon: <FaCloud className="w-8 h-8" />,
         title: "AWS Cloud Services",
         description: "Comprehensive AWS solutions including architecture, deployment, and management.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Architecture Design", "Infrastructure Setup", "Security & Compliance", "Cost Management"],
         image: awsCloudServicesImg
       },
       {
         icon: <FaSyncAlt className="w-8 h-8" />,
         title: "Cloud Migration",
         description: "Seamlessly migrate your legacy systems to scalable cloud environments.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Assessment & Planning", "Zero-Downtime Migration", "Post-Migration Support", "Performance Tuning"],
         image: cloudMigrationImg
       },
       {
         icon: <FaDesktop className="w-8 h-8" />,
         title: "AWS EC2 Setup",
         description: "Configure and optimize secure, resizable compute capacity in the cloud.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Instance Provisioning", "Auto-scaling Groups", "Load Balancing", "Performance Optimization"],
         image: awsEc2SetupImg
       },
       {
         icon: <FaDatabase className="w-8 h-8" />,
         title: "AWS S3",
         description: "Secure, durable, and highly-scalable object storage infrastructure.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Bucket Configuration", "Lifecycle Policies", "Data Security & Encryption", "Access Management"],
         image: awsS3Img
       },
       {
         icon: <FaDatabase className="w-8 h-8" />,
         title: "Cloud Database Setup",
         description: "Deploy and manage highly available relational and NoSQL databases.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Database Migration", "High Availability Setup", "Performance Tuning", "Automated Backups"],
         image: cloudDatabaseSetupImg
       },
       {
         icon: <FaRocket className="w-8 h-8" />,
         title: "Server Deployment",
         description: "Expert deployment of high-performance application servers.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Environment Setup", "Security Hardening", "Application Deployment", "Server Monitoring"],
         image: serverDeploymentImg
       },
       {
         icon: <FaPlug className="w-8 h-8" />,
         title: "Domain & DNS Management",
         description: "Secure and reliable domain registration and DNS routing configuration.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Domain Registration", "DNS Record Setup", "Routing Policies", "SSL/TLS Integration"],
         image: domainDnsManagementImg
       },
       {
         icon: <FaShieldAlt className="w-8 h-8" />,
         title: "SSL Installation",
         description: "Ensure data security and trust with proper SSL/TLS certificate installation.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Certificate Generation", "Server Configuration", "HTTPS Enforcement", "Renewal Automation"],
         image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=600&auto=format&fit=crop"
       },
       {
         icon: <FaCloud className="w-8 h-8" />,
         title: "Cloudflare Setup",
         description: "Implement robust CDN and DDoS protection for maximum performance and security.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["CDN Configuration", "WAF Rules Setup", "DDoS Protection", "Caching Policies"],
         image: cloudflareSetupImg
       },
       {
         icon: <FaCogs className="w-8 h-8" />,
         title: "CI/CD Pipeline",
         description: "Automate your software delivery process with continuous integration and deployment.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Workflow Automation", "Automated Testing", "Deployment Pipelines", "Release Management"],
         image: cicdPipelineImg
       },
       {
         icon: <FaCode className="w-8 h-8" />,
         title: "GitHub/GitLab Deployment",
         description: "Streamlined code deployment directly from your version control repositories.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Webhook Integration", "Version Control Setup", "Action/Runner Config", "Branching Strategies"],
         image: gitHubGitLabDeploymentImg
       },
       {
         icon: <FaDesktop className="w-8 h-8" />,
         title: "Docker Deployment",
         description: "Containerize your applications for consistent and scalable deployments.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Containerization", "Image Management", "Orchestration Setup", "Microservices Architecture"],
         image: dockerDeploymentImg
       },
       {
         icon: <FaChartLineIcon className="w-8 h-8" />,
         title: "Server Monitoring",
         description: "24/7 proactive monitoring to ensure optimal uptime and performance.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Resource Tracking", "Alert Configuration", "Log Management", "Uptime Monitoring"],
         image: serverMonitoringImg
       },
       {
         icon: <FaLock className="w-8 h-8" />,
         title: "Backup & Disaster Recovery",
         description: "Robust backup strategies to prevent data loss and ensure business continuity.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Automated Backups", "Recovery Planning", "Data Redundancy", "Failover Testing"],
         image: backupDisasterRecoveryImg
       },
       {
         icon: <FaChartLine className="w-8 h-8" />,
         title: "Cloud Cost Optimization",
         description: "Analyze and reduce your cloud infrastructure spending without sacrificing performance.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Resource Analysis", "Cost Allocation Tags", "Reserved Instances", "Waste Reduction"],
         image: cloudCostOptimizationImg
       }
     ],

@@ -51,105 +51,105 @@ const ApiIntegration = forwardRef((props, ref) => {
         icon: <FaPlug className="w-8 h-8" />,
         title: "REST API Development",
         description: "Custom, secure, and scalable RESTful APIs to power your applications.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Custom Endpoints", "Secure Connections", "Data Synchronization", "Scalable Architecture"],
         image: restApiDevelopmentImg
       },
       {
         icon: <FaSyncAlt className="w-8 h-8" />,
         title: "API Integration",
         description: "Seamless integration of third-party APIs into your existing software ecosystem.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Third-Party APIs", "Webhooks Setup", "Authentication", "Rate Limiting"],
         image: apiIntegrationImg
       },
       {
         icon: <FaShoppingCart className="w-8 h-8" />,
         title: "Payment Gateway Integration",
         description: "Secure connections to global payment processors like Stripe, PayPal, and Razorpay.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Payment Gateway", "Transaction Processing", "Refund Management", "Secure Checkout"],
         image: paymentGatewayIntegrationImg
       },
       {
         icon: <FaLock className="w-8 h-8" />,
         title: "Razorpay Integration",
         description: "Specialized implementation of Razorpay for seamless Indian payment processing.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["CRM Integration", "Lead Syncing", "Customer Data", "Automated Workflows"],
         image: razorpayIntegrationImg
       },
       {
         icon: <FaMobile className="w-8 h-8" />,
         title: "WhatsApp API",
         description: "Automate messaging, notifications, and customer support directly through WhatsApp.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["ERP Integration", "Inventory Sync", "Order Management", "Financial Data"],
         image: whatsappApiImg
       },
       {
         icon: <FaMobile className="w-8 h-8" />,
         title: "SMS Gateway",
         description: "Integrate robust SMS delivery systems for OTPs, alerts, and marketing.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Social Media APIs", "Auto Posting", "Social Login", "Data Scraping"],
         image: smsGatewayImg
       },
       {
         icon: <FaDesktop className="w-8 h-8" />,
         title: "Email API",
         description: "Reliable transactional and marketing email integrations using SendGrid, AWS SES, etc.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Mapping APIs", "Geolocation Services", "Route Optimization", "Custom Maps"],
         image: emailApiImg
       },
       {
         icon: <FaDesktop className="w-8 h-8" />,
         title: "Google Maps Integration",
         description: "Embed interactive maps, geolocation, and routing capabilities into your apps.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["SMS Gateway", "OTP Verification", "Push Notifications", "Email Delivery"],
         image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=600&auto=format&fit=crop"
       },
       {
         icon: <FaRocket className="w-8 h-8" />,
         title: "Shipping API",
         description: "Automate logistics with direct integrations to major shipping carriers.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Cloud Storage APIs", "File Uploads", "Data Backup", "Media Streaming"],
         image: shippingApiImg
       },
       {
         icon: <FaDesktop className="w-8 h-8" />,
         title: "Bus Booking API",
         description: "Connect with bus aggregators to enable seamless ticket booking on your platform.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Analytics Integration", "Event Tracking", "Custom Metrics", "Data Export"],
         image: busBookingApiImg
       },
       {
         icon: <FaBuilding className="w-8 h-8" />,
         title: "Hotel Booking API",
         description: "Integrate global hotel inventory and reservation systems directly into your app.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["GraphQL Setup", "RESTful Architecture", "SOAP Integration", "gRPC Services"],
         image: hotelBookingApiImg
       },
       {
         icon: <FaUsers className="w-8 h-8" />,
         title: "CRM Integration",
         description: "Sync your software with leading CRMs like Salesforce, HubSpot, and Zoho.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Custom Endpoints", "Secure Connections", "Data Synchronization", "Scalable Architecture"],
         image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop"
       },
       {
         icon: <FaCogs className="w-8 h-8" />,
         title: "ERP Integration",
         description: "Connect your front-end systems with complex backend Enterprise Resource Planning software.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Third-Party APIs", "Webhooks Setup", "Authentication", "Rate Limiting"],
         image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop"
       },
       {
         icon: <FaChartLine className="w-8 h-8" />,
         title: "Accounting Software Integration",
         description: "Automate financial data flow with Tally, QuickBooks, or Xero integrations.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Payment Gateway", "Transaction Processing", "Refund Management", "Secure Checkout"],
         image: accountingSoftwareIntegrationImg
       },
       {
         icon: <FaShieldAlt className="w-8 h-8" />,
         title: "Government/Enterprise API Integration",
         description: "Secure integration with official enterprise or government digital infrastructure.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["CRM Integration", "Lead Syncing", "Customer Data", "Automated Workflows"],
         image: governmentEnterpriseApiIntegrationImg
       }
     ],

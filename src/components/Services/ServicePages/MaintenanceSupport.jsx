@@ -47,84 +47,84 @@ const MaintenanceSupport = forwardRef((props, ref) => {
         icon: <FaDesktop className="w-8 h-8" />,
         title: "Website Maintenance",
         description: "Ongoing updates, bug fixes, and content management for your web presence.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Regular Updates", "Bug Fixes", "Performance Monitoring", "24/7 Technical Support"],
         image: websiteMaintenanceImg
       },
       {
         icon: <FaMobile className="w-8 h-8" />,
         title: "App Maintenance",
         description: "Regular updates to ensure your mobile app stays compatible with new OS versions.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Security Patches", "Backup Management", "Uptime Guarantee", "Proactive Maintenance"],
         image: appMaintenanceImg
       },
       {
         icon: <FaCode className="w-8 h-8" />,
         title: "Software Maintenance",
         description: "Continuous improvement and bug fixing for your custom enterprise software.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Server Maintenance", "Database Optimization", "Log Rotation", "Resource Scaling"],
         image: softwareMaintenanceImg
       },
       {
         icon: <FaDatabase className="w-8 h-8" />,
         title: "Server Management",
         description: "Proactive server administration, patching, and optimization.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Content Updates", "CMS Management", "Asset Optimization", "Link Checking"],
         image: serverManagementImg
       },
       {
         icon: <FaCloud className="w-8 h-8" />,
         title: "Cloud Management",
         description: "Managing and optimizing your AWS, Azure, or Google Cloud infrastructure.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Code Refactoring", "Dependency Updates", "Technical Debt Reduction", "Framework Upgrades"],
         image: cloudManagementImg
       },
       {
         icon: <FaDesktop className="w-8 h-8" />,
         title: "WordPress Maintenance",
         description: "Keeping your WordPress core, plugins, and themes secure and up-to-date.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Incident Management", "Ticket Resolution", "Helpdesk Support", "SLA Compliance"],
         image: wordPressMaintenanceImg
       },
       {
         icon: <FaShieldAlt className="w-8 h-8" />,
         title: "Security Monitoring",
         description: "24/7 surveillance to detect and block potential security threats.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Performance Tuning", "Caching Strategies", "CDN Management", "Load Balancing"],
         image: securityMonitoringImg
       },
       {
         icon: <FaLock className="w-8 h-8" />,
         title: "Backup Management",
         description: "Automated, secure data backups and routine restoration testing.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Compliance Monitoring", "Audit Logs", "Access Reviews", "Security Scanning"],
         image: backupManagementImg
       },
       {
         icon: <FaChartLine className="w-8 h-8" />,
         title: "Performance Optimization",
         description: "Continuous tuning to ensure maximum speed and efficiency for your applications.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Disaster Recovery Testing", "Failover Checks", "Data Restoration", "Redundancy Verification"],
         image: performanceOptimizationImg
       },
       {
         icon: <FaUsers className="w-8 h-8" />,
         title: "Monthly Technical Support",
         description: "Dedicated hours of expert technical support available whenever you need it.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["User Support", "Training Sessions", "Documentation Updates", "Knowledge Base Management"],
         image: monthlyTechnicalSupportImg
       },
       {
         icon: <FaBuilding className="w-8 h-8" />,
         title: "AMC Plans",
         description: "Annual Maintenance Contracts tailored to your business's specific IT needs.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Regular Updates", "Bug Fixes", "Performance Monitoring", "24/7 Technical Support"],
         image: amcPlansImg
       },
       {
         icon: <FaCogs className="w-8 h-8" />,
         title: "Managed IT Support",
         description: "Comprehensive, outsourced IT department handling all your technological needs.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Security Patches", "Backup Management", "Uptime Guarantee", "Proactive Maintenance"],
         image: managedItSupportImg
       }
     ],

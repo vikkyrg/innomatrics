@@ -45,63 +45,63 @@ const DedicatedTeam = forwardRef((props, ref) => {
         icon: <FaMobile className="w-8 h-8" />,
         title: "Hire Flutter Developer",
         description: "Expert Flutter developers for high-performance, cross-platform mobile apps.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Skilled Professionals", "Agile Methodology", "Seamless Communication", "Scalable Resources"],
         image: hireFlutterDeveloperImg
       },
       {
         icon: <FaReact className="w-8 h-8" />,
         title: "Hire React Developer",
         description: "Skilled frontend engineers specializing in dynamic, interactive React applications.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Domain Experts", "Flexible Engagement", "Dedicated Support", "Rapid Onboarding"],
         image: hireReactDeveloperImg
       },
       {
         icon: <FaNodeJs className="w-8 h-8" />,
         title: "Hire Node.js Developer",
         description: "Backend specialists for scalable, high-speed API and server-side development.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Full-Stack Developers", "Frontend Specialists", "Backend Engineers", "Database Experts"],
         image: hireNodejsDeveloperImg
       },
       {
         icon: <FaPhp className="w-8 h-8" />,
         title: "Hire PHP/Laravel Developer",
         description: "Experienced PHP developers for robust web applications and custom eCommerce.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Mobile Developers", "iOS Experts", "Android Specialists", "Cross-Platform Team"],
         image: hirePhpLaravelDeveloperImg
       },
       {
         icon: <FaPaintBrush className="w-8 h-8" />,
         title: "Hire UI/UX Designer",
         description: "Creative designers dedicated to crafting stunning, user-centric digital interfaces.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["UI/UX Designers", "Creative Leads", "Product Designers", "Visual Artists"],
         image: hireUiUxDesignerImg
       },
       {
         icon: <FaDesktop className="w-8 h-8" />,
         title: "Hire QA Tester",
         description: "Meticulous quality assurance engineers to ensure bug-free software delivery.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["QA Engineers", "Test Automation", "Manual Testers", "Quality Assurance Leads"],
         image: hireQaTesterImg
       },
       {
         icon: <FaCloud className="w-8 h-8" />,
         title: "Hire DevOps Engineer",
         description: "Infrastructure experts to manage cloud deployments, CI/CD, and server scaling.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Project Managers", "Scrum Masters", "Product Owners", "Delivery Managers"],
         image: hireDevOpsEngineerImg
       },
       {
         icon: <FaUsers className="w-8 h-8" />,
         title: "Dedicated Project Manager",
         description: "Experienced leaders to oversee your team, manage timelines, and ensure delivery.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["DevOps Engineers", "Cloud Architects", "SysAdmins", "Infrastructure Specialists"],
         image: dedicatedProjectManagerImg
       },
       {
         icon: <FaBuilding className="w-8 h-8" />,
         title: "Full Development Team",
         description: "A complete, managed squad of developers, designers, and managers for your project.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Data Scientists", "Machine Learning Experts", "Data Engineers", "BI Analysts"],
         image: fullDevelopmentTeamImg
       }
     ],

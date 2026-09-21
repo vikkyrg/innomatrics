@@ -33,98 +33,98 @@ const DigitalMarket = forwardRef((props, ref) => {
         icon: <FaChartLine className="w-8 h-8" />,
         title: "SEO",
         description: "Boost your organic search rankings and drive targeted traffic to your website.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Targeted Campaigns", "ROI Tracking", "Audience Engagement", "Data Analytics"],
         image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&auto=format&fit=crop"
       },
       {
         icon: <FaChartLineIcon className="w-8 h-8" />,
         title: "Local SEO",
         description: "Dominate local search results and attract customers in your geographical area.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["SEO Optimization", "Content Strategy", "Conversion Tracking", "A/B Testing"],
         image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=600&auto=format&fit=crop"
       },
       {
         icon: <FaCode className="w-8 h-8" />,
         title: "Technical SEO",
         description: "Optimize your website's technical foundation for better crawling and indexing.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Brand Awareness", "Lead Generation", "Social Media Ads", "Email Marketing"],
         image: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?q=80&w=600&auto=format&fit=crop"
       },
       {
         icon: <FaChartLine className="w-8 h-8" />,
         title: "Google Ads",
         description: "High-converting pay-per-click campaigns on the Google Search Network.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Keyword Research", "On-Page SEO", "Link Building", "Competitor Analysis"],
         image: "https://images.unsplash.com/photo-1533750516457-a7f992034fec?q=80&w=600&auto=format&fit=crop"
       },
       {
         icon: <FaMobile className="w-8 h-8" />,
         title: "Meta Ads",
         description: "Targeted advertising campaigns across Facebook, Instagram, and the Meta ecosystem.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["PPC Management", "Ad Copywriting", "Bid Optimization", "Performance Reporting"],
         image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=600&auto=format&fit=crop"
       },
       {
         icon: <FaUsers className="w-8 h-8" />,
         title: "Social Media Marketing",
         description: "Strategic marketing campaigns to grow your brand presence on social platforms.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Social Media Management", "Community Building", "Influencer Outreach", "Viral Campaigns"],
         image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=600&auto=format&fit=crop"
       },
       {
         icon: <FaDesktop className="w-8 h-8" />,
         title: "Social Media Management",
         description: "Comprehensive management of your social profiles, content, and community.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Content Creation", "Blogging Strategy", "Video Marketing", "Infographics Design"],
         image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=600&auto=format&fit=crop"
       },
       {
         icon: <FaPaintBrush className="w-8 h-8" />,
         title: "Content Marketing",
         description: "Engaging, high-quality content strategies to educate and convert your audience.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Local SEO", "Google My Business", "Review Management", "Directory Listings"],
         image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=600&auto=format&fit=crop"
       },
       {
         icon: <FaBuilding className="w-8 h-8" />,
         title: "Google Business Profile Optimization",
         description: "Maximize your visibility on Google Maps and local search results.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Email Automation", "List Segmentation", "Drip Campaigns", "Newsletter Design"],
         image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=600&auto=format&fit=crop"
       },
       {
         icon: <FaRocket className="w-8 h-8" />,
         title: "Lead Generation",
         description: "Data-driven strategies to capture and nurture high-quality business leads.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Conversion Rate Optimization", "Landing Page Design", "User Behavior Analysis", "Heatmapping"],
         image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=600&auto=format&fit=crop"
       },
       {
         icon: <FaMobile className="w-8 h-8" />,
         title: "WhatsApp Marketing",
         description: "Direct, personalized marketing campaigns delivered straight to WhatsApp.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Affiliate Marketing", "Partnership Strategy", "Commission Tracking", "Partner Outreach"],
         image: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=600&auto=format&fit=crop"
       },
       {
         icon: <FaDesktop className="w-8 h-8" />,
         title: "Email Marketing",
         description: "Automated email sequences and newsletters to retain customers and drive sales.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Mobile Marketing", "App Store Optimization", "SMS Campaigns", "Location-Based Targeting"],
         image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop"
       },
       {
         icon: <FaShieldAlt className="w-8 h-8" />,
         title: "Online Reputation Management",
         description: "Monitor, manage, and improve your brand's digital reputation and reviews.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Web Analytics Setup", "Custom Dashboards", "Goal Tracking", "Attribution Modeling"],
         image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop"
       },
       {
         icon: <FaChartLineIcon className="w-8 h-8" />,
         title: "Conversion Rate Optimization",
         description: "A/B testing and UX improvements to turn more visitors into paying customers.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Reputation Management", "PR Strategy", "Crisis Communication", "Brand Monitoring"],
         image: "https://images.unsplash.com/photo-1607082349566-187342175e2f?q=80&w=600&auto=format&fit=crop"
       }
     ],

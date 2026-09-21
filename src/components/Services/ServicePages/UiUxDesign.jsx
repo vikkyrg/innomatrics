@@ -42,70 +42,70 @@ const UiUxDesign = forwardRef((props, ref) => {
         icon: <FaPaintBrush className="w-8 h-8" />,
         title: "UI/UX Design",
         description: "User-centric interfaces that combine stunning aesthetics with seamless usability.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["User Research", "Wireframing", "Prototyping", "Usability Testing"],
         image: uiuxDesignImg
       },
       {
         icon: <FaDesktop className="w-8 h-8" />,
         title: "Website UI Design",
         description: "Beautiful, responsive website designs that captivate and convert visitors.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Visual Design", "Interaction Design", "Information Architecture", "Design Systems"],
         image: websiteUiDesignImg
       },
       {
         icon: <FaMobile className="w-8 h-8" />,
         title: "Mobile App UI Design",
         description: "Intuitive mobile application interfaces optimized for iOS and Android.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["UI Mockups", "Responsive Layouts", "Typography Selection", "Color Theory"],
         image: mobileAppUiDesignImg
       },
       {
         icon: <FaChartLine className="w-8 h-8" />,
         title: "Dashboard Design",
         description: "Clear, functional, and visually appealing admin panels and data dashboards.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["User Personas", "Journey Mapping", "A/B Testing", "Feedback Analysis"],
         image: dashboardDesignImg
       },
       {
         icon: <FaCloud className="w-8 h-8" />,
         title: "SaaS Product Design",
         description: "End-to-end product design for scalable Software-as-a-Service platforms.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Mobile App Design", "Web Interface Design", "Dashboard Creation", "SaaS Platform UX"],
         image: saasProductDesignImg
       },
       {
         icon: <FaCogs className="w-8 h-8" />,
         title: "Design System Development",
         description: "Comprehensive component libraries and style guides for consistent branding.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Microinteractions", "Animation Design", "State Transitions", "Feedback Indicators"],
         image: designSystemDevelopmentImg
       },
       {
         icon: <FaDesktop className="w-8 h-8" />,
         title: "Figma Prototyping",
         description: "Interactive, high-fidelity prototypes to visualize and test your product before coding.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Accessibility Compliance", "WCAG Standards", "Inclusive Design", "Screen Reader Support"],
         image: figmaPrototypingImg
       },
       {
         icon: <FaUsers className="w-8 h-8" />,
         title: "UX Research",
         description: "In-depth user research, testing, and persona development to inform design decisions.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Heuristic Evaluation", "Expert Review", "Competitive Analysis", "Design Audits"],
         image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?q=80&w=600&auto=format&fit=crop"
       },
       {
         icon: <FaCode className="w-8 h-8" />,
         title: "Wireframing",
         description: "Structural blueprints that define the layout and flow of your digital product.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Iconography", "Custom Illustrations", "Asset Generation", "Style Guides"],
         image: wireframingImg
       },
       {
         icon: <FaLightbulb className="w-8 h-8" />,
         title: "Branding & Visual Identity",
         description: "Cohesive brand identities, including logos, typography, and color palettes.",
-        list: ["Professional Service", "Expert Delivery", "Secure & Scalable", "24/7 Support"],
+        list: ["Clickable Prototypes", "Figma Design", "Adobe XD", "Sketch Files"],
         image: brandingVisualIdentityImg
       }
     ],
