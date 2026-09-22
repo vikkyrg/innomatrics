@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ServiceHero = ({ breadcrumbTitle, title, description, primaryCTA = "Request a Quote", primaryLink = "/quote", secondaryCTA = "Contact Us", secondaryLink = "/contact", onSecondaryClick, backgroundImage }) => {
+const ServiceHero = ({ breadcrumbTitle, title, description, primaryCTA = "Request a Quote", primaryLink = "/quote", secondaryCTA = "Contact Us", secondaryLink = "/contact", onPrimaryClick, onSecondaryClick, backgroundImage }) => {
   return (
     <div className="relative w-full min-h-[500px] flex items-center bg-primary-900 border-b border-primary-800">
       <div className="absolute inset-0 bg-primary-900 overflow-hidden">
@@ -46,12 +46,22 @@ const ServiceHero = ({ breadcrumbTitle, title, description, primaryCTA = "Reques
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link to={primaryLink}>
-              <button className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white text-secondary-900 hover:bg-secondary-50 text-sm font-bold uppercase tracking-widest px-8 py-4 transition-colors">
+            {onPrimaryClick ? (
+              <button
+                type="button"
+                onClick={onPrimaryClick}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white text-secondary-900 hover:bg-secondary-50 text-sm font-bold uppercase tracking-widest px-8 py-4 transition-colors"
+              >
                 {primaryCTA}
               </button>
-            </Link>
-            {onSecondaryClick ? (
+            ) : (
+              <Link to={primaryLink}>
+                <button className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white text-secondary-900 hover:bg-secondary-50 text-sm font-bold uppercase tracking-widest px-8 py-4 transition-colors">
+                  {primaryCTA}
+                </button>
+              </Link>
+            )}
+            {secondaryCTA && (onSecondaryClick ? (
               <button
                 type="button"
                 onClick={onSecondaryClick}
@@ -65,7 +75,7 @@ const ServiceHero = ({ breadcrumbTitle, title, description, primaryCTA = "Reques
                   {secondaryCTA}
                 </button>
               </Link>
-            )}
+            ))}
           </div>
         </div>
       </div>
