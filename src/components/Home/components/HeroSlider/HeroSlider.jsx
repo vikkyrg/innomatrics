@@ -72,7 +72,12 @@ const HeroSlider = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              We engineer scalable, secure, and high-performance digital platforms. By bridging complex business logic with modern infrastructure, we accelerate modernization for global industry leaders.
+              <span
+                className="text-white bg-[rgba(7,30,55,0.85)] px-[5px] py-[2px]"
+                style={{ boxDecorationBreak: "clone", WebkitBoxDecorationBreak: "clone" }}
+              >
+                We engineer scalable, secure, and high-performance digital platforms. By bridging complex business logic with modern infrastructure, we accelerate modernization for global industry leaders.
+              </span>
             </motion.p>
             
             <motion.div 

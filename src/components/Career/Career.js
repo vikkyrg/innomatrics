@@ -181,10 +181,9 @@ const Career = () => {
         title="Shape the Future of Technology"
         description="Join our global team of visionaries. Give your career an edge with a dynamic work environment and a culture of continuous innovation."
         backgroundImage="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2000&auto=format&fit=crop"
-        primaryCTA="Explore Openings"
-        secondaryCTA="Submit Application"
-        primaryLink="#openings"
-        onSecondaryClick={scrollToJobApplication}
+        primaryCTA="Submit Application"
+        onPrimaryClick={scrollToJobApplication}
+        secondaryCTA={null}
       />
 
       {/* Intro Section */}
@@ -339,7 +338,7 @@ const Career = () => {
                       className="w-14 h-14 rounded-full object-cover border-2 border-primary-500 mr-4"
                     />
                     <div className="text-left">
-                      <h4 className="font-bold text-lg">{testimonials[currentTestimonial].name}</h4>
+                      <h4 className="font-bold text-lg text-white">{testimonials[currentTestimonial].name}</h4>
                       <p className="text-primary-300 text-sm">{testimonials[currentTestimonial].role}</p>
                     </div>
                   </div>
