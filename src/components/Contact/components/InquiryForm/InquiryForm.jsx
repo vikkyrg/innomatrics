@@ -162,6 +162,11 @@ const InquiryForm = () => {
             className="w-full border border-secondary-200 bg-secondary-50 px-4 py-3 text-secondary-900 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/50 focus:bg-white shadow-inner focus:shadow-md transition-all duration-300"
             placeholder="Enter your phone number"
             required
+            inputMode="numeric"
+            maxLength={10}
+            onInput={(event) => {
+              event.currentTarget.value = event.currentTarget.value.replace(/\D/g, "");
+            }}
             pattern="[0-9]{10}"
           />
           <p className="text-xs text-secondary-500 mt-2 tracking-wide">

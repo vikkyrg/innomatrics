@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.6eab56f1.css",
-    "main.js": "/static/js/main.b1b9aa94.js",
+    "main.js": "/static/js/main.4b455025.js",
     "static/media/aboutMe.jpeg": "/static/media/aboutMe.a48964ec4def045d29b8.jpeg",
     "static/media/aboutCorporate.jpg": "/static/media/aboutCorporate.8f86d8f3b1614c8a0297.jpg",
     "static/media/hero_saas_product.png": "/static/media/hero_saas_product.3b12d8b3c6c3a856f099.png",
@@ -162,6 +162,6 @@
   },
   "entrypoints": [
     "static/css/main.6eab56f1.css",
-    "static/js/main.b1b9aa94.js"
+    "static/js/main.4b455025.js"
   ]
 }
