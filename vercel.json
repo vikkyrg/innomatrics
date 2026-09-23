@@ -11,12 +11,16 @@
     {
       "src": "api/careers.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "api/contact.js",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/api/careers.js"
+      "dest": "/api/$1"
     },
     {
       "src": "/static/(.*)",

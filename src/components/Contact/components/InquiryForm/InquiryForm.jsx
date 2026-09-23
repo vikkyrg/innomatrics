@@ -1,7 +1,10 @@
-import React, { useState, useRef, useEffect } from "react";
-import emailjs from "@emailjs/browser";
+import React, { useState, useRef } from "react";
 import { FaLocationPin } from "react-icons/fa6";
 import { motion } from "framer-motion";
+
+// Submits the inquiry to the Nodemailer-backed serverless function
+// (api/contact.js), which emails it to the company inbox.
+const API_ENDPOINT = "/api/contact";
 
 const InquiryForm = () => {
   const formRef = useRef();
@@ -13,10 +16,6 @@ const InquiryForm = () => {
   const [status, setStatus] = useState({ type: "", message: "" });
   const [showPopup, setShowPopup] = useState(false);
 
-  useEffect(() => {
-    emailjs.init("6VY09sJt6V10-gvtv");
-  }, []);
-
   const resetForm = () => {
     formRef.current.reset();
     setStatus({ type: "", message: "" });
@@ -24,19 +23,29 @@ const InquiryForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const serviceId = "service_jrw5k1p";
-    const templateId = "template_x896ksc";
 
     try {
       setLoading(true);
       setStatus({ type: "", message: "" });
 
-      await emailjs.send(serviceId, templateId, {
-        name: nameRef.current.value,
-        email: emailRef.current.value,
-        message: messageRef.current.value,
-        phone: phoneRef.current.value,
+      // POST the inquiry to the serverless function, which sends the
+      // email via Nodemailer. No page navigation/re-render.
+      const response = await fetch(API_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: nameRef.current.value,
+          email: emailRef.current.value,
+          phone: phoneRef.current.value,
+          message: messageRef.current.value,
+        }),
       });
+
+      const result = await response.json().catch(() => null);
+
+      if (!response.ok || !result?.success) {
+        throw new Error(result?.message || "Submission failed.");
+      }
 
       setStatus({
         type: "success",
@@ -49,10 +58,13 @@ const InquiryForm = () => {
         setShowPopup(false);
       }, 3000);
     } catch (error) {
-      console.error("Error sending email:", error);
+      console.error("Error sending inquiry:", error);
       setStatus({
         type: "error",
-        message: "There was an error sending your message. Please try again.",
+        message:
+          error?.message && error.message !== "Submission failed."
+            ? error.message
+            : "There was an error sending your message. Please try again.",
       });
     } finally {
       setLoading(false);
