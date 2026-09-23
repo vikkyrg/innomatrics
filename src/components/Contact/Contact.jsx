@@ -7,6 +7,11 @@ const Contact = forwardRef((props, ref) => {
   };
 
   useEffect(() => {
+    if (window.location.hash === '#contact-inquiry') {
+      document.getElementById('contact-inquiry')?.scrollIntoView({ block: 'start' });
+      return;
+    }
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 

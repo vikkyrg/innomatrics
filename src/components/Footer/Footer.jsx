@@ -41,7 +41,7 @@ const Footer = () => {
               <h2 className="text-3xl font-bold text-white mb-4">Ready to accelerate your digital transformation?</h2>
               <p className="text-lg text-secondary-300">Partner with Innomatrics to build scalable, secure, and future-proof technology solutions.</p>
             </div>
-            <Link to="/contact" className="btn-primary whitespace-nowrap">
+            <Link to="/contact#contact-inquiry" className="btn-primary whitespace-nowrap">
               Discuss Your Project
             </Link>
           </div>
