@@ -1,16 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FiX, FiCheck, FiChevronRight, FiAlertCircle, FiFileText } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
-import emailjs from "@emailjs/browser";
 
 // External Indeed company page (opens in a new tab)
 const INDEED_URL = "https://in.indeed.com/cmp/Innomatrics-Technologies";
 
-// Reuses the site's existing EmailJS career-application integration
-// (same service/template as the hero "Submit Application" modal in Career.js)
-const EMAILJS_SERVICE_ID = "service_jrw5k1p";
-const EMAILJS_TEMPLATE_ID = "template_bi8brd5";
-const EMAILJS_PUBLIC_KEY = "6VY09sJt6V10-gvtv";
+// Submits the application to the Nodemailer-backed serverless function
+// (api/careers.js), which emails the details + resume to the HR inbox.
+const API_ENDPOINT = "/api/careers";
 
 const MAX_RESUME_SIZE_MB = 5;
 const ALLOWED_RESUME_EXTENSIONS = ["pdf", "doc", "docx"];
@@ -150,22 +147,36 @@ const ApplicationModal = ({ onClose }) => {
     setStatus("submitting");
     setSubmitError("");
     try {
-      // Existing EmailJS integration (same service/template the Careers page
-      // already uses). The resume is sent as a form file attachment
-      // (input name: "resume"). To plug in a custom backend later, replace
-      // this block with a POST of FormData to your careers API endpoint.
-      await emailjs.sendForm(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        formRef.current,
-        EMAILJS_PUBLIC_KEY
-      );
+      // POST the form (including the resume file) to the serverless
+      // function, which sends the email via Nodemailer. Stays in this modal
+      // — no page navigation or re-render.
+      const payload = new FormData();
+      payload.append("fullName", form.fullName.trim());
+      payload.append("email", form.email.trim());
+      payload.append("phone", form.phone.trim());
+      payload.append("role", form.role.trim());
+      payload.append("experience", form.experience.trim());
+      payload.append("resume", resumeFile);
+
+      const response = await fetch(API_ENDPOINT, {
+        method: "POST",
+        body: payload,
+      });
+
+      const result = await response.json().catch(() => null);
+
+      if (!response.ok || !result?.success) {
+        throw new Error(result?.message || "Submission failed.");
+      }
+
       setStatus("success");
     } catch (error) {
       console.error("Career application submission failed:", error);
       setStatus("error");
       setSubmitError(
-        "Something went wrong while submitting your application. Please try again, or apply directly via the Indeed page."
+        error?.message && error.message !== "Submission failed."
+          ? error.message
+          : "Something went wrong while submitting your application. Please try again."
       );
     }
   };
@@ -235,16 +246,6 @@ const ApplicationModal = ({ onClose }) => {
             </div>
           ) : (
             <form ref={formRef} onSubmit={handleSubmit} noValidate className="space-y-5">
-              {/* Hidden fields keep the existing EmailJS template variables populated */}
-              <input type="hidden" name="to_name" value="HR Team" />
-              <input type="hidden" name="name" value={form.fullName} />
-              <input type="hidden" name="from_name" value={form.fullName} />
-              <input
-                type="hidden"
-                name="message"
-                value={`Name: ${form.fullName}\nEmail: ${form.email}\nPhone: ${form.phone}\nRole: ${form.role}\nExperience: ${form.experience}`}
-              />
-
               {fieldMeta.map((field, index) => (
                 <div key={field.id}>
                   <label
